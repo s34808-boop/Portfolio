@@ -6,6 +6,8 @@
 
 <title>TARMING PORTFOLIO</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -14,98 +16,82 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-html{
     scroll-behavior:smooth;
 }
 
 body{
     font-family:'Kanit',sans-serif;
-    background:#fff;
+    background:#ffffff;
     color:#222;
 }
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 header{
-    height:90px;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+    background:#ffffff;
+    border-bottom:1px solid #eeeeee;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 7%;
-    border-bottom:1px solid #eee;
-    background:#fff;
-    position:sticky;
-    top:0;
+    padding:0 6%;
     z-index:1000;
 }
 
 .logo{
-    font-size:30px;
+    font-size:28px;
     font-weight:700;
-    letter-spacing:1px;
+    color:#222;
 }
 
 .logo span{
-    color:#f47721;
+    color:#f36f21;
 }
 
 .menu-btn{
-    width:58px;
-    height:58px;
+    width:52px;
+    height:52px;
     border:none;
-    border-radius:15px;
-    background:#f47721;
+    border-radius:12px;
+    background:#f36f21;
     color:white;
-    font-size:32px;
+    font-size:28px;
     cursor:pointer;
 }
 
-/* ================= MENU ================= */
+/* =========================
+   MENU
+========================= */
 
 .menu{
     position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.92);
-    z-index:2000;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:25px;
+    top:75px;
+    right:-100%;
+    width:100%;
+    max-width:500px;
+    height:calc(100vh - 75px);
+    background:#ffffff;
+    z-index:999;
+    padding:30px 25px;
+    transition:0.4s;
+    overflow-y:auto;
+    box-shadow:-10px 0 30px rgba(0,0,0,0.12);
 }
 
 .menu.active{
-    display:flex;
+    right:0;
 }
 
-.menu-box{
-    width:100%;
-    max-width:650px;
-    background:#fff;
-    padding:30px;
-    border-radius:25px;
-}
-
-.menu-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.menu h2{
+    text-align:center;
     margin-bottom:25px;
-}
-
-.menu-top h2{
-    font-size:25px;
-}
-
-.close{
-    width:50px;
-    height:50px;
-    border:1px solid #ddd;
-    background:white;
-    border-radius:12px;
-    font-size:30px;
-    cursor:pointer;
+    color:#f36f21;
 }
 
 .menu-grid{
@@ -115,426 +101,478 @@ header{
 }
 
 .menu-item{
-    border:2px solid #f47721;
-    background:#fff;
-    min-height:105px;
-    border-radius:15px;
-    cursor:pointer;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    font-size:20px;
-    font-weight:500;
-    transition:.2s;
+    text-decoration:none;
+    color:#222;
+    border:1px solid #f36f21;
+    border-radius:12px;
+    padding:25px 10px;
+    text-align:center;
+    background:#fffaf6;
+    transition:0.3s;
 }
 
 .menu-item:hover{
-    background:#f47721;
+    background:#f36f21;
     color:white;
+    transform:translateY(-3px);
 }
 
 .menu-icon{
-    font-size:32px;
-    margin-bottom:5px;
-}
-
-/* ================= PAGE ================= */
-
-.page{
-    display:none;
-    min-height:calc(100vh - 90px);
-    padding:80px 7%;
-}
-
-.page.active{
     display:block;
+    font-size:38px;
+    margin-bottom:8px;
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
+.menu-item strong{
+    font-size:18px;
 }
 
-.back{
-    color:#f47721;
-    font-size:20px;
-    margin-bottom:45px;
-    cursor:pointer;
+.menu-full{
+    grid-column:1 / 3;
 }
 
-.page-title{
-    font-size:55px;
-    font-weight:700;
-    margin-bottom:5px;
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    min-height:100vh;
+    padding:130px 7% 80px;
 }
 
-.subtitle{
-    color:#f47721;
-    letter-spacing:4px;
-    font-size:20px;
+.section-title{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.section-subtitle{
+    color:#f36f21;
+    letter-spacing:3px;
+    font-size:18px;
     margin-bottom:40px;
 }
 
-/* ================= HOME ================= */
+/* =========================
+   HOME
+========================= */
 
-.home{
-    min-height:calc(100vh - 90px);
+#home{
     display:flex;
     align-items:center;
+    background:linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fff6ef 100%
+    );
 }
 
-.home-grid{
+.home-container{
     width:100%;
     display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:70px;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
     align-items:center;
 }
 
-.hello{
-    color:#f47721;
-    letter-spacing:5px;
-    font-size:22px;
-    margin-bottom:20px;
-}
-
-.name{
-    font-size:75px;
-    line-height:1;
-    font-weight:700;
-}
-
-.name span{
-    color:#f47721;
-}
-
-.fullname{
-    font-size:30px;
-    margin:25px 0 15px;
-    font-weight:600;
-}
-
-.intro{
+.small-title{
+    color:#f36f21;
+    letter-spacing:4px;
     font-size:20px;
-    color:#666;
+}
+
+.home h1{
+    font-size:80px;
+    line-height:1;
+    margin:15px 0;
+}
+
+.home h1 span{
+    color:#f36f21;
+}
+
+.home h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.home p{
+    font-size:19px;
     line-height:1.9;
-    margin-bottom:30px;
+    color:#666;
+    max-width:650px;
 }
 
 .buttons{
     display:flex;
     gap:15px;
+    margin-top:30px;
 }
 
 .btn{
-    border:none;
-    padding:15px 30px;
-    border-radius:12px;
-    font-family:inherit;
-    font-size:18px;
-    cursor:pointer;
+    text-decoration:none;
+    padding:13px 25px;
+    border-radius:10px;
+    font-size:17px;
+    transition:0.3s;
 }
 
-.btn-orange{
-    background:#f47721;
-    color:#fff;
+.btn-main{
+    background:#f36f21;
+    color:white;
 }
 
-.btn-white{
-    background:#fff;
-    border:1px solid #f47721;
-    color:#f47721;
+.btn-main:hover{
+    background:#d9570d;
 }
 
-/* ================= PROFILE PHOTO ================= */
+.btn-outline{
+    border:1px solid #f36f21;
+    color:#f36f21;
+}
 
-.profile{
+.btn-outline:hover{
+    background:#f36f21;
+    color:white;
+}
+
+/* PROFILE PHOTO */
+
+.photo-box{
     width:100%;
     max-width:430px;
     margin:auto;
     border-radius:25px;
     overflow:hidden;
-    border:5px solid #f47721;
-    box-shadow:0 15px 40px rgba(244,119,33,.2);
+    border:3px solid #f36f21;
+    background:#fff;
+    box-shadow:0 15px 40px rgba(243,111,33,0.2);
 }
 
-.profile img{
+.photo-box img{
     width:100%;
     display:block;
-    object-fit:cover;
 }
 
-/* ================= CARDS ================= */
+/* =========================
+   CARDS
+========================= */
 
 .card{
-    background:#fff;
-    border:1px solid #e6e6e6;
-    border-left:6px solid #f47721;
-    border-radius:20px;
-    padding:35px;
-    margin-bottom:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
-}
-
-.card h2{
-    color:#f47721;
-    margin-bottom:20px;
-    font-size:28px;
-}
-
-.card p{
-    font-size:19px;
-    color:#555;
-    line-height:2;
-}
-
-.info{
-    font-size:20px;
-    line-height:2.2;
-}
-
-.info b{
-    color:#444;
-}
-
-/* ================= EDUCATION ================= */
-
-.edu-card{
-    background:#fff;
-    border:1px solid #ddd;
-    border-radius:20px;
+    background:white;
+    border:1px solid #eeeeee;
+    border-left:5px solid #f36f21;
+    border-radius:18px;
     padding:30px;
     margin-bottom:20px;
-    position:relative;
-    overflow:hidden;
+    box-shadow:0 8px 30px rgba(0,0,0,0.06);
 }
 
-.edu-card::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    width:7px;
-    height:100%;
-    background:#f47721;
-}
-
-.edu-title{
-    font-size:23px;
-    color:#f47721;
-    font-weight:600;
-}
-
-.edu-school{
-    font-size:20px;
-    margin-top:8px;
-}
-
-/* ================= UNIVERSITY ================= */
-
-.uni-card{
-    text-align:center;
-    border:2px solid #f47721;
-    border-radius:25px;
-    padding:45px 30px;
-    background:#fffaf6;
-}
-
-.uni-logo{
-    width:190px;
-    height:190px;
-    object-fit:contain;
-    margin-bottom:20px;
-}
-
-.uni-card h2{
-    font-size:34px;
+.card h3{
+    color:#f36f21;
+    font-size:25px;
     margin-bottom:15px;
 }
 
-.uni-card h3{
-    color:#f47721;
-    font-size:25px;
-}
-
-.uni-card p{
-    font-size:20px;
+.card p{
+    font-size:18px;
+    line-height:1.9;
     color:#555;
 }
 
-/* ================= SKILLS ================= */
+/* =========================
+   HISTORY
+========================= */
 
-.skills{
+.info-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:20px;
 }
 
-.skill{
-    border:1px solid #ddd;
-    border-radius:20px;
-    padding:30px;
-    transition:.2s;
-}
-
-.skill:hover{
-    border-color:#f47721;
-    transform:translateY(-3px);
-}
-
-.skill-icon{
-    font-size:40px;
-}
-
-.skill h3{
-    font-size:23px;
-    margin:10px 0;
-}
-
-.skill p{
-    color:#666;
-    font-size:17px;
-}
-
-/* ================= RESEARCH / WORK ================= */
-
-.work{
-    margin-bottom:35px;
-    border:1px solid #ddd;
-    border-radius:20px;
-    overflow:hidden;
-    background:#fff;
-}
-
-.work img{
-    width:100%;
-    max-height:550px;
-    object-fit:cover;
-    display:block;
-}
-
-.work-text{
+.info-box{
+    background:#fffaf6;
+    border:1px solid #f36f21;
+    border-radius:15px;
     padding:25px;
 }
 
-.work-text h2{
-    color:#f47721;
+.info-box h3{
+    color:#f36f21;
     margin-bottom:8px;
 }
 
-.work-text p{
-    color:#666;
-    font-size:18px;
+/* =========================
+   EDUCATION
+========================= */
+
+.education-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
 }
 
-/* ================= CONTACT ================= */
-
-.contact{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
+.edu{
+    padding:25px;
+    border-radius:15px;
+    background:#fffaf6;
+    border:1px solid #f3c2a5;
 }
 
-.contact-box{
-    border:1px solid #ddd;
-    border-radius:20px;
-    padding:30px;
-}
-
-.contact-box h3{
-    color:#f47721;
+.edu h3{
+    color:#f36f21;
     font-size:23px;
-    margin-bottom:10px;
 }
 
-.contact-box p{
-    font-size:18px;
+.edu p{
+    margin-top:5px;
     color:#555;
 }
 
-/* ================= FOOTER ================= */
+/* =========================
+   UNIVERSITY
+========================= */
+
+.university-card{
+    text-align:center;
+    background:#fffaf6;
+    border:2px solid #f36f21;
+    border-radius:25px;
+    padding:45px 25px;
+    box-shadow:0 10px 35px rgba(243,111,33,0.12);
+}
+
+.university-logo{
+    width:180px;
+    height:180px;
+    object-fit:contain;
+    margin-bottom:25px;
+    border-radius:15px;
+}
+
+.university-card h2{
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.university-card h3{
+    color:#f36f21;
+    font-size:25px;
+}
+
+.university-card p{
+    font-size:20px;
+    color:#555;
+    margin-top:5px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.skill{
+    padding:30px;
+    border:1px solid #f3c2a5;
+    border-radius:18px;
+    background:#fffaf6;
+    text-align:center;
+    transition:0.3s;
+}
+
+.skill:hover{
+    transform:translateY(-5px);
+    border-color:#f36f21;
+}
+
+.skill .icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.skill h3{
+    color:#f36f21;
+}
+
+/* =========================
+   RESEARCH / WORK
+========================= */
+
+.work-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.work{
+    border:1px solid #eeeeee;
+    border-radius:18px;
+    padding:30px;
+    background:white;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+.work h3{
+    color:#f36f21;
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.work p{
+    color:#666;
+    line-height:1.8;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box{
+    max-width:750px;
+    margin:auto;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:22px;
+    margin-bottom:15px;
+    border:1px solid #f3c2a5;
+    border-radius:15px;
+    background:#fffaf6;
+}
+
+.contact-icon{
+    font-size:35px;
+}
+
+.contact-item h3{
+    color:#f36f21;
+}
+
+.contact-item a{
+    color:#555;
+    text-decoration:none;
+}
+
+.contact-item a:hover{
+    color:#f36f21;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-home{
+    display:inline-block;
+    margin-bottom:30px;
+    color:#f36f21;
+    text-decoration:none;
+    font-size:18px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     text-align:center;
     padding:30px;
-    border-top:1px solid #eee;
-    color:#777;
+    background:#222;
+    color:white;
 }
 
-/* ================= MOBILE ================= */
+footer span{
+    color:#f36f21;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:800px){
 
     header{
-        height:80px;
-        padding:0 5%;
+        height:70px;
+        padding:0 24px;
     }
 
     .logo{
-        font-size:25px;
+        font-size:23px;
     }
 
-    .menu-btn{
-        width:55px;
-        height:55px;
+    section{
+        padding:110px 24px 60px;
     }
 
-    .page{
-        padding:55px 6%;
-    }
-
-    .home{
-        padding-top:50px;
-    }
-
-    .home-grid{
+    .home-container{
         grid-template-columns:1fr;
-        gap:45px;
+        gap:40px;
     }
 
-    .name{
+    .home h1{
         font-size:55px;
     }
 
-    .fullname{
+    .home h2{
         font-size:25px;
     }
 
-    .intro{
-        font-size:18px;
+    .home p{
+        font-size:16px;
     }
 
-    .page-title{
-        font-size:45px;
+    .photo-box{
+        max-width:350px;
     }
 
-    .skills{
+    .section-title{
+        font-size:38px;
+    }
+
+    .info-grid,
+    .skills-grid,
+    .work-grid{
         grid-template-columns:1fr;
     }
 
-    .contact{
-        grid-template-columns:1fr;
-    }
-
-    .menu-box{
-        padding:20px;
-        max-height:90vh;
-        overflow:auto;
+    .menu{
+        width:100%;
     }
 
     .menu-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .menu-item{
-        min-height:100px;
-        font-size:17px;
+    .menu-full{
+        grid-column:1 / 3;
     }
 
-    .menu-icon{
-        font-size:27px;
+    .university-card h2{
+        font-size:25px;
     }
+
+    .university-card h3{
+        font-size:21px;
+    }
+
+}
+
+/* =========================
+   HIDE SECTIONS BY DEFAULT
+========================= */
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
 }
 
 </style>
@@ -542,7 +580,9 @@ footer{
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -550,654 +590,613 @@ footer{
         TAR<span>MING</span>
     </div>
 
-    <button class="menu-btn" onclick="openMenu()">☰</button>
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
 
 </header>
 
 
-<!-- ================= MENU ================= -->
+<!-- =========================
+     MENU
+========================= -->
 
 <div class="menu" id="menu">
 
-    <div class="menu-box">
+    <h2>Menu - เมนูต่างๆ</h2>
 
-        <div class="menu-top">
+    <div class="menu-grid">
 
-            <h2>Menu - เมนูต่างๆ</h2>
+        <a href="#home" class="menu-item" onclick="closeMenu()">
+            <span class="menu-icon">🏠</span>
+            <strong>หน้าหลัก</strong>
+        </a>
 
-            <button class="close" onclick="closeMenu()">×</button>
+        <a href="#history" class="menu-item" onclick="closeMenu()">
+            <span class="menu-icon">👤</span>
+            <strong>ประวัติ</strong>
+        </a>
 
-        </div>
+        <a href="#education" class="menu-item" onclick="closeMenu()">
+            <span class="menu-icon">🎓</span>
+            <strong>การศึกษา</strong>
+        </a>
 
-        <div class="menu-grid">
+        <a href="#university" class="menu-item" onclick="closeMenu()">
+            <span class="menu-icon">🏫</span>
+            <strong>มหาลัย</strong>
+        </a>
 
-            <div class="menu-item" onclick="showPage('home')">
-                <div class="menu-icon">🏠</div>
-                หน้าหลัก
-            </div>
+        <a href="#skills" class="menu-item" onclick="closeMenu()">
+            <span class="menu-icon">⚙️</span>
+            <strong>ทักษะ</strong>
+        </a>
 
-            <div class="menu-item" onclick="showPage('history')">
-                <div class="menu-icon">👤</div>
-                ประวัติ
-            </div>
+        <a href="#research" class="menu-item" onclick="closeMenu()">
+            <span class="menu-icon">📁</span>
+            <strong>ผลงานวิจัย</strong>
+        </a>
 
-            <div class="menu-item" onclick="showPage('education')">
-                <div class="menu-icon">🎓</div>
-                การศึกษา
-            </div>
-
-            <div class="menu-item" onclick="showPage('university')">
-                <div class="menu-icon">🏫</div>
-                มหาลัย
-            </div>
-
-            <div class="menu-item" onclick="showPage('skills')">
-                <div class="menu-icon">⚙️</div>
-                ทักษะ
-            </div>
-
-            <div class="menu-item" onclick="showPage('research')">
-                <div class="menu-icon">📁</div>
-                ผลงานวิจัย
-            </div>
-
-            <div class="menu-item" onclick="showPage('contact')">
-                <div class="menu-icon">💬</div>
-                ติดต่อผม
-            </div>
-
-        </div>
+        <a href="#contact" class="menu-item menu-full" onclick="closeMenu()">
+            <span class="menu-icon">💬</span>
+            <strong>ติดต่อผม</strong>
+        </a>
 
     </div>
 
 </div>
 
 
-<!-- ================= HOME ================= -->
+<!-- =========================
+     HOME
+========================= -->
 
 <section id="home" class="page active">
 
-<div class="container home">
+    <div class="home-container">
 
-<div class="home-grid">
+        <div>
 
-    <div>
+            <div class="small-title">
+                HELLO, I'M
+            </div>
 
-        <div class="hello">
-            HELLO, I'M
+            <h1>
+                TAR<span>MING</span>
+            </h1>
+
+            <h2>
+                เสฎฐวุฒิ พลหาญ
+            </h2>
+
+            <p>
+                นักเรียนโรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+                ผู้มีความสนใจด้านวิศวกรรม การบิน อวกาศ
+                และเทคโนโลยีสมัยใหม่
+                พร้อมเรียนรู้และพัฒนาตัวเอง
+                เพื่อก้าวเข้าสู่เส้นทางวิศวกรรมการบินและอวกาศ
+            </p>
+
+            <div class="buttons">
+
+                <a href="#history" class="btn btn-main">
+                    รู้จักผมมากขึ้น
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    ติดต่อผม
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="name">
-            TAR<span>MING</span>
-        </div>
 
-        <div class="fullname">
-            เสฎฐวุฒิ พลหาญ
-        </div>
+        <div class="photo-box">
 
-        <div class="intro">
-
-            นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
-            แผนการเรียน CSE<br>
-
-            โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์<br>
-
-            มีความสนใจด้านวิศวกรรม การบิน อวกาศ
-            และเทคโนโลยี
-
-        </div>
-
-        <div class="buttons">
-
-            <button class="btn btn-orange"
-            onclick="showPage('history')">
-                รู้จักผมมากขึ้น
-            </button>
-
-            <button class="btn btn-white"
-            onclick="showPage('contact')">
-                ติดต่อผม
-            </button>
+            <!-- รูปของ TARMING -->
+            <img
+                src="file_000000085d47207b52f2b182e7429b3.png"
+                alt="รูปโปรไฟล์ TARMING"
+            >
 
         </div>
 
     </div>
-
-
-    <div class="profile">
-
-        <img src="profile.jpg" alt="TARMING">
-
-    </div>
-
-</div>
-
-</div>
 
 </section>
 
 
-<!-- ================= HISTORY ================= -->
+<!-- =========================
+     HISTORY
+========================= -->
 
 <section id="history" class="page">
 
-<div class="container">
+    <a href="#home" class="back-home">
+        ← กลับหน้าหลัก
+    </a>
 
-<div class="back" onclick="showPage('home')">
-← กลับหน้าหลัก
-</div>
+    <h1 class="section-title">
+        ประวัติ
+    </h1>
 
-<h1 class="page-title">ประวัติ</h1>
-
-<div class="subtitle">
-MY PROFILE
-</div>
-
-
-<div class="card">
-
-    <div style="text-align:center;margin-bottom:30px;">
-
-        <img
-        src="profile.jpg"
-        alt="TARMING"
-        style="
-        width:180px;
-        height:180px;
-        border-radius:50%;
-        object-fit:cover;
-        border:5px solid #f47721;
-        ">
-
+    <div class="section-subtitle">
+        MY PROFILE
     </div>
 
-    <h2>เสฎฐวุฒิ พลหาญ</h2>
+    <div class="card">
 
-    <div class="info">
+        <h3>
+            เสฎฐวุฒิ พลหาญ
+        </h3>
 
-        <b>ชื่อเล่น:</b> ต้าหมิง<br>
+        <p>
+            <strong>ชื่อเล่น:</strong> ต้าหมิง
+        </p>
 
-        <b>ศาสนา:</b> คริสต์<br>
+        <p>
+            <strong>ศาสนา:</strong> คริสต์
+        </p>
 
-        <b>กำลังศึกษาอยู่:</b>
-        ชั้นมัธยมศึกษาปีที่ 6/6<br>
+        <p>
+            <strong>ระดับการศึกษา:</strong>
+            ชั้นมัธยมศึกษาปีที่ 6/6
+        </p>
 
-        <b>แผนการเรียน:</b> CSE<br>
+        <p>
+            <strong>แผนการเรียน:</strong> CSE
+        </p>
 
-        <b>โรงเรียน:</b>
-        โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+        <p>
+            <strong>สถานศึกษา:</strong>
+            โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+        </p>
 
     </div>
-
-</div>
-
-
-<h2 style="margin:45px 0 25px;">
-ประวัติการศึกษา
-</h2>
-
-
-<div class="edu-card">
-
-    <div class="edu-title">
-        ระดับอนุบาล
-    </div>
-
-    <div class="edu-school">
-        โรงเรียนบุญประทีปวิทยาคาร
-    </div>
-
-</div>
-
-
-<div class="edu-card">
-
-    <div class="edu-title">
-        ระดับประถมศึกษา
-    </div>
-
-    <div class="edu-school">
-        โรงเรียนบุญประทีปวิทยาคาร
-    </div>
-
-</div>
-
-
-<div class="edu-card">
-
-    <div class="edu-title">
-        ระดับมัธยมศึกษาตอนต้น
-    </div>
-
-    <div class="edu-school">
-        โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-    </div>
-
-</div>
-
-
-<div class="edu-card">
-
-    <div class="edu-title">
-        ระดับมัธยมศึกษาตอนปลาย
-    </div>
-
-    <div class="edu-school">
-        โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-    </div>
-
-</div>
-
-</div>
 
 </section>
 
 
-<!-- ================= EDUCATION ================= -->
+<!-- =========================
+     EDUCATION
+========================= -->
 
 <section id="education" class="page">
 
-<div class="container">
+    <a href="#home" class="back-home">
+        ← กลับหน้าหลัก
+    </a>
 
-<div class="back" onclick="showPage('home')">
-← กลับหน้าหลัก
-</div>
+    <h1 class="section-title">
+        การศึกษา
+    </h1>
 
-<h1 class="page-title">การศึกษา</h1>
-
-<div class="subtitle">
-EDUCATION
-</div>
-
-
-<div class="card">
-
-<h2>🎓 ระดับมัธยมศึกษาตอนปลาย</h2>
-
-<p>
-โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-</p>
-
-<p>
-ชั้นมัธยมศึกษาปีที่ 6/6
-</p>
-
-<p>
-แผนการเรียน CSE
-</p>
-
-</div>
+    <div class="section-subtitle">
+        EDUCATION
+    </div>
 
 
-<div class="card">
+    <div class="education-list">
 
-<h2>📚 ระดับการศึกษาในอดีต</h2>
+        <div class="edu">
 
-<p>
-ระดับอนุบาล – โรงเรียนบุญประทีปวิทยาคาร
-</p>
+            <h3>
+                ระดับอนุบาล
+            </h3>
 
-<p>
-ระดับประถมศึกษา – โรงเรียนบุญประทีปวิทยาคาร
-</p>
+            <p>
+                โรงเรียนบุญประทีปวิทยาคาร
+            </p>
 
-<p>
-ระดับมัธยมศึกษาตอนต้น – โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-</p>
+        </div>
 
-</div>
 
-</div>
+        <div class="edu">
+
+            <h3>
+                ระดับประถมศึกษา
+            </h3>
+
+            <p>
+                โรงเรียนบุญประทีปวิทยาคาร
+            </p>
+
+        </div>
+
+
+        <div class="edu">
+
+            <h3>
+                ระดับมัธยมศึกษาตอนต้น
+            </h3>
+
+            <p>
+                โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+            </p>
+
+        </div>
+
+
+        <div class="edu">
+
+            <h3>
+                ระดับมัธยมศึกษาตอนปลาย
+            </h3>
+
+            <p>
+                โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+            </p>
+
+            <p>
+                แผนการเรียน CSE
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- ================= UNIVERSITY ================= -->
+<!-- =========================
+     UNIVERSITY
+========================= -->
 
 <section id="university" class="page">
 
-<div class="container">
+    <a href="#home" class="back-home">
+        ← กลับหน้าหลัก
+    </a>
 
-<div class="back" onclick="showPage('home')">
-← กลับหน้าหลัก
-</div>
+    <h1 class="section-title">
+        มหาลัย
+    </h1>
 
-<h1 class="page-title">มหาลัย</h1>
-
-<div class="subtitle">
-MY DREAM UNIVERSITY
-</div>
+    <div class="section-subtitle">
+        DREAM UNIVERSITY
+    </div>
 
 
-<div class="uni-card">
+    <div class="university-card">
 
-<img
-src="logo-lkmutnb.jpg"
-class="uni-logo"
-alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ">
+        <!-- โลโก้ มจพ. -->
+        <img
+            class="university-logo"
+            src="logo-I%20kmutnb.jpg"
+            alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ"
+        >
 
-<h2>
-มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
-</h2>
+        <h2>
+            มหาวิทยาลัยเทคโนโลยี
+            พระจอมเกล้าพระนครเหนือ
+        </h2>
 
-<h3>
-คณะวิศวกรรมศาสตร์
-</h3>
+        <h3>
+            คณะวิศวกรรมศาสตร์
+        </h3>
 
-<p>
-สาขาวิศวกรรมการบินและอวกาศ
-</p>
+        <p>
+            สาขาวิศวกรรมการบินและอวกาศ
+        </p>
 
-</div>
+        <p style="margin-top:20px;">
+            ✈️ เป้าหมายของผมคือการเข้าศึกษา
+            และพัฒนาความรู้ด้านวิศวกรรมการบินและอวกาศ
+        </p>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= SKILLS ================= -->
+<!-- =========================
+     SKILLS
+========================= -->
 
 <section id="skills" class="page">
 
-<div class="container">
+    <a href="#home" class="back-home">
+        ← กลับหน้าหลัก
+    </a>
 
-<div class="back" onclick="showPage('home')">
-← กลับหน้าหลัก
-</div>
+    <h1 class="section-title">
+        ทักษะ
+    </h1>
 
-<h1 class="page-title">
-ทักษะ
-</h1>
-
-<div class="subtitle">
-SKILLS & INTERESTS
-</div>
+    <div class="section-subtitle">
+        SKILLS & INTERESTS
+    </div>
 
 
-<div class="skills">
+    <div class="skills-grid">
 
-<div class="skill">
+        <div class="skill">
+            <div class="icon">✈️</div>
+            <h3>การบิน</h3>
+            <p>สนใจเทคโนโลยีและระบบที่เกี่ยวข้องกับอากาศยาน</p>
+        </div>
 
-<div class="skill-icon">✈️</div>
+        <div class="skill">
+            <div class="icon">🚀</div>
+            <h3>อวกาศ</h3>
+            <p>สนใจเทคโนโลยีอวกาศและการสำรวจอวกาศ</p>
+        </div>
 
-<h3>การบิน</h3>
+        <div class="skill">
+            <div class="icon">💻</div>
+            <h3>เทคโนโลยี</h3>
+            <p>สนใจการเรียนรู้เทคโนโลยีและนวัตกรรมใหม่ๆ</p>
+        </div>
 
-<p>
-สนใจเทคโนโลยีและระบบที่เกี่ยวข้องกับอากาศยาน
-</p>
+        <div class="skill">
+            <div class="icon">🔧</div>
+            <h3>การแก้ปัญหา</h3>
+            <p>ชอบเรียนรู้และแก้ไขปัญหาอย่างเป็นระบบ</p>
+        </div>
 
-</div>
+        <div class="skill">
+            <div class="icon">🤝</div>
+            <h3>การทำงานเป็นทีม</h3>
+            <p>สามารถทำงานร่วมกับผู้อื่นและแลกเปลี่ยนความคิดเห็น</p>
+        </div>
 
+        <div class="skill">
+            <div class="icon">📚</div>
+            <h3>การเรียนรู้</h3>
+            <p>พร้อมเรียนรู้สิ่งใหม่และพัฒนาตัวเองอยู่เสมอ</p>
+        </div>
 
-<div class="skill">
-
-<div class="skill-icon">🤖</div>
-
-<h3>เทคโนโลยี</h3>
-
-<p>
-สนใจการออกแบบและเทคโนโลยีสมัยใหม่
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">💻</div>
-
-<h3>คอมพิวเตอร์</h3>
-
-<p>
-มีความสนใจด้านคอมพิวเตอร์และการเรียนรู้เทคโนโลยี
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">🤝</div>
-
-<h3>การทำงานเป็นทีม</h3>
-
-<p>
-สามารถทำงานร่วมกับผู้อื่นและแบ่งหน้าที่ภายในทีม
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= RESEARCH / WORK ================= -->
+<!-- =========================
+     RESEARCH
+========================= -->
 
 <section id="research" class="page">
 
-<div class="container">
+    <a href="#home" class="back-home">
+        ← กลับหน้าหลัก
+    </a>
 
-<div class="back" onclick="showPage('home')">
-← กลับหน้าหลัก
-</div>
+    <h1 class="section-title">
+        ผลงานวิจัย
+    </h1>
 
-<h1 class="page-title">
-ผลงานวิจัย
-</h1>
-
-<div class="subtitle">
-RESEARCH & PROJECTS
-</div>
+    <div class="section-subtitle">
+        RESEARCH & PROJECTS
+    </div>
 
 
-<div class="work">
+    <div class="work-grid">
 
-<img src="1789097279748.jpg" alt="กิจกรรมและผลงาน">
+        <div class="work">
 
-<div class="work-text">
+            <h3>
+                🔬 ผลงานวิจัยที่ 01
+            </h3>
 
-<h2>
-🤖 ผลงานกิจกรรมด้านเทคโนโลยี
-</h2>
+            <p>
+                พื้นที่สำหรับนำเสนอผลงานวิจัย
+                โครงงาน หรือกิจกรรมที่เกี่ยวข้องกับ
+                วิทยาศาสตร์ วิศวกรรม และเทคโนโลยี
+            </p>
 
-<p>
-การเข้าร่วมกิจกรรมและการทำงานร่วมกับทีม
-ด้านเทคโนโลยีและวิศวกรรม
-</p>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="work">
+        <div class="work">
 
-<img src="1789097318177.jpg" alt="ผลงานหุ่นยนต์">
+            <h3>
+                🚀 โครงงานด้านเทคโนโลยี
+            </h3>
 
-<div class="work-text">
+            <p>
+                สามารถเพิ่มรายละเอียดเกี่ยวกับ
+                โครงงาน สิ่งที่ได้เรียนรู้
+                และทักษะที่ได้รับจากการทำโครงงาน
+            </p>
 
-<h2>
-🚀 ผลงานโครงงาน
-</h2>
-
-<p>
-ผลงานหุ่นยนต์และการประยุกต์ใช้เทคโนโลยี
-ในการแก้ปัญหาและการแข่งขัน
-</p>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="work">
+        <div class="work">
 
-<img src="1789097279748.jpg" alt="ผลงานออกแบบ">
+            <h3>
+                ✈️ ความสนใจด้านการบิน
+            </h3>
 
-<div class="work-text">
+            <p>
+                ศึกษาและเรียนรู้เกี่ยวกับอากาศยาน
+                ระบบการบิน และเทคโนโลยี
+                ที่เกี่ยวข้องกับอุตสาหกรรมการบิน
+            </p>
 
-<h2>
-🏫 ผลงานการออกแบบ
-</h2>
+        </div>
 
-<p>
-ผลงานการออกแบบอาคารและการเรียนรู้
-ด้านเทคโนโลยี
-</p>
 
-</div>
+        <div class="work">
 
-</div>
+            <h3>
+                💡 ผลงานอื่นๆ
+            </h3>
 
-</div>
+            <p>
+                สามารถเพิ่มรูปภาพ ใบประกาศ
+                หรือผลงานต่างๆ ของ TARMING
+                ในส่วนนี้ได้
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact" class="page">
 
-<div class="container">
+    <a href="#home" class="back-home">
+        ← กลับหน้าหลัก
+    </a>
 
-<div class="back" onclick="showPage('home')">
-← กลับหน้าหลัก
-</div>
+    <h1 class="section-title">
+        ติดต่อผม
+    </h1>
 
-<h1 class="page-title">
-ติดต่อผม
-</h1>
-
-<div class="subtitle">
-CONTACT ME
-</div>
+    <div class="section-subtitle">
+        CONTACT ME
+    </div>
 
 
-<div class="contact">
+    <div class="contact-box">
 
-<div class="contact-box">
+        <div class="contact-item">
 
-<h3>📱 โทรศัพท์</h3>
+            <div class="contact-icon">
+                📧
+            </div>
 
-<p>
-สามารถติดต่อสอบถามได้
-</p>
+            <div>
+                <h3>อีเมล</h3>
 
-</div>
+                <a href="mailto:Tarmingx2@gmail.com">
+                    Tarmingx2@gmail.com
+                </a>
+            </div>
 
-
-<div class="contact-box">
-
-<h3>📧 Email</h3>
-
-<p>
-ติดต่อผ่านช่องทาง Email
-</p>
-
-</div>
+        </div>
 
 
-<div class="contact-box">
+        <div class="contact-item">
 
-<h3>📷 Instagram</h3>
+            <div class="contact-icon">
+                📸
+            </div>
 
-<p>
-TARMING
-</p>
+            <div>
+                <h3>Instagram</h3>
 
-</div>
+                <a
+                    href="https://www.instagram.com/lux_rtsp_9?stkn=MTR1ZTRuOGNnMzcybg=="
+                    target="_blank"
+                >
+                    @lux_rtsp_9
+                </a>
+
+            </div>
+
+        </div>
 
 
-<div class="contact-box">
+        <div class="contact-item">
 
-<h3>💬 Facebook</h3>
+            <div class="contact-icon">
+                👤
+            </div>
 
-<p>
-TARMING
-</p>
+            <div>
 
-</div>
+                <h3>
+                    ชื่อ
+                </h3>
 
-</div>
+                <p>
+                    เสฎฐวุฒิ พลหาญ
+                </p>
 
-</div>
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-© 2026 TARMING PORTFOLIO
+    <p>
+        © 2026 <span>TARMING</span> Portfolio
+    </p>
+
+    <p>
+        เสฎฐวุฒิ พลหาญ
+    </p>
 
 </footer>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
-function openMenu(){
+function toggleMenu(){
 
-    document.getElementById("menu")
-    .classList.add("active");
+    const menu = document.getElementById("menu");
+
+    menu.classList.toggle("active");
 
 }
 
 function closeMenu(){
 
-    document.getElementById("menu")
-    .classList.remove("active");
+    const menu = document.getElementById("menu");
+
+    menu.classList.remove("active");
 
 }
 
-function showPage(page){
 
-    document
-    .querySelectorAll(".page")
-    .forEach(function(p){
+/* เปลี่ยนหน้าเมื่อกดเมนู */
 
-        p.classList.remove("active");
+function showPage(){
+
+    const hash = window.location.hash || "#home";
+
+    document.querySelectorAll(".page").forEach(page => {
+
+        page.classList.remove("active");
 
     });
 
+    const target = document.querySelector(hash);
 
-    document
-    .getElementById(page)
-    .classList.add("active");
+    if(target){
 
+        target.classList.add("active");
 
-    closeMenu();
+    }
 
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
 
-    history.replaceState(null,null,"#"+page);
-
 }
 
 
-/* เปิดหน้าตาม URL */
+/* ทำงานเมื่อเปลี่ยนเมนู */
 
-window.onload=function(){
+window.addEventListener("hashchange", showPage);
 
-    let page =
-    window.location.hash.replace("#","");
 
-    if(page &&
-       document.getElementById(page)){
+/* เปิดเว็บครั้งแรก */
 
-        showPage(page);
-
-    }else{
-
-        showPage("home");
-
-    }
-
-};
+showPage();
 
 </script>
 
