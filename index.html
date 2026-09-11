@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,9 +9,16 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
 <style>
+
+/* ==================================================
+   BASIC
+================================================== */
 
 *{
     margin:0;
@@ -18,32 +26,44 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html,
+body{
+    margin:0;
+    padding:0;
+    font-family:"Kanit",sans-serif;
+    background:#ffffff;
+    color:#222222;
 }
 
 body{
-    font-family:"Kanit",sans-serif;
-    background:#fff;
-    color:#222;
     min-height:100vh;
 }
 
 button{
-    font-family:inherit;
+    font-family:"Kanit",sans-serif;
 }
 
-/* ================= HEADER ================= */
+img{
+    max-width:100%;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
 
 header{
     height:90px;
     width:100%;
-    background:#fff;
-    border-bottom:1px solid #eee;
+    background:#ffffff;
+    border-bottom:1px solid #eeeeee;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     padding:0 5%;
+
     position:sticky;
     top:0;
     z-index:1000;
@@ -52,6 +72,7 @@ header{
 .logo{
     font-size:30px;
     font-weight:700;
+    letter-spacing:1px;
 }
 
 .logo span{
@@ -61,23 +82,35 @@ header{
 .menu-btn{
     width:64px;
     height:64px;
-    border:0;
-    border-radius:15px;
+
+    border:none;
+    border-radius:16px;
+
     background:#f47721;
     color:white;
+
     font-size:34px;
+
     cursor:pointer;
 }
 
-/* ================= MENU ================= */
+
+/* ==================================================
+   MENU OVERLAY
+================================================== */
 
 .overlay{
     display:none;
+
     position:fixed;
     inset:0;
+
     background:rgba(0,0,0,.78);
+
     z-index:5000;
+
     padding:20px;
+
     align-items:center;
     justify-content:center;
 }
@@ -86,14 +119,18 @@ header{
     display:flex;
 }
 
-.menu{
+.menu-box{
     width:680px;
     max-width:100%;
     max-height:90vh;
+
     overflow:auto;
-    background:#111;
+
+    background:#111111;
+
     border:1px solid #f47721;
     border-radius:28px;
+
     padding:28px 18px;
 }
 
@@ -101,29 +138,37 @@ header{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-bottom:30px;
+
+    margin-bottom:25px;
 }
 
 .menu-head h2{
-    color:#fff;
+    color:#ffffff;
     font-size:27px;
 }
 
-.close{
-    width:60px;
-    height:60px;
+.close-btn{
+    width:58px;
+    height:58px;
+
+    border:1px solid #555555;
     border-radius:15px;
-    border:1px solid #555;
-    background:#111;
-    color:#fff;
+
+    background:#111111;
+    color:#ffffff;
+
     font-size:32px;
+
     cursor:pointer;
 }
 
 .menu-title{
     text-align:center;
-    color:#aaa;
-    font-size:20px;
+
+    color:#aaaaaa;
+
+    font-size:19px;
+
     margin-bottom:22px;
 }
 
@@ -135,15 +180,21 @@ header{
 
 .menu-item{
     min-height:130px;
+
     background:#1b1715;
+
     border:1px solid #f47721;
     border-radius:18px;
-    color:#fff;
+
+    color:#ffffff;
+
     display:flex;
     flex-direction:column;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+
     cursor:pointer;
+
     transition:.2s;
 }
 
@@ -160,59 +211,92 @@ header{
     font-size:18px;
 }
 
-/* ================= PAGE ================= */
+
+/* ==================================================
+   GENERAL PAGE
+================================================== */
 
 .page{
+    width:100%;
     max-width:1100px;
+
     min-height:calc(100vh - 90px);
-    margin:auto;
-    padding:60px 6% 90px;
+
+    margin:0 auto;
+
+    padding:60px 6% 80px;
+}
+
+.back{
+    display:inline-block;
+
+    color:#df7838;
+
+    font-size:20px;
+
+    margin-bottom:35px;
+
+    cursor:pointer;
 }
 
 .page h1{
     font-size:55px;
     line-height:1.2;
+
     margin-bottom:8px;
 }
 
 .subtitle{
     color:#df7838;
-    letter-spacing:5px;
+
     font-size:20px;
+
+    letter-spacing:5px;
+
     margin-bottom:40px;
 }
 
-.back{
-    display:inline-block;
-    color:#df7838;
-    font-size:20px;
-    margin-bottom:35px;
-    cursor:pointer;
-}
 
-/* ================= HOME ================= */
+/* ==================================================
+   HOME
+================================================== */
 
 .home{
+    width:100%;
     max-width:1200px;
+
     min-height:calc(100vh - 90px);
-    margin:auto;
+
+    margin:0 auto;
+
     padding:70px 6%;
+
     display:grid;
+
     grid-template-columns:1fr 430px;
+
     align-items:center;
+
     gap:70px;
 }
 
 .hello{
     color:#df7838;
+
     font-size:24px;
+
     letter-spacing:6px;
+
     margin-bottom:20px;
 }
 
 .tarming{
     font-size:70px;
+
     line-height:1;
+
+    font-weight:700;
+
     margin-bottom:30px;
 }
 
@@ -222,13 +306,17 @@ header{
 
 .home h1{
     font-size:32px;
+
     margin-bottom:15px;
 }
 
 .home p{
-    color:#666;
+    color:#666666;
+
     font-size:20px;
+
     line-height:1.8;
+
     margin-bottom:25px;
 }
 
@@ -239,44 +327,66 @@ header{
 
 .btn{
     padding:13px 25px;
+
     border-radius:12px;
+
     font-size:18px;
+
     cursor:pointer;
 }
 
-.orange{
+.btn-orange{
     background:#f47721;
-    color:#fff;
+
+    color:#ffffff;
+
     border:2px solid #f47721;
 }
 
-.white{
-    background:#fff;
+.btn-white{
+    background:#ffffff;
+
     color:#df7838;
+
     border:2px solid #df7838;
 }
 
-.photo{
+.home-photo{
     width:100%;
+
     border:4px solid #f47721;
+
     border-radius:28px;
+
     overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(244,119,33,.15);
 }
 
-.photo img{
+.home-photo img{
     width:100%;
+
     display:block;
 }
 
-/* ================= HISTORY ================= */
+
+/* ==================================================
+   HISTORY
+================================================== */
 
 .history-photo{
     width:430px;
     max-width:100%;
+
     margin:0 auto 30px;
+
     border:4px solid #f47721;
+
     border-radius:30px;
+
     overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(244,119,33,.15);
 }
 
 .history-photo img{
@@ -284,171 +394,286 @@ header{
     display:block;
 }
 
-.card{
-    background:#fff;
-    border:1px solid #eee;
+.info-card{
+    background:#ffffff;
+
+    border:1px solid #eeeeee;
+
     border-left:6px solid #f47721;
+
     border-radius:24px;
+
     padding:35px;
+
     box-shadow:0 12px 35px rgba(0,0,0,.07);
 }
 
-.card h2{
+.info-card h2{
     color:#e87532;
+
     font-size:30px;
+
     margin-bottom:20px;
 }
 
-.info{
+.info-line{
     font-size:18px;
+
     line-height:1.9;
+
     margin:8px 0;
 }
 
-.info strong{
-    color:#222;
+.info-line strong{
+    color:#222222;
 }
 
-/* ================= EDUCATION ================= */
 
-.education{
+/* ==================================================
+   EDUCATION
+================================================== */
+
+.education-list{
     display:grid;
+
     gap:20px;
 }
 
-.edu{
-    background:#fff;
-    border:1px solid #eee;
+.education-card{
+    background:#ffffff;
+
+    border:1px solid #eeeeee;
+
     border-left:6px solid #f47721;
-    border-radius:20px;
+
+    border-radius:22px;
+
     padding:28px;
+
     box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
-.edu h2{
+.education-card h2{
     color:#e87532;
+
     font-size:25px;
+
     margin-bottom:8px;
 }
 
-.edu p{
-    color:#555;
+.education-card p{
+    color:#555555;
+
     font-size:18px;
+
     line-height:1.7;
 }
 
-/* ================= UNIVERSITY ================= */
 
-.uni{
+/* ==================================================
+   UNIVERSITY
+================================================== */
+
+.university-card{
     text-align:center;
+
     background:#fffaf5;
-    border:2px solid #e87532;
+
+    border:2px solid #df7838;
+
     border-radius:28px;
-    padding:45px 25px;
+
+    padding:40px 25px;
+
+    box-shadow:0 15px 35px rgba(244,119,33,.08);
 }
 
-.uni h2{
-    font-size:30px;
+.university-logo{
+    width:190px;
+    height:190px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:0 auto 25px;
+
+    border-radius:10px;
+}
+
+.dream{
+    color:#df7838;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    letter-spacing:5px;
+
     margin-bottom:15px;
 }
 
-.uni h3{
-    color:#e87532;
+.university-card h2{
+    font-size:30px;
+
+    line-height:1.5;
+
+    margin-bottom:12px;
+}
+
+.university-card h3{
+    color:#df7838;
+
     font-size:25px;
-    margin-bottom:10px;
-}
 
-.uni p{
-    color:#666;
-    font-size:19px;
-    line-height:1.8;
-}
-
-/* ================= SKILLS ================= */
-
-.skills{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.skill{
-    padding:28px;
-    border:1px solid #eee;
-    border-radius:22px;
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
-}
-
-.skill h2{
-    color:#e87532;
-    margin-bottom:10px;
-}
-
-.skill p{
-    color:#666;
-    font-size:18px;
-    line-height:1.7;
-}
-
-/* ================= RESEARCH ================= */
-
-.research{
-    display:grid;
-    gap:25px;
-}
-
-.project{
-    border:1px solid #eee;
-    border-left:6px solid #f47721;
-    border-radius:22px;
-    padding:28px;
-    box-shadow:0 10px 35px rgba(0,0,0,.07);
-}
-
-.project h2{
-    color:#e87532;
     margin-bottom:8px;
 }
 
-.project p{
-    color:#666;
+.university-card p{
+    color:#666666;
+
+    font-size:19px;
+
+    line-height:1.8;
+}
+
+
+/* ==================================================
+   SKILLS
+================================================== */
+
+.skills-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+}
+
+.skill-card{
+    padding:28px;
+
+    border:1px solid #eeeeee;
+
+    border-radius:22px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.skill-card h2{
+    color:#e87532;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+}
+
+.skill-card p{
+    color:#666666;
+
     font-size:18px;
+
     line-height:1.7;
 }
 
-/* ================= CONTACT ================= */
 
-.contact{
+/* ==================================================
+   RESEARCH / PROJECT
+================================================== */
+
+.project-list{
+    display:grid;
+
+    gap:22px;
+}
+
+.project-card{
+    border:1px solid #eeeeee;
+
     border-left:6px solid #f47721;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.07);
+}
+
+.project-card h2{
+    color:#e87532;
+
+    font-size:25px;
+
+    margin-bottom:10px;
+}
+
+.project-card p{
+    color:#666666;
+
+    font-size:18px;
+
+    line-height:1.7;
+}
+
+.project-image{
+    width:100%;
+
+    border-radius:18px;
+
+    margin-top:20px;
+
+    display:block;
+}
+
+
+/* ==================================================
+   CONTACT
+================================================== */
+
+.contact-card{
+    border-left:6px solid #f47721;
+
+    border-top:1px solid #eeeeee;
+    border-right:1px solid #eeeeee;
+    border-bottom:1px solid #eeeeee;
+
     border-radius:25px;
+
     padding:35px;
-    border-top:1px solid #eee;
-    border-right:1px solid #eee;
-    border-bottom:1px solid #eee;
+
     box-shadow:0 12px 35px rgba(0,0,0,.06);
 }
 
-.contact div{
+.contact-line{
     font-size:19px;
+
     padding:18px 0;
-    border-bottom:1px solid #eee;
+
+    border-bottom:1px solid #eeeeee;
 }
 
-.contact div:last-child{
-    border-bottom:0;
+.contact-line:last-child{
+    border-bottom:none;
 }
 
-.contact strong{
+.contact-line strong{
     color:#e87532;
 }
 
-/* ================= FOOTER ================= */
+
+/* ==================================================
+   FOOTER
+================================================== */
 
 footer{
-    background:#222;
-    color:#fff;
+    background:#222222;
+
+    color:#ffffff;
+
     text-align:center;
+
     padding:30px;
+
     font-size:17px;
 }
 
@@ -456,7 +681,10 @@ footer span{
     color:#f47721;
 }
 
-/* ================= MOBILE ================= */
+
+/* ==================================================
+   MOBILE
+================================================== */
 
 @media(max-width:800px){
 
@@ -475,15 +703,20 @@ footer span{
 
     .home{
         display:flex;
+
         flex-direction:column-reverse;
-        padding:50px 6%;
-        gap:35px;
+
         align-items:stretch;
+
+        gap:35px;
+
+        padding:50px 6%;
     }
 
-    .photo{
+    .home-photo{
         max-width:430px;
-        margin:auto;
+
+        margin:0 auto;
     }
 
     .hello{
@@ -502,6 +735,10 @@ footer span{
         font-size:17px;
     }
 
+    .buttons{
+        flex-wrap:wrap;
+    }
+
     .page{
         padding:45px 6% 70px;
     }
@@ -510,19 +747,32 @@ footer span{
         font-size:43px;
     }
 
-    .skills{
+    .skills-grid{
         grid-template-columns:1fr;
     }
 
-    .card{
+    .info-card{
         padding:25px;
     }
 
-    .info{
+    .info-line{
         font-size:17px;
     }
 
-    .menu{
+    .university-logo{
+        width:160px;
+        height:160px;
+    }
+
+    .university-card h2{
+        font-size:25px;
+    }
+
+    .university-card h3{
+        font-size:22px;
+    }
+
+    .menu-box{
         padding:22px 14px;
     }
 
@@ -544,12 +794,37 @@ footer span{
 
 }
 
+
+/* ==================================================
+   VERY SMALL SCREEN
+================================================== */
+
+@media(max-width:400px){
+
+    .menu-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .tarming{
+        font-size:44px;
+    }
+
+    .page h1{
+        font-size:38px;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- ==================================================
+     HEADER
+================================================== -->
 
 <header>
 
@@ -557,24 +832,34 @@ footer span{
         TAR<span>MING</span>
     </div>
 
-    <button class="menu-btn" onclick="openMenu()">
+    <button
+        class="menu-btn"
+        onclick="openMenu()">
         ☰
     </button>
 
 </header>
 
 
-<!-- ================= MENU ================= -->
+<!-- ==================================================
+     MENU
+================================================== -->
 
-<div class="overlay" id="overlay">
+<div
+    class="overlay"
+    id="overlay">
 
-    <div class="menu">
+    <div class="menu-box">
 
         <div class="menu-head">
 
-            <h2>TARMING PORTFOLIO</h2>
+            <h2>
+                TARMING PORTFOLIO
+            </h2>
 
-            <button class="close" onclick="closeMenu()">
+            <button
+                class="close-btn"
+                onclick="closeMenu()">
                 ×
             </button>
 
@@ -584,42 +869,114 @@ footer span{
             Menu - เมนูต่างๆ
         </div>
 
+
         <div class="menu-grid">
 
-            <div class="menu-item" onclick="go('home')">
-                <div class="menu-icon">🏠</div>
-                <b>หน้าหลัก</b>
+
+            <div
+                class="menu-item"
+                onclick="go('home')">
+
+                <div class="menu-icon">
+                    🏠
+                </div>
+
+                <b>
+                    หน้าหลัก
+                </b>
+
             </div>
 
-            <div class="menu-item" onclick="go('history')">
-                <div class="menu-icon">👤</div>
-                <b>ประวัติ</b>
+
+            <div
+                class="menu-item"
+                onclick="go('history')">
+
+                <div class="menu-icon">
+                    👤
+                </div>
+
+                <b>
+                    ประวัติ
+                </b>
+
             </div>
 
-            <div class="menu-item" onclick="go('education')">
-                <div class="menu-icon">🎓</div>
-                <b>การศึกษา</b>
+
+            <div
+                class="menu-item"
+                onclick="go('education')">
+
+                <div class="menu-icon">
+                    🎓
+                </div>
+
+                <b>
+                    การศึกษา
+                </b>
+
             </div>
 
-            <div class="menu-item" onclick="go('university')">
-                <div class="menu-icon">🏫</div>
-                <b>มหาลัย</b>
+
+            <div
+                class="menu-item"
+                onclick="go('university')">
+
+                <div class="menu-icon">
+                    🏫
+                </div>
+
+                <b>
+                    มหาลัย
+                </b>
+
             </div>
 
-            <div class="menu-item" onclick="go('skills')">
-                <div class="menu-icon">⚙️</div>
-                <b>ทักษะ</b>
+
+            <div
+                class="menu-item"
+                onclick="go('skills')">
+
+                <div class="menu-icon">
+                    ⚙️
+                </div>
+
+                <b>
+                    ทักษะ
+                </b>
+
             </div>
 
-            <div class="menu-item" onclick="go('research')">
-                <div class="menu-icon">📁</div>
-                <b>ผลงานวิจัย</b>
+
+            <div
+                class="menu-item"
+                onclick="go('research')">
+
+                <div class="menu-icon">
+                    📁
+                </div>
+
+                <b>
+                    ผลงาน
+                </b>
+
             </div>
 
-            <div class="menu-item" onclick="go('contact')">
-                <div class="menu-icon">💬</div>
-                <b>ติดต่อผม</b>
+
+            <div
+                class="menu-item"
+                onclick="go('contact')">
+
+                <div class="menu-icon">
+                    💬
+                </div>
+
+                <b>
+                    ติดต่อผม
+                </b>
+
             </div>
+
 
         </div>
 
@@ -628,48 +985,55 @@ footer span{
 </div>
 
 
-<!-- =================
-     ตรงนี้จะแสดงแค่หน้าที่เลือก
-================= -->
+<!-- ==================================================
+     APP
+     ทุกหน้าจะถูกใส่ตรงนี้ที่เดียว
+================================================== -->
 
 <div id="app"></div>
 
 
 <script>
 
-/* =====================================================
-   รูปโปรไฟล์
-===================================================== */
+
+/* ==================================================
+   IMAGE FILES
+================================================== */
 
 const PROFILE_IMAGE =
 "file_0000000085d47207b52f2b182e7429b3.png";
 
+const UNIVERSITY_LOGO =
+"logo-lkmutnb.jpg";
 
-/* =====================================================
-   เปิด / ปิดเมนู
-===================================================== */
+
+/* ==================================================
+   MENU
+================================================== */
 
 function openMenu(){
 
-    document.getElementById("overlay")
-        .classList.add("show");
+    document
+        .getElementById("overlay")
+        .classList
+        .add("show");
 
 }
+
 
 function closeMenu(){
 
-    document.getElementById("overlay")
-        .classList.remove("show");
+    document
+        .getElementById("overlay")
+        .classList
+        .remove("show");
 
 }
 
 
-/* =====================================================
-   เปลี่ยนหน้า
-   สำคัญมาก:
-   ทุกครั้งจะล้าง #app ก่อน
-   จึงไม่มีหน้าอื่นต่ออยู่ด้านล่าง
-===================================================== */
+/* ==================================================
+   GO TO PAGE
+================================================== */
 
 function go(page){
 
@@ -679,27 +1043,38 @@ function go(page){
 
     render(page);
 
-    window.scrollTo({
-        top:0,
-        behavior:"instant"
-    });
+    window.scrollTo(0,0);
 
 }
 
 
-/* =====================================================
-   สร้างหน้า
-===================================================== */
+/* ==================================================
+   RENDER PAGE
+================================================== */
 
 function render(page){
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
 
-    /* ล้างหน้าเก่าทิ้งทั้งหมด */
+
+    /*
+       สำคัญที่สุด
+
+       ทุกครั้งที่เปลี่ยนเมนู
+       ล้างของเก่าทั้งหมดก่อน
+
+       เพราะฉะนั้นจะไม่มี
+       หน้าหลัก + ประวัติ + มหาลัย
+       ต่อกันอีก
+    */
+
     app.innerHTML = "";
 
 
-    /* ================= HOME ================= */
+    /* ==================================================
+       HOME
+    ================================================== */
 
     if(page === "home"){
 
@@ -707,41 +1082,56 @@ function render(page){
 
         <section class="home">
 
+
             <div>
 
                 <div class="hello">
                     HELLO, I'M
                 </div>
 
+
                 <div class="tarming">
                     TAR<span>MING</span>
                 </div>
+
 
                 <h1>
                     นาย เสฎฐวุฒิ พลหาญ
                 </h1>
 
+
                 <p>
+
                     นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
                     แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์
                     และวิศวกรรม (CSE)
+
                     <br>
-                    มีความสนใจด้านวิศวกรรม การบิน อวกาศ
-                    เทคโนโลยี และการพัฒนาตนเอง
+
+                    มีความสนใจด้านวิศวกรรม
+                    การบิน อวกาศ เทคโนโลยี
+                    และการพัฒนาตนเอง
+
                 </p>
+
 
                 <div class="buttons">
 
                     <button
-                        class="btn orange"
+                        class="btn btn-orange"
                         onclick="go('history')">
+
                         รู้จักผมมากขึ้น
+
                     </button>
 
+
                     <button
-                        class="btn white"
+                        class="btn btn-white"
                         onclick="go('contact')">
+
                         ติดต่อผม
+
                     </button>
 
                 </div>
@@ -749,7 +1139,7 @@ function render(page){
             </div>
 
 
-            <div class="photo">
+            <div class="home-photo">
 
                 <img
                     src="${PROFILE_IMAGE}"
@@ -757,10 +1147,16 @@ function render(page){
 
             </div>
 
+
         </section>
 
+
         <footer>
-            © 2026 <span>TARMING</span> PORTFOLIO
+
+            © 2026
+            <span>TARMING</span>
+            PORTFOLIO
+
         </footer>
 
         `;
@@ -768,7 +1164,9 @@ function render(page){
     }
 
 
-    /* ================= HISTORY ================= */
+    /* ==================================================
+       HISTORY
+    ================================================== */
 
     else if(page === "history"){
 
@@ -776,13 +1174,20 @@ function render(page){
 
         <section class="page">
 
-            <div class="back" onclick="go('home')">
+
+            <div
+                class="back"
+                onclick="go('home')">
+
                 ← กลับหน้าหลัก
+
             </div>
+
 
             <h1>
                 ประวัติ
             </h1>
+
 
             <div class="subtitle">
                 MY PROFILE
@@ -798,68 +1203,139 @@ function render(page){
             </div>
 
 
-            <div class="card">
+            <div class="info-card">
+
 
                 <h2>
                     นาย เสฎฐวุฒิ พลหาญ
                 </h2>
 
-                <div class="info">
-                    <strong>ชื่อ-นามสกุล:</strong>
+
+                <div class="info-line">
+
+                    <strong>
+                        ชื่อ-นามสกุล:
+                    </strong>
+
                     นาย เสฎฐวุฒิ พลหาญ
+
                 </div>
 
-                <div class="info">
-                    <strong>ชื่อเล่น:</strong>
+
+                <div class="info-line">
+
+                    <strong>
+                        ชื่อเล่น:
+                    </strong>
+
                     ต้าหมิง
+
                 </div>
 
-                <div class="info">
-                    <strong>อายุ:</strong>
+
+                <div class="info-line">
+
+                    <strong>
+                        อายุ:
+                    </strong>
+
                     17 ปี
+
                 </div>
 
-                <div class="info">
-                    <strong>วัน/เดือน/ปีเกิด:</strong>
+
+                <div class="info-line">
+
+                    <strong>
+                        วัน/เดือน/ปีเกิด:
+                    </strong>
+
                     19 กุมภาพันธ์ 2552
+
                 </div>
 
-                <div class="info">
-                    <strong>แผนการเรียน:</strong>
-                    เตรียมวิทยาการคอมพิวเตอร์และวิศวกรรม (CSE)
+
+                <div class="info-line">
+
+                    <strong>
+                        แผนการเรียน:
+                    </strong>
+
+                    เตรียมวิทยาการคอมพิวเตอร์
+                    และวิศวกรรม (CSE)
+
                 </div>
 
-                <div class="info">
-                    <strong>สถานที่ศึกษา:</strong>
-                    โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+
+                <div class="info-line">
+
+                    <strong>
+                        สถานที่ศึกษา:
+                    </strong>
+
+                    โรงเรียนบ้านบึง
+                    อุตสาหกรรมนุเคราะห์
+
                 </div>
 
-                <div class="info">
-                    <strong>เชื้อชาติ:</strong>
+
+                <div class="info-line">
+
+                    <strong>
+                        เชื้อชาติ:
+                    </strong>
+
                     ไทย
+
                 </div>
 
-                <div class="info">
-                    <strong>สัญชาติ:</strong>
+
+                <div class="info-line">
+
+                    <strong>
+                        สัญชาติ:
+                    </strong>
+
                     ไทย
+
                 </div>
 
-                <div class="info">
-                    <strong>ศาสนา:</strong>
+
+                <div class="info-line">
+
+                    <strong>
+                        ศาสนา:
+                    </strong>
+
                     คริสต์
+
                 </div>
 
-                <div class="info">
-                    <strong>สถานศึกษา:</strong>
-                    โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+
+                <div class="info-line">
+
+                    <strong>
+                        สถานศึกษา:
+                    </strong>
+
+                    โรงเรียนบ้านบึง
+                    “อุตสาหกรรมนุเคราะห์”
+
                 </div>
+
 
             </div>
 
+
         </section>
 
+
         <footer>
-            © 2026 <span>TARMING</span> PORTFOLIO
+
+            © 2026
+            <span>TARMING</span>
+            PORTFOLIO
+
         </footer>
 
         `;
@@ -867,7 +1343,9 @@ function render(page){
     }
 
 
-    /* ================= EDUCATION ================= */
+    /* ==================================================
+       EDUCATION
+    ================================================== */
 
     else if(page === "education"){
 
@@ -875,26 +1353,78 @@ function render(page){
 
         <section class="page">
 
-            <div class="back" onclick="go('home')">
+
+            <div
+                class="back"
+                onclick="go('home')">
+
                 ← กลับหน้าหลัก
+
             </div>
 
-            <h1>การศึกษา</h1>
+
+            <h1>
+                การศึกษา
+            </h1>
+
 
             <div class="subtitle">
                 EDUCATION
             </div>
 
-            <div class="education">
 
-                <div class="edu">
+            <div class="education-list">
+
+
+                <div class="education-card">
+
+                    <h2>
+                        ระดับอนุบาล
+                    </h2>
+
+                    <p>
+                        โรงเรียนบุญประทีปวิทยาคาร
+                    </p>
+
+                </div>
+
+
+                <div class="education-card">
+
+                    <h2>
+                        ระดับประถมศึกษา
+                    </h2>
+
+                    <p>
+                        โรงเรียนบุญประทีปวิทยาคาร
+                    </p>
+
+                </div>
+
+
+                <div class="education-card">
+
+                    <h2>
+                        ระดับมัธยมศึกษาตอนต้น
+                    </h2>
+
+                    <p>
+                        โรงเรียนบ้านบึง
+                        อุตสาหกรรมนุเคราะห์
+                    </p>
+
+                </div>
+
+
+                <div class="education-card">
 
                     <h2>
                         ระดับมัธยมศึกษาตอนปลาย
                     </h2>
 
                     <p>
-                        โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+                        โรงเรียนบ้านบึง
+                        อุตสาหกรรมนุเคราะห์
                     </p>
 
                     <p>
@@ -908,25 +1438,19 @@ function render(page){
 
                 </div>
 
-                <div class="edu">
-
-                    <h2>
-                        ความสนใจด้านการศึกษา
-                    </h2>
-
-                    <p>
-                        วิศวกรรมคอมพิวเตอร์ เทคโนโลยี
-                        การบิน อวกาศ และนวัตกรรม
-                    </p>
-
-                </div>
 
             </div>
 
+
         </section>
 
+
         <footer>
-            © 2026 <span>TARMING</span> PORTFOLIO
+
+            © 2026
+            <span>TARMING</span>
+            PORTFOLIO
+
         </footer>
 
         `;
@@ -934,7 +1458,9 @@ function render(page){
     }
 
 
-    /* ================= UNIVERSITY ================= */
+    /* ==================================================
+       UNIVERSITY
+    ================================================== */
 
     else if(page === "university"){
 
@@ -942,37 +1468,71 @@ function render(page){
 
         <section class="page">
 
-            <div class="back" onclick="go('home')">
+
+            <div
+                class="back"
+                onclick="go('home')">
+
                 ← กลับหน้าหลัก
+
             </div>
 
-            <h1>มหาลัย</h1>
+
+            <h1>
+                มหาลัย
+            </h1>
+
 
             <div class="subtitle">
                 UNIVERSITY
             </div>
 
-            <div class="uni">
+
+            <div class="university-card">
+
+
+                <img
+                    src="${UNIVERSITY_LOGO}"
+                    alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ"
+                    class="university-logo"
+                >
+
+
+                <div class="dream">
+                    MY DREAM
+                </div>
+
 
                 <h2>
-                    มหาวิทยาลัยที่สนใจ
+
+                    มหาวิทยาลัยเทคโนโลยี
+                    พระจอมเกล้าพระนครเหนือ
+
                 </h2>
 
+
                 <h3>
-                    สาขาวิศวกรรมคอมพิวเตอร์
+                    คณะวิศวกรรมศาสตร์
                 </h3>
 
+
                 <p>
-                    สนใจศึกษาต่อในด้านคอมพิวเตอร์
-                    วิศวกรรม เทคโนโลยี และนวัตกรรม
+                    สาขาวิศวกรรมการบินและอวกาศ
                 </p>
+
 
             </div>
 
+
         </section>
 
+
         <footer>
-            © 2026 <span>TARMING</span> PORTFOLIO
+
+            © 2026
+            <span>TARMING</span>
+            PORTFOLIO
+
         </footer>
 
         `;
@@ -980,7 +1540,9 @@ function render(page){
     }
 
 
-    /* ================= SKILLS ================= */
+    /* ==================================================
+       SKILLS
+    ================================================== */
 
     else if(page === "skills"){
 
@@ -988,56 +1550,97 @@ function render(page){
 
         <section class="page">
 
-            <div class="back" onclick="go('home')">
+
+            <div
+                class="back"
+                onclick="go('home')">
+
                 ← กลับหน้าหลัก
+
             </div>
 
-            <h1>ทักษะ</h1>
+
+            <h1>
+                ทักษะ
+            </h1>
+
 
             <div class="subtitle">
                 MY SKILLS
             </div>
 
-            <div class="skills">
 
-                <div class="skill">
-                    <h2>💻 เทคโนโลยี</h2>
+            <div class="skills-grid">
+
+
+                <div class="skill-card">
+
+                    <h2>
+                        💻 เทคโนโลยี
+                    </h2>
+
                     <p>
-                        สนใจด้านคอมพิวเตอร์
+                        มีความสนใจด้านคอมพิวเตอร์
                         เทคโนโลยี และนวัตกรรม
                     </p>
+
                 </div>
 
-                <div class="skill">
-                    <h2>✈️ การบินและอวกาศ</h2>
+
+                <div class="skill-card">
+
+                    <h2>
+                        ✈️ การบินและอวกาศ
+                    </h2>
+
                     <p>
                         มีความสนใจด้านการบิน
                         อวกาศ และวิศวกรรม
                     </p>
+
                 </div>
 
-                <div class="skill">
-                    <h2>🤝 การทำงานเป็นทีม</h2>
+
+                <div class="skill-card">
+
+                    <h2>
+                        🤝 การทำงานเป็นทีม
+                    </h2>
+
                     <p>
                         สามารถทำงานร่วมกับผู้อื่น
                         และรับผิดชอบงานที่ได้รับมอบหมาย
                     </p>
+
                 </div>
 
-                <div class="skill">
-                    <h2>🧠 การเรียนรู้</h2>
+
+                <div class="skill-card">
+
+                    <h2>
+                        🧠 การเรียนรู้
+                    </h2>
+
                     <p>
                         พร้อมเรียนรู้สิ่งใหม่
                         และพัฒนาตนเองอยู่เสมอ
                     </p>
+
                 </div>
+
 
             </div>
 
+
         </section>
 
+
         <footer>
-            © 2026 <span>TARMING</span> PORTFOLIO
+
+            © 2026
+            <span>TARMING</span>
+            PORTFOLIO
+
         </footer>
 
         `;
@@ -1045,7 +1648,9 @@ function render(page){
     }
 
 
-    /* ================= RESEARCH ================= */
+    /* ==================================================
+       RESEARCH / PROJECT
+    ================================================== */
 
     else if(page === "research"){
 
@@ -1053,52 +1658,110 @@ function render(page){
 
         <section class="page">
 
-            <div class="back" onclick="go('home')">
+
+            <div
+                class="back"
+                onclick="go('home')">
+
                 ← กลับหน้าหลัก
+
             </div>
 
-            <h1>ผลงานวิจัย</h1>
+
+            <h1>
+                ผลงาน
+            </h1>
+
 
             <div class="subtitle">
                 MY PROJECTS
             </div>
 
-            <div class="research">
 
-                <div class="project">
+            <div class="project-list">
+
+
+                <div class="project-card">
 
                     <h2>
-                        ผลงานและโครงงาน
+                        🤖 โครงงานด้านเทคโนโลยี
                     </h2>
 
                     <p>
-                        พื้นที่สำหรับใส่ผลงาน
-                        โครงงาน กิจกรรม
-                        หรือผลงานที่เคยทำในอนาคต
+
+                        ผลงานการสร้างและพัฒนา
+                        โครงงานด้านเทคโนโลยี
+                        และหุ่นยนต์
+
                     </p>
+
+                    <img
+                        src="1789097318177.jpg"
+                        alt="ผลงานหุ่นยนต์"
+                        class="project-image"
+                    >
 
                 </div>
 
-                <div class="project">
+
+                <div class="project-card">
 
                     <h2>
-                        กิจกรรมที่เข้าร่วม
+                        👥 การทำงานร่วมกับทีม
                     </h2>
 
                     <p>
-                        สามารถเพิ่มรายละเอียด
-                        กิจกรรม เกียรติบัตร
-                        และประสบการณ์ต่าง ๆ ได้ที่หน้านี้
+
+                        ประสบการณ์การทำงานร่วมกับเพื่อน
+                        การแบ่งหน้าที่
+                        และการแก้ไขปัญหาร่วมกัน
+
                     </p>
 
+                    <img
+                        src="1789097279748.jpg"
+                        alt="กิจกรรมการทำงานเป็นทีม"
+                        class="project-image"
+                    >
+
                 </div>
+
+
+                <div class="project-card">
+
+                    <h2>
+                        🏫 การออกแบบอาคาร
+                    </h2>
+
+                    <p>
+
+                        ผลงานการออกแบบอาคาร
+                        และการใช้เทคโนโลยี
+                        เพื่อสร้างแบบจำลอง
+
+                    </p>
+
+                    <img
+                        src="1789097279748.jpg"
+                        alt="ผลงานออกแบบ"
+                        class="project-image"
+                    >
+
+                </div>
+
 
             </div>
 
+
         </section>
 
+
         <footer>
-            © 2026 <span>TARMING</span> PORTFOLIO
+
+            © 2026
+            <span>TARMING</span>
+            PORTFOLIO
+
         </footer>
 
         `;
@@ -1106,7 +1769,9 @@ function render(page){
     }
 
 
-    /* ================= CONTACT ================= */
+    /* ==================================================
+       CONTACT
+    ================================================== */
 
     else if(page === "contact"){
 
@@ -1114,45 +1779,110 @@ function render(page){
 
         <section class="page">
 
-            <div class="back" onclick="go('home')">
+
+            <div
+                class="back"
+                onclick="go('home')">
+
                 ← กลับหน้าหลัก
+
             </div>
 
-            <h1>ติดต่อผม</h1>
+
+            <h1>
+                ติดต่อผม
+            </h1>
+
 
             <div class="subtitle">
                 CONTACT ME
             </div>
 
-            <div class="contact">
 
-                <div>
-                    <strong>👤 ชื่อ</strong><br>
+            <div class="contact-card">
+
+
+                <div class="contact-line">
+
+                    <strong>
+                        👤 ชื่อ
+                    </strong>
+
+                    <br>
+
                     นาย เสฎฐวุฒิ พลหาญ
+
                 </div>
 
-                <div>
-                    <strong>🏫 โรงเรียน</strong><br>
-                    โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+
+                <div class="contact-line">
+
+                    <strong>
+                        🏷️ ชื่อเล่น
+                    </strong>
+
+                    <br>
+
+                    ต้าหมิง
+
                 </div>
 
-                <div>
-                    <strong>📚 แผนการเรียน</strong><br>
-                    เตรียมวิทยาการคอมพิวเตอร์และวิศวกรรม (CSE)
+
+                <div class="contact-line">
+
+                    <strong>
+                        🏫 สถานศึกษา
+                    </strong>
+
+                    <br>
+
+                    โรงเรียนบ้านบึง
+                    “อุตสาหกรรมนุเคราะห์”
+
                 </div>
 
-                <div>
-                    <strong>💬 ติดต่อ</strong><br>
-                    สามารถเพิ่ม Facebook,
-                    Instagram หรือ Email ได้ที่นี่
+
+                <div class="contact-line">
+
+                    <strong>
+                        📚 แผนการเรียน
+                    </strong>
+
+                    <br>
+
+                    เตรียมวิทยาการคอมพิวเตอร์
+                    และวิศวกรรม (CSE)
+
                 </div>
+
+
+                <div class="contact-line">
+
+                    <strong>
+                        💬 ติดต่อ
+                    </strong>
+
+                    <br>
+
+                    สามารถเพิ่มช่องทางการติดต่อ
+                    เช่น Facebook / Instagram /
+                    Email ได้ที่นี่
+
+                </div>
+
 
             </div>
 
+
         </section>
 
+
         <footer>
-            © 2026 <span>TARMING</span> PORTFOLIO
+
+            © 2026
+            <span>TARMING</span>
+            PORTFOLIO
+
         </footer>
 
         `;
@@ -1160,7 +1890,9 @@ function render(page){
     }
 
 
-    /* ================= ถ้า URL ผิด ================= */
+    /* ==================================================
+       DEFAULT
+    ================================================== */
 
     else{
 
@@ -1171,50 +1903,58 @@ function render(page){
 }
 
 
-/* =====================================================
-   เปิดเว็บครั้งแรก
-===================================================== */
+/* ==================================================
+   เปิดหน้าแรก
+================================================== */
 
-let firstPage =
+let currentPage =
     window.location.hash.replace("#","");
 
-if(
-    !firstPage ||
-    ![
-        "home",
-        "history",
-        "education",
-        "university",
-        "skills",
-        "research",
-        "contact"
-    ].includes(firstPage)
-){
 
-    firstPage = "home";
+const validPages = [
+    "home",
+    "history",
+    "education",
+    "university",
+    "skills",
+    "research",
+    "contact"
+];
+
+
+if(!validPages.includes(currentPage)){
+
+    currentPage = "home";
 
 }
 
-render(firstPage);
+
+render(currentPage);
 
 
-/* =====================================================
-   ถ้ากด Back / Forward ของ Browser
-===================================================== */
+/* ==================================================
+   BROWSER BACK / FORWARD
+================================================== */
 
-window.addEventListener("hashchange",function(){
+window.addEventListener(
+    "hashchange",
+    function(){
 
-    const page =
-        window.location.hash.replace("#","") || "home";
+        let page =
+            window.location.hash.replace("#","");
 
-    render(page);
+        if(!validPages.includes(page)){
 
-    window.scrollTo({
-        top:0,
-        behavior:"instant"
-    });
+            page = "home";
 
-});
+        }
+
+        render(page);
+
+        window.scrollTo(0,0);
+
+    }
+);
 
 </script>
 
