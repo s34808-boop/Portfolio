@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,269 +16,180 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Kanit','Prompt',sans-serif;
+    font-family:'Kanit',sans-serif;
     background:#ffffff;
-    color:#222;
-    line-height:1.8;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-img{
-    max-width:100%;
-    display:block;
+    color:#202020;
 }
 
 /* ================= HEADER ================= */
 
 header{
-    position:sticky;
-    top:0;
-    z-index:999;
     height:90px;
-    background:#fff;
-    border-bottom:1px solid #eee;
+    background:#ffffff;
+    border-bottom:1px solid #eeeeee;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 7%;
+    padding:0 6%;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
     font-size:30px;
     font-weight:700;
-    letter-spacing:-1px;
+    letter-spacing:1px;
 }
 
 .logo span{
-    color:#f47721;
+    color:#f47b20;
 }
 
-.menu-btn{
-    width:58px;
-    height:58px;
+.menu-button{
+    width:62px;
+    height:62px;
     border:none;
-    border-radius:14px;
-    background:#f47721;
+    border-radius:15px;
+    background:#f47b20;
     color:white;
-    font-size:30px;
+    font-size:35px;
     cursor:pointer;
-    box-shadow:0 8px 20px rgba(244,119,33,.25);
-}
-
-/* ================= MENU ================= */
-
-.menu-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.72);
-    z-index:1000;
-    display:none;
-    padding:25px;
-}
-
-.menu-overlay.active{
     display:flex;
+    align-items:center;
     justify-content:center;
-    align-items:center;
 }
 
-.menu-box{
-    background:#111;
-    color:white;
-    width:100%;
-    max-width:850px;
-    padding:30px;
-    border-radius:25px;
-    border:1px solid #f47721;
+.menu-button:hover{
+    background:#df6812;
 }
 
-.menu-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
+/* ================= MAIN ================= */
+
+.page{
+    display:none;
+    min-height:calc(100vh - 90px);
+    padding:70px 7%;
 }
 
-.menu-top h2{
-    color:#fff;
-}
-
-.close-btn{
-    width:50px;
-    height:50px;
-    border-radius:12px;
-    border:1px solid #555;
-    background:#111;
-    color:#fff;
-    font-size:30px;
-    cursor:pointer;
-}
-
-.menu-title{
-    text-align:center;
-    color:#bbb;
-    margin-bottom:20px;
-}
-
-.menu-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.menu-item{
-    background:#1b1714;
-    border:1px solid #f47721;
-    border-radius:12px;
-    padding:25px 10px;
-    text-align:center;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.menu-item:hover{
-    background:#f47721;
-    transform:translateY(-3px);
-}
-
-.menu-icon{
+.page.active{
     display:block;
-    font-size:38px;
-    margin-bottom:8px;
 }
 
-.menu-item span:last-child{
-    font-size:18px;
-    font-weight:600;
+.back{
+    color:#e87520;
+    font-size:20px;
+    margin-bottom:45px;
+    cursor:pointer;
+    display:inline-block;
 }
 
-/* ================= GENERAL ================= */
-
-section{
-    min-height:100vh;
-    padding:100px 7%;
-}
-
-.container{
-    max-width:1150px;
-    margin:auto;
-}
-
-.section-label{
-    color:#f47721;
-    letter-spacing:5px;
-    font-size:18px;
+.title{
+    font-size:58px;
+    font-weight:700;
+    line-height:1.1;
     margin-bottom:10px;
 }
 
-.section-title{
-    font-size:50px;
-    line-height:1.2;
-    margin-bottom:40px;
-    font-weight:700;
-}
-
-.back-home{
-    display:inline-block;
-    color:#f47721;
-    margin-bottom:30px;
-    font-size:18px;
+.subtitle{
+    color:#e87520;
+    letter-spacing:5px;
+    font-size:20px;
+    margin-bottom:45px;
 }
 
 /* ================= HOME ================= */
 
-#home{
+.home{
     min-height:calc(100vh - 90px);
     display:flex;
     align-items:center;
+    padding:70px 7%;
 }
 
-.home-grid{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:60px;
-    align-items:center;
+.home-content{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
 }
 
 .hello{
-    color:#f47721;
-    letter-spacing:5px;
+    color:#e87520;
     font-size:22px;
+    letter-spacing:5px;
     margin-bottom:20px;
 }
 
-.home-title{
-    font-size:76px;
+.home-name{
+    font-size:75px;
     line-height:1;
+    font-weight:700;
     margin-bottom:25px;
 }
 
-.home-title span{
-    color:#f47721;
+.home-name span{
+    color:#f47b20;
 }
 
-.home-name{
-    font-size:34px;
-    margin-bottom:15px;
+.home h2{
+    font-size:30px;
+    margin-bottom:20px;
 }
 
-.home-text{
+.home p{
     font-size:21px;
     color:#666;
-    margin-bottom:30px;
+    line-height:1.8;
+    max-width:750px;
 }
 
-.buttons{
+.home-layout{
     display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:14px 28px;
-    border-radius:12px;
-    font-size:18px;
-    font-weight:600;
-    border:1px solid #f47721;
-    transition:.3s;
-}
-
-.btn-orange{
-    background:#f47721;
-    color:#fff;
-}
-
-.btn-white{
-    color:#f47721;
-    background:#fff;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
+    align-items:center;
+    justify-content:space-between;
+    gap:70px;
 }
 
 .home-photo{
-    width:100%;
-    max-width:430px;
-    margin:auto;
-    border:4px solid #f47721;
+    width:360px;
+    height:470px;
+    object-fit:cover;
     border-radius:30px;
-    overflow:hidden;
-    box-shadow:0 20px 50px rgba(244,119,33,.18);
+    border:5px solid #f47b20;
+    box-shadow:0 20px 50px rgba(244,123,32,.18);
 }
 
-.home-photo img{
-    width:100%;
-    aspect-ratio:4/5;
-    object-fit:cover;
+.buttons{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    padding:15px 28px;
+    border-radius:12px;
+    text-decoration:none;
+    font-size:18px;
+    font-family:inherit;
+    cursor:pointer;
+    border:2px solid #f47b20;
+}
+
+.btn-main{
+    background:#f47b20;
+    color:#fff;
+}
+
+.btn-outline{
+    background:white;
+    color:#e87520;
 }
 
 /* ================= CARD ================= */
@@ -286,22 +197,28 @@ section{
 .card{
     background:#fff;
     border:1px solid #e7e7e7;
-    border-left:6px solid #f47721;
+    border-left:6px solid #f47b20;
     border-radius:22px;
     padding:35px;
     margin-bottom:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,.07);
+    box-shadow:0 15px 35px rgba(0,0,0,.06);
 }
 
 .card h2{
-    color:#f47721;
-    margin-bottom:20px;
+    color:#e87520;
     font-size:30px;
+    margin-bottom:22px;
+}
+
+.card p{
+    font-size:19px;
+    line-height:2;
+    color:#555;
 }
 
 .info-line{
     font-size:19px;
-    margin:9px 0;
+    line-height:2.1;
     color:#555;
 }
 
@@ -312,42 +229,40 @@ section{
 /* ================= HISTORY ================= */
 
 .history-photo{
+    display:block;
     width:430px;
     max-width:100%;
-    margin:0 auto 30px;
-    border:4px solid #f47721;
-    border-radius:28px;
-    overflow:hidden;
+    height:540px;
+    object-fit:cover;
+    margin:0 auto 35px;
+    border-radius:30px;
+    border:5px solid #f47b20;
+    box-shadow:0 20px 45px rgba(244,123,32,.18);
 }
 
-.history-photo img{
-    width:100%;
-    aspect-ratio:4/5;
-    object-fit:cover;
+.history-card{
+    max-width:1000px;
+    margin:auto;
 }
 
 /* ================= EDUCATION ================= */
 
-.edu-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.edu-card{
-    padding:30px;
-    border:2px solid #f47721;
-    border-radius:20px;
+.education-item{
+    padding:25px;
+    margin-bottom:20px;
+    border:1px solid #eeeeee;
+    border-radius:18px;
     background:#fff;
 }
 
-.edu-card h3{
-    color:#f47721;
+.education-item h3{
     font-size:23px;
-    margin-bottom:10px;
+    color:#e87520;
+    margin-bottom:8px;
 }
 
-.edu-card p{
+.education-item p{
+    font-size:18px;
     color:#555;
 }
 
@@ -355,59 +270,58 @@ section{
 
 .university-card{
     text-align:center;
-    padding:50px 30px;
-    border:2px solid #f47721;
-    border-radius:30px;
-    background:#fffaf6;
+    max-width:900px;
+    margin:auto;
 }
 
 .university-logo{
-    width:230px;
-    height:230px;
+    width:220px;
+    height:220px;
     object-fit:contain;
-    margin:0 auto 25px;
+    margin-bottom:25px;
 }
 
 .university-card h2{
     font-size:34px;
-    margin-bottom:10px;
+    color:#222;
 }
 
 .university-card h3{
-    color:#f47721;
-    font-size:26px;
-    margin-bottom:5px;
+    font-size:25px;
+    color:#e87520;
+    margin:15px 0;
 }
 
 /* ================= SKILLS ================= */
 
-.skill-grid{
+.skills-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
-.skill-card{
-    padding:30px;
+.skill{
+    border:1px solid #eeeeee;
     border-radius:20px;
+    padding:30px;
+    text-align:center;
     background:#fff;
-    border:1px solid #ddd;
     transition:.3s;
 }
 
-.skill-card:hover{
-    border-color:#f47721;
+.skill:hover{
     transform:translateY(-5px);
+    border-color:#f47b20;
 }
 
 .skill-icon{
     font-size:45px;
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
-.skill-card h3{
-    color:#f47721;
-    font-size:24px;
+.skill h3{
+    font-size:23px;
+    color:#e87520;
 }
 
 /* ================= RESEARCH ================= */
@@ -418,49 +332,154 @@ section{
     gap:25px;
 }
 
-.research-card{
-    background:#fff;
-    border:1px solid #ddd;
-    border-radius:22px;
+.project-card{
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    border-radius:22px;
+    border:1px solid #e5e5e5;
+    background:#fff;
+    box-shadow:0 12px 30px rgba(0,0,0,.07);
 }
 
-.research-card img{
+.project-card img{
     width:100%;
-    height:270px;
+    height:300px;
     object-fit:cover;
+    display:block;
 }
 
-.research-content{
+.project-content{
     padding:25px;
 }
 
-.research-content h3{
-    color:#f47721;
-    font-size:25px;
+.project-content h2{
+    color:#e87520;
     margin-bottom:10px;
+}
+
+.project-content p{
+    color:#666;
+    font-size:17px;
+    line-height:1.8;
 }
 
 /* ================= CONTACT ================= */
 
 .contact-box{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-item{
+    padding:25px;
+    margin:15px 0;
+    border:1px solid #eeeeee;
+    border-radius:18px;
+    font-size:20px;
+}
+
+.contact-item span{
+    color:#e87520;
+}
+
+/* ================= MENU OVERLAY ================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.70);
+    z-index:2000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.overlay.show{
+    display:flex;
+}
+
+.menu-box{
+    width:100%;
+    max-width:720px;
+    background:#111111;
+    border:1px solid #f47b20;
+    border-radius:25px;
+    padding:30px;
+    color:white;
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.menu-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.menu-logo{
+    font-size:28px;
+    font-weight:700;
+}
+
+.menu-logo span{
+    color:#f47b20;
+}
+
+.close{
+    width:55px;
+    height:55px;
+    border:1px solid #444;
     background:#111;
     color:white;
-    border-radius:25px;
-    padding:45px;
-    border:2px solid #f47721;
+    border-radius:14px;
+    font-size:32px;
+    cursor:pointer;
 }
 
-.contact-box h2{
-    color:#f47721;
-    font-size:35px;
-    margin-bottom:20px;
+.menu-title{
+    text-align:center;
+    font-size:21px;
+    color:#ccc;
+    margin-bottom:25px;
 }
 
-.contact-line{
-    margin:12px 0;
-    font-size:19px;
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.menu-item{
+    min-height:150px;
+    border:1px solid #f47b20;
+    border-radius:16px;
+    background:#1b1714;
+    color:white;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    font-family:inherit;
+    font-size:20px;
+    font-weight:500;
+    transition:.25s;
+}
+
+.menu-item:hover{
+    background:#f47b20;
+    transform:translateY(-3px);
+}
+
+.menu-icon{
+    font-size:43px;
+}
+
+.menu-item.full{
+    grid-column:1 / -1;
 }
 
 /* ================= FOOTER ================= */
@@ -469,11 +488,12 @@ footer{
     background:#222;
     color:#fff;
     text-align:center;
-    padding:30px 20px;
+    padding:30px;
+    font-size:16px;
 }
 
 footer span{
-    color:#f47721;
+    color:#f47b20;
 }
 
 /* ================= MOBILE ================= */
@@ -489,67 +509,74 @@ footer span{
         font-size:25px;
     }
 
-    .menu-btn{
-        width:52px;
-        height:52px;
-        font-size:27px;
+    .menu-button{
+        width:58px;
+        height:58px;
     }
 
-    section{
-        padding:75px 6%;
+    .page{
+        padding:45px 6%;
     }
 
-    .home-grid{
-        grid-template-columns:1fr;
-        gap:40px;
+    .title{
+        font-size:43px;
     }
 
-    .home-title{
-        font-size:55px;
+    .subtitle{
+        font-size:17px;
     }
 
-    .home-name{
-        font-size:28px;
+    .home{
+        padding:45px 6%;
     }
 
-    .home-text{
-        font-size:18px;
+    .home-layout{
+        flex-direction:column-reverse;
+        text-align:left;
+        gap:35px;
     }
 
     .home-photo{
-        max-width:350px;
+        width:280px;
+        height:360px;
     }
 
-    .section-title{
-        font-size:42px;
+    .home-name{
+        font-size:53px;
     }
 
-    .edu-grid,
-    .skill-grid,
+    .home h2{
+        font-size:25px;
+    }
+
+    .home p{
+        font-size:17px;
+    }
+
+    .buttons{
+        flex-wrap:wrap;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
     .research-grid{
         grid-template-columns:1fr;
     }
 
+    .history-photo{
+        width:100%;
+        height:auto;
+    }
+
     .card{
-        padding:28px 24px;
-    }
-
-    .info-line{
-        font-size:17px;
-    }
-
-    .university-card h2{
-        font-size:28px;
-    }
-
-    .menu-overlay{
-        padding:15px;
+        padding:25px;
     }
 
     .menu-box{
-        padding:20px 15px;
-        max-height:90vh;
-        overflow:auto;
+        padding:20px;
+        border-radius:20px;
     }
 
     .menu-grid{
@@ -557,15 +584,12 @@ footer span{
     }
 
     .menu-item{
-        padding:20px 5px;
+        min-height:130px;
+        font-size:17px;
     }
 
     .menu-icon{
-        font-size:30px;
-    }
-
-    .menu-item span:last-child{
-        font-size:16px;
+        font-size:35px;
     }
 
 }
@@ -583,156 +607,97 @@ footer span{
         TAR<span>MING</span>
     </div>
 
-    <button class="menu-btn" onclick="openMenu()">☰</button>
+    <button class="menu-button" onclick="openMenu()">
+        ☰
+    </button>
 
 </header>
 
 
-<!-- ================= MENU ================= -->
-
-<div class="menu-overlay" id="menu">
-
-    <div class="menu-box">
-
-        <div class="menu-top">
-
-            <h2>TARMING PORTFOLIO</h2>
-
-            <button class="close-btn" onclick="closeMenu()">×</button>
-
-        </div>
-
-        <div class="menu-title">
-            Menu - เมนูต่างๆ
-        </div>
-
-        <div class="menu-grid">
-
-            <a href="#home" class="menu-item" onclick="closeMenu()">
-                <span class="menu-icon">🏠</span>
-                <span>หน้าหลัก</span>
-            </a>
-
-            <a href="#history" class="menu-item" onclick="closeMenu()">
-                <span class="menu-icon">👤</span>
-                <span>ประวัติ</span>
-            </a>
-
-            <a href="#education" class="menu-item" onclick="closeMenu()">
-                <span class="menu-icon">🎓</span>
-                <span>การศึกษา</span>
-            </a>
-
-            <a href="#university" class="menu-item" onclick="closeMenu()">
-                <span class="menu-icon">🏫</span>
-                <span>มหาลัย</span>
-            </a>
-
-            <a href="#skills" class="menu-item" onclick="closeMenu()">
-                <span class="menu-icon">⚙️</span>
-                <span>ทักษะ</span>
-            </a>
-
-            <a href="#research" class="menu-item" onclick="closeMenu()">
-                <span class="menu-icon">📁</span>
-                <span>ผลงานวิจัย</span>
-            </a>
-
-            <a href="#contact" class="menu-item" onclick="closeMenu()">
-                <span class="menu-icon">💬</span>
-                <span>ติดต่อผม</span>
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
 <!-- ================= HOME ================= -->
 
-<section id="home">
+<section id="home" class="page active home">
 
-<div class="container home-grid">
+    <div class="home-content">
 
-    <div>
+        <div class="home-layout">
 
-        <div class="hello">
-            HELLO, I'M
-        </div>
+            <div>
 
-        <h1 class="home-title">
-            TAR<span>MING</span>
-        </h1>
+                <div class="hello">
+                    HELLO, I'M
+                </div>
 
-        <h2 class="home-name">
-            นาย เสฎฐวุฒิ พลหาญ
-        </h2>
+                <div class="home-name">
+                    TAR<span>MING</span>
+                </div>
 
-        <p class="home-text">
-            นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
-            แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์และวิศวกรรม (CSE)
-            โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-        </p>
+                <h2>
+                    นาย เสฎฐวุฒิ พลหาญ
+                </h2>
 
-        <div class="buttons">
+                <p>
+                    นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
+                    แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์และวิศวกรรม (CSE)
+                </p>
 
-            <a href="#history" class="btn btn-orange">
-                รู้จักผมมากขึ้น
-            </a>
+                <p>
+                    มีความสนใจด้านวิศวกรรม การบิน อวกาศ
+                    เทคโนโลยี และการพัฒนาตนเอง
+                </p>
 
-            <a href="#contact" class="btn btn-white">
-                ติดต่อผม
-            </a>
+                <div class="buttons">
+
+                    <button class="btn btn-main"
+                    onclick="showPage('history')">
+                        รู้จักผมมากขึ้น
+                    </button>
+
+                    <button class="btn btn-outline"
+                    onclick="showPage('contact')">
+                        ติดต่อผม
+                    </button>
+
+                </div>
+
+            </div>
+
+            <img
+                class="home-photo"
+                src="file_0000000085d47207b52f2b182e7429b3.png"
+                alt="TARMING"
+            >
 
         </div>
 
     </div>
-
-
-    <div class="home-photo">
-
-        <img
-        src="file_0000000085d47207b52f2b182e7429b3.png"
-        alt="TARMING">
-
-    </div>
-
-</div>
 
 </section>
 
 
 <!-- ================= HISTORY ================= -->
 
-<section id="history">
+<section id="history" class="page">
 
-<div class="container">
-
-    <a href="#home" class="back-home">
+    <div class="back" onclick="showPage('home')">
         ← กลับหน้าหลัก
-    </a>
-
-    <div class="section-label">
-        MY PROFILE
     </div>
 
-    <h1 class="section-title">
+    <h1 class="title">
         ประวัติ
     </h1>
 
-
-    <div class="history-photo">
-
-        <img
-        src="file_0000000085d47207b52f2b182e7429b3.png"
-        alt="นาย เสฎฐวุฒิ พลหาญ">
-
+    <div class="subtitle">
+        MY PROFILE
     </div>
 
+    <img
+        class="history-photo"
+        src="file_0000000085d47207b52f2b182e7429b3.png"
+        alt="นาย เสฎฐวุฒิ พลหาญ"
+    >
 
-    <div class="card">
+    <div class="card history-card">
 
         <h2>
             นาย เสฎฐวุฒิ พลหาญ
@@ -771,10 +736,14 @@ footer span{
         <div class="info-line">
             <strong>เชื้อชาติ:</strong>
             ไทย
-            &nbsp;&nbsp;
+        </div>
+
+        <div class="info-line">
             <strong>สัญชาติ:</strong>
             ไทย
-            &nbsp;&nbsp;
+        </div>
+
+        <div class="info-line">
             <strong>ศาสนา:</strong>
             คริสต์
         </div>
@@ -786,46 +755,32 @@ footer span{
 
     </div>
 
-</div>
-
 </section>
 
 
 <!-- ================= EDUCATION ================= -->
 
-<section id="education">
+<section id="education" class="page">
 
-<div class="container">
-
-    <a href="#home" class="back-home">
+    <div class="back" onclick="showPage('home')">
         ← กลับหน้าหลัก
-    </a>
-
-    <div class="section-label">
-        EDUCATION
     </div>
 
-    <h1 class="section-title">
+    <h1 class="title">
         การศึกษา
     </h1>
 
+    <div class="subtitle">
+        MY EDUCATION
+    </div>
 
-    <div class="edu-grid">
+    <div class="card">
 
-        <div class="edu-card">
+        <div class="education-item">
 
-            <h3>ระดับอนุบาล</h3>
-
-            <p>
-                โรงเรียนบุญประทีปวิทยาคาร
-            </p>
-
-        </div>
-
-
-        <div class="edu-card">
-
-            <h3>ระดับประถมศึกษา</h3>
+            <h3>
+                🎒 ระดับอนุบาล
+            </h3>
 
             <p>
                 โรงเรียนบุญประทีปวิทยาคาร
@@ -833,10 +788,23 @@ footer span{
 
         </div>
 
+        <div class="education-item">
 
-        <div class="edu-card">
+            <h3>
+                📚 ระดับประถมศึกษา
+            </h3>
 
-            <h3>ระดับมัธยมศึกษาตอนต้น</h3>
+            <p>
+                โรงเรียนบุญประทีปวิทยาคาร
+            </p>
+
+        </div>
+
+        <div class="education-item">
+
+            <h3>
+                🎓 ระดับมัธยมศึกษาตอนต้น
+            </h3>
 
             <p>
                 โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
@@ -844,10 +812,11 @@ footer span{
 
         </div>
 
+        <div class="education-item">
 
-        <div class="edu-card">
-
-            <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+            <h3>
+                🏫 ระดับมัธยมศึกษาตอนปลาย
+            </h3>
 
             <p>
                 โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
@@ -861,45 +830,39 @@ footer span{
 
     </div>
 
-</div>
-
 </section>
 
 
 <!-- ================= UNIVERSITY ================= -->
 
-<section id="university">
+<section id="university" class="page">
 
-<div class="container">
-
-    <a href="#home" class="back-home">
+    <div class="back" onclick="showPage('home')">
         ← กลับหน้าหลัก
-    </a>
-
-    <div class="section-label">
-        DREAM UNIVERSITY
     </div>
 
-    <h1 class="section-title">
+    <h1 class="title">
         มหาลัย
     </h1>
 
+    <div class="subtitle">
+        DREAM UNIVERSITY
+    </div>
 
-    <div class="university-card">
+    <div class="card university-card">
 
         <img
-        src="logo-lkmutnb.jpg"
-        alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ"
-        class="university-logo">
+            class="university-logo"
+            src="logo-lkmutnb.jpg"
+            alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ"
+        >
 
-
-        <div class="section-label">
+        <h3>
             MY DREAM
-        </div>
+        </h3>
 
         <h2>
-            มหาวิทยาลัยเทคโนโลยี
-            พระจอมเกล้าพระนครเหนือ
+            มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
         </h2>
 
         <h3>
@@ -912,139 +875,97 @@ footer span{
 
     </div>
 
-</div>
-
 </section>
 
 
 <!-- ================= SKILLS ================= -->
 
-<section id="skills">
+<section id="skills" class="page">
 
-<div class="container">
-
-    <a href="#home" class="back-home">
+    <div class="back" onclick="showPage('home')">
         ← กลับหน้าหลัก
-    </a>
-
-    <div class="section-label">
-        SKILLS & INTERESTS
     </div>
 
-    <h1 class="section-title">
+    <h1 class="title">
         ทักษะ
     </h1>
 
+    <div class="subtitle">
+        SKILLS & INTERESTS
+    </div>
 
-    <div class="skill-grid">
+    <div class="skills-grid">
 
-        <div class="skill-card">
-
+        <div class="skill">
             <div class="skill-icon">💻</div>
-
-            <h3>
-                เทคโนโลยี
-            </h3>
-
-            <p>
-                สนใจเทคโนโลยี คอมพิวเตอร์
-                และการพัฒนานวัตกรรม
-            </p>
-
+            <h3>เทคโนโลยี</h3>
         </div>
 
-
-        <div class="skill-card">
-
+        <div class="skill">
             <div class="skill-icon">✈️</div>
-
-            <h3>
-                การบิน
-            </h3>
-
-            <p>
-                สนใจด้านการบิน อากาศยาน
-                และเทคโนโลยีการบิน
-            </p>
-
+            <h3>การบินและอวกาศ</h3>
         </div>
 
+        <div class="skill">
+            <div class="skill-icon">🤖</div>
+            <h3>วิศวกรรม</h3>
+        </div>
 
-        <div class="skill-card">
+        <div class="skill">
+            <div class="skill-icon">🧠</div>
+            <h3>การเรียนรู้</h3>
+        </div>
 
+        <div class="skill">
             <div class="skill-icon">🤝</div>
-
-            <h3>
-                การทำงานเป็นทีม
-            </h3>
-
-            <p>
-                สามารถทำงานร่วมกับผู้อื่น
-                และแบ่งหน้าที่ภายในทีม
-            </p>
-
+            <h3>การทำงานเป็นทีม</h3>
         </div>
 
-
-        <div class="skill-card">
-
-            <div class="skill-icon">💡</div>
-
-            <h3>
-                การแก้ปัญหา
-            </h3>
-
-            <p>
-                ชอบเรียนรู้สิ่งใหม่
-                และแก้ไขปัญหาอย่างเป็นระบบ
-            </p>
-
+        <div class="skill">
+            <div class="skill-icon">🎯</div>
+            <h3>การแก้ปัญหา</h3>
         </div>
 
     </div>
-
-</div>
 
 </section>
 
 
 <!-- ================= RESEARCH ================= -->
 
-<section id="research">
+<section id="research" class="page">
 
-<div class="container">
-
-    <a href="#home" class="back-home">
+    <div class="back" onclick="showPage('home')">
         ← กลับหน้าหลัก
-    </a>
-
-    <div class="section-label">
-        RESEARCH & PROJECTS
     </div>
 
-    <h1 class="section-title">
+    <h1 class="title">
         ผลงานวิจัย
     </h1>
+
+    <div class="subtitle">
+        RESEARCH & PROJECTS
+    </div>
 
 
     <div class="research-grid">
 
-
-        <div class="research-card">
+        <div class="project-card">
 
             <img
-            src="1789097279748.jpg"
-            alt="กิจกรรมการทำงานเป็นทีม">
+                src="1789097318177.jpg"
+                alt="ผลงานหุ่นยนต์"
+            >
 
-            <div class="research-content">
+            <div class="project-content">
 
-                <h3>
-                    🤝 กิจกรรมการทำงานเป็นทีม
-                </h3>
+                <h2>
+                    🤖 โครงงานหุ่นยนต์
+                </h2>
 
                 <p>
-                    ประสบการณ์การทำงานร่วมกับสมาชิกในทีม
-                    และการเรียนรู้จากกิจกรรมด้านเทคโนโลยี
+                    ผลงานเกี่ยวกับการออกแบบและพัฒนาหุ่นยนต์
+                    โดยนำความรู้ด้านเทคโนโลยีและวิศวกรรมมาใช้
                 </p>
 
             </div>
@@ -1052,21 +973,22 @@ footer span{
         </div>
 
 
-        <div class="research-card">
+        <div class="project-card">
 
             <img
-            src="1789097318177.jpg"
-            alt="โครงงานหุ่นยนต์">
+                src="1789097279748.jpg"
+                alt="ผลงานออกแบบอาคาร"
+            >
 
-            <div class="research-content">
+            <div class="project-content">
 
-                <h3>
-                    🤖 โครงงานด้านเทคโนโลยี
-                </h3>
+                <h2>
+                    🏫 ผลงานออกแบบอาคาร
+                </h2>
 
                 <p>
-                    ผลงานหุ่นยนต์และเทคโนโลยี
-                    ที่ได้เรียนรู้จากการทำโครงงาน
+                    ผลงานการออกแบบอาคารด้วยโปรแกรมคอมพิวเตอร์
+                    แสดงความสนใจด้านการออกแบบและเทคโนโลยี
                 </p>
 
             </div>
@@ -1074,85 +996,192 @@ footer span{
         </div>
 
 
-        <div class="research-card">
+        <div class="project-card">
 
             <img
-            src="17890972797748.jpg"
-            alt="ผลงานโมเดลอาคาร">
+                src="1789097279748.jpg"
+                alt="ผลงานด้านเทคโนโลยี"
+            >
 
-            <div class="research-content">
+            <div class="project-content">
 
-                <h3>
-                    🏫 ผลงานการออกแบบ
-                </h3>
+                <h2>
+                    🚀 ผลงานด้านเทคโนโลยี
+                </h2>
 
                 <p>
-                    ผลงานการออกแบบโมเดลอาคาร
-                    และการประยุกต์ใช้เทคโนโลยี
+                    การเรียนรู้และพัฒนาทักษะด้านเทคโนโลยี
+                    วิศวกรรม และนวัตกรรม
                 </p>
 
             </div>
 
         </div>
 
+
+        <div class="project-card">
+
+            <img
+                src="1789097318177.jpg"
+                alt="กิจกรรมการทำงานเป็นทีม"
+            >
+
+            <div class="project-content">
+
+                <h2>
+                    👥 กิจกรรมการทำงานเป็นทีม
+                </h2>
+
+                <p>
+                    การทำงานร่วมกับผู้อื่น
+                    การแบ่งหน้าที่ และการแก้ปัญหาร่วมกัน
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
-
-</div>
 
 </section>
 
 
 <!-- ================= CONTACT ================= -->
 
-<section id="contact">
+<section id="contact" class="page">
 
-<div class="container">
-
-    <a href="#home" class="back-home">
+    <div class="back" onclick="showPage('home')">
         ← กลับหน้าหลัก
-    </a>
-
-    <div class="section-label">
-        CONTACT
     </div>
 
-    <h1 class="section-title">
+    <h1 class="title">
         ติดต่อผม
     </h1>
 
+    <div class="subtitle">
+        CONTACT ME
+    </div>
 
     <div class="contact-box">
 
-        <h2>
-            TARMING
-        </h2>
+        <div class="card">
 
-        <div class="contact-line">
-            👤 นาย เสฎฐวุฒิ พลหาญ
+            <div class="contact-item">
+                📱 <span>โทรศัพท์</span>
+            </div>
+
+            <div class="contact-item">
+                📧 <span>อีเมล</span>
+            </div>
+
+            <div class="contact-item">
+                📷 <span>Instagram</span>
+            </div>
+
+            <div class="contact-item">
+                💬 <span>Facebook</span>
+            </div>
+
         </div>
 
-        <div class="contact-line">
-            🎓 นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
+    </div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<div class="overlay" id="menuOverlay">
+
+    <div class="menu-box">
+
+        <div class="menu-top">
+
+            <div class="menu-logo">
+                TAR<span>MING</span> PORTFOLIO
+            </div>
+
+            <button class="close" onclick="closeMenu()">
+                ×
+            </button>
+
         </div>
 
-        <div class="contact-line">
-            💻 แผนการเรียน CSE
+
+        <div class="menu-title">
+            Menu - เมนูต่างๆ
         </div>
 
-        <div class="contact-line">
-            🏫 โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
-        </div>
 
-        <div class="contact-line">
-            📱 สามารถติดต่อผมได้ผ่านช่องทางที่สะดวก
+        <div class="menu-grid">
+
+            <button class="menu-item"
+            onclick="showPage('home')">
+
+                <div class="menu-icon">🏠</div>
+                หน้าหลัก
+
+            </button>
+
+
+            <button class="menu-item"
+            onclick="showPage('history')">
+
+                <div class="menu-icon">👤</div>
+                ประวัติ
+
+            </button>
+
+
+            <button class="menu-item"
+            onclick="showPage('education')">
+
+                <div class="menu-icon">🎓</div>
+                การศึกษา
+
+            </button>
+
+
+            <button class="menu-item"
+            onclick="showPage('university')">
+
+                <div class="menu-icon">🏫</div>
+                มหาลัย
+
+            </button>
+
+
+            <button class="menu-item"
+            onclick="showPage('skills')">
+
+                <div class="menu-icon">⚙️</div>
+                ทักษะ
+
+            </button>
+
+
+            <button class="menu-item"
+            onclick="showPage('research')">
+
+                <div class="menu-icon">📁</div>
+                ผลงานวิจัย
+
+            </button>
+
+
+            <button class="menu-item full"
+            onclick="showPage('contact')">
+
+                <div class="menu-icon">💬</div>
+                ติดต่อผม
+
+            </button>
+
         </div>
 
     </div>
 
 </div>
-
-</section>
 
 
 <!-- ================= FOOTER ================= -->
@@ -1168,21 +1197,131 @@ footer span{
 
 <script>
 
+/* ================= MENU ================= */
+
 function openMenu(){
-    document.getElementById("menu").classList.add("active");
+
+    document
+    .getElementById("menuOverlay")
+    .classList.add("show");
+
 }
+
 
 function closeMenu(){
-    document.getElementById("menu").classList.remove("active");
+
+    document
+    .getElementById("menuOverlay")
+    .classList.remove("show");
+
 }
 
-document.getElementById("menu").addEventListener("click", function(e){
 
-    if(e.target === this){
-        closeMenu();
+/* ================= CHANGE PAGE ================= */
+
+function showPage(page){
+
+    /* ซ่อนทุกหน้า */
+
+    document
+    .querySelectorAll(".page")
+    .forEach(function(section){
+
+        section.classList.remove("active");
+
+    });
+
+
+    /* แสดงหน้าที่เลือก */
+
+    document
+    .getElementById(page)
+    .classList.add("active");
+
+
+    /* ปิดเมนู */
+
+    closeMenu();
+
+
+    /* เปลี่ยน URL */
+
+    history.pushState(
+        null,
+        "",
+        "#" + page
+    );
+
+
+    /* กลับไปด้านบน */
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ================= LOAD PAGE ================= */
+
+function loadPage(){
+
+    let page =
+        window.location.hash.replace("#","");
+
+
+    if(
+        page &&
+        document.getElementById(page)
+    ){
+
+        showPage(page);
+
+    }else{
+
+        showPage("home");
+
     }
 
-});
+}
+
+
+/* ================= BACK BUTTON ================= */
+
+window.addEventListener(
+    "popstate",
+    loadPage
+);
+
+
+/* ================= CLOSE MENU OUTSIDE ================= */
+
+document
+.getElementById("menuOverlay")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            document.getElementById("menuOverlay")
+        ){
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+
+/* ================= START ================= */
+
+window.addEventListener(
+    "load",
+    loadPage
+);
 
 </script>
 
