@@ -1,49 +1,26 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TARMING | Portfolio</title>
+<title>TARMING PORTFOLIO</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================
-   BASIC
-========================= */
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
     scroll-behavior:smooth;
 }
 
-:root{
-    --orange:#f36b21;
-    --orange2:#ff8a3d;
-    --orange-dark:#d94f0c;
-
-    --white:#ffffff;
-    --cream:#fff7f1;
-
-    --black:#15110f;
-    --gray:#68615c;
-
-    --border:#eadbd1;
-}
-
 body{
-    font-family:"Kanit","Prompt",sans-serif;
+    font-family:"Kanit",sans-serif;
     background:#fff;
-    color:var(--black);
-    line-height:1.7;
+    color:#191919;
 }
 
 a{
@@ -51,37 +28,39 @@ a{
     color:inherit;
 }
 
+:root{
+    --orange:#f36b21;
+    --orange2:#ff914d;
+    --dark:#17110d;
+    --cream:#fff7f1;
+    --gray:#666;
+}
 
-/* =========================
-   NAVBAR
-========================= */
+/* ================= NAV ================= */
 
 nav{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    z-index:1000;
-
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(15px);
-
+    height:72px;
+    background:white;
     border-bottom:1px solid #eee;
+    z-index:1000;
 }
 
-.nav-container{
-    max-width:1150px;
+.nav{
+    max-width:1100px;
+    height:100%;
     margin:auto;
-
-    padding:17px 24px;
-
+    padding:0 22px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 }
 
 .logo{
-    font-size:1.45rem;
+    font-size:25px;
     font-weight:700;
     letter-spacing:2px;
 }
@@ -90,1606 +69,1018 @@ nav{
     color:var(--orange);
 }
 
-
-/* HAMBURGER */
-
-.menu-button{
+.menu-btn{
     width:46px;
     height:46px;
-
-    border:none;
+    border:0;
     border-radius:12px;
-
     background:var(--orange);
     color:white;
-
     font-size:25px;
-
     cursor:pointer;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    box-shadow:0 8px 20px rgba(243,107,33,.25);
 }
 
+/* ================= MENU ================= */
 
-/* =========================
-   FULL MENU
-========================= */
-
-.menu-overlay{
-
+.menu{
     position:fixed;
-
     inset:0;
-
-    z-index:2000;
-
-    background:rgba(15,12,10,.97);
-
+    background:rgba(15,10,7,.98);
+    z-index:3000;
     display:none;
-
-    overflow-y:auto;
-
-    animation:fadeIn .25s ease;
+    color:white;
+    overflow:auto;
 }
 
-.menu-overlay.active{
+.menu.show{
     display:block;
 }
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
-    }
-
-    to{
-        opacity:1;
-    }
-}
-
-
-.menu-header{
-
+.menu-top{
     max-width:900px;
-
     margin:auto;
-
     padding:25px 20px;
-
     display:flex;
-
-    align-items:center;
-
     justify-content:space-between;
-
-    border-bottom:1px solid rgba(255,255,255,.1);
+    align-items:center;
+    border-bottom:1px solid #40352e;
 }
 
 .menu-title{
-
-    color:white;
-
-    font-size:1.5rem;
-
-    font-weight:500;
+    font-size:23px;
+    font-weight:600;
 }
 
-.close-button{
-
+.close{
     width:45px;
     height:45px;
-
-    border:1px solid rgba(255,255,255,.25);
-
-    border-radius:12px;
-
+    border:1px solid #66564c;
     background:transparent;
-
     color:white;
-
-    font-size:27px;
-
-    cursor:pointer;
+    border-radius:12px;
+    font-size:28px;
 }
 
-
-/* MENU CONTENT */
-
-.menu-content{
-
+.menu-inner{
     max-width:900px;
-
     margin:auto;
-
-    padding:40px 20px 70px;
+    padding:40px 20px;
 }
 
-.menu-subtitle{
-
-    color:#aaa;
-
+.menu-sub{
     text-align:center;
-
+    color:#bbb;
+    font-size:19px;
     margin-bottom:25px;
-
-    font-size:1.1rem;
 }
-
-
-/* MENU GRID */
 
 .menu-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:1fr 1fr;
     gap:12px;
 }
 
 .menu-item{
-
-    min-height:125px;
-
-    padding:22px;
-
-    border:1px solid rgba(243,107,33,.55);
-
+    min-height:120px;
     background:#211a16;
-
-    color:white;
-
+    border:1px solid #8c461f;
     display:flex;
-
     flex-direction:column;
-
-    align-items:center;
-
     justify-content:center;
-
+    align-items:center;
     text-align:center;
-
-    border-radius:3px;
-
-    transition:.25s;
+    transition:.2s;
 }
 
 .menu-item:hover{
-
     background:var(--orange);
-
-    border-color:var(--orange);
-
-    transform:translateY(-3px);
 }
 
 .menu-icon{
-
     font-size:38px;
-
     margin-bottom:8px;
 }
 
 .menu-item span{
-
-    font-size:1.05rem;
-
-    font-weight:500;
+    font-size:18px;
 }
 
-
-/* CONTACT MENU */
-
-.menu-contact{
-
-    margin-top:12px;
-
-    display:grid;
-
-    grid-template-columns:1fr;
-
-    gap:12px;
-}
-
-.menu-contact .menu-item{
-    min-height:100px;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-#home{
-
-    min-height:100vh;
-
-    max-width:1150px;
-
-    margin:auto;
-
-    padding:
-        150px 25px
-        90px;
-
-    display:grid;
-
-    grid-template-columns:
-        1.1fr .9fr;
-
-    align-items:center;
-
-    gap:60px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #fff8f3
-        );
-}
-
-.hello{
-
-    color:var(--orange);
-
-    letter-spacing:4px;
-
-    font-weight:600;
-
-    margin-bottom:10px;
-}
-
-.hero-name{
-
-    font-size:
-        clamp(4rem,10vw,7rem);
-
-    line-height:.9;
-
-    letter-spacing:-3px;
-
-    margin-bottom:20px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--orange-dark),
-            var(--orange2)
-        );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-}
-
-.real-name{
-
-    font-size:1.6rem;
-
-    font-weight:500;
-
-    margin-bottom:15px;
-}
-
-.hero-description{
-
-    color:var(--gray);
-
-    font-size:1.08rem;
-
-    max-width:650px;
-}
-
-.highlight{
-
-    color:var(--orange);
-
-    font-weight:600;
-}
-
-.buttons{
-
-    display:flex;
-
-    gap:12px;
-
-    margin-top:30px;
-
-    flex-wrap:wrap;
-}
-
-.btn{
-
-    padding:12px 24px;
-
-    border-radius:12px;
-
-    border:2px solid var(--orange);
-
-    font-weight:500;
-
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-}
-
-.btn-primary{
-
-    background:var(--orange);
-
-    color:white;
-}
-
-.btn-secondary{
-
-    color:var(--orange);
-
-    background:white;
-}
-
-
-/* =========================
-   PROFILE
-========================= */
-
-.profile-card{
-
-    max-width:430px;
-
-    width:100%;
-
-    margin:auto;
-
-    overflow:hidden;
-
-    border-radius:28px;
-
-    border:3px solid var(--orange);
-
-    background:white;
-
-    box-shadow:
-        0 20px 50px
-        rgba(243,107,33,.20);
-}
-
-.profile-card img{
-
-    width:100%;
-
-    height:520px;
-
-    display:block;
-
-    object-fit:cover;
-
-    object-position:center top;
-}
-
-
-/* =========================
-   SECTION
-========================= */
-
-section:not(#home){
-
-    max-width:1150px;
-
-    margin:auto;
-
-    padding:100px 25px;
-}
-
-.section-title{
-
-    font-size:
-        clamp(2rem,5vw,3rem);
-
-    margin-bottom:5px;
-}
-
-.section-subtitle{
-
-    color:var(--orange);
-
-    margin-bottom:35px;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-box{
-
-    padding:35px;
-
-    border-radius:22px;
-
-    background:var(--cream);
-
-    border:1px solid var(--border);
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.06);
-}
-
-.about-box p{
-
-    color:var(--gray);
-
-    font-size:1.08rem;
-}
-
-
-/* =========================
-   EDUCATION
-========================= */
-
-.education-card{
-
-    padding:35px;
-
-    border-radius:22px;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.07);
-
-    transition:.3s;
-}
-
-.education-card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:var(--orange);
-}
-
-.education-icon{
-
-    font-size:45px;
-
-    margin-bottom:10px;
-}
-
-.education-card h3{
-
-    font-size:1.5rem;
-
-    margin-bottom:8px;
-}
-
-.school-name{
-
-    color:var(--orange);
-
-    font-size:1.15rem;
-
-    font-weight:500;
-
-    margin-bottom:10px;
-}
-
-.education-card p{
-
-    color:var(--gray);
-}
-
-
-/* =========================
-   UNIVERSITY
-========================= */
-
-.university-card{
-
-    display:grid;
-
-    grid-template-columns:150px 1fr;
-
-    align-items:center;
-
-    gap:35px;
-
-    padding:40px;
-
-    border-radius:28px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff7f1,
-            #fff
-        );
-
-    border:2px solid var(--orange);
-
-    box-shadow:
-        0 15px 40px
-        rgba(243,107,33,.12);
-}
-
-.university-logo{
-
-    width:140px;
-
-    height:140px;
-
-    object-fit:contain;
-
-    padding:10px;
-
-    border-radius:20px;
-
-    background:white;
-
-    border:1px solid var(--border);
-}
-
-.dream{
-
-    color:var(--orange);
-
-    letter-spacing:3px;
-
-    font-weight:600;
-
-    margin-bottom:8px;
-}
-
-.university-card h3{
-
-    font-size:
-        clamp(1.5rem,4vw,2.2rem);
-
-    line-height:1.4;
-
-    margin-bottom:8px;
-}
-
-.faculty{
-
-    color:var(--orange-dark);
-
-    font-size:1.25rem;
-
-    font-weight:600;
-}
-
-.major{
-
-    color:var(--gray);
-}
-
-
-/* =========================
-   CARDS
-========================= */
-
-.grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:20px;
-}
-
-.card{
-
-    padding:30px;
-
-    border-radius:20px;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.06);
-
-    transition:.3s;
-}
-
-.card:hover{
-
-    transform:translateY(-7px);
-
-    border-color:var(--orange);
-}
-
-.card-icon{
-
-    font-size:42px;
-
-    margin-bottom:12px;
-}
-
-.card h3{
-
-    margin-bottom:8px;
-}
-
-.card p{
-
-    color:var(--gray);
-}
-
-
-/* =========================
-   PROJECT
-========================= */
-
-.project-card{
-
-    min-height:220px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fff7f1,
-            white
-        );
-}
-
-.project-number{
-
-    width:fit-content;
-
-    padding:5px 12px;
-
-    border-radius:50px;
-
-    background:
-        rgba(243,107,33,.1);
-
-    color:var(--orange);
-
-    font-size:.85rem;
-
-    margin-bottom:12px;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-box{
-
-    padding:30px;
-
-    background:var(--cream);
-
-    border:1px solid var(--border);
-
-    border-radius:22px;
-}
-
-.contact-list{
-
-    display:grid;
-
-    gap:15px;
-}
-
-.contact-item{
-
-    display:block;
-
-    padding:20px;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:15px;
-
-    transition:.3s;
-}
-
-.contact-item:hover{
-
-    transform:translateX(6px);
-
-    border-color:var(--orange);
-}
-
-.contact-item strong{
-
-    display:block;
-
-    color:var(--orange);
-
-    margin-bottom:3px;
-}
-
-.contact-item span{
-
-    color:var(--gray);
-
-    word-break:break-word;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-
-    text-align:center;
-
-    padding:35px 20px;
-
-    color:var(--gray);
-
-    background:var(--cream);
-
-    border-top:1px solid var(--border);
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:800px){
-
-    #home{
-
-        grid-template-columns:1fr;
-
-        gap:40px;
-
-        padding:
-            130px 20px
-            80px;
-    }
-
-    .hero-name{
-        font-size:4.5rem;
-    }
-
-    .profile-card{
-        max-width:100%;
-    }
-
-    .profile-card img{
-        height:470px;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .university-card{
-
-        grid-template-columns:1fr;
-
-        text-align:center;
-    }
-
-    .university-logo{
-        margin:auto;
-    }
-
-    section:not(#home){
-        padding:80px 20px;
-    }
-
+@media(max-width:600px){
     .menu-grid{
         grid-template-columns:1fr 1fr;
     }
 
     .menu-item{
-        min-height:115px;
+        min-height:110px;
+    }
+}
+
+/* ================= PAGES ================= */
+
+.page{
+    display:none;
+    min-height:100vh;
+    padding:115px 22px 80px;
+}
+
+.page.active{
+    display:block;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.back{
+    display:inline-block;
+    margin-bottom:25px;
+    color:var(--orange);
+    font-size:17px;
+    cursor:pointer;
+}
+
+.page-title{
+    font-size:clamp(38px,8vw,70px);
+    line-height:1.1;
+    margin-bottom:8px;
+}
+
+.page-sub{
+    color:var(--orange);
+    letter-spacing:2px;
+    margin-bottom:35px;
+}
+
+/* ================= HOME ================= */
+
+#home{
+    background:
+        linear-gradient(135deg,#fff,#fff5ee);
+}
+
+.home-grid{
+    min-height:80vh;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:60px;
+}
+
+.hello{
+    color:var(--orange);
+    letter-spacing:4px;
+    font-size:18px;
+}
+
+.name{
+    font-size:clamp(65px,11vw,120px);
+    line-height:.95;
+    color:var(--orange);
+    margin:15px 0;
+}
+
+.real{
+    font-size:25px;
+    font-weight:500;
+}
+
+.intro{
+    margin-top:20px;
+    color:var(--gray);
+    font-size:18px;
+    line-height:1.8;
+}
+
+.btns{
+    display:flex;
+    gap:12px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 23px;
+    border-radius:12px;
+    font-size:17px;
+}
+
+.btn-orange{
+    background:var(--orange);
+    color:white;
+}
+
+.btn-white{
+    border:2px solid var(--orange);
+    color:var(--orange);
+}
+
+.photo{
+    border:3px solid var(--orange);
+    border-radius:25px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 20px 50px rgba(243,107,33,.18);
+}
+
+.photo img{
+    width:100%;
+    height:540px;
+    object-fit:cover;
+    object-position:center top;
+    display:block;
+}
+
+@media(max-width:800px){
+    .home-grid{
+        grid-template-columns:1fr;
+        gap:35px;
     }
 
+    .photo img{
+        height:470px;
+    }
+}
+
+/* ================= CARDS ================= */
+
+.card{
+    background:white;
+    border:1px solid #eadbd1;
+    border-radius:22px;
+    padding:30px;
+    margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.card h2{
+    color:var(--orange);
+    margin-bottom:12px;
+}
+
+.card p{
+    color:var(--gray);
+    font-size:18px;
+    line-height:1.8;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.grid .card{
+    margin:0;
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+@media(max-width:800px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* ================= UNIVERSITY ================= */
+
+.uni{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:35px;
+    align-items:center;
+    background:var(--cream);
+    border:2px solid var(--orange);
+    border-radius:25px;
+    padding:35px;
+}
+
+.uni img{
+    width:160px;
+    height:160px;
+    object-fit:contain;
+    background:white;
+    border-radius:20px;
+}
+
+.uni h2{
+    font-size:30px;
+    line-height:1.4;
+}
+
+.uni .faculty{
+    color:var(--orange);
+    font-size:22px;
+    margin-top:10px;
+}
+
+@media(max-width:700px){
+    .uni{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .uni img{
+        margin:auto;
+    }
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    display:grid;
+    gap:15px;
+}
+
+.contact a{
+    display:block;
+    background:var(--cream);
+    border:1px solid #eadbd1;
+    border-radius:18px;
+    padding:22px;
+}
+
+.contact strong{
+    display:block;
+    color:var(--orange);
+    font-size:18px;
+}
+
+.contact span{
+    color:#666;
+    font-size:17px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:30px;
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     NAVBAR
-========================= -->
+<!-- NAV -->
 
 <nav>
+    <div class="nav">
 
-<div class="nav-container">
+        <a href="#" class="logo" onclick="showPage('home')">
+            TAR<span>MING</span>
+        </a>
 
-<a href="#home" class="logo">
-TAR<span>MING</span>
-</a>
+        <button class="menu-btn" onclick="openMenu()">☰</button>
 
-<button
-class="menu-button"
-onclick="openMenu()"
-aria-label="เปิดเมนู"
->
-☰
-</button>
-
-</div>
-
+    </div>
 </nav>
 
 
-<!-- =========================
-     MENU OVERLAY
-========================= -->
+<!-- MENU -->
 
-<div
-id="menuOverlay"
-class="menu-overlay"
->
+<div id="menu" class="menu">
 
-<div class="menu-header">
+    <div class="menu-top">
 
-<div class="menu-title">
-TARMING PORTFOLIO
-</div>
+        <div class="menu-title">
+            TARMING PORTFOLIO
+        </div>
 
-<button
-class="close-button"
-onclick="closeMenu()"
->
-×
-</button>
+        <button class="close" onclick="closeMenu()">×</button>
 
-</div>
+    </div>
 
+    <div class="menu-inner">
 
-<div class="menu-content">
+        <div class="menu-sub">
+            Menu - เมนูต่างๆ
+        </div>
 
-<div class="menu-subtitle">
-Menu - เมนูต่างๆ
-</div>
+        <div class="menu-grid">
 
+            <a class="menu-item" onclick="showPage('home')">
+                <div class="menu-icon">🏠</div>
+                <span>หน้าหลัก</span>
+            </a>
 
-<div class="menu-grid">
+            <a class="menu-item" onclick="showPage('history')">
+                <div class="menu-icon">👤</div>
+                <span>ประวัติ</span>
+            </a>
 
+            <a class="menu-item" onclick="showPage('education')">
+                <div class="menu-icon">🎓</div>
+                <span>การศึกษา</span>
+            </a>
 
-<a
-href="#home"
-class="menu-item"
-onclick="closeMenu()"
->
+            <a class="menu-item" onclick="showPage('university')">
+                <div class="menu-icon">🏫</div>
+                <span>มหาลัย</span>
+            </a>
 
-<div class="menu-icon">
-🏠
-</div>
+            <a class="menu-item" onclick="showPage('skills')">
+                <div class="menu-icon">⚙️</div>
+                <span>ทักษะ</span>
+            </a>
 
-<span>
-หน้าหลัก
-</span>
+            <a class="menu-item" onclick="showPage('research')">
+                <div class="menu-icon">🔬</div>
+                <span>ผลงานวิจัย</span>
+            </a>
 
-</a>
+            <a class="menu-item" onclick="showPage('contact')">
+                <div class="menu-icon">📧</div>
+                <span>ติดต่อผม</span>
+            </a>
 
+        </div>
 
-<a
-href="#about"
-class="menu-item"
-onclick="closeMenu()"
->
-
-<div class="menu-icon">
-👤
-</div>
-
-<span>
-เกี่ยวกับผม
-</span>
-
-</a>
-
-
-<a
-href="#education"
-class="menu-item"
-onclick="closeMenu()"
->
-
-<div class="menu-icon">
-🎓
-</div>
-
-<span>
-การศึกษา
-</span>
-
-</a>
-
-
-<a
-href="#goal"
-class="menu-item"
-onclick="closeMenu()"
->
-
-<div class="menu-icon">
-🏫
-</div>
-
-<span>
-มหาวิทยาลัยในฝัน
-</span>
-
-</a>
-
-
-<a
-href="#skills"
-class="menu-item"
-onclick="closeMenu()"
->
-
-<div class="menu-icon">
-⚙️
-</div>
-
-<span>
-ทักษะและความสนใจ
-</span>
-
-</a>
-
-
-<a
-href="#projects"
-class="menu-item"
-onclick="closeMenu()"
->
-
-<div class="menu-icon">
-📁
-</div>
-
-<span>
-ผลงาน
-</span>
-
-</a>
+    </div>
 
 </div>
 
 
-<div class="menu-contact">
+<!-- ================= HOME ================= -->
+
+<section id="home" class="page active">
+
+<div class="container home-grid">
+
+    <div>
+
+        <div class="hello">
+            HELLO, I'M
+        </div>
+
+        <h1 class="name">
+            TARMING
+        </h1>
+
+        <div class="real">
+            เสฎฐวุฒิ พลหาญ
+        </div>
+
+        <p class="intro">
+            นักเรียนโรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+            ผู้มีความสนใจด้านวิศวกรรม การบิน
+            และเทคโนโลยีอวกาศ
+            <br>
+            มีความมุ่งมั่นที่จะศึกษาต่อด้าน
+            <b>วิศวกรรมการบินและอวกาศ</b>
+        </p>
+
+        <div class="btns">
+
+            <a class="btn btn-orange"
+               onclick="showPage('history')">
+                รู้จักผมมากขึ้น
+            </a>
+
+            <a class="btn btn-white"
+               onclick="showPage('contact')">
+                ติดต่อผม
+            </a>
+
+        </div>
+
+    </div>
 
 
-<a
-href="#contact"
-class="menu-item"
-onclick="closeMenu()"
->
+    <div class="photo">
 
-<div class="menu-icon">
-💬
-</div>
+        <img
+        src="file_0000000085d47207b52f2b182e7429b3.png"
+        alt="TARMING">
 
-<span>
-ติดต่อผม
-</span>
-
-</a>
-
-
-<a
-href="https://www.instagram.com/lux_rtsp_9?stkn=MTR1ZTRuOGNnMzcybg=="
-target="_blank"
-rel="noopener noreferrer"
-class="menu-item"
->
-
-<div class="menu-icon">
-📸
-</div>
-
-<span>
-Instagram
-</span>
-
-</a>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     HOME
-========================= -->
-
-<section id="home">
-
-<div>
-
-<div class="hello">
-HELLO, I'M
-</div>
-
-<h1 class="hero-name">
-TARMING
-</h1>
-
-<div class="real-name">
-เสฎฐวุฒิ พลหาญ
-</div>
-
-<p class="hero-description">
-
-นักเรียนโรงเรียนบ้านบึง
-อุตสาหกรรมนุเคราะห์
-
-<br><br>
-
-ผู้มีความสนใจด้าน
-<span class="highlight">
-วิศวกรรม การบิน และเทคโนโลยีอวกาศ
-</span>
-
-พร้อมเรียนรู้
-พัฒนาตัวเอง
-และก้าวเข้าสู่เส้นทาง
-วิศวกรรมการบินและอวกาศ
-
-</p>
-
-
-<div class="buttons">
-
-<a
-href="#about"
-class="btn btn-primary"
->
-รู้จักผมมากขึ้น
-</a>
-
-<a
-href="#contact"
-class="btn btn-secondary"
->
-ติดต่อผม
-</a>
-
-</div>
-
-</div>
-
-
-<div class="profile-card">
-
-<img
-src="file_0000000085d47207b52f2b182e7429b3.png"
-alt="TARMING - เสฎฐวุฒิ พลหาญ"
->
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ================= HISTORY ================= -->
 
-<section id="about">
+<section id="history" class="page">
 
-<h2 class="section-title">
-เกี่ยวกับผม
-</h2>
+<div class="container">
 
-<p class="section-subtitle">
-ABOUT ME
-</p>
+    <div class="back" onclick="showPage('home')">
+        ← กลับหน้าหลัก
+    </div>
 
-<div class="about-box">
+    <h1 class="page-title">
+        ประวัติ
+    </h1>
 
-<p>
+    <div class="page-sub">
+        MY PROFILE
+    </div>
 
-สวัสดีครับ ผมชื่อ
-<span class="highlight">
-TARMING
-</span>
+    <div class="card">
 
-หรือ
-<span class="highlight">
-เสฎฐวุฒิ พลหาญ
-</span>
+        <h2>
+            เสฎฐวุฒิ พลหาญ
+        </h2>
 
-ปัจจุบันเป็นนักเรียน
-<span class="highlight">
-โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-</span>
+        <p>
+            ชื่อเล่น TARMING
+            <br><br>
 
-ผมมีความสนใจด้านวิศวกรรม
-โดยเฉพาะด้านการบินและอวกาศ
+            ปัจจุบันเป็นนักเรียนโรงเรียน
+            <b>บ้านบึง อุตสาหกรรมนุเคราะห์</b>
 
-ผมชอบเรียนรู้สิ่งใหม่ ๆ
-และต้องการพัฒนาความรู้
-ความสามารถ
-และประสบการณ์ของตัวเอง
+            <br><br>
 
-</p>
+            เป็นผู้ที่มีความสนใจในด้าน
+            วิศวกรรม การบิน อวกาศ
+            และเทคโนโลยีสมัยใหม่
 
-</div>
+            <br><br>
 
-</section>
+            เป้าหมายของผมคือการพัฒนาตัวเอง
+            และก้าวเข้าสู่เส้นทางวิศวกรรม
+            การบินและอวกาศ
+        </p>
 
-
-<!-- =========================
-     EDUCATION
-========================= -->
-
-<section id="education">
-
-<h2 class="section-title">
-การศึกษา
-</h2>
-
-<p class="section-subtitle">
-EDUCATION
-</p>
-
-<div class="education-card">
-
-<div class="education-icon">
-🎓
-</div>
-
-<h3>
-นักเรียนระดับมัธยมศึกษา
-</h3>
-
-<div class="school-name">
-โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-</div>
-
-<p>
-
-กำลังศึกษาและเตรียมความพร้อม
-เพื่อศึกษาต่อในระดับมหาวิทยาลัย
-
-โดยมีเป้าหมายในสาย
-วิศวกรรมการบินและอวกาศ
-
-</p>
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     UNIVERSITY
-========================= -->
+<!-- ================= EDUCATION ================= -->
 
-<section id="goal">
+<section id="education" class="page">
 
-<h2 class="section-title">
-มหาวิทยาลัยในฝัน
-</h2>
+<div class="container">
 
-<p class="section-subtitle">
-MY UNIVERSITY GOAL
-</p>
+    <div class="back" onclick="showPage('home')">
+        ← กลับหน้าหลัก
+    </div>
 
+    <h1 class="page-title">
+        การศึกษา
+    </h1>
 
-<div class="university-card">
+    <div class="page-sub">
+        EDUCATION
+    </div>
 
-<img
-class="university-logo"
-src="university-logo.png"
-alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ"
->
+    <div class="card">
 
+        <div class="icon">
+            🎓
+        </div>
 
-<div>
+        <h2>
+            โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+        </h2>
 
-<div class="dream">
-DREAM UNIVERSITY
-</div>
+        <p>
+            ปัจจุบันกำลังศึกษาอยู่ที่
+            โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
 
-<h3>
-มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
-</h3>
+            <br><br>
 
-<div class="faculty">
-คณะวิศวกรรมศาสตร์
-</div>
+            กำลังเตรียมความพร้อมสำหรับ
+            การศึกษาต่อในระดับมหาวิทยาลัย
+            โดยมีเป้าหมายในสายวิศวกรรม
+            การบินและอวกาศ
+        </p>
 
-<div class="major">
-สาขาวิศวกรรมการบินและอวกาศ
-</div>
-
-</div>
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     SKILLS
-========================= -->
+<!-- ================= UNIVERSITY ================= -->
 
-<section id="skills">
+<section id="university" class="page">
 
-<h2 class="section-title">
-ทักษะและความสนใจ
-</h2>
+<div class="container">
 
-<p class="section-subtitle">
-SKILLS & INTERESTS
-</p>
+    <div class="back" onclick="showPage('home')">
+        ← กลับหน้าหลัก
+    </div>
 
+    <h1 class="page-title">
+        มหาลัย
+    </h1>
 
-<div class="grid">
-
-
-<div class="card">
-
-<div class="card-icon">
-✈️
-</div>
-
-<h3>
-การบิน
-</h3>
-
-<p>
-สนใจเทคโนโลยี
-และระบบที่เกี่ยวข้อง
-กับอากาศยาน
-</p>
-
-</div>
+    <div class="page-sub">
+        DREAM UNIVERSITY
+    </div>
 
 
-<div class="card">
+    <div class="uni">
 
-<div class="card-icon">
-🚀
-</div>
+        <img
+        src="university-logo.png"
+        alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ">
 
-<h3>
-อวกาศ
-</h3>
+        <div>
 
-<p>
-สนใจเทคโนโลยีอวกาศ
-จรวด
-และการสำรวจอวกาศ
-</p>
+            <h2>
+                มหาวิทยาลัยเทคโนโลยี
+                พระจอมเกล้าพระนครเหนือ
+            </h2>
 
-</div>
+            <div class="faculty">
+                คณะวิศวกรรมศาสตร์
+            </div>
 
+            <p>
+                สาขาวิศวกรรมการบินและอวกาศ
+            </p>
 
-<div class="card">
+        </div>
 
-<div class="card-icon">
-⚙️
-</div>
-
-<h3>
-วิศวกรรม
-</h3>
-
-<p>
-สนใจการออกแบบ
-การแก้ปัญหา
-และเทคโนโลยี
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-💻
-</div>
-
-<h3>
-เทคโนโลยี
-</h3>
-
-<p>
-สนใจการนำเทคโนโลยี
-มาประยุกต์ใช้
-ในการสร้างผลงาน
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-🧠
-</div>
-
-<h3>
-การเรียนรู้
-</h3>
-
-<p>
-พร้อมเรียนรู้สิ่งใหม่
-และพัฒนาตัวเอง
-อย่างต่อเนื่อง
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-🤝
-</div>
-
-<h3>
-การทำงานเป็นทีม
-</h3>
-
-<p>
-ให้ความสำคัญกับ
-การสื่อสาร
-และการทำงานร่วมกับผู้อื่น
-</p>
-
-</div>
-
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     PROJECTS
-========================= -->
+<!-- ================= SKILLS ================= -->
 
-<section id="projects">
+<section id="skills" class="page">
 
-<h2 class="section-title">
-ผลงาน
-</h2>
+<div class="container">
 
-<p class="section-subtitle">
-PROJECTS
-</p>
+    <div class="back" onclick="showPage('home')">
+        ← กลับหน้าหลัก
+    </div>
 
+    <h1 class="page-title">
+        ทักษะ
+    </h1>
 
-<div class="grid">
-
-
-<div class="card project-card">
-
-<span class="project-number">
-PROJECT 01
-</span>
-
-<h3>
-ผลงานของผม
-</h3>
-
-<p>
-พื้นที่สำหรับเพิ่ม
-โครงงานหรือผลงาน
-ที่ภาคภูมิใจ
-</p>
-
-</div>
+    <div class="page-sub">
+        SKILLS & INTERESTS
+    </div>
 
 
-<div class="card project-card">
+    <div class="grid">
 
-<span class="project-number">
-PROJECT 02
-</span>
-
-<h3>
-กิจกรรมที่เข้าร่วม
-</h3>
-
-<p>
-เพิ่มกิจกรรม
-ค่ายวิศวกรรม
-การแข่งขัน
-หรือกิจกรรมในโรงเรียน
-</p>
-
-</div>
+        <div class="card">
+            <div class="icon">✈️</div>
+            <h2>การบิน</h2>
+            <p>
+                สนใจเทคโนโลยี
+                และระบบต่าง ๆ
+                ที่เกี่ยวข้องกับอากาศยาน
+            </p>
+        </div>
 
 
-<div class="card project-card">
-
-<span class="project-number">
-PROJECT 03
-</span>
-
-<h3>
-ผลงานในอนาคต
-</h3>
-
-<p>
-พื้นที่สำหรับเพิ่ม
-ผลงานใหม่ ๆ
-ในอนาคต
-</p>
-
-</div>
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h2>อวกาศ</h2>
+            <p>
+                สนใจเทคโนโลยีอวกาศ
+                จรวด และการสำรวจอวกาศ
+            </p>
+        </div>
 
 
-</div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section id="contact">
-
-<h2 class="section-title">
-ติดต่อผม
-</h2>
-
-<p class="section-subtitle">
-CONTACT ME
-</p>
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h2>วิศวกรรม</h2>
+            <p>
+                สนใจการออกแบบ
+                การแก้ปัญหา
+                และเทคโนโลยี
+            </p>
+        </div>
 
 
-<div class="contact-box">
-
-<div class="contact-list">
-
-
-<a
-href="mailto:Tarmingx2@gmail.com"
-class="contact-item"
->
-
-<strong>
-📧 EMAIL
-</strong>
-
-<span>
-Tarmingx2@gmail.com
-</span>
-
-</a>
+        <div class="card">
+            <div class="icon">💻</div>
+            <h2>เทคโนโลยี</h2>
+            <p>
+                สนใจการนำเทคโนโลยี
+                มาประยุกต์ใช้
+            </p>
+        </div>
 
 
-<a
-href="https://www.instagram.com/lux_rtsp_9?stkn=MTR1ZTRuOGNnMzcybg=="
-target="_blank"
-rel="noopener noreferrer"
-class="contact-item"
->
-
-<strong>
-📸 INSTAGRAM
-</strong>
-
-<span>
-@lux_rtsp_9
-— กดเพื่อเข้าสู่ Instagram
-</span>
-
-</a>
+        <div class="card">
+            <div class="icon">🧠</div>
+            <h2>การเรียนรู้</h2>
+            <p>
+                พร้อมเรียนรู้สิ่งใหม่
+                และพัฒนาตัวเอง
+            </p>
+        </div>
 
 
-</div>
+        <div class="card">
+            <div class="icon">🤝</div>
+            <h2>การทำงานเป็นทีม</h2>
+            <p>
+                สามารถทำงานร่วมกับผู้อื่น
+                และแลกเปลี่ยนความคิดเห็น
+            </p>
+        </div>
+
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= RESEARCH ================= -->
+
+<section id="research" class="page">
+
+<div class="container">
+
+    <div class="back" onclick="showPage('home')">
+        ← กลับหน้าหลัก
+    </div>
+
+    <h1 class="page-title">
+        ผลงานวิจัย
+    </h1>
+
+    <div class="page-sub">
+        RESEARCH & PROJECTS
+    </div>
+
+
+    <div class="card">
+
+        <div class="icon">
+            🔬
+        </div>
+
+        <h2>
+            ผลงานวิจัยและโครงงาน
+        </h2>
+
+        <p>
+            พื้นที่สำหรับรวบรวมผลงานวิจัย
+            โครงงาน กิจกรรม และประสบการณ์
+            ที่เกี่ยวข้องกับการเรียนรู้
+
+            <br><br>
+
+            <b>
+            สามารถเพิ่มผลงานจริงในส่วนนี้ได้ในอนาคต
+            </b>
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="icon">📚</div>
+
+            <h2>
+                โครงงาน
+            </h2>
+
+            <p>
+                รวบรวมโครงงาน
+                และสิ่งที่ได้เรียนรู้
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🏆</div>
+
+            <h2>
+                กิจกรรม
+            </h2>
+
+            <p>
+                กิจกรรมและประสบการณ์
+                ที่เข้าร่วม
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">💡</div>
+
+            <h2>
+                ผลงานในอนาคต
+            </h2>
+
+            <p>
+                พื้นที่สำหรับผลงานใหม่ ๆ
+                ที่จะสร้างขึ้นในอนาคต
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="page">
+
+<div class="container">
+
+    <div class="back" onclick="showPage('home')">
+        ← กลับหน้าหลัก
+    </div>
+
+    <h1 class="page-title">
+        ติดต่อผม
+    </h1>
+
+    <div class="page-sub">
+        CONTACT ME
+    </div>
+
+
+    <div class="contact">
+
+
+        <a href="mailto:Tarmingx2@gmail.com">
+
+            <strong>
+                📧 EMAIL
+            </strong>
+
+            <span>
+                Tarmingx2@gmail.com
+            </span>
+
+        </a>
+
+
+        <a
+        href="https://www.instagram.com/lux_rtsp_9?stkn=MTR1ZTRuOGNnMzcybg=="
+        target="_blank"
+        rel="noopener">
+
+            <strong>
+                📸 INSTAGRAM
+            </strong>
+
+            <span>
+                @lux_rtsp_9
+                — กดเพื่อเข้าสู่ Instagram
+            </span>
+
+        </a>
+
+
+    </div>
+
+</div>
+
+</section>
+
 
 <footer>
-
-© 2026 TARMING — Portfolio
-
+    © 2026 TARMING PORTFOLIO
 </footer>
 
 
 <script>
 
 /* =========================
-   MENU
+   OPEN / CLOSE MENU
 ========================= */
 
 function openMenu(){
 
     document
-        .getElementById("menuOverlay")
-        .classList
-        .add("active");
+    .getElementById("menu")
+    .classList
+    .add("show");
 
-    document.body.style.overflow="hidden";
 }
-
 
 function closeMenu(){
 
     document
-        .getElementById("menuOverlay")
-        .classList
-        .remove("active");
+    .getElementById("menu")
+    .classList
+    .remove("show");
 
-    document.body.style.overflow="auto";
 }
 
 
-/* ปิดเมนูเมื่อกดพื้นหลัง */
+/* =========================
+   CHANGE PAGE
+========================= */
 
-document
-    .getElementById("menuOverlay")
-    .addEventListener(
-        "click",
-        function(event){
+function showPage(page){
 
-            if(event.target === this){
+    // ปิดเมนู
+    closeMenu();
 
-                closeMenu();
+    // ซ่อนทุกหน้า
+    document
+    .querySelectorAll(".page")
+    .forEach(function(p){
 
-            }
+        p.classList.remove("active");
 
-        }
-    );
+    });
+
+    // แสดงหน้าที่เลือก
+    document
+    .getElementById(page)
+    .classList.add("active");
+
+    // ขึ้นไปด้านบน
+    window.scrollTo(0,0);
+
+    // เปลี่ยน URL
+    history.pushState(null,"","#"+page);
+
+}
 
 
-/* กด ESC เพื่อปิด */
+/* =========================
+   เปิดหน้าตาม URL
+========================= */
 
-document.addEventListener(
-    "keydown",
-    function(event){
+window.addEventListener("load",function(){
 
-        if(event.key === "Escape"){
+    let page =
+        location.hash.replace("#","");
 
-            closeMenu();
+    if(
+        page &&
+        document.getElementById(page)
+    ){
 
-        }
+        showPage(page);
+
+    }else{
+
+        showPage("home");
 
     }
-);
+
+});
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+window.addEventListener("popstate",function(){
+
+    let page =
+        location.hash.replace("#","");
+
+    if(
+        page &&
+        document.getElementById(page)
+    ){
+
+        document
+        .querySelectorAll(".page")
+        .forEach(function(p){
+
+            p.classList.remove("active");
+
+        });
+
+        document
+        .getElementById(page)
+        .classList.add("active");
+
+        window.scrollTo(0,0);
+
+    }
+
+});
 
 </script>
-
 
 </body>
 </html>
