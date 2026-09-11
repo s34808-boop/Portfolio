@@ -6,28 +6,24 @@
 
 <title>TARMING PORTFOLIO</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
     scroll-behavior:smooth;
 }
 
 body{
     font-family:'Kanit',sans-serif;
-    background:#ffffff;
+    background:#fff;
     color:#222;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
     position:fixed;
@@ -35,19 +31,18 @@ header{
     left:0;
     width:100%;
     height:75px;
-    background:#ffffff;
-    border-bottom:1px solid #eeeeee;
+    background:#fff;
+    border-bottom:1px solid #eee;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 6%;
+    padding:0 5%;
     z-index:1000;
 }
 
 .logo{
-    font-size:28px;
+    font-size:27px;
     font-weight:700;
-    color:#222;
 }
 
 .logo span{
@@ -55,33 +50,30 @@ header{
 }
 
 .menu-btn{
-    width:52px;
-    height:52px;
-    border:none;
+    width:55px;
+    height:55px;
+    border:0;
     border-radius:12px;
     background:#f36f21;
-    color:white;
-    font-size:28px;
-    cursor:pointer;
+    color:#fff;
+    font-size:30px;
 }
 
-/* =========================
-   MENU
-========================= */
+/* MENU */
 
 .menu{
     position:fixed;
     top:75px;
     right:-100%;
     width:100%;
-    max-width:500px;
+    max-width:520px;
     height:calc(100vh - 75px);
-    background:#ffffff;
-    z-index:999;
+    background:#fff;
     padding:30px 25px;
-    transition:0.4s;
-    overflow-y:auto;
-    box-shadow:-10px 0 30px rgba(0,0,0,0.12);
+    z-index:999;
+    transition:.4s;
+    overflow:auto;
+    box-shadow:-10px 0 30px #0002;
 }
 
 .menu.active{
@@ -105,16 +97,15 @@ header{
     color:#222;
     border:1px solid #f36f21;
     border-radius:12px;
-    padding:25px 10px;
-    text-align:center;
     background:#fffaf6;
-    transition:0.3s;
+    text-align:center;
+    padding:25px 10px;
+    transition:.3s;
 }
 
 .menu-item:hover{
     background:#f36f21;
-    color:white;
-    transform:translateY(-3px);
+    color:#fff;
 }
 
 .menu-icon{
@@ -123,67 +114,66 @@ header{
     margin-bottom:8px;
 }
 
-.menu-item strong{
-    font-size:18px;
-}
-
 .menu-full{
     grid-column:1 / 3;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* PAGE */
 
-section{
+.page{
+    display:none;
     min-height:100vh;
-    padding:130px 7% 80px;
+    padding:120px 7% 80px;
 }
 
-.section-title{
-    font-size:45px;
-    margin-bottom:10px;
+.page.active{
+    display:block;
 }
 
-.section-subtitle{
+.back{
     color:#f36f21;
-    letter-spacing:3px;
+    text-decoration:none;
     font-size:18px;
-    margin-bottom:40px;
+    display:inline-block;
+    margin-bottom:30px;
 }
 
-/* =========================
-   HOME
-========================= */
+.title{
+    font-size:48px;
+    font-weight:700;
+}
 
-#home{
+.subtitle{
+    color:#f36f21;
+    letter-spacing:4px;
+    margin:5px 0 40px;
+    font-size:18px;
+}
+
+/* HOME */
+
+#home.active{
     display:flex;
     align-items:center;
-    background:linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #fff6ef 100%
-    );
 }
 
-.home-container{
+.home-box{
     width:100%;
     display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:60px;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
     align-items:center;
 }
 
-.small-title{
+.small{
     color:#f36f21;
     letter-spacing:4px;
     font-size:20px;
 }
 
 .home h1{
-    font-size:80px;
-    line-height:1;
-    margin:15px 0;
+    font-size:75px;
+    margin:10px 0;
 }
 
 .home h1 span{
@@ -192,79 +182,60 @@ section{
 
 .home h2{
     font-size:30px;
-    margin-bottom:15px;
 }
 
 .home p{
-    font-size:19px;
-    line-height:1.9;
+    margin-top:15px;
     color:#666;
-    max-width:650px;
+    font-size:18px;
+    line-height:1.9;
 }
 
-.buttons{
-    display:flex;
-    gap:15px;
-    margin-top:30px;
-}
-
-.btn{
-    text-decoration:none;
-    padding:13px 25px;
-    border-radius:10px;
-    font-size:17px;
-    transition:0.3s;
-}
-
-.btn-main{
-    background:#f36f21;
-    color:white;
-}
-
-.btn-main:hover{
-    background:#d9570d;
-}
-
-.btn-outline{
-    border:1px solid #f36f21;
-    color:#f36f21;
-}
-
-.btn-outline:hover{
-    background:#f36f21;
-    color:white;
-}
-
-/* PROFILE PHOTO */
-
-.photo-box{
-    width:100%;
+.photo{
     max-width:430px;
     margin:auto;
+    border:3px solid #f36f21;
     border-radius:25px;
     overflow:hidden;
-    border:3px solid #f36f21;
-    background:#fff;
-    box-shadow:0 15px 40px rgba(243,111,33,0.2);
 }
 
-.photo-box img{
+.photo img{
     width:100%;
     display:block;
 }
 
-/* =========================
-   CARDS
-========================= */
+.buttons{
+    margin-top:25px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:13px 25px;
+    border-radius:10px;
+    margin-right:10px;
+}
+
+.orange{
+    background:#f36f21;
+    color:#fff;
+}
+
+.outline{
+    color:#f36f21;
+    border:1px solid #f36f21;
+}
+
+/* CARD */
 
 .card{
-    background:white;
-    border:1px solid #eeeeee;
+    background:#fff;
+    border:1px solid #eee;
     border-left:5px solid #f36f21;
     border-radius:18px;
     padding:30px;
     margin-bottom:20px;
-    box-shadow:0 8px 30px rgba(0,0,0,0.06);
+    box-shadow:0 8px 30px #0000000d;
 }
 
 .card h3{
@@ -274,48 +245,19 @@ section{
 }
 
 .card p{
-    font-size:18px;
-    line-height:1.9;
     color:#555;
+    font-size:18px;
+    line-height:2;
 }
 
-/* =========================
-   HISTORY
-========================= */
-
-.info-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.info-box{
-    background:#fffaf6;
-    border:1px solid #f36f21;
-    border-radius:15px;
-    padding:25px;
-}
-
-.info-box h3{
-    color:#f36f21;
-    margin-bottom:8px;
-}
-
-/* =========================
-   EDUCATION
-========================= */
-
-.education-list{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-}
+/* EDUCATION */
 
 .edu{
-    padding:25px;
-    border-radius:15px;
     background:#fffaf6;
     border:1px solid #f3c2a5;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:18px;
 }
 
 .edu h3{
@@ -324,122 +266,117 @@ section{
 }
 
 .edu p{
-    margin-top:5px;
     color:#555;
+    font-size:18px;
 }
 
-/* =========================
-   UNIVERSITY
-========================= */
+/* UNIVERSITY */
 
-.university-card{
+.university{
     text-align:center;
     background:#fffaf6;
     border:2px solid #f36f21;
     border-radius:25px;
-    padding:45px 25px;
-    box-shadow:0 10px 35px rgba(243,111,33,0.12);
+    padding:40px 25px;
 }
 
-.university-logo{
+.university img{
     width:180px;
     height:180px;
     object-fit:contain;
-    margin-bottom:25px;
-    border-radius:15px;
+    margin-bottom:20px;
 }
 
-.university-card h2{
-    font-size:32px;
-    margin-bottom:12px;
+.university h2{
+    font-size:30px;
 }
 
-.university-card h3{
+.university h3{
     color:#f36f21;
     font-size:25px;
+    margin-top:12px;
 }
 
-.university-card p{
-    font-size:20px;
+.university p{
     color:#555;
-    margin-top:5px;
+    font-size:20px;
 }
 
-/* =========================
-   SKILLS
-========================= */
+/* SKILLS */
 
-.skills-grid{
+.skills{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
 .skill{
-    padding:30px;
+    text-align:center;
+    padding:30px 20px;
+    background:#fffaf6;
     border:1px solid #f3c2a5;
     border-radius:18px;
-    background:#fffaf6;
-    text-align:center;
-    transition:0.3s;
 }
 
-.skill:hover{
-    transform:translateY(-5px);
-    border-color:#f36f21;
-}
-
-.skill .icon{
+.skill-icon{
     font-size:45px;
-    margin-bottom:10px;
 }
 
 .skill h3{
     color:#f36f21;
+    margin:10px 0;
 }
 
-/* =========================
-   RESEARCH / WORK
-========================= */
+.skill p{
+    color:#666;
+}
 
-.work-grid{
+/* PROJECTS */
+
+.projects{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:20px;
+    gap:25px;
 }
 
-.work{
-    border:1px solid #eeeeee;
-    border-radius:18px;
-    padding:30px;
-    background:white;
-    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+.project{
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid #eee;
+    box-shadow:0 8px 30px #00000012;
 }
 
-.work h3{
+.project img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+}
+
+.project-info{
+    padding:22px;
+}
+
+.project-info h3{
     color:#f36f21;
     font-size:24px;
-    margin-bottom:10px;
 }
 
-.work p{
+.project-info p{
     color:#666;
     line-height:1.8;
+    margin-top:8px;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
-.contact-box{
+.contact{
     max-width:750px;
     margin:auto;
 }
 
 .contact-item{
-    display:flex;
-    align-items:center;
-    gap:20px;
     padding:22px;
     margin-bottom:15px;
     border:1px solid #f3c2a5;
@@ -447,72 +384,36 @@ section{
     background:#fffaf6;
 }
 
-.contact-icon{
-    font-size:35px;
-}
-
 .contact-item h3{
     color:#f36f21;
 }
 
+.contact-item p,
 .contact-item a{
     color:#555;
-    text-decoration:none;
-}
-
-.contact-item a:hover{
-    color:#f36f21;
-}
-
-/* =========================
-   BACK BUTTON
-========================= */
-
-.back-home{
-    display:inline-block;
-    margin-bottom:30px;
-    color:#f36f21;
     text-decoration:none;
     font-size:18px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
+    background:#222;
+    color:#fff;
     text-align:center;
     padding:30px;
-    background:#222;
-    color:white;
 }
 
 footer span{
     color:#f36f21;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:800px){
 
-    header{
-        height:70px;
-        padding:0 24px;
-    }
-
-    .logo{
-        font-size:23px;
-    }
-
-    section{
-        padding:110px 24px 60px;
-    }
-
-    .home-container{
+    .home-box{
         grid-template-columns:1fr;
-        gap:40px;
     }
 
     .home h1{
@@ -523,56 +424,19 @@ footer span{
         font-size:25px;
     }
 
-    .home p{
-        font-size:16px;
+    .title{
+        font-size:40px;
     }
 
-    .photo-box{
-        max-width:350px;
-    }
-
-    .section-title{
-        font-size:38px;
-    }
-
-    .info-grid,
-    .skills-grid,
-    .work-grid{
+    .skills,
+    .projects{
         grid-template-columns:1fr;
     }
 
-    .menu{
-        width:100%;
+    .project img{
+        height:auto;
     }
 
-    .menu-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .menu-full{
-        grid-column:1 / 3;
-    }
-
-    .university-card h2{
-        font-size:25px;
-    }
-
-    .university-card h3{
-        font-size:21px;
-    }
-
-}
-
-/* =========================
-   HIDE SECTIONS BY DEFAULT
-========================= */
-
-.page{
-    display:none;
-}
-
-.page.active{
-    display:block;
 }
 
 </style>
@@ -580,621 +444,530 @@ footer span{
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+
+<!-- HEADER -->
 
 <header>
 
-    <div class="logo">
-        TAR<span>MING</span>
-    </div>
+<div class="logo">
+TAR<span>MING</span>
+</div>
 
-    <button class="menu-btn" onclick="toggleMenu()">
-        ☰
-    </button>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
 </header>
 
 
-<!-- =========================
-     MENU
-========================= -->
+<!-- MENU -->
 
 <div class="menu" id="menu">
 
-    <h2>Menu - เมนูต่างๆ</h2>
+<h2>Menu - เมนูต่างๆ</h2>
 
-    <div class="menu-grid">
+<div class="menu-grid">
 
-        <a href="#home" class="menu-item" onclick="closeMenu()">
-            <span class="menu-icon">🏠</span>
-            <strong>หน้าหลัก</strong>
-        </a>
+<a href="#home" class="menu-item" onclick="closeMenu()">
+<span class="menu-icon">🏠</span>
+หน้าหลัก
+</a>
 
-        <a href="#history" class="menu-item" onclick="closeMenu()">
-            <span class="menu-icon">👤</span>
-            <strong>ประวัติ</strong>
-        </a>
+<a href="#history" class="menu-item" onclick="closeMenu()">
+<span class="menu-icon">👤</span>
+ประวัติ
+</a>
 
-        <a href="#education" class="menu-item" onclick="closeMenu()">
-            <span class="menu-icon">🎓</span>
-            <strong>การศึกษา</strong>
-        </a>
+<a href="#education" class="menu-item" onclick="closeMenu()">
+<span class="menu-icon">🎓</span>
+การศึกษา
+</a>
 
-        <a href="#university" class="menu-item" onclick="closeMenu()">
-            <span class="menu-icon">🏫</span>
-            <strong>มหาลัย</strong>
-        </a>
+<a href="#university" class="menu-item" onclick="closeMenu()">
+<span class="menu-icon">🏫</span>
+มหาลัย
+</a>
 
-        <a href="#skills" class="menu-item" onclick="closeMenu()">
-            <span class="menu-icon">⚙️</span>
-            <strong>ทักษะ</strong>
-        </a>
+<a href="#skills" class="menu-item" onclick="closeMenu()">
+<span class="menu-icon">⚙️</span>
+ทักษะ
+</a>
 
-        <a href="#research" class="menu-item" onclick="closeMenu()">
-            <span class="menu-icon">📁</span>
-            <strong>ผลงานวิจัย</strong>
-        </a>
+<a href="#research" class="menu-item" onclick="closeMenu()">
+<span class="menu-icon">📁</span>
+ผลงานวิจัย
+</a>
 
-        <a href="#contact" class="menu-item menu-full" onclick="closeMenu()">
-            <span class="menu-icon">💬</span>
-            <strong>ติดต่อผม</strong>
-        </a>
+<a href="#contact" class="menu-item menu-full" onclick="closeMenu()">
+<span class="menu-icon">💬</span>
+ติดต่อผม
+</a>
 
-    </div>
+</div>
+</div>
+
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+<div class="home-box">
+
+<div class="home">
+
+<div class="small">
+HELLO, I'M
+</div>
+
+<h1>
+TAR<span>MING</span>
+</h1>
+
+<h2>
+เสฎฐวุฒิ พลหาญ
+</h2>
+
+<p>
+นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
+แผนการเรียน CSE โรงเรียนบ้านบึง
+อุตสาหกรรมนุเคราะห์
+<br>
+มีความสนใจด้านวิศวกรรม การบิน อวกาศ
+และเทคโนโลยี
+</p>
+
+<div class="buttons">
+
+<a href="#history" class="btn orange">
+รู้จักผมมากขึ้น
+</a>
+
+<a href="#contact" class="btn outline">
+ติดต่อผม
+</a>
+
+</div>
 
 </div>
 
 
-<!-- =========================
-     HOME
-========================= -->
+<div class="photo">
 
-<section id="home" class="page active">
+<!-- เปลี่ยนชื่อรูปตรงนี้เป็นชื่อรูปโปรไฟล์ของแก -->
 
-    <div class="home-container">
+<img src="file_000000085d47207b52f2b182e7429b3.png"
+alt="TARMING">
 
-        <div>
+</div>
 
-            <div class="small-title">
-                HELLO, I'M
-            </div>
-
-            <h1>
-                TAR<span>MING</span>
-            </h1>
-
-            <h2>
-                เสฎฐวุฒิ พลหาญ
-            </h2>
-
-            <p>
-                นักเรียนโรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-                ผู้มีความสนใจด้านวิศวกรรม การบิน อวกาศ
-                และเทคโนโลยีสมัยใหม่
-                พร้อมเรียนรู้และพัฒนาตัวเอง
-                เพื่อก้าวเข้าสู่เส้นทางวิศวกรรมการบินและอวกาศ
-            </p>
-
-            <div class="buttons">
-
-                <a href="#history" class="btn btn-main">
-                    รู้จักผมมากขึ้น
-                </a>
-
-                <a href="#contact" class="btn btn-outline">
-                    ติดต่อผม
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="photo-box">
-
-            <!-- รูปของ TARMING -->
-            <img
-                src="file_000000085d47207b52f2b182e7429b3.png"
-                alt="รูปโปรไฟล์ TARMING"
-            >
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
-     HISTORY
-========================= -->
+<!-- HISTORY -->
 
 <section id="history" class="page">
 
-    <a href="#home" class="back-home">
-        ← กลับหน้าหลัก
-    </a>
+<a href="#home" class="back">← กลับหน้าหลัก</a>
 
-    <h1 class="section-title">
-        ประวัติ
-    </h1>
+<h1 class="title">ประวัติ</h1>
 
-    <div class="section-subtitle">
-        MY PROFILE
-    </div>
+<div class="subtitle">
+MY PROFILE
+</div>
 
-    <div class="card">
+<div class="card">
 
-        <h3>
-            เสฎฐวุฒิ พลหาญ
-        </h3>
+<h3>เสฎฐวุฒิ พลหาญ</h3>
 
-        <p>
-            <strong>ชื่อเล่น:</strong> ต้าหมิง
-        </p>
+<p>
+<strong>ชื่อเล่น:</strong> ต้าหมิง
+</p>
 
-        <p>
-            <strong>ศาสนา:</strong> คริสต์
-        </p>
+<p>
+<strong>ศาสนา:</strong> คริสต์
+</p>
 
-        <p>
-            <strong>ระดับการศึกษา:</strong>
-            ชั้นมัธยมศึกษาปีที่ 6/6
-        </p>
+<p>
+<strong>กำลังศึกษาอยู่:</strong>
+ชั้นมัธยมศึกษาปีที่ 6/6
+</p>
 
-        <p>
-            <strong>แผนการเรียน:</strong> CSE
-        </p>
+<p>
+<strong>แผนการเรียน:</strong> CSE
+</p>
 
-        <p>
-            <strong>สถานศึกษา:</strong>
-            โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-        </p>
+<p>
+<strong>โรงเรียน:</strong>
+โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+</p>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
-     EDUCATION
-========================= -->
+<!-- EDUCATION -->
 
 <section id="education" class="page">
 
-    <a href="#home" class="back-home">
-        ← กลับหน้าหลัก
-    </a>
+<a href="#home" class="back">← กลับหน้าหลัก</a>
 
-    <h1 class="section-title">
-        การศึกษา
-    </h1>
+<h1 class="title">การศึกษา</h1>
 
-    <div class="section-subtitle">
-        EDUCATION
-    </div>
+<div class="subtitle">
+EDUCATION
+</div>
 
+<div class="edu">
 
-    <div class="education-list">
+<h3>ระดับอนุบาล</h3>
 
-        <div class="edu">
+<p>
+โรงเรียนบุญประทีปวิทยาคาร
+</p>
 
-            <h3>
-                ระดับอนุบาล
-            </h3>
+</div>
 
-            <p>
-                โรงเรียนบุญประทีปวิทยาคาร
-            </p>
+<div class="edu">
 
-        </div>
+<h3>ระดับประถมศึกษา</h3>
 
+<p>
+โรงเรียนบุญประทีปวิทยาคาร
+</p>
 
-        <div class="edu">
+</div>
 
-            <h3>
-                ระดับประถมศึกษา
-            </h3>
+<div class="edu">
 
-            <p>
-                โรงเรียนบุญประทีปวิทยาคาร
-            </p>
+<h3>ระดับมัธยมศึกษาตอนต้น</h3>
 
-        </div>
+<p>
+โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+</p>
 
+</div>
 
-        <div class="edu">
+<div class="edu">
 
-            <h3>
-                ระดับมัธยมศึกษาตอนต้น
-            </h3>
+<h3>ระดับมัธยมศึกษาตอนปลาย</h3>
 
-            <p>
-                โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-            </p>
+<p>
+โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+</p>
 
-        </div>
+<p>
+แผนการเรียน CSE
+</p>
 
-
-        <div class="edu">
-
-            <h3>
-                ระดับมัธยมศึกษาตอนปลาย
-            </h3>
-
-            <p>
-                โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-            </p>
-
-            <p>
-                แผนการเรียน CSE
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
-     UNIVERSITY
-========================= -->
+<!-- UNIVERSITY -->
 
 <section id="university" class="page">
 
-    <a href="#home" class="back-home">
-        ← กลับหน้าหลัก
-    </a>
+<a href="#home" class="back">← กลับหน้าหลัก</a>
 
-    <h1 class="section-title">
-        มหาลัย
-    </h1>
+<h1 class="title">มหาลัย</h1>
 
-    <div class="section-subtitle">
-        DREAM UNIVERSITY
-    </div>
+<div class="subtitle">
+DREAM UNIVERSITY
+</div>
 
+<div class="university">
 
-    <div class="university-card">
+<img src="logo-I%20kmutnb.jpg"
+alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ">
 
-        <!-- โลโก้ มจพ. -->
-        <img
-            class="university-logo"
-            src="logo-I%20kmutnb.jpg"
-            alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ"
-        >
+<h2>
+มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
+</h2>
 
-        <h2>
-            มหาวิทยาลัยเทคโนโลยี
-            พระจอมเกล้าพระนครเหนือ
-        </h2>
+<h3>
+คณะวิศวกรรมศาสตร์
+</h3>
 
-        <h3>
-            คณะวิศวกรรมศาสตร์
-        </h3>
+<p>
+สาขาวิศวกรรมการบินและอวกาศ
+</p>
 
-        <p>
-            สาขาวิศวกรรมการบินและอวกาศ
-        </p>
+<p style="margin-top:20px;">
+✈️ มหาวิทยาลัยในฝันของผม
+</p>
 
-        <p style="margin-top:20px;">
-            ✈️ เป้าหมายของผมคือการเข้าศึกษา
-            และพัฒนาความรู้ด้านวิศวกรรมการบินและอวกาศ
-        </p>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
-     SKILLS
-========================= -->
+<!-- SKILLS -->
 
 <section id="skills" class="page">
 
-    <a href="#home" class="back-home">
-        ← กลับหน้าหลัก
-    </a>
+<a href="#home" class="back">← กลับหน้าหลัก</a>
 
-    <h1 class="section-title">
-        ทักษะ
-    </h1>
+<h1 class="title">ทักษะ</h1>
 
-    <div class="section-subtitle">
-        SKILLS & INTERESTS
-    </div>
+<div class="subtitle">
+SKILLS & INTERESTS
+</div>
 
+<div class="skills">
 
-    <div class="skills-grid">
+<div class="skill">
+<div class="skill-icon">✈️</div>
+<h3>การบิน</h3>
+<p>สนใจด้านอากาศยานและระบบการบิน</p>
+</div>
 
-        <div class="skill">
-            <div class="icon">✈️</div>
-            <h3>การบิน</h3>
-            <p>สนใจเทคโนโลยีและระบบที่เกี่ยวข้องกับอากาศยาน</p>
-        </div>
+<div class="skill">
+<div class="skill-icon">🚀</div>
+<h3>อวกาศ</h3>
+<p>สนใจเทคโนโลยีและการสำรวจอวกาศ</p>
+</div>
 
-        <div class="skill">
-            <div class="icon">🚀</div>
-            <h3>อวกาศ</h3>
-            <p>สนใจเทคโนโลยีอวกาศและการสำรวจอวกาศ</p>
-        </div>
+<div class="skill">
+<div class="skill-icon">💻</div>
+<h3>เทคโนโลยี</h3>
+<p>สนใจเทคโนโลยีและนวัตกรรมใหม่ๆ</p>
+</div>
 
-        <div class="skill">
-            <div class="icon">💻</div>
-            <h3>เทคโนโลยี</h3>
-            <p>สนใจการเรียนรู้เทคโนโลยีและนวัตกรรมใหม่ๆ</p>
-        </div>
+<div class="skill">
+<div class="skill-icon">🔧</div>
+<h3>การแก้ปัญหา</h3>
+<p>ชอบคิดวิเคราะห์และแก้ไขปัญหา</p>
+</div>
 
-        <div class="skill">
-            <div class="icon">🔧</div>
-            <h3>การแก้ปัญหา</h3>
-            <p>ชอบเรียนรู้และแก้ไขปัญหาอย่างเป็นระบบ</p>
-        </div>
+<div class="skill">
+<div class="skill-icon">🤝</div>
+<h3>การทำงานเป็นทีม</h3>
+<p>สามารถทำงานร่วมกับผู้อื่นได้ดี</p>
+</div>
 
-        <div class="skill">
-            <div class="icon">🤝</div>
-            <h3>การทำงานเป็นทีม</h3>
-            <p>สามารถทำงานร่วมกับผู้อื่นและแลกเปลี่ยนความคิดเห็น</p>
-        </div>
+<div class="skill">
+<div class="skill-icon">📚</div>
+<h3>การเรียนรู้</h3>
+<p>พร้อมเรียนรู้และพัฒนาตัวเอง</p>
+</div>
 
-        <div class="skill">
-            <div class="icon">📚</div>
-            <h3>การเรียนรู้</h3>
-            <p>พร้อมเรียนรู้สิ่งใหม่และพัฒนาตัวเองอยู่เสมอ</p>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
-     RESEARCH
-========================= -->
+<!-- RESEARCH / PROJECT -->
 
 <section id="research" class="page">
 
-    <a href="#home" class="back-home">
-        ← กลับหน้าหลัก
-    </a>
+<a href="#home" class="back">← กลับหน้าหลัก</a>
 
-    <h1 class="section-title">
-        ผลงานวิจัย
-    </h1>
+<h1 class="title">ผลงานวิจัย</h1>
 
-    <div class="section-subtitle">
-        RESEARCH & PROJECTS
-    </div>
+<div class="subtitle">
+MY PROJECTS
+</div>
+
+<div class="projects">
 
 
-    <div class="work-grid">
+<!-- รูปที่ 1 -->
 
-        <div class="work">
+<div class="project">
 
-            <h3>
-                🔬 ผลงานวิจัยที่ 01
-            </h3>
+<img src="1789097279748.jpg"
+alt="กิจกรรมและการแข่งขัน">
 
-            <p>
-                พื้นที่สำหรับนำเสนอผลงานวิจัย
-                โครงงาน หรือกิจกรรมที่เกี่ยวข้องกับ
-                วิทยาศาสตร์ วิศวกรรม และเทคโนโลยี
-            </p>
+<div class="project-info">
 
-        </div>
+<h3>
+🤖 กิจกรรมและการแข่งขัน
+</h3>
 
+<p>
+การเข้าร่วมกิจกรรมและการทำงานร่วมกับทีม
+ด้านเทคโนโลยีและหุ่นยนต์
+</p>
 
-        <div class="work">
+</div>
 
-            <h3>
-                🚀 โครงงานด้านเทคโนโลยี
-            </h3>
-
-            <p>
-                สามารถเพิ่มรายละเอียดเกี่ยวกับ
-                โครงงาน สิ่งที่ได้เรียนรู้
-                และทักษะที่ได้รับจากการทำโครงงาน
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="work">
+<!-- รูปที่ 2 -->
 
-            <h3>
-                ✈️ ความสนใจด้านการบิน
-            </h3>
+<div class="project">
 
-            <p>
-                ศึกษาและเรียนรู้เกี่ยวกับอากาศยาน
-                ระบบการบิน และเทคโนโลยี
-                ที่เกี่ยวข้องกับอุตสาหกรรมการบิน
-            </p>
+<img src="1789097318177.jpg"
+alt="โครงงานหุ่นยนต์">
 
-        </div>
+<div class="project-info">
+
+<h3>
+🤖 โครงงานหุ่นยนต์
+</h3>
+
+<p>
+ผลงานการสร้างและพัฒนาหุ่นยนต์
+เพื่อใช้ในการแข่งขันและกิจกรรมด้านเทคโนโลยี
+</p>
+
+</div>
+
+</div>
 
 
-        <div class="work">
+<!-- รูปที่ 3 -->
 
-            <h3>
-                💡 ผลงานอื่นๆ
-            </h3>
+<div class="project">
 
-            <p>
-                สามารถเพิ่มรูปภาพ ใบประกาศ
-                หรือผลงานต่างๆ ของ TARMING
-                ในส่วนนี้ได้
-            </p>
+<img src="1789097279748.jpg"
+alt="ผลงานออกแบบอาคาร">
 
-        </div>
+<div class="project-info">
 
-    </div>
+<h3>
+🏢 ผลงานการออกแบบ
+</h3>
+
+<p>
+ผลงานการออกแบบอาคารด้วยโปรแกรมคอมพิวเตอร์
+แสดงถึงความสนใจด้านการออกแบบและเทคโนโลยี
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- CONTACT -->
 
 <section id="contact" class="page">
 
-    <a href="#home" class="back-home">
-        ← กลับหน้าหลัก
-    </a>
+<a href="#home" class="back">← กลับหน้าหลัก</a>
 
-    <h1 class="section-title">
-        ติดต่อผม
-    </h1>
+<h1 class="title">ติดต่อผม</h1>
 
-    <div class="section-subtitle">
-        CONTACT ME
-    </div>
+<div class="subtitle">
+CONTACT ME
+</div>
 
+<div class="contact">
 
-    <div class="contact-box">
+<div class="contact-item">
 
-        <div class="contact-item">
+<h3>👤 ชื่อ</h3>
 
-            <div class="contact-icon">
-                📧
-            </div>
+<p>
+เสฎฐวุฒิ พลหาญ
+</p>
 
-            <div>
-                <h3>อีเมล</h3>
+</div>
 
-                <a href="mailto:Tarmingx2@gmail.com">
-                    Tarmingx2@gmail.com
-                </a>
-            </div>
+<div class="contact-item">
 
-        </div>
+<h3>📧 Email</h3>
 
+<a href="mailto:Tarmingx2@gmail.com">
+Tarmingx2@gmail.com
+</a>
 
-        <div class="contact-item">
+</div>
 
-            <div class="contact-icon">
-                📸
-            </div>
+<div class="contact-item">
 
-            <div>
-                <h3>Instagram</h3>
+<h3>📸 Instagram</h3>
 
-                <a
-                    href="https://www.instagram.com/lux_rtsp_9?stkn=MTR1ZTRuOGNnMzcybg=="
-                    target="_blank"
-                >
-                    @lux_rtsp_9
-                </a>
+<a href="https://www.instagram.com/lux_rtsp_9"
+target="_blank">
 
-            </div>
+@lux_rtsp_9
 
-        </div>
+</a>
 
+</div>
 
-        <div class="contact-item">
-
-            <div class="contact-icon">
-                👤
-            </div>
-
-            <div>
-
-                <h3>
-                    ชื่อ
-                </h3>
-
-                <p>
-                    เสฎฐวุฒิ พลหาญ
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
-    <p>
-        © 2026 <span>TARMING</span> Portfolio
-    </p>
+<p>
+© 2026 <span>TARMING</span> Portfolio
+</p>
 
-    <p>
-        เสฎฐวุฒิ พลหาญ
-    </p>
+<p>
+เสฎฐวุฒิ พลหาญ
+</p>
 
 </footer>
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
 function toggleMenu(){
 
-    const menu = document.getElementById("menu");
-
-    menu.classList.toggle("active");
+document
+.getElementById("menu")
+.classList
+.toggle("active");
 
 }
 
 function closeMenu(){
 
-    const menu = document.getElementById("menu");
-
-    menu.classList.remove("active");
+document
+.getElementById("menu")
+.classList
+.remove("active");
 
 }
-
-
-/* เปลี่ยนหน้าเมื่อกดเมนู */
 
 function showPage(){
 
-    const hash = window.location.hash || "#home";
+let hash=window.location.hash || "#home";
 
-    document.querySelectorAll(".page").forEach(page => {
+document
+.querySelectorAll(".page")
+.forEach(function(page){
 
-        page.classList.remove("active");
+page.classList.remove("active");
 
-    });
+});
 
-    const target = document.querySelector(hash);
+let target=document.querySelector(hash);
 
-    if(target){
+if(target){
 
-        target.classList.add("active");
+target.classList.add("active");
 
-    }
+}else{
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+document
+.querySelector("#home")
+.classList
+.add("active");
 
 }
 
+window.scrollTo(0,0);
 
-/* ทำงานเมื่อเปลี่ยนเมนู */
+}
 
-window.addEventListener("hashchange", showPage);
-
-
-/* เปิดเว็บครั้งแรก */
+window.addEventListener(
+"hashchange",
+showPage
+);
 
 showPage();
 
