@@ -8,9 +8,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -19,14 +24,14 @@
     }
 
     :root {
-      --bg: #08090d;
-      --card: #11131a;
-      --card2: #171a22;
+      --bg: #06080d;
+      --card: #10141c;
+      --card2: #171c26;
       --text: #f5f7ff;
-      --muted: #a8adbd;
-      --line: rgba(255,255,255,.09);
-      --accent: #66d9ff;
-      --accent2: #8d7dff;
+      --muted: #a9b0c2;
+      --line: rgba(255,255,255,0.09);
+      --blue: #4ddcff;
+      --purple: #8175ff;
     }
 
     body {
@@ -34,15 +39,16 @@
       background:
         radial-gradient(
           circle at 80% 10%,
-          rgba(102,217,255,.12),
-          transparent 28%
+          rgba(77,220,255,0.13),
+          transparent 30%
         ),
         radial-gradient(
-          circle at 10% 40%,
-          rgba(141,125,255,.10),
-          transparent 28%
+          circle at 10% 50%,
+          rgba(129,117,255,0.10),
+          transparent 30%
         ),
         var(--bg);
+
       color: var(--text);
       line-height: 1.7;
     }
@@ -52,166 +58,72 @@
       text-decoration: none;
     }
 
-    /* NAVBAR */
+    /* =========================
+       NAVBAR
+    ========================= */
+
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(8,9,13,.78);
-      backdrop-filter: blur(14px);
+
+      background: rgba(6,8,13,0.82);
+      backdrop-filter: blur(15px);
+
       border-bottom: 1px solid var(--line);
     }
 
-    .nav-inner {
+    .nav-container {
       max-width: 1150px;
       margin: auto;
-      padding: 18px 24px;
+
+      padding: 18px 25px;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 700;
       letter-spacing: 2px;
     }
 
     .logo span {
-      color: var(--accent);
+      color: var(--blue);
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
+      gap: 24px;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--muted);
-      transition: .25s;
+      transition: 0.3s;
     }
 
     .nav-links a:hover {
-      color: var(--accent);
+      color: var(--blue);
     }
 
-    /* SECTIONS */
+    /* =========================
+       GENERAL
+    ========================= */
+
     section {
       max-width: 1150px;
       margin: auto;
-      padding: 100px 24px;
+      padding: 100px 25px;
     }
 
-    /* HERO */
-    #home {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      align-items: center;
-      gap: 60px;
-      padding-top: 140px;
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      font-size: 1rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-size: clamp(3.5rem, 10vw, 7rem);
-      line-height: .95;
-      letter-spacing: -2px;
-      margin-bottom: 18px;
-    }
-
-    h1 span {
-      background: linear-gradient(
-        90deg,
-        var(--accent),
-        var(--accent2)
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-title {
-      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-      color: #dfe4f4;
-      margin-bottom: 18px;
-    }
-
-    .hero-text {
-      color: var(--muted);
-      max-width: 650px;
-      font-size: 1.05rem;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 14px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 12px 22px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      transition: .25s;
-    }
-
-    .btn.primary {
-      background: linear-gradient(
-        90deg,
-        var(--accent),
-        var(--accent2)
-      );
-      color: #07080c;
-      font-weight: 600;
-      border: none;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    /* PHOTO */
-    .photo-card {
-      min-height: 430px;
-      border-radius: 30px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(
-          145deg,
-          rgba(102,217,255,.10),
-          rgba(141,125,255,.08)
-        ),
-        var(--card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      box-shadow: 0 25px 80px rgba(0,0,0,.35);
-    }
-
-    .photo-placeholder {
-      color: #777d91;
-      font-size: 1.2rem;
-      letter-spacing: 2px;
-    }
-
-    /* HEADINGS */
     .section-title {
       font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 12px;
+      margin-bottom: 5px;
     }
 
     .section-subtitle {
@@ -219,133 +131,402 @@
       margin-bottom: 35px;
     }
 
-    /* BOX */
-    .about-box,
-    .contact-box {
-      background: var(--card);
+    /* =========================
+       HERO
+    ========================= */
+
+    #home {
+      min-height: 100vh;
+
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+
+      align-items: center;
+
+      gap: 60px;
+
+      padding-top: 140px;
+    }
+
+    .hello {
+      color: var(--blue);
+      letter-spacing: 4px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-name {
+      font-size: clamp(4rem, 10vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+
+      background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple)
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .real-name {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 23px;
+      border-radius: 12px;
+
       border: 1px solid var(--line);
+
+      background: var(--card);
+
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    .btn-primary {
+      border: none;
+
+      background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple)
+      );
+
+      color: #05070b;
+      font-weight: 600;
+    }
+
+    /* =========================
+       PROFILE IMAGE
+    ========================= */
+
+    .profile-card {
+      width: 100%;
+      max-width: 430px;
+
+      margin: auto;
+
+      border-radius: 30px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--line);
+
+      background: var(--card);
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.4);
+    }
+
+    .profile-card img {
+      width: 100%;
+
+      height: 500px;
+
+      display: block;
+
+      object-fit: cover;
+
+      object-position: center top;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-box {
+      padding: 32px;
+
       border-radius: 22px;
-      padding: 30px;
+
+      background: var(--card);
+
+      border: 1px solid var(--line);
     }
 
     .about-box p {
-      color: #c5c9d6;
+      color: #c8cdd9;
       font-size: 1.08rem;
     }
 
-    /* EDUCATION */
+    .highlight {
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    /* =========================
+       EDUCATION
+    ========================= */
+
     .education-card {
-      padding: 30px;
-      background: var(--card);
-      border: 1px solid var(--line);
+      padding: 32px;
+
       border-radius: 22px;
+
+      background: var(--card);
+
+      border: 1px solid var(--line);
+
+      transition: 0.3s;
+    }
+
+    .education-card:hover {
+      transform: translateY(-5px);
+
+      border-color: rgba(77,220,255,0.4);
+    }
+
+    .education-icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
     }
 
     .education-card h3 {
       font-size: 1.5rem;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
-    .education-card .school {
-      color: var(--accent);
+    .school-name {
+      color: var(--blue);
       font-size: 1.1rem;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .education-card p {
       color: var(--muted);
     }
 
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
+    /* =========================
+       GOAL
+    ========================= */
 
-    .card {
-      background: var(--card);
+    .goal-card {
+      position: relative;
+
+      padding: 40px;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(77,220,255,0.08),
+          rgba(129,117,255,0.10)
+        ),
+        var(--card);
+
       border: 1px solid var(--line);
-      padding: 26px;
-      border-radius: 20px;
-      transition: .25s;
+
+      overflow: hidden;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(102,217,255,.35);
+    .goal-card::after {
+      content: "🚀";
+
+      position: absolute;
+
+      right: 35px;
+      bottom: 15px;
+
+      font-size: 7rem;
+
+      opacity: 0.08;
     }
 
-    .icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
+    .goal-label {
+      color: var(--blue);
+
+      font-size: 0.95rem;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 10px;
     }
 
-    .card h3 {
+    .goal-card h3 {
+      font-size: 1.8rem;
       margin-bottom: 8px;
     }
 
-    .card p {
-      color: var(--muted);
+    .goal-major {
+      color: var(--blue);
+      font-size: 1.2rem;
     }
 
-    /* PROJECTS */
-    .project-card {
-      min-height: 210px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
     }
 
-    .project-card .tag {
-      display: inline-block;
-      width: fit-content;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(102,217,255,.1);
-      color: var(--accent);
-      font-size: .85rem;
+    .skill-card {
+      padding: 28px;
+
+      border-radius: 20px;
+
+      background: var(--card);
+
+      border: 1px solid var(--line);
+
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+
+      border-color:
+        rgba(77,220,255,0.35);
+    }
+
+    .skill-icon {
+      font-size: 2.2rem;
+
       margin-bottom: 12px;
     }
 
-    /* CONTACT */
+    .skill-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .project-card {
+      min-height: 220px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+    }
+
+    .project-number {
+      display: inline-block;
+
+      width: fit-content;
+
+      padding: 5px 12px;
+
+      border-radius: 50px;
+
+      background:
+        rgba(77,220,255,0.1);
+
+      color: var(--blue);
+
+      font-size: 0.85rem;
+
+      margin-bottom: 12px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-box {
+      padding: 30px;
+
+      background: var(--card);
+
+      border: 1px solid var(--line);
+
+      border-radius: 22px;
+    }
+
     .contact-list {
       display: grid;
-      gap: 14px;
+
+      gap: 15px;
     }
 
     .contact-item {
-      padding: 17px 20px;
-      border-radius: 14px;
+      display: block;
+
+      padding: 18px 20px;
+
       background: var(--card2);
+
       border: 1px solid var(--line);
-      transition: .25s;
+
+      border-radius: 15px;
+
+      transition: 0.3s;
     }
 
     .contact-item:hover {
-      transform: translateX(5px);
-      border-color: rgba(102,217,255,.4);
+      transform: translateX(6px);
+
+      border-color:
+        rgba(77,220,255,0.4);
     }
 
     .contact-item strong {
       display: block;
-      margin-bottom: 2px;
+
+      margin-bottom: 3px;
     }
 
     .contact-item span {
       color: var(--muted);
+
       word-break: break-word;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
       text-align: center;
+
       padding: 35px 20px;
-      color: #74798b;
-      border-top: 1px solid var(--line);
+
+      color: #747b8d;
+
+      border-top:
+        1px solid var(--line);
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 800px) {
 
       .nav-links {
@@ -354,11 +535,22 @@
 
       #home {
         grid-template-columns: 1fr;
-        gap: 35px;
+
+        gap: 40px;
+
+        padding-top: 130px;
       }
 
-      .photo-card {
-        min-height: 300px;
+      .hero-name {
+        font-size: 4.5rem;
+      }
+
+      .profile-card {
+        max-width: 100%;
+      }
+
+      .profile-card img {
+        height: 470px;
       }
 
       .grid {
@@ -366,66 +558,134 @@
       }
 
       section {
-        padding: 80px 20px;
+        padding:
+          80px 20px;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- NAVBAR -->
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
   <nav>
-    <div class="nav-inner">
+
+    <div class="nav-container">
 
       <a href="#home" class="logo">
         TAR<span>MING</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="#home">หน้าหลัก</a></li>
-        <li><a href="#about">เกี่ยวกับผม</a></li>
-        <li><a href="#education">การศึกษา</a></li>
-        <li><a href="#skills">ทักษะ</a></li>
-        <li><a href="#projects">ผลงาน</a></li>
-        <li><a href="#contact">ติดต่อ</a></li>
+
+        <li>
+          <a href="#home">
+            หน้าหลัก
+          </a>
+        </li>
+
+        <li>
+          <a href="#about">
+            เกี่ยวกับผม
+          </a>
+        </li>
+
+        <li>
+          <a href="#education">
+            การศึกษา
+          </a>
+        </li>
+
+        <li>
+          <a href="#goal">
+            เป้าหมาย
+          </a>
+        </li>
+
+        <li>
+          <a href="#skills">
+            ทักษะ
+          </a>
+        </li>
+
+        <li>
+          <a href="#projects">
+            ผลงาน
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            ติดต่อ
+          </a>
+        </li>
+
       </ul>
 
     </div>
+
   </nav>
 
 
-  <!-- HOME -->
+  <!-- =========================
+       HOME
+  ========================= -->
+
   <section id="home">
 
     <div>
 
-      <div class="eyebrow">
+      <div class="hello">
         HELLO, I'M
       </div>
 
-      <h1>
-        <span>TARMING</span>
+      <h1 class="hero-name">
+        TARMING
       </h1>
 
-      <div class="hero-title">
+      <div class="real-name">
         เสฎฐวุฒิ พลหาญ
       </div>
 
-      <p class="hero-text">
-        นักเรียนโรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
-        ผู้มีความสนใจด้านวิศวกรรม การบิน และเทคโนโลยีอวกาศ
+      <p class="hero-description">
+
+        นักเรียนโรงเรียนบ้านบึง
+        อุตสาหกรรมนุเคราะห์
+
+        <br>
+
+        ผู้มีความสนใจด้าน
+        <span class="highlight">
+          วิศวกรรม การบิน และเทคโนโลยีอวกาศ
+        </span>
+
         พร้อมเรียนรู้และพัฒนาตัวเอง
-        เพื่อก้าวเข้าสู่เส้นทางวิศวกรรมการบินและอวกาศ
+        เพื่อก้าวเข้าสู่เส้นทาง
+        วิศวกรรมการบินและอวกาศในอนาคต
+
       </p>
+
 
       <div class="buttons">
 
-        <a href="#about" class="btn primary">
+        <a
+          href="#about"
+          class="btn btn-primary"
+        >
           รู้จักผมมากขึ้น
         </a>
 
-        <a href="#contact" class="btn">
+        <a
+          href="#contact"
+          class="btn"
+        >
           ติดต่อผม
         </a>
 
@@ -434,30 +694,24 @@
     </div>
 
 
-    <div class="photo-card">
+    <!-- PROFILE IMAGE -->
 
-      <div class="photo-placeholder">
+    <div class="profile-card">
 
-        ✈️
-
-        <br>
-
-        YOUR PHOTO
-
-        <br>
-
-        <small>
-          ใส่รูปของคุณตรงนี้
-        </small>
-
-      </div>
+      <img
+        src="file_0000000085d47207b52f2b182e7429b3.png"
+        alt="TARMING - เสฎฐวุฒิ พลหาญ"
+      >
 
     </div>
 
   </section>
 
 
-  <!-- ABOUT -->
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
   <section id="about">
 
     <h2 class="section-title">
@@ -468,24 +722,35 @@
       About Me
     </p>
 
+
     <div class="about-box">
 
       <p>
 
         สวัสดีครับ ผมชื่อ
-        <strong>TARMING</strong>
+        <span class="highlight">
+          TARMING
+        </span>
+
         หรือ
-        <strong>เสฎฐวุฒิ พลหาญ</strong>
+        <span class="highlight">
+          เสฎฐวุฒิ พลหาญ
+        </span>
 
         ปัจจุบันเป็นนักเรียน
-        <strong>โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์</strong>
+        <span class="highlight">
+          โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+        </span>
 
         ผมมีความสนใจในด้านวิศวกรรม
-        โดยเฉพาะเทคโนโลยีการบินและอวกาศ
+        โดยเฉพาะด้านการบินและอวกาศ
 
-        และมีเป้าหมายที่จะศึกษาต่อในระดับมหาวิทยาลัย
-        เพื่อพัฒนาความรู้ ความสามารถ
-        และสร้างผลงานที่เกี่ยวข้องกับสายงานนี้ในอนาคต
+        ผมชอบเรียนรู้สิ่งใหม่ ๆ
+        และต้องการพัฒนาความรู้
+        และความสามารถของตัวเอง
+
+        โดยมีเป้าหมายที่จะศึกษาต่อ
+        ในสายวิศวกรรมการบินและอวกาศ
 
       </p>
 
@@ -494,7 +759,10 @@
   </section>
 
 
-  <!-- EDUCATION -->
+  <!-- =========================
+       EDUCATION
+  ========================= -->
+
   <section id="education">
 
     <h2 class="section-title">
@@ -505,19 +773,29 @@
       Education
     </p>
 
+
     <div class="education-card">
+
+      <div class="education-icon">
+        🏫
+      </div>
 
       <h3>
         นักเรียนระดับมัธยมศึกษา
       </h3>
 
-      <div class="school">
+      <div class="school-name">
         โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
       </div>
 
       <p>
-        กำลังเตรียมความพร้อม
+
+        กำลังศึกษาและเตรียมความพร้อม
         เพื่อศึกษาต่อในระดับมหาวิทยาลัย
+
+        โดยมีความสนใจและเป้าหมาย
+        ในสายวิศวกรรมการบินและอวกาศ
+
       </p>
 
     </div>
@@ -525,8 +803,11 @@
   </section>
 
 
-  <!-- UNIVERSITY GOAL -->
-  <section>
+  <!-- =========================
+       UNIVERSITY GOAL
+  ========================= -->
+
+  <section id="goal">
 
     <h2 class="section-title">
       เป้าหมายในอนาคต
@@ -536,13 +817,18 @@
       My University Goal
     </p>
 
-    <div class="education-card">
+
+    <div class="goal-card">
+
+      <div class="goal-label">
+        DREAM UNIVERSITY
+      </div>
 
       <h3>
         มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
       </h3>
 
-      <div class="school">
+      <div class="goal-major">
         คณะวิศวกรรมศาสตร์
       </div>
 
@@ -555,7 +841,10 @@
   </section>
 
 
-  <!-- SKILLS -->
+  <!-- =========================
+       SKILLS
+  ========================= -->
+
   <section id="skills">
 
     <h2 class="section-title">
@@ -566,74 +855,132 @@
       Skills & Interests
     </p>
 
+
     <div class="grid">
 
-      <div class="card">
-        <div class="icon">✈️</div>
-        <h3>การบิน</h3>
+
+      <div class="skill-card">
+
+        <div class="skill-icon">
+          ✈️
+        </div>
+
+        <h3>
+          การบิน
+        </h3>
+
         <p>
-          สนใจเทคโนโลยีและระบบ
-          ที่เกี่ยวข้องกับอากาศยาน
+          สนใจเทคโนโลยี
+          และระบบที่เกี่ยวข้อง
+          กับอากาศยาน
         </p>
+
       </div>
 
 
-      <div class="card">
-        <div class="icon">🚀</div>
-        <h3>อวกาศ</h3>
+      <div class="skill-card">
+
+        <div class="skill-icon">
+          🚀
+        </div>
+
+        <h3>
+          อวกาศ
+        </h3>
+
         <p>
           สนใจเทคโนโลยีอวกาศ
           จรวด และการสำรวจอวกาศ
         </p>
+
       </div>
 
 
-      <div class="card">
-        <div class="icon">⚙️</div>
-        <h3>วิศวกรรม</h3>
+      <div class="skill-card">
+
+        <div class="skill-icon">
+          ⚙️
+        </div>
+
+        <h3>
+          วิศวกรรม
+        </h3>
+
         <p>
-          ต้องการพัฒนาทักษะด้าน
-          วิทยาศาสตร์ คณิตศาสตร์
-          และการแก้ปัญหา
+          สนใจการออกแบบ
+          การแก้ปัญหา
+          และเทคโนโลยี
         </p>
+
       </div>
 
 
-      <div class="card">
-        <div class="icon">💡</div>
-        <h3>การเรียนรู้</h3>
-        <p>
-          พร้อมเรียนรู้สิ่งใหม่
-          และพัฒนาตัวเองอย่างต่อเนื่อง
-        </p>
-      </div>
+      <div class="skill-card">
 
+        <div class="skill-icon">
+          💻
+        </div>
 
-      <div class="card">
-        <div class="icon">🤝</div>
-        <h3>การทำงานเป็นทีม</h3>
-        <p>
-          ให้ความสำคัญกับการสื่อสาร
-          และการทำงานร่วมกับผู้อื่น
-        </p>
-      </div>
+        <h3>
+          เทคโนโลยี
+        </h3>
 
-
-      <div class="card">
-        <div class="icon">💻</div>
-        <h3>เทคโนโลยี</h3>
         <p>
           สนใจการนำเทคโนโลยี
-          มาประยุกต์ใช้ในการสร้างผลงาน
+          มาประยุกต์ใช้
+          ในการสร้างผลงาน
         </p>
+
       </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-icon">
+          🧠
+        </div>
+
+        <h3>
+          การเรียนรู้
+        </h3>
+
+        <p>
+          พร้อมเรียนรู้สิ่งใหม่
+          และพัฒนาตัวเอง
+          อย่างต่อเนื่อง
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-icon">
+          🤝
+        </div>
+
+        <h3>
+          การทำงานเป็นทีม
+        </h3>
+
+        <p>
+          ให้ความสำคัญกับ
+          การสื่อสาร
+          และการทำงานร่วมกับผู้อื่น
+        </p>
+
+      </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- PROJECTS -->
+  <!-- =========================
+       PROJECTS
+  ========================= -->
+
   <section id="projects">
 
     <h2 class="section-title">
@@ -644,11 +991,13 @@
       Projects
     </p>
 
+
     <div class="grid">
 
-      <div class="card project-card">
 
-        <span class="tag">
+      <div class="skill-card project-card">
+
+        <span class="project-number">
           PROJECT 01
         </span>
 
@@ -657,17 +1006,17 @@
         </h3>
 
         <p>
-          สามารถเพิ่มรายละเอียดโครงงาน
-          กิจกรรม หรือผลงานที่ภาคภูมิใจ
-          ได้ที่นี่
+          เพิ่มโครงงาน
+          หรือผลงานที่ภาคภูมิใจ
+          ของคุณได้ที่นี่
         </p>
 
       </div>
 
 
-      <div class="card project-card">
+      <div class="skill-card project-card">
 
-        <span class="tag">
+        <span class="project-number">
           PROJECT 02
         </span>
 
@@ -676,16 +1025,18 @@
         </h3>
 
         <p>
-          เพิ่มกิจกรรม ค่ายวิศวกรรม
-          การแข่งขัน หรือกิจกรรมในโรงเรียน
+          เพิ่มกิจกรรม
+          ค่ายวิศวกรรม
+          การแข่งขัน
+          หรือกิจกรรมในโรงเรียน
         </p>
 
       </div>
 
 
-      <div class="card project-card">
+      <div class="skill-card project-card">
 
-        <span class="tag">
+        <span class="project-number">
           PROJECT 03
         </span>
 
@@ -694,18 +1045,23 @@
         </h3>
 
         <p>
-          พื้นที่สำหรับเพิ่มผลงานใหม่ ๆ
+          พื้นที่สำหรับเพิ่ม
+          ผลงานใหม่ ๆ
           ที่จะสร้างขึ้นในอนาคต
         </p>
 
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
   <section id="contact">
 
     <h2 class="section-title">
@@ -716,11 +1072,14 @@
       Contact Me
     </p>
 
+
     <div class="contact-box">
 
       <div class="contact-list">
 
+
         <!-- EMAIL -->
+
         <a
           class="contact-item"
           href="mailto:Tarmingx2@gmail.com"
@@ -738,10 +1097,14 @@
 
 
         <!-- INSTAGRAM -->
+
         <a
           class="contact-item"
+
           href="https://www.instagram.com/lux_rtsp_9?stkn=MTR1ZTRuOGNnMzcybg=="
+
           target="_blank"
+
           rel="noopener noreferrer"
         >
 
@@ -750,10 +1113,12 @@
           </strong>
 
           <span>
-            @lux_rtsp_9 — กดเพื่อเข้าสู่ Instagram
+            @lux_rtsp_9
+            — กดเพื่อเข้าสู่ Instagram
           </span>
 
         </a>
+
 
       </div>
 
@@ -762,12 +1127,16 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
 
     © 2026 TARMING — Portfolio
 
   </footer>
+
 
 </body>
 </html>
