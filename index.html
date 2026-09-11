@@ -19,7 +19,7 @@
 
 body{
     font-family:'Kanit',sans-serif;
-    background:#fff;
+    background:#ffffff;
     color:#222;
 }
 
@@ -41,7 +41,7 @@ header{
 }
 
 .logo{
-    font-size:27px;
+    font-size:28px;
     font-weight:700;
 }
 
@@ -50,13 +50,14 @@ header{
 }
 
 .menu-btn{
-    width:55px;
-    height:55px;
-    border:0;
-    border-radius:12px;
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:14px;
     background:#f36f21;
     color:#fff;
-    font-size:30px;
+    font-size:32px;
+    cursor:pointer;
 }
 
 /* MENU */
@@ -83,7 +84,7 @@ header{
 .menu h2{
     text-align:center;
     margin-bottom:25px;
-    color:#f36f21;
+    color:#444;
 }
 
 .menu-grid{
@@ -105,7 +106,7 @@ header{
 
 .menu-item:hover{
     background:#f36f21;
-    color:#fff;
+    color:white;
 }
 
 .menu-icon{
@@ -194,15 +195,18 @@ header{
 .photo{
     max-width:430px;
     margin:auto;
-    border:3px solid #f36f21;
+    border:4px solid #f36f21;
     border-radius:25px;
     overflow:hidden;
+    background:#fff;
 }
 
 .photo img{
     width:100%;
     display:block;
 }
+
+/* BUTTON */
 
 .buttons{
     margin-top:25px;
@@ -214,6 +218,7 @@ header{
     padding:13px 25px;
     border-radius:10px;
     margin-right:10px;
+    font-size:17px;
 }
 
 .orange{
@@ -263,11 +268,13 @@ header{
 .edu h3{
     color:#f36f21;
     font-size:23px;
+    margin-bottom:8px;
 }
 
 .edu p{
     color:#555;
     font-size:18px;
+    line-height:1.8;
 }
 
 /* UNIVERSITY */
@@ -281,8 +288,8 @@ header{
 }
 
 .university img{
-    width:180px;
-    height:180px;
+    width:210px;
+    height:210px;
     object-fit:contain;
     margin-bottom:20px;
 }
@@ -300,6 +307,7 @@ header{
 .university p{
     color:#555;
     font-size:20px;
+    margin-top:5px;
 }
 
 /* SKILLS */
@@ -325,6 +333,7 @@ header{
 .skill h3{
     color:#f36f21;
     margin:10px 0;
+    font-size:22px;
 }
 
 .skill p{
@@ -386,6 +395,7 @@ header{
 
 .contact-item h3{
     color:#f36f21;
+    margin-bottom:5px;
 }
 
 .contact-item p,
@@ -416,6 +426,14 @@ footer span{
         grid-template-columns:1fr;
     }
 
+    #home.active{
+        display:block;
+    }
+
+    .home{
+        padding-top:30px;
+    }
+
     .home h1{
         font-size:55px;
     }
@@ -437,13 +455,17 @@ footer span{
         height:auto;
     }
 
+    .photo{
+        margin-top:30px;
+        max-width:360px;
+    }
+
 }
 
 </style>
 </head>
 
 <body>
-
 
 <!-- HEADER -->
 
@@ -526,10 +548,13 @@ TAR<span>MING</span>
 </h2>
 
 <p>
-นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
-แผนการเรียน CSE โรงเรียนบ้านบึง
-อุตสาหกรรมนุเคราะห์
-<br>
+ชื่อเล่น ต้าหมิง<br>
+นักเรียนชั้นมัธยมศึกษาปีที่ 6/6<br>
+แผนการเรียน CSE<br>
+โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+</p>
+
+<p>
 มีความสนใจด้านวิศวกรรม การบิน อวกาศ
 และเทคโนโลยี
 </p>
@@ -551,9 +576,7 @@ TAR<span>MING</span>
 
 <div class="photo">
 
-<!-- เปลี่ยนชื่อรูปตรงนี้เป็นชื่อรูปโปรไฟล์ของแก -->
-
-<img src="file_000000085d47207b52f2b182e7429b3.png"
+<img src="file_0000000085d47207b52f2b182e7429b3.png"
 alt="TARMING">
 
 </div>
@@ -657,7 +680,7 @@ EDUCATION
 </p>
 
 <p>
-แผนการเรียน CSE
+<strong>แผนการเรียน CSE</strong>
 </p>
 
 </div>
@@ -679,7 +702,7 @@ DREAM UNIVERSITY
 
 <div class="university">
 
-<img src="logo-I%20kmutnb.jpg"
+<img src="logo-lkmutnb.jpg"
 alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ">
 
 <h2>
@@ -694,8 +717,8 @@ alt="มหาวิทยาลัยเทคโนโลยีพระจอ
 สาขาวิศวกรรมการบินและอวกาศ
 </p>
 
-<p style="margin-top:20px;">
-✈️ มหาวิทยาลัยในฝันของผม
+<p>
+มหาวิทยาลัยที่ผมใฝ่ฝันและต้องการเข้าศึกษาต่อ
 </p>
 
 </div>
@@ -720,37 +743,49 @@ SKILLS & INTERESTS
 <div class="skill">
 <div class="skill-icon">✈️</div>
 <h3>การบิน</h3>
-<p>สนใจด้านอากาศยานและระบบการบิน</p>
+<p>
+สนใจเทคโนโลยีและระบบที่เกี่ยวข้องกับอากาศยาน
+</p>
 </div>
 
 <div class="skill">
-<div class="skill-icon">🚀</div>
-<h3>อวกาศ</h3>
-<p>สนใจเทคโนโลยีและการสำรวจอวกาศ</p>
+<div class="skill-icon">🤖</div>
+<h3>เทคโนโลยี</h3>
+<p>
+สนใจเทคโนโลยีสมัยใหม่และการสร้างสิ่งประดิษฐ์
+</p>
 </div>
 
 <div class="skill">
 <div class="skill-icon">💻</div>
-<h3>เทคโนโลยี</h3>
-<p>สนใจเทคโนโลยีและนวัตกรรมใหม่ๆ</p>
+<h3>CSE</h3>
+<p>
+เรียนรู้ด้านคอมพิวเตอร์และเทคโนโลยี
+</p>
 </div>
 
 <div class="skill">
 <div class="skill-icon">🔧</div>
-<h3>การแก้ปัญหา</h3>
-<p>ชอบคิดวิเคราะห์และแก้ไขปัญหา</p>
+<h3>การสร้างสรรค์</h3>
+<p>
+ชอบทดลองและสร้างผลงานใหม่ ๆ
+</p>
 </div>
 
 <div class="skill">
 <div class="skill-icon">🤝</div>
 <h3>การทำงานเป็นทีม</h3>
-<p>สามารถทำงานร่วมกับผู้อื่นได้ดี</p>
+<p>
+สามารถทำงานร่วมกับผู้อื่นและแบ่งหน้าที่กันได้
+</p>
 </div>
 
 <div class="skill">
-<div class="skill-icon">📚</div>
-<h3>การเรียนรู้</h3>
-<p>พร้อมเรียนรู้และพัฒนาตัวเอง</p>
+<div class="skill-icon">🚀</div>
+<h3>ความสนใจ</h3>
+<p>
+วิศวกรรม การบิน อวกาศ และเทคโนโลยี
+</p>
 </div>
 
 </div>
@@ -758,7 +793,7 @@ SKILLS & INTERESTS
 </section>
 
 
-<!-- RESEARCH / PROJECT -->
+<!-- RESEARCH / WORK -->
 
 <section id="research" class="page">
 
@@ -773,30 +808,24 @@ MY PROJECTS
 <div class="projects">
 
 
-<!-- รูปที่ 1 -->
-
 <div class="project">
 
 <img src="1789097279748.jpg"
-alt="กิจกรรมและการแข่งขัน">
+alt="กิจกรรมและผลงาน">
 
 <div class="project-info">
 
-<h3>
-🤖 กิจกรรมและการแข่งขัน
-</h3>
+<h3>กิจกรรมและผลงาน</h3>
 
 <p>
-การเข้าร่วมกิจกรรมและการทำงานร่วมกับทีม
-ด้านเทคโนโลยีและหุ่นยนต์
+ภาพกิจกรรมการทำงานร่วมกับทีม
+และการนำเสนอผลงาน
 </p>
 
 </div>
 
 </div>
 
-
-<!-- รูปที่ 2 -->
 
 <div class="project">
 
@@ -805,41 +834,36 @@ alt="โครงงานหุ่นยนต์">
 
 <div class="project-info">
 
-<h3>
-🤖 โครงงานหุ่นยนต์
-</h3>
+<h3>โครงงานหุ่นยนต์</h3>
 
 <p>
-ผลงานการสร้างและพัฒนาหุ่นยนต์
-เพื่อใช้ในการแข่งขันและกิจกรรมด้านเทคโนโลยี
+ผลงานด้านเทคโนโลยีและหุ่นยนต์
+ที่ได้ร่วมพัฒนาและทดลอง
 </p>
 
 </div>
 
 </div>
 
-
-<!-- รูปที่ 3 -->
 
 <div class="project">
 
-<img src="1789097279748.jpg"
-alt="ผลงานออกแบบอาคาร">
+<img src="IMG_20260911_102647_613.jpg"
+alt="ผลงานการออกแบบ">
 
 <div class="project-info">
 
-<h3>
-🏢 ผลงานการออกแบบ
-</h3>
+<h3>ผลงานการออกแบบ</h3>
 
 <p>
-ผลงานการออกแบบอาคารด้วยโปรแกรมคอมพิวเตอร์
-แสดงถึงความสนใจด้านการออกแบบและเทคโนโลยี
+ผลงานการออกแบบและการสร้างสรรค์
+ที่เกี่ยวข้องกับการเรียนรู้ด้านเทคโนโลยี
 </p>
 
 </div>
 
 </div>
+
 
 </div>
 
@@ -865,31 +889,38 @@ CONTACT ME
 <h3>👤 ชื่อ</h3>
 
 <p>
-เสฎฐวุฒิ พลหาญ
+เสฎฐวุฒิ พลหาญ (ต้าหมิง)
 </p>
 
 </div>
 
 <div class="contact-item">
 
-<h3>📧 Email</h3>
+<h3>🏫 สถานศึกษา</h3>
 
-<a href="mailto:Tarmingx2@gmail.com">
-Tarmingx2@gmail.com
-</a>
+<p>
+โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+</p>
 
 </div>
 
 <div class="contact-item">
 
-<h3>📸 Instagram</h3>
+<h3>📚 การศึกษา</h3>
 
-<a href="https://www.instagram.com/lux_rtsp_9"
-target="_blank">
+<p>
+มัธยมศึกษาปีที่ 6/6 แผนการเรียน CSE
+</p>
 
-@lux_rtsp_9
+</div>
 
-</a>
+<div class="contact-item">
+
+<h3>💬 ติดต่อ</h3>
+
+<p>
+สามารถเพิ่มช่องทางติดต่อของผมในส่วนนี้ได้
+</p>
 
 </div>
 
@@ -898,12 +929,10 @@ target="_blank">
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
 <p>
-© 2026 <span>TARMING</span> Portfolio
+© 2026 <span>TARMING PORTFOLIO</span>
 </p>
 
 <p>
@@ -917,57 +946,43 @@ target="_blank">
 
 function toggleMenu(){
 
-document
-.getElementById("menu")
-.classList
-.toggle("active");
+    document.getElementById("menu").classList.toggle("active");
 
 }
 
 function closeMenu(){
 
-document
-.getElementById("menu")
-.classList
-.remove("active");
+    document.getElementById("menu").classList.remove("active");
 
 }
 
 function showPage(){
 
-let hash=window.location.hash || "#home";
+    let hash = window.location.hash;
 
-document
-.querySelectorAll(".page")
-.forEach(function(page){
+    document.querySelectorAll(".page").forEach(function(page){
 
-page.classList.remove("active");
+        page.classList.remove("active");
 
-});
+    });
 
-let target=document.querySelector(hash);
+    let target = document.querySelector(hash);
 
-if(target){
+    if(target){
 
-target.classList.add("active");
+        target.classList.add("active");
 
-}else{
+    }else{
 
-document
-.querySelector("#home")
-.classList
-.add("active");
+        document.getElementById("home").classList.add("active");
 
-}
+    }
 
-window.scrollTo(0,0);
+    window.scrollTo(0,0);
 
 }
 
-window.addEventListener(
-"hashchange",
-showPage
-);
+window.addEventListener("hashchange",showPage);
 
 showPage();
 
