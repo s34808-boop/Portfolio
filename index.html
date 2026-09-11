@@ -18,6 +18,10 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:"Kanit",sans-serif;
     background:#fff;
@@ -28,6 +32,8 @@ body{
 button{
     font-family:inherit;
 }
+
+/* ================= HEADER ================= */
 
 header{
     height:90px;
@@ -69,7 +75,7 @@ header{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.75);
+    background:rgba(0,0,0,.78);
     z-index:5000;
     padding:20px;
     align-items:center;
@@ -99,7 +105,7 @@ header{
 }
 
 .menu-head h2{
-    color:white;
+    color:#fff;
     font-size:27px;
 }
 
@@ -109,8 +115,9 @@ header{
     border-radius:15px;
     border:1px solid #555;
     background:#111;
-    color:white;
+    color:#fff;
     font-size:32px;
+    cursor:pointer;
 }
 
 .menu-title{
@@ -131,7 +138,7 @@ header{
     background:#1b1715;
     border:1px solid #f47721;
     border-radius:18px;
-    color:white;
+    color:#fff;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -153,10 +160,34 @@ header{
     font-size:18px;
 }
 
-/* ================= APP ================= */
+/* ================= PAGE ================= */
 
-#app{
+.page{
+    max-width:1100px;
     min-height:calc(100vh - 90px);
+    margin:auto;
+    padding:60px 6% 90px;
+}
+
+.page h1{
+    font-size:55px;
+    line-height:1.2;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#df7838;
+    letter-spacing:5px;
+    font-size:20px;
+    margin-bottom:40px;
+}
+
+.back{
+    display:inline-block;
+    color:#df7838;
+    font-size:20px;
+    margin-bottom:35px;
+    cursor:pointer;
 }
 
 /* ================= HOME ================= */
@@ -237,34 +268,6 @@ header{
     display:block;
 }
 
-/* ================= COMMON PAGE ================= */
-
-.page{
-    max-width:1100px;
-    min-height:calc(100vh - 90px);
-    margin:auto;
-    padding:60px 6% 100px;
-}
-
-.back{
-    color:#df7838;
-    font-size:20px;
-    margin-bottom:35px;
-    cursor:pointer;
-}
-
-.page h1{
-    font-size:55px;
-    margin-bottom:5px;
-}
-
-.subtitle{
-    color:#df7838;
-    letter-spacing:5px;
-    font-size:20px;
-    margin-bottom:40px;
-}
-
 /* ================= HISTORY ================= */
 
 .history-photo{
@@ -282,7 +285,7 @@ header{
 }
 
 .card{
-    background:white;
+    background:#fff;
     border:1px solid #eee;
     border-left:6px solid #f47721;
     border-radius:24px;
@@ -299,7 +302,7 @@ header{
 .info{
     font-size:18px;
     line-height:1.9;
-    margin:7px 0;
+    margin:8px 0;
 }
 
 .info strong{
@@ -310,7 +313,7 @@ header{
 
 .education{
     display:grid;
-    gap:18px;
+    gap:20px;
 }
 
 .edu{
@@ -318,19 +321,20 @@ header{
     border:1px solid #eee;
     border-left:6px solid #f47721;
     border-radius:20px;
-    padding:25px;
+    padding:28px;
     box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
 .edu h2{
     color:#e87532;
-    font-size:24px;
-    margin-bottom:7px;
+    font-size:25px;
+    margin-bottom:8px;
 }
 
 .edu p{
     color:#555;
     font-size:18px;
+    line-height:1.7;
 }
 
 /* ================= UNIVERSITY ================= */
@@ -340,14 +344,7 @@ header{
     background:#fffaf5;
     border:2px solid #e87532;
     border-radius:28px;
-    padding:40px 25px;
-}
-
-.uni img{
-    width:230px;
-    height:230px;
-    object-fit:contain;
-    margin-bottom:20px;
+    padding:45px 25px;
 }
 
 .uni h2{
@@ -358,11 +355,13 @@ header{
 .uni h3{
     color:#e87532;
     font-size:25px;
+    margin-bottom:10px;
 }
 
 .uni p{
     color:#666;
     font-size:19px;
+    line-height:1.8;
 }
 
 /* ================= SKILLS ================= */
@@ -395,22 +394,15 @@ header{
 
 .research{
     display:grid;
-    gap:30px;
+    gap:25px;
 }
 
 .project{
     border:1px solid #eee;
-    border-radius:25px;
-    padding:20px;
+    border-left:6px solid #f47721;
+    border-radius:22px;
+    padding:28px;
     box-shadow:0 10px 35px rgba(0,0,0,.07);
-}
-
-.project img{
-    width:100%;
-    max-height:550px;
-    object-fit:cover;
-    border-radius:18px;
-    margin-bottom:18px;
 }
 
 .project h2{
@@ -449,6 +441,8 @@ header{
 .contact strong{
     color:#e87532;
 }
+
+/* ================= FOOTER ================= */
 
 footer{
     background:#222;
@@ -520,6 +514,14 @@ footer span{
         grid-template-columns:1fr;
     }
 
+    .card{
+        padding:25px;
+    }
+
+    .info{
+        font-size:17px;
+    }
+
     .menu{
         padding:22px 14px;
     }
@@ -545,9 +547,7 @@ footer span{
 </style>
 </head>
 
-
 <body>
-
 
 <!-- ================= HEADER ================= -->
 
@@ -586,37 +586,37 @@ footer span{
 
         <div class="menu-grid">
 
-            <div class="menu-item" onclick="showPage('home')">
+            <div class="menu-item" onclick="go('home')">
                 <div class="menu-icon">🏠</div>
                 <b>หน้าหลัก</b>
             </div>
 
-            <div class="menu-item" onclick="showPage('history')">
+            <div class="menu-item" onclick="go('history')">
                 <div class="menu-icon">👤</div>
                 <b>ประวัติ</b>
             </div>
 
-            <div class="menu-item" onclick="showPage('education')">
+            <div class="menu-item" onclick="go('education')">
                 <div class="menu-icon">🎓</div>
                 <b>การศึกษา</b>
             </div>
 
-            <div class="menu-item" onclick="showPage('university')">
+            <div class="menu-item" onclick="go('university')">
                 <div class="menu-icon">🏫</div>
                 <b>มหาลัย</b>
             </div>
 
-            <div class="menu-item" onclick="showPage('skills')">
+            <div class="menu-item" onclick="go('skills')">
                 <div class="menu-icon">⚙️</div>
                 <b>ทักษะ</b>
             </div>
 
-            <div class="menu-item" onclick="showPage('research')">
+            <div class="menu-item" onclick="go('research')">
                 <div class="menu-icon">📁</div>
                 <b>ผลงานวิจัย</b>
             </div>
 
-            <div class="menu-item" onclick="showPage('contact')">
+            <div class="menu-item" onclick="go('contact')">
                 <div class="menu-icon">💬</div>
                 <b>ติดต่อผม</b>
             </div>
@@ -629,11 +629,594 @@ footer span{
 
 
 <!-- =================
-     จุดเดียวที่แสดงหน้า
+     ตรงนี้จะแสดงแค่หน้าที่เลือก
 ================= -->
 
 <div id="app"></div>
 
 
-<footer>
-   
+<script>
+
+/* =====================================================
+   รูปโปรไฟล์
+===================================================== */
+
+const PROFILE_IMAGE =
+"file_0000000085d47207b52f2b182e7429b3.png";
+
+
+/* =====================================================
+   เปิด / ปิดเมนู
+===================================================== */
+
+function openMenu(){
+
+    document.getElementById("overlay")
+        .classList.add("show");
+
+}
+
+function closeMenu(){
+
+    document.getElementById("overlay")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   เปลี่ยนหน้า
+   สำคัญมาก:
+   ทุกครั้งจะล้าง #app ก่อน
+   จึงไม่มีหน้าอื่นต่ออยู่ด้านล่าง
+===================================================== */
+
+function go(page){
+
+    closeMenu();
+
+    window.location.hash = page;
+
+    render(page);
+
+    window.scrollTo({
+        top:0,
+        behavior:"instant"
+    });
+
+}
+
+
+/* =====================================================
+   สร้างหน้า
+===================================================== */
+
+function render(page){
+
+    const app = document.getElementById("app");
+
+    /* ล้างหน้าเก่าทิ้งทั้งหมด */
+    app.innerHTML = "";
+
+
+    /* ================= HOME ================= */
+
+    if(page === "home"){
+
+        app.innerHTML = `
+
+        <section class="home">
+
+            <div>
+
+                <div class="hello">
+                    HELLO, I'M
+                </div>
+
+                <div class="tarming">
+                    TAR<span>MING</span>
+                </div>
+
+                <h1>
+                    นาย เสฎฐวุฒิ พลหาญ
+                </h1>
+
+                <p>
+                    นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
+                    แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์
+                    และวิศวกรรม (CSE)
+                    <br>
+                    มีความสนใจด้านวิศวกรรม การบิน อวกาศ
+                    เทคโนโลยี และการพัฒนาตนเอง
+                </p>
+
+                <div class="buttons">
+
+                    <button
+                        class="btn orange"
+                        onclick="go('history')">
+                        รู้จักผมมากขึ้น
+                    </button>
+
+                    <button
+                        class="btn white"
+                        onclick="go('contact')">
+                        ติดต่อผม
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="photo">
+
+                <img
+                    src="${PROFILE_IMAGE}"
+                    alt="TARMING">
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 <span>TARMING</span> PORTFOLIO
+        </footer>
+
+        `;
+
+    }
+
+
+    /* ================= HISTORY ================= */
+
+    else if(page === "history"){
+
+        app.innerHTML = `
+
+        <section class="page">
+
+            <div class="back" onclick="go('home')">
+                ← กลับหน้าหลัก
+            </div>
+
+            <h1>
+                ประวัติ
+            </h1>
+
+            <div class="subtitle">
+                MY PROFILE
+            </div>
+
+
+            <div class="history-photo">
+
+                <img
+                    src="${PROFILE_IMAGE}"
+                    alt="นาย เสฎฐวุฒิ พลหาญ">
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>
+                    นาย เสฎฐวุฒิ พลหาญ
+                </h2>
+
+                <div class="info">
+                    <strong>ชื่อ-นามสกุล:</strong>
+                    นาย เสฎฐวุฒิ พลหาญ
+                </div>
+
+                <div class="info">
+                    <strong>ชื่อเล่น:</strong>
+                    ต้าหมิง
+                </div>
+
+                <div class="info">
+                    <strong>อายุ:</strong>
+                    17 ปี
+                </div>
+
+                <div class="info">
+                    <strong>วัน/เดือน/ปีเกิด:</strong>
+                    19 กุมภาพันธ์ 2552
+                </div>
+
+                <div class="info">
+                    <strong>แผนการเรียน:</strong>
+                    เตรียมวิทยาการคอมพิวเตอร์และวิศวกรรม (CSE)
+                </div>
+
+                <div class="info">
+                    <strong>สถานที่ศึกษา:</strong>
+                    โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+                </div>
+
+                <div class="info">
+                    <strong>เชื้อชาติ:</strong>
+                    ไทย
+                </div>
+
+                <div class="info">
+                    <strong>สัญชาติ:</strong>
+                    ไทย
+                </div>
+
+                <div class="info">
+                    <strong>ศาสนา:</strong>
+                    คริสต์
+                </div>
+
+                <div class="info">
+                    <strong>สถานศึกษา:</strong>
+                    โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 <span>TARMING</span> PORTFOLIO
+        </footer>
+
+        `;
+
+    }
+
+
+    /* ================= EDUCATION ================= */
+
+    else if(page === "education"){
+
+        app.innerHTML = `
+
+        <section class="page">
+
+            <div class="back" onclick="go('home')">
+                ← กลับหน้าหลัก
+            </div>
+
+            <h1>การศึกษา</h1>
+
+            <div class="subtitle">
+                EDUCATION
+            </div>
+
+            <div class="education">
+
+                <div class="edu">
+
+                    <h2>
+                        ระดับมัธยมศึกษาตอนปลาย
+                    </h2>
+
+                    <p>
+                        โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+                    </p>
+
+                    <p>
+                        แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์
+                        และวิศวกรรม (CSE)
+                    </p>
+
+                    <p>
+                        ชั้นมัธยมศึกษาปีที่ 6/6
+                    </p>
+
+                </div>
+
+                <div class="edu">
+
+                    <h2>
+                        ความสนใจด้านการศึกษา
+                    </h2>
+
+                    <p>
+                        วิศวกรรมคอมพิวเตอร์ เทคโนโลยี
+                        การบิน อวกาศ และนวัตกรรม
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 <span>TARMING</span> PORTFOLIO
+        </footer>
+
+        `;
+
+    }
+
+
+    /* ================= UNIVERSITY ================= */
+
+    else if(page === "university"){
+
+        app.innerHTML = `
+
+        <section class="page">
+
+            <div class="back" onclick="go('home')">
+                ← กลับหน้าหลัก
+            </div>
+
+            <h1>มหาลัย</h1>
+
+            <div class="subtitle">
+                UNIVERSITY
+            </div>
+
+            <div class="uni">
+
+                <h2>
+                    มหาวิทยาลัยที่สนใจ
+                </h2>
+
+                <h3>
+                    สาขาวิศวกรรมคอมพิวเตอร์
+                </h3>
+
+                <p>
+                    สนใจศึกษาต่อในด้านคอมพิวเตอร์
+                    วิศวกรรม เทคโนโลยี และนวัตกรรม
+                </p>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 <span>TARMING</span> PORTFOLIO
+        </footer>
+
+        `;
+
+    }
+
+
+    /* ================= SKILLS ================= */
+
+    else if(page === "skills"){
+
+        app.innerHTML = `
+
+        <section class="page">
+
+            <div class="back" onclick="go('home')">
+                ← กลับหน้าหลัก
+            </div>
+
+            <h1>ทักษะ</h1>
+
+            <div class="subtitle">
+                MY SKILLS
+            </div>
+
+            <div class="skills">
+
+                <div class="skill">
+                    <h2>💻 เทคโนโลยี</h2>
+                    <p>
+                        สนใจด้านคอมพิวเตอร์
+                        เทคโนโลยี และนวัตกรรม
+                    </p>
+                </div>
+
+                <div class="skill">
+                    <h2>✈️ การบินและอวกาศ</h2>
+                    <p>
+                        มีความสนใจด้านการบิน
+                        อวกาศ และวิศวกรรม
+                    </p>
+                </div>
+
+                <div class="skill">
+                    <h2>🤝 การทำงานเป็นทีม</h2>
+                    <p>
+                        สามารถทำงานร่วมกับผู้อื่น
+                        และรับผิดชอบงานที่ได้รับมอบหมาย
+                    </p>
+                </div>
+
+                <div class="skill">
+                    <h2>🧠 การเรียนรู้</h2>
+                    <p>
+                        พร้อมเรียนรู้สิ่งใหม่
+                        และพัฒนาตนเองอยู่เสมอ
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 <span>TARMING</span> PORTFOLIO
+        </footer>
+
+        `;
+
+    }
+
+
+    /* ================= RESEARCH ================= */
+
+    else if(page === "research"){
+
+        app.innerHTML = `
+
+        <section class="page">
+
+            <div class="back" onclick="go('home')">
+                ← กลับหน้าหลัก
+            </div>
+
+            <h1>ผลงานวิจัย</h1>
+
+            <div class="subtitle">
+                MY PROJECTS
+            </div>
+
+            <div class="research">
+
+                <div class="project">
+
+                    <h2>
+                        ผลงานและโครงงาน
+                    </h2>
+
+                    <p>
+                        พื้นที่สำหรับใส่ผลงาน
+                        โครงงาน กิจกรรม
+                        หรือผลงานที่เคยทำในอนาคต
+                    </p>
+
+                </div>
+
+                <div class="project">
+
+                    <h2>
+                        กิจกรรมที่เข้าร่วม
+                    </h2>
+
+                    <p>
+                        สามารถเพิ่มรายละเอียด
+                        กิจกรรม เกียรติบัตร
+                        และประสบการณ์ต่าง ๆ ได้ที่หน้านี้
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 <span>TARMING</span> PORTFOLIO
+        </footer>
+
+        `;
+
+    }
+
+
+    /* ================= CONTACT ================= */
+
+    else if(page === "contact"){
+
+        app.innerHTML = `
+
+        <section class="page">
+
+            <div class="back" onclick="go('home')">
+                ← กลับหน้าหลัก
+            </div>
+
+            <h1>ติดต่อผม</h1>
+
+            <div class="subtitle">
+                CONTACT ME
+            </div>
+
+            <div class="contact">
+
+                <div>
+                    <strong>👤 ชื่อ</strong><br>
+                    นาย เสฎฐวุฒิ พลหาญ
+                </div>
+
+                <div>
+                    <strong>🏫 โรงเรียน</strong><br>
+                    โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+                </div>
+
+                <div>
+                    <strong>📚 แผนการเรียน</strong><br>
+                    เตรียมวิทยาการคอมพิวเตอร์และวิศวกรรม (CSE)
+                </div>
+
+                <div>
+                    <strong>💬 ติดต่อ</strong><br>
+                    สามารถเพิ่ม Facebook,
+                    Instagram หรือ Email ได้ที่นี่
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 <span>TARMING</span> PORTFOLIO
+        </footer>
+
+        `;
+
+    }
+
+
+    /* ================= ถ้า URL ผิด ================= */
+
+    else{
+
+        render("home");
+
+    }
+
+}
+
+
+/* =====================================================
+   เปิดเว็บครั้งแรก
+===================================================== */
+
+let firstPage =
+    window.location.hash.replace("#","");
+
+if(
+    !firstPage ||
+    ![
+        "home",
+        "history",
+        "education",
+        "university",
+        "skills",
+        "research",
+        "contact"
+    ].includes(firstPage)
+){
+
+    firstPage = "home";
+
+}
+
+render(firstPage);
+
+
+/* =====================================================
+   ถ้ากด Back / Forward ของ Browser
+===================================================== */
+
+window.addEventListener("hashchange",function(){
+
+    const page =
+        window.location.hash.replace("#","") || "home";
+
+    render(page);
+
+    window.scrollTo({
+        top:0,
+        behavior:"instant"
+    });
+
+});
+
+</script>
+
+</body>
+</html>
