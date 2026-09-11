@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -23,7 +24,7 @@ body{
     color:#222;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
     position:fixed;
@@ -55,12 +56,12 @@ header{
     border:none;
     border-radius:14px;
     background:#f36f21;
-    color:#fff;
+    color:white;
     font-size:32px;
     cursor:pointer;
 }
 
-/* MENU */
+/* ================= MENU ================= */
 
 .menu{
     position:fixed;
@@ -106,7 +107,7 @@ header{
 
 .menu-item:hover{
     background:#f36f21;
-    color:white;
+    color:#fff;
 }
 
 .menu-icon{
@@ -119,7 +120,7 @@ header{
     grid-column:1 / 3;
 }
 
-/* PAGE */
+/* ================= PAGE ================= */
 
 .page{
     display:none;
@@ -151,7 +152,7 @@ header{
     font-size:18px;
 }
 
-/* HOME */
+/* ================= HOME ================= */
 
 #home.active{
     display:flex;
@@ -206,7 +207,7 @@ header{
     display:block;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 
 .buttons{
     margin-top:25px;
@@ -231,7 +232,7 @@ header{
     border:1px solid #f36f21;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .card{
     background:#fff;
@@ -255,7 +256,23 @@ header{
     line-height:2;
 }
 
-/* EDUCATION */
+/* ================= PROFILE PHOTO ================= */
+
+.profile-photo{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.profile-photo img{
+    width:190px;
+    height:190px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #f36f21;
+    box-shadow:0 8px 25px #0002;
+}
+
+/* ================= EDUCATION ================= */
 
 .edu{
     background:#fffaf6;
@@ -277,7 +294,7 @@ header{
     line-height:1.8;
 }
 
-/* UNIVERSITY */
+/* ================= UNIVERSITY ================= */
 
 .university{
     text-align:center;
@@ -310,7 +327,7 @@ header{
     margin-top:5px;
 }
 
-/* SKILLS */
+/* ================= SKILLS ================= */
 
 .skills{
     display:grid;
@@ -340,11 +357,11 @@ header{
     color:#666;
 }
 
-/* PROJECTS */
+/* ================= RESEARCH / PROJECT ================= */
 
 .projects{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr;
     gap:25px;
 }
 
@@ -358,7 +375,7 @@ header{
 
 .project img{
     width:100%;
-    height:320px;
+    max-height:450px;
     object-fit:cover;
     display:block;
 }
@@ -378,7 +395,7 @@ header{
     margin-top:8px;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 
 .contact{
     max-width:750px;
@@ -405,7 +422,7 @@ header{
     font-size:18px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     background:#222;
@@ -418,7 +435,7 @@ footer span{
     color:#f36f21;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
@@ -446,8 +463,7 @@ footer span{
         font-size:40px;
     }
 
-    .skills,
-    .projects{
+    .skills{
         grid-template-columns:1fr;
     }
 
@@ -460,14 +476,23 @@ footer span{
         max-width:360px;
     }
 
+    .profile-photo img{
+        width:160px;
+        height:160px;
+    }
+
 }
 
+/* ================= END CSS ================= */
+
 </style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -480,7 +505,7 @@ TAR<span>MING</span>
 </header>
 
 
-<!-- MENU -->
+<!-- ================= MENU ================= -->
 
 <div class="menu" id="menu">
 
@@ -524,10 +549,11 @@ TAR<span>MING</span>
 </a>
 
 </div>
+
 </div>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
 <section id="home" class="page active">
 
@@ -574,9 +600,11 @@ TAR<span>MING</span>
 </div>
 
 
+<!-- รูปหน้าแรก -->
+
 <div class="photo">
 
-<img src="file_0000000085d47207b52f2b182e7429b3.png"
+<img src="1789097279748.jpg"
 alt="TARMING">
 
 </div>
@@ -586,28 +614,48 @@ alt="TARMING">
 </section>
 
 
-<!-- HISTORY -->
+<!-- ================= HISTORY ================= -->
 
 <section id="history" class="page">
 
-<a href="#home" class="back">← กลับหน้าหลัก</a>
+<a href="#home" class="back">
+← กลับหน้าหลัก
+</a>
 
-<h1 class="title">ประวัติ</h1>
+<h1 class="title">
+ประวัติ
+</h1>
 
 <div class="subtitle">
 MY PROFILE
 </div>
 
+
 <div class="card">
 
-<h3>เสฎฐวุฒิ พลหาญ</h3>
+
+<!-- รูปเดียวกับหน้าแรก -->
+
+<div class="profile-photo">
+
+<img src="1789097279748.jpg"
+alt="เสฎฐวุฒิ พลหาญ">
+
+</div>
+
+
+<h3>
+เสฎฐวุฒิ พลหาญ
+</h3>
 
 <p>
-<strong>ชื่อเล่น:</strong> ต้าหมิง
+<strong>ชื่อเล่น:</strong>
+ต้าหมิง
 </p>
 
 <p>
-<strong>ศาสนา:</strong> คริสต์
+<strong>ศาสนา:</strong>
+คริสต์
 </p>
 
 <p>
@@ -616,7 +664,8 @@ MY PROFILE
 </p>
 
 <p>
-<strong>แผนการเรียน:</strong> CSE
+<strong>แผนการเรียน:</strong>
+CSE
 </p>
 
 <p>
@@ -626,24 +675,32 @@ MY PROFILE
 
 </div>
 
+
 </section>
 
 
-<!-- EDUCATION -->
+<!-- ================= EDUCATION ================= -->
 
 <section id="education" class="page">
 
-<a href="#home" class="back">← กลับหน้าหลัก</a>
+<a href="#home" class="back">
+← กลับหน้าหลัก
+</a>
 
-<h1 class="title">การศึกษา</h1>
+<h1 class="title">
+การศึกษา
+</h1>
 
 <div class="subtitle">
 EDUCATION
 </div>
 
+
 <div class="edu">
 
-<h3>ระดับอนุบาล</h3>
+<h3>
+ระดับอนุบาล
+</h3>
 
 <p>
 โรงเรียนบุญประทีปวิทยาคาร
@@ -651,9 +708,12 @@ EDUCATION
 
 </div>
 
+
 <div class="edu">
 
-<h3>ระดับประถมศึกษา</h3>
+<h3>
+ระดับประถมศึกษา
+</h3>
 
 <p>
 โรงเรียนบุญประทีปวิทยาคาร
@@ -661,9 +721,12 @@ EDUCATION
 
 </div>
 
+
 <div class="edu">
 
-<h3>ระดับมัธยมศึกษาตอนต้น</h3>
+<h3>
+ระดับมัธยมศึกษาตอนต้น
+</h3>
 
 <p>
 โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
@@ -671,16 +734,21 @@ EDUCATION
 
 </div>
 
+
 <div class="edu">
 
-<h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+<h3>
+ระดับมัธยมศึกษาตอนปลาย
+</h3>
 
 <p>
 โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
 </p>
 
 <p>
-<strong>แผนการเรียน CSE</strong>
+<strong>
+แผนการเรียน CSE
+</strong>
 </p>
 
 </div>
@@ -688,22 +756,29 @@ EDUCATION
 </section>
 
 
-<!-- UNIVERSITY -->
+<!-- ================= UNIVERSITY ================= -->
 
 <section id="university" class="page">
 
-<a href="#home" class="back">← กลับหน้าหลัก</a>
+<a href="#home" class="back">
+← กลับหน้าหลัก
+</a>
 
-<h1 class="title">มหาลัย</h1>
+<h1 class="title">
+มหาลัย
+</h1>
 
 <div class="subtitle">
-DREAM UNIVERSITY
+MY DREAM UNIVERSITY
 </div>
+
 
 <div class="university">
 
+
 <img src="logo-lkmutnb.jpg"
 alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ">
+
 
 <h2>
 มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
@@ -717,96 +792,156 @@ alt="มหาวิทยาลัยเทคโนโลยีพระจอ
 สาขาวิศวกรรมการบินและอวกาศ
 </p>
 
-<p>
-มหาวิทยาลัยที่ผมใฝ่ฝันและต้องการเข้าศึกษาต่อ
-</p>
-
 </div>
 
 </section>
 
 
-<!-- SKILLS -->
+<!-- ================= SKILLS ================= -->
 
 <section id="skills" class="page">
 
-<a href="#home" class="back">← กลับหน้าหลัก</a>
+<a href="#home" class="back">
+← กลับหน้าหลัก
+</a>
 
-<h1 class="title">ทักษะ</h1>
+<h1 class="title">
+ทักษะ
+</h1>
 
 <div class="subtitle">
-SKILLS & INTERESTS
+MY SKILLS
 </div>
+
 
 <div class="skills">
 
-<div class="skill">
-<div class="skill-icon">✈️</div>
-<h3>การบิน</h3>
-<p>
-สนใจเทคโนโลยีและระบบที่เกี่ยวข้องกับอากาศยาน
-</p>
-</div>
 
 <div class="skill">
-<div class="skill-icon">🤖</div>
-<h3>เทคโนโลยี</h3>
-<p>
-สนใจเทคโนโลยีสมัยใหม่และการสร้างสิ่งประดิษฐ์
-</p>
+
+<div class="skill-icon">
+💻
 </div>
 
-<div class="skill">
-<div class="skill-icon">💻</div>
-<h3>CSE</h3>
+<h3>
+เทคโนโลยี
+</h3>
+
 <p>
-เรียนรู้ด้านคอมพิวเตอร์และเทคโนโลยี
+มีความสนใจและเรียนรู้เทคโนโลยีสมัยใหม่
 </p>
+
 </div>
 
-<div class="skill">
-<div class="skill-icon">🔧</div>
-<h3>การสร้างสรรค์</h3>
-<p>
-ชอบทดลองและสร้างผลงานใหม่ ๆ
-</p>
-</div>
 
 <div class="skill">
-<div class="skill-icon">🤝</div>
-<h3>การทำงานเป็นทีม</h3>
-<p>
-สามารถทำงานร่วมกับผู้อื่นและแบ่งหน้าที่กันได้
-</p>
+
+<div class="skill-icon">
+🤖
 </div>
 
-<div class="skill">
-<div class="skill-icon">🚀</div>
-<h3>ความสนใจ</h3>
+<h3>
+Robotics
+</h3>
+
 <p>
-วิศวกรรม การบิน อวกาศ และเทคโนโลยี
+สนใจการสร้างและพัฒนาโครงงานหุ่นยนต์
 </p>
+
 </div>
+
+
+<div class="skill">
+
+<div class="skill-icon">
+✈️
+</div>
+
+<h3>
+การบินและอวกาศ
+</h3>
+
+<p>
+มีความสนใจด้านการบินและเทคโนโลยีอวกาศ
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-icon">
+🧠
+</div>
+
+<h3>
+การแก้ปัญหา
+</h3>
+
+<p>
+สามารถคิด วิเคราะห์ และแก้ไขปัญหา
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-icon">
+🤝
+</div>
+
+<h3>
+การทำงานเป็นทีม
+</h3>
+
+<p>
+สามารถทำงานร่วมกับผู้อื่นได้ดี
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-icon">
+🎯
+</div>
+
+<h3>
+ความรับผิดชอบ
+</h3>
+
+<p>
+ตั้งใจทำงานและรับผิดชอบหน้าที่ที่ได้รับ
+</p>
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- RESEARCH / WORK -->
+<!-- ================= RESEARCH ================= -->
 
 <section id="research" class="page">
 
-<a href="#home" class="back">← กลับหน้าหลัก</a>
+<a href="#home" class="back">
+← กลับหน้าหลัก
+</a>
 
-<h1 class="title">ผลงานวิจัย</h1>
+<h1 class="title">
+ผลงานวิจัย
+</h1>
 
 <div class="subtitle">
-MY PROJECTS
+RESEARCH & PROJECTS
 </div>
 
-<div class="projects">
 
+<!-- รูปกิจกรรม -->
 
 <div class="project">
 
@@ -815,17 +950,22 @@ alt="กิจกรรมและผลงาน">
 
 <div class="project-info">
 
-<h3>กิจกรรมและผลงาน</h3>
+<h3>
+🤝 ผลงานกิจกรรม
+</h3>
 
 <p>
-ภาพกิจกรรมการทำงานร่วมกับทีม
-และการนำเสนอผลงาน
+การเข้าร่วมกิจกรรมและการทำงานร่วมกับเพื่อน
+ฝึกทักษะการทำงานเป็นทีม ความรับผิดชอบ
+และการแก้ไขปัญหา
 </p>
 
 </div>
 
 </div>
 
+
+<!-- รูปหุ่นยนต์ -->
 
 <div class="project">
 
@@ -834,59 +974,72 @@ alt="โครงงานหุ่นยนต์">
 
 <div class="project-info">
 
-<h3>โครงงานหุ่นยนต์</h3>
+<h3>
+🤖 โครงงานหุ่นยนต์
+</h3>
 
 <p>
-ผลงานด้านเทคโนโลยีและหุ่นยนต์
-ที่ได้ร่วมพัฒนาและทดลอง
+ผลงานการสร้างและพัฒนาหุ่นยนต์
+โดยได้เรียนรู้เกี่ยวกับระบบควบคุม
+การออกแบบ และการทำงานของหุ่นยนต์
 </p>
 
 </div>
 
 </div>
 
+
+<!-- รูปแบบอาคาร -->
 
 <div class="project">
 
-<img src="IMG_20260911_102647_613.jpg"
-alt="ผลงานการออกแบบ">
+<img src="17890972779748.jpg"
+alt="ผลงานออกแบบอาคาร">
 
 <div class="project-info">
 
-<h3>ผลงานการออกแบบ</h3>
+<h3>
+🏫 ผลงานออกแบบอาคาร
+</h3>
 
 <p>
-ผลงานการออกแบบและการสร้างสรรค์
-ที่เกี่ยวข้องกับการเรียนรู้ด้านเทคโนโลยี
+ผลงานการออกแบบอาคารด้วยโปรแกรมคอมพิวเตอร์
+เพื่อฝึกทักษะด้านการออกแบบและเทคโนโลยี
 </p>
 
 </div>
 
 </div>
 
-
-</div>
 
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section id="contact" class="page">
 
-<a href="#home" class="back">← กลับหน้าหลัก</a>
+<a href="#home" class="back">
+← กลับหน้าหลัก
+</a>
 
-<h1 class="title">ติดต่อผม</h1>
+<h1 class="title">
+ติดต่อผม
+</h1>
 
 <div class="subtitle">
 CONTACT ME
 </div>
 
+
 <div class="contact">
+
 
 <div class="contact-item">
 
-<h3>👤 ชื่อ</h3>
+<h3>
+👤 ชื่อ
+</h3>
 
 <p>
 เสฎฐวุฒิ พลหาญ (ต้าหมิง)
@@ -894,9 +1047,12 @@ CONTACT ME
 
 </div>
 
+
 <div class="contact-item">
 
-<h3>🏫 สถานศึกษา</h3>
+<h3>
+🏫 โรงเรียน
+</h3>
 
 <p>
 โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
@@ -904,67 +1060,85 @@ CONTACT ME
 
 </div>
 
+
 <div class="contact-item">
 
-<h3>📚 การศึกษา</h3>
+<h3>
+📚 ระดับการศึกษา
+</h3>
 
 <p>
-มัธยมศึกษาปีที่ 6/6 แผนการเรียน CSE
+มัธยมศึกษาปีที่ 6/6
+แผนการเรียน CSE
 </p>
 
 </div>
 
+
 <div class="contact-item">
 
-<h3>💬 ติดต่อ</h3>
+<h3>
+📱 Instagram
+</h3>
 
 <p>
-สามารถเพิ่มช่องทางติดต่อของผมในส่วนนี้ได้
+สามารถเพิ่ม Instagram ของผมได้ที่นี่
 </p>
 
 </div>
+
 
 </div>
 
 </section>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-<p>
-© 2026 <span>TARMING PORTFOLIO</span>
-</p>
-
-<p>
-เสฎฐวุฒิ พลหาญ
-</p>
+© 2026
+<span>TARMING</span>
+PORTFOLIO
 
 </footer>
 
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
 function toggleMenu(){
 
-    document.getElementById("menu").classList.toggle("active");
+    document.getElementById("menu")
+    .classList.toggle("active");
 
 }
+
 
 function closeMenu(){
 
-    document.getElementById("menu").classList.remove("active");
+    document.getElementById("menu")
+    .classList.remove("active");
 
 }
+
 
 function showPage(){
 
     let hash = window.location.hash;
 
-    document.querySelectorAll(".page").forEach(function(page){
+    if(!hash){
+        hash = "#home";
+    }
+
+    document.querySelectorAll(".page")
+    .forEach(function(page){
 
         page.classList.remove("active");
 
     });
+
 
     let target = document.querySelector(hash);
 
@@ -972,21 +1146,17 @@ function showPage(){
 
         target.classList.add("active");
 
-    }else{
-
-        document.getElementById("home").classList.add("active");
-
     }
-
-    window.scrollTo(0,0);
 
 }
 
-window.addEventListener("hashchange",showPage);
+
+window.addEventListener("hashchange", showPage);
 
 showPage();
 
 </script>
+
 
 </body>
 </html>
