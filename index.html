@@ -3,980 +3,1384 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>TARMING PORTFOLIO</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-<link
-href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
 
 <style>
 
-/* ==================================================
-   BASIC
-================================================== */
+/* =========================================================
+   RESET
+========================================================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html,
-body{
-    margin:0;
-    padding:0;
-    font-family:"Kanit",sans-serif;
-    background:#ffffff;
-    color:#222222;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    min-height:100vh;
-}
-
-button{
-    font-family:"Kanit",sans-serif;
-}
-
-img{
-    max-width:100%;
+body {
+    font-family: "Kanit", "Prompt", sans-serif;
+    background: #ffffff;
+    color: #222222;
+    overflow-x: hidden;
 }
 
 
-/* ==================================================
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --orange: #f47721;
+    --orange-dark: #e76513;
+    --orange-light: #fff6ed;
+    --black: #222222;
+    --gray: #666666;
+    --white: #ffffff;
+    --border: #eeeeee;
+}
+
+
+/* =========================================================
+   SNOW
+========================================================= */
+
+#snow-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.snowflake {
+    position: absolute;
+    top: -30px;
+    color: #ffffff;
+    user-select: none;
+    pointer-events: none;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,.9),
+        0 0 10px rgba(255,255,255,.6);
+
+    animation:
+        snowFall linear infinite;
+}
+
+@keyframes snowFall {
+
+    0% {
+        transform:
+            translate3d(0,-30px,0)
+            rotate(0deg);
+    }
+
+    25% {
+        transform:
+            translate3d(30px,25vh,0)
+            rotate(90deg);
+    }
+
+    50% {
+        transform:
+            translate3d(-25px,50vh,0)
+            rotate(180deg);
+    }
+
+    75% {
+        transform:
+            translate3d(25px,75vh,0)
+            rotate(270deg);
+    }
+
+    100% {
+        transform:
+            translate3d(-15px,110vh,0)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
    HEADER
-================================================== */
+========================================================= */
 
-header{
-    height:90px;
-    width:100%;
-    background:#ffffff;
-    border-bottom:1px solid #eeeeee;
+header {
+    height: 90px;
+    width: 100%;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    background: rgba(255,255,255,.96);
 
-    padding:0 5%;
+    border-bottom: 1px solid #eeeeee;
 
-    position:sticky;
-    top:0;
-    z-index:1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
 }
 
-.logo{
-    font-size:30px;
-    font-weight:700;
-    letter-spacing:1px;
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
-.logo span{
-    color:#f47721;
+.logo .black {
+    color: #222;
 }
 
-.menu-btn{
-    width:64px;
-    height:64px;
-
-    border:none;
-    border-radius:16px;
-
-    background:#f47721;
-    color:white;
-
-    font-size:34px;
-
-    cursor:pointer;
+.logo .orange {
+    color: var(--orange);
 }
 
 
-/* ==================================================
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+.menu-btn {
+    width: 58px;
+    height: 58px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: var(--orange);
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    transition: .25s;
+}
+
+.menu-btn:hover {
+    background: var(--orange-dark);
+    transform: translateY(-2px);
+}
+
+.menu-btn span {
+    display: block;
+
+    width: 27px;
+    height: 3px;
+
+    background: white;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================================
    MENU OVERLAY
-================================================== */
+========================================================= */
 
-.overlay{
-    display:none;
+.menu-overlay {
 
-    position:fixed;
-    inset:0;
+    position: fixed;
 
-    background:rgba(0,0,0,.78);
+    inset: 0;
 
-    z-index:5000;
+    background: rgba(0,0,0,.72);
 
-    padding:20px;
+    display: none;
 
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 2000;
 }
 
-.overlay.show{
-    display:flex;
-}
-
-.menu-box{
-    width:680px;
-    max-width:100%;
-    max-height:90vh;
-
-    overflow:auto;
-
-    background:#111111;
-
-    border:1px solid #f47721;
-    border-radius:28px;
-
-    padding:28px 18px;
-}
-
-.menu-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    margin-bottom:25px;
-}
-
-.menu-head h2{
-    color:#ffffff;
-    font-size:27px;
-}
-
-.close-btn{
-    width:58px;
-    height:58px;
-
-    border:1px solid #555555;
-    border-radius:15px;
-
-    background:#111111;
-    color:#ffffff;
-
-    font-size:32px;
-
-    cursor:pointer;
-}
-
-.menu-title{
-    text-align:center;
-
-    color:#aaaaaa;
-
-    font-size:19px;
-
-    margin-bottom:22px;
-}
-
-.menu-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-}
-
-.menu-item{
-    min-height:130px;
-
-    background:#1b1715;
-
-    border:1px solid #f47721;
-    border-radius:18px;
-
-    color:#ffffff;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.menu-item:hover{
-    background:#f47721;
-}
-
-.menu-icon{
-    font-size:38px;
-    margin-bottom:8px;
-}
-
-.menu-item b{
-    font-size:18px;
+.menu-overlay.active {
+    display: flex;
 }
 
 
-/* ==================================================
-   GENERAL PAGE
-================================================== */
+/* =========================================================
+   MENU BOX
+========================================================= */
 
-.page{
-    width:100%;
-    max-width:1100px;
+.menu-box {
 
-    min-height:calc(100vh - 90px);
+    width: min(680px, 100%);
 
-    margin:0 auto;
+    max-height: 90vh;
 
-    padding:60px 6% 80px;
+    overflow-y: auto;
+
+    background: #111111;
+
+    border: 1px solid var(--orange);
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.5);
 }
 
-.back{
-    display:inline-block;
+.menu-top {
 
-    color:#df7838;
+    display: flex;
 
-    font-size:20px;
+    justify-content: space-between;
 
-    margin-bottom:35px;
+    align-items: center;
 
-    cursor:pointer;
+    margin-bottom: 25px;
 }
 
-.page h1{
-    font-size:55px;
-    line-height:1.2;
+.menu-title {
 
-    margin-bottom:8px;
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: 800;
 }
 
-.subtitle{
-    color:#df7838;
+.close-btn {
 
-    font-size:20px;
+    width: 48px;
+    height: 48px;
 
-    letter-spacing:5px;
+    border-radius: 14px;
 
-    margin-bottom:40px;
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid #555;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+.menu-subtitle {
+
+    color: #aaa;
+
+    text-align: center;
+
+    margin-bottom: 25px;
 }
 
 
-/* ==================================================
+/* =========================================================
+   MENU GRID
+========================================================= */
+
+.menu-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.menu-item {
+
+    min-height: 135px;
+
+    background: #191614;
+
+    border: 1px solid #b95e22;
+
+    border-radius: 18px;
+
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    transition: .25s;
+}
+
+.menu-item:hover {
+
+    background: var(--orange);
+
+    transform: translateY(-4px);
+}
+
+.menu-icon {
+    font-size: 34px;
+}
+
+.menu-name {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    padding-top: 90px;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+.page {
+
+    display: none;
+
+    min-height:
+        calc(100vh - 90px);
+
+    padding:
+        75px 7% 90px;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* =========================================================
    HOME
-================================================== */
+========================================================= */
 
-.home{
-    width:100%;
-    max-width:1200px;
+.home {
 
-    min-height:calc(100vh - 90px);
+    min-height:
+        calc(100vh - 90px);
 
-    margin:0 auto;
+    display: flex;
 
-    padding:70px 6%;
-
-    display:grid;
-
-    grid-template-columns:1fr 430px;
-
-    align-items:center;
-
-    gap:70px;
+    align-items: center;
 }
 
-.hello{
-    color:#df7838;
+.home-container {
 
-    font-size:24px;
+    width: 100%;
 
-    letter-spacing:6px;
+    max-width: 1200px;
 
-    margin-bottom:20px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    gap: 60px;
+
+    align-items: center;
 }
 
-.tarming{
-    font-size:70px;
+.small-title {
 
-    line-height:1;
+    color: var(--orange);
 
-    font-weight:700;
+    font-size: 23px;
 
-    margin-bottom:30px;
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
 }
 
-.tarming span{
-    color:#f47721;
+.home-name {
+
+    font-size:
+        clamp(55px, 8vw, 95px);
+
+    line-height: .95;
+
+    font-weight: 800;
+
+    margin-bottom: 30px;
 }
 
-.home h1{
-    font-size:32px;
-
-    margin-bottom:15px;
+.home-name .orange {
+    color: var(--orange);
 }
 
-.home p{
-    color:#666666;
+.home h2 {
 
-    font-size:20px;
+    font-size: 32px;
 
-    line-height:1.8;
-
-    margin-bottom:25px;
+    margin-bottom: 20px;
 }
 
-.buttons{
-    display:flex;
-    gap:15px;
-}
+.home-description {
 
-.btn{
-    padding:13px 25px;
+    font-size: 20px;
 
-    border-radius:12px;
+    line-height: 1.9;
 
-    font-size:18px;
+    color: #666;
 
-    cursor:pointer;
-}
+    max-width: 650px;
 
-.btn-orange{
-    background:#f47721;
-
-    color:#ffffff;
-
-    border:2px solid #f47721;
-}
-
-.btn-white{
-    background:#ffffff;
-
-    color:#df7838;
-
-    border:2px solid #df7838;
-}
-
-.home-photo{
-    width:100%;
-
-    border:4px solid #f47721;
-
-    border-radius:28px;
-
-    overflow:hidden;
-
-    box-shadow:0 15px 35px rgba(244,119,33,.15);
-}
-
-.home-photo img{
-    width:100%;
-
-    display:block;
+    margin-bottom: 30px;
 }
 
 
-/* ==================================================
-   HISTORY
-================================================== */
+/* =========================================================
+   BUTTONS
+========================================================= */
 
-.history-photo{
-    width:430px;
-    max-width:100%;
+.buttons {
 
-    margin:0 auto 30px;
+    display: flex;
 
-    border:4px solid #f47721;
+    gap: 15px;
 
-    border-radius:30px;
-
-    overflow:hidden;
-
-    box-shadow:0 15px 35px rgba(244,119,33,.15);
+    flex-wrap: wrap;
 }
 
-.history-photo img{
-    width:100%;
-    display:block;
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 15px 25px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 18px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: .25s;
 }
 
-.info-card{
-    background:#ffffff;
+.btn-primary {
 
-    border:1px solid #eeeeee;
+    background: var(--orange);
 
-    border-left:6px solid #f47721;
+    color: white;
 
-    border-radius:24px;
-
-    padding:35px;
-
-    box-shadow:0 12px 35px rgba(0,0,0,.07);
+    border: 2px solid var(--orange);
 }
 
-.info-card h2{
-    color:#e87532;
+.btn-primary:hover {
 
-    font-size:30px;
-
-    margin-bottom:20px;
+    background:
+        var(--orange-dark);
 }
 
-.info-line{
-    font-size:18px;
+.btn-outline {
 
-    line-height:1.9;
+    background: white;
 
-    margin:8px 0;
-}
+    color: var(--orange);
 
-.info-line strong{
-    color:#222222;
+    border: 2px solid var(--orange);
 }
 
 
-/* ==================================================
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
+.profile-image {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: auto;
+
+    border-radius: 25px;
+
+    border: 4px solid var(--orange);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(244,119,33,.18);
+}
+
+.profile-image img {
+
+    width: 100%;
+
+    display: block;
+
+    height: auto;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.back-home {
+
+    color: var(--orange);
+
+    font-size: 20px;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    margin-bottom: 40px;
+}
+
+.page-title {
+
+    font-size:
+        clamp(48px, 7vw, 75px);
+
+    line-height: 1;
+
+    margin-bottom: 15px;
+
+    font-weight: 800;
+}
+
+.page-subtitle {
+
+    color: var(--orange);
+
+    letter-spacing: 5px;
+
+    font-size: 21px;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-layout {
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.profile-photo-large {
+
+    width: min(430px, 100%);
+
+    margin:
+        0 auto 35px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    border: 4px solid var(--orange);
+
+    box-shadow:
+        0 20px 50px rgba(244,119,33,.15);
+}
+
+.profile-photo-large img {
+
+    width: 100%;
+
+    display: block;
+}
+
+.info-card {
+
+    background: white;
+
+    border: 1px solid #eeeeee;
+
+    border-left:
+        6px solid var(--orange);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.07);
+}
+
+.info-card h2 {
+
+    color: var(--orange);
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+.info-row {
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #555;
+
+    margin-bottom: 5px;
+}
+
+.info-row strong {
+
+    color: #222;
+}
+
+
+/* =========================================================
    EDUCATION
-================================================== */
+========================================================= */
 
-.education-list{
-    display:grid;
+.education-card {
 
-    gap:20px;
+    max-width: 900px;
+
+    margin: auto;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf5,
+            #ffffff
+        );
+
+    border:
+        2px solid #df884c;
+
+    border-radius: 30px;
+
+    padding: 55px 35px;
+
+    text-align: center;
 }
 
-.education-card{
-    background:#ffffff;
+.university-logo {
 
-    border:1px solid #eeeeee;
+    width: 180px;
 
-    border-left:6px solid #f47721;
+    height: 180px;
 
-    border-radius:22px;
+    object-fit: contain;
 
-    padding:28px;
+    margin: 0 auto 25px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    display: block;
 }
 
-.education-card h2{
-    color:#e87532;
+.education-card h2 {
 
-    font-size:25px;
+    font-size: 32px;
 
-    margin-bottom:8px;
+    margin-bottom: 15px;
 }
 
-.education-card p{
-    color:#555555;
+.education-card h3 {
 
-    font-size:18px;
+    color: var(--orange);
 
-    line-height:1.7;
+    font-size: 25px;
+
+    margin-bottom: 20px;
 }
 
+.education-card p {
 
-/* ==================================================
-   UNIVERSITY
-================================================== */
+    font-size: 18px;
 
-.university-card{
-    text-align:center;
+    color: #666;
 
-    background:#fffaf5;
-
-    border:2px solid #df7838;
-
-    border-radius:28px;
-
-    padding:40px 25px;
-
-    box-shadow:0 15px 35px rgba(244,119,33,.08);
-}
-
-.university-logo{
-    width:190px;
-    height:190px;
-
-    object-fit:contain;
-
-    display:block;
-
-    margin:0 auto 25px;
-
-    border-radius:10px;
-}
-
-.dream{
-    color:#df7838;
-
-    font-size:20px;
-
-    font-weight:600;
-
-    letter-spacing:5px;
-
-    margin-bottom:15px;
-}
-
-.university-card h2{
-    font-size:30px;
-
-    line-height:1.5;
-
-    margin-bottom:12px;
-}
-
-.university-card h3{
-    color:#df7838;
-
-    font-size:25px;
-
-    margin-bottom:8px;
-}
-
-.university-card p{
-    color:#666666;
-
-    font-size:19px;
-
-    line-height:1.8;
+    line-height: 1.8;
 }
 
 
-/* ==================================================
+/* =========================================================
    SKILLS
-================================================== */
+========================================================= */
 
-.skills-grid{
-    display:grid;
+.skills-grid {
 
-    grid-template-columns:1fr 1fr;
+    max-width: 1000px;
 
-    gap:20px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
 }
 
-.skill-card{
-    padding:28px;
+.skill-card {
 
-    border:1px solid #eeeeee;
+    background: white;
 
-    border-radius:22px;
+    border: 1px solid #eeeeee;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    border-radius: 20px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+
+    transition: .25s;
 }
 
-.skill-card h2{
-    color:#e87532;
+.skill-card:hover {
 
-    font-size:24px;
+    transform: translateY(-7px);
 
-    margin-bottom:10px;
+    border-color:
+        var(--orange);
 }
 
-.skill-card p{
-    color:#666666;
+.skill-icon {
 
-    font-size:18px;
+    font-size: 42px;
 
-    line-height:1.7;
+    margin-bottom: 15px;
 }
 
+.skill-card h3 {
 
-/* ==================================================
-   RESEARCH / PROJECT
-================================================== */
+    font-size: 21px;
 
-.project-list{
-    display:grid;
-
-    gap:22px;
+    margin-bottom: 10px;
 }
 
-.project-card{
-    border:1px solid #eeeeee;
+.skill-card p {
 
-    border-left:6px solid #f47721;
+    color: #777;
 
-    border-radius:22px;
-
-    padding:28px;
-
-    box-shadow:0 10px 35px rgba(0,0,0,.07);
-}
-
-.project-card h2{
-    color:#e87532;
-
-    font-size:25px;
-
-    margin-bottom:10px;
-}
-
-.project-card p{
-    color:#666666;
-
-    font-size:18px;
-
-    line-height:1.7;
-}
-
-.project-image{
-    width:100%;
-
-    border-radius:18px;
-
-    margin-top:20px;
-
-    display:block;
+    line-height: 1.6;
 }
 
 
-/* ==================================================
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.project-card {
+
+    overflow: hidden;
+
+    background: white;
+
+    border:
+        1px solid #eeeeee;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.07);
+
+    transition: .25s;
+}
+
+.project-card:hover {
+
+    transform: translateY(-5px);
+}
+
+.project-card img {
+
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.project-content {
+
+    padding: 25px;
+}
+
+.project-content h3 {
+
+    color: var(--orange);
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.project-content p {
+
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CERTIFICATE
+========================================================= */
+
+.certificate-box {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    gap: 20px;
+}
+
+.certificate {
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border:
+        1px solid #eeeeee;
+
+    border-left:
+        5px solid var(--orange);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+}
+
+.certificate h3 {
+
+    color: var(--orange);
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.certificate p {
+
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
    CONTACT
-================================================== */
+========================================================= */
 
-.contact-card{
-    border-left:6px solid #f47721;
+.contact-box {
 
-    border-top:1px solid #eeeeee;
-    border-right:1px solid #eeeeee;
-    border-bottom:1px solid #eeeeee;
+    max-width: 800px;
 
-    border-radius:25px;
+    margin: auto;
 
-    padding:35px;
+    text-align: center;
 
-    box-shadow:0 12px 35px rgba(0,0,0,.06);
+    background:
+        linear-gradient(
+            135deg,
+            #fff7ef,
+            #ffffff
+        );
+
+    border:
+        2px solid #e48a4e;
+
+    border-radius: 30px;
+
+    padding: 55px 30px;
 }
 
-.contact-line{
-    font-size:19px;
+.contact-box h2 {
 
-    padding:18px 0;
+    font-size: 35px;
 
-    border-bottom:1px solid #eeeeee;
+    margin-bottom: 20px;
 }
 
-.contact-line:last-child{
-    border-bottom:none;
+.contact-box p {
+
+    color: #666;
+
+    font-size: 18px;
+
+    margin-bottom: 25px;
 }
 
-.contact-line strong{
-    color:#e87532;
+.contact-list {
+
+    display: grid;
+
+    gap: 15px;
+}
+
+.contact-link {
+
+    text-decoration: none;
+
+    color: #333;
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid #eee;
+
+    transition: .25s;
+}
+
+.contact-link:hover {
+
+    border-color:
+        var(--orange);
+
+    color:
+        var(--orange);
 }
 
 
-/* ==================================================
+/* =========================================================
    FOOTER
-================================================== */
+========================================================= */
 
-footer{
-    background:#222222;
+footer {
 
-    color:#ffffff;
+    background: #222;
 
-    text-align:center;
+    color: white;
 
-    padding:30px;
+    text-align: center;
 
-    font-size:17px;
+    padding: 30px;
+
+    font-size: 16px;
 }
 
-footer span{
-    color:#f47721;
+footer span {
+    color: var(--orange);
 }
 
 
-/* ==================================================
+/* =========================================================
    MOBILE
-================================================== */
+========================================================= */
 
-@media(max-width:800px){
+@media (max-width: 800px) {
 
-    header{
-        height:80px;
+    header {
+
+        height: 80px;
+
+        padding:
+            0 30px;
     }
 
-    .logo{
-        font-size:27px;
+    main {
+
+        padding-top: 80px;
     }
 
-    .menu-btn{
-        width:60px;
-        height:60px;
+    .page {
+
+        min-height:
+            calc(100vh - 80px);
+
+        padding:
+            45px 30px 70px;
     }
 
-    .home{
-        display:flex;
+    .home {
 
-        flex-direction:column-reverse;
-
-        align-items:stretch;
-
-        gap:35px;
-
-        padding:50px 6%;
+        padding-top: 20px;
     }
 
-    .home-photo{
-        max-width:430px;
+    .home-container {
 
-        margin:0 auto;
+        grid-template-columns: 1fr;
+
+        gap: 35px;
     }
 
-    .hello{
-        font-size:19px;
+    .home-text {
+
+        order: 2;
     }
 
-    .tarming{
-        font-size:50px;
+    .profile-image {
+
+        order: 1;
+
+        max-width: 380px;
     }
 
-    .home h1{
-        font-size:27px;
+    .home-name {
+
+        font-size: 58px;
     }
 
-    .home p{
-        font-size:17px;
+    .home h2 {
+
+        font-size: 27px;
     }
 
-    .buttons{
-        flex-wrap:wrap;
+    .home-description {
+
+        font-size: 17px;
     }
 
-    .page{
-        padding:45px 6% 70px;
+    .page-title {
+
+        font-size: 48px;
     }
 
-    .page h1{
-        font-size:43px;
+    .skills-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .skills-grid{
-        grid-template-columns:1fr;
+    .project-grid {
+
+        grid-template-columns: 1fr;
     }
 
-    .info-card{
-        padding:25px;
+    .menu-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .info-line{
-        font-size:17px;
+    .menu-box {
+
+        padding: 20px;
+
+        border-radius: 25px;
     }
 
-    .university-logo{
-        width:160px;
-        height:160px;
+    .menu-item {
+
+        min-height: 115px;
     }
 
-    .university-card h2{
-        font-size:25px;
+    .menu-icon {
+
+        font-size: 28px;
     }
 
-    .university-card h3{
-        font-size:22px;
-    }
+    .menu-name {
 
-    .menu-box{
-        padding:22px 14px;
+        font-size: 17px;
     }
-
-    .menu-grid{
-        gap:10px;
-    }
-
-    .menu-item{
-        min-height:115px;
-    }
-
-    .menu-icon{
-        font-size:32px;
-    }
-
-    .menu-item b{
-        font-size:16px;
-    }
-
 }
 
 
-/* ==================================================
-   VERY SMALL SCREEN
-================================================== */
+@media (max-width: 480px) {
 
-@media(max-width:400px){
+    .logo {
 
-    .menu-grid{
-        grid-template-columns:1fr 1fr;
+        font-size: 25px;
     }
 
-    .tarming{
-        font-size:44px;
+    .menu-btn {
+
+        width: 54px;
+        height: 54px;
     }
 
-    .page h1{
-        font-size:38px;
+    .page {
+
+        padding-left: 25px;
+        padding-right: 25px;
     }
 
+    .home-name {
+
+        font-size: 48px;
+    }
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+
+        width: 100%;
+    }
+
+    .btn {
+
+        width: 100%;
+    }
+
+    .info-card {
+
+        padding: 25px;
+    }
+
+    .info-row {
+
+        font-size: 16px;
+    }
+
+    .education-card {
+
+        padding:
+            40px 20px;
+    }
+
+    .menu-grid {
+
+        gap: 10px;
+    }
+
+    .menu-item {
+
+        min-height: 105px;
+    }
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ==================================================
+<!-- ======================================================
+     SNOW
+====================================================== -->
+
+<div id="snow-container"></div>
+
+
+<!-- ======================================================
      HEADER
-================================================== -->
+====================================================== -->
 
 <header>
 
     <div class="logo">
-        TAR<span>MING</span>
+        <span class="black">TAR</span><span class="orange">MING</span>
     </div>
 
     <button
         class="menu-btn"
-        onclick="openMenu()">
-        ☰
+        onclick="openMenu()"
+        aria-label="เปิดเมนู">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
     </button>
 
 </header>
 
 
-<!-- ==================================================
+<!-- ======================================================
      MENU
-================================================== -->
+====================================================== -->
 
 <div
-    class="overlay"
-    id="overlay">
+    class="menu-overlay"
+    id="menuOverlay">
 
     <div class="menu-box">
 
-        <div class="menu-head">
+        <div class="menu-top">
 
-            <h2>
+            <div class="menu-title">
                 TARMING PORTFOLIO
-            </h2>
+            </div>
 
             <button
                 class="close-btn"
                 onclick="closeMenu()">
+
                 ×
+
             </button>
 
         </div>
 
-        <div class="menu-title">
+        <div class="menu-subtitle">
             Menu - เมนูต่างๆ
         </div>
 
 
         <div class="menu-grid">
 
-
-            <div
+            <button
                 class="menu-item"
-                onclick="go('home')">
+                onclick="showPage('home')">
 
-                <div class="menu-icon">
-                    🏠
-                </div>
+                <div class="menu-icon">🏠</div>
 
-                <b>
+                <div class="menu-name">
                     หน้าหลัก
-                </b>
-
-            </div>
-
-
-            <div
-                class="menu-item"
-                onclick="go('history')">
-
-                <div class="menu-icon">
-                    👤
                 </div>
 
-                <b>
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('history')">
+
+                <div class="menu-icon">👤</div>
+
+                <div class="menu-name">
                     ประวัติ
-                </b>
-
-            </div>
-
-
-            <div
-                class="menu-item"
-                onclick="go('education')">
-
-                <div class="menu-icon">
-                    🎓
                 </div>
 
-                <b>
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('education')">
+
+                <div class="menu-icon">🎓</div>
+
+                <div class="menu-name">
                     การศึกษา
-                </b>
-
-            </div>
-
-
-            <div
-                class="menu-item"
-                onclick="go('university')">
-
-                <div class="menu-icon">
-                    🏫
                 </div>
 
-                <b>
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('university')">
+
+                <div class="menu-icon">🏫</div>
+
+                <div class="menu-name">
                     มหาลัย
-                </b>
-
-            </div>
-
-
-            <div
-                class="menu-item"
-                onclick="go('skills')">
-
-                <div class="menu-icon">
-                    ⚙️
                 </div>
 
-                <b>
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('skills')">
+
+                <div class="menu-icon">⚙️</div>
+
+                <div class="menu-name">
                     ทักษะ
-                </b>
-
-            </div>
-
-
-            <div
-                class="menu-item"
-                onclick="go('research')">
-
-                <div class="menu-icon">
-                    📁
                 </div>
 
-                <b>
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('projects')">
+
+                <div class="menu-icon">📁</div>
+
+                <div class="menu-name">
                     ผลงาน
-                </b>
-
-            </div>
-
-
-            <div
-                class="menu-item"
-                onclick="go('contact')">
-
-                <div class="menu-icon">
-                    💬
                 </div>
 
-                <b>
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('contact')">
+
+                <div class="menu-icon">💬</div>
+
+                <div class="menu-name">
                     ติดต่อผม
-                </b>
+                </div>
 
-            </div>
-
+            </button>
 
         </div>
 
@@ -985,122 +1389,41 @@ footer span{
 </div>
 
 
-<!-- ==================================================
-     APP
-     ทุกหน้าจะถูกใส่ตรงนี้ที่เดียว
-================================================== -->
+<!-- ======================================================
+     MAIN
+====================================================== -->
 
-<div id="app"></div>
-
-
-<script>
+<main>
 
 
-/* ==================================================
-   IMAGE FILES
-================================================== */
+<!-- ======================================================
+     HOME
+====================================================== -->
 
-const PROFILE_IMAGE =
-"file_0000000085d47207b52f2b182e7429b3.png";
+<section
+    id="home"
+    class="page active">
 
-const UNIVERSITY_LOGO =
-"logo-lkmutnb.jpg";
+    <div class="home">
 
-
-/* ==================================================
-   MENU
-================================================== */
-
-function openMenu(){
-
-    document
-        .getElementById("overlay")
-        .classList
-        .add("show");
-
-}
+        <div class="home-container">
 
 
-function closeMenu(){
+            <div class="home-text">
 
-    document
-        .getElementById("overlay")
-        .classList
-        .remove("show");
-
-}
-
-
-/* ==================================================
-   GO TO PAGE
-================================================== */
-
-function go(page){
-
-    closeMenu();
-
-    window.location.hash = page;
-
-    render(page);
-
-    window.scrollTo(0,0);
-
-}
-
-
-/* ==================================================
-   RENDER PAGE
-================================================== */
-
-function render(page){
-
-    const app =
-        document.getElementById("app");
-
-
-    /*
-       สำคัญที่สุด
-
-       ทุกครั้งที่เปลี่ยนเมนู
-       ล้างของเก่าทั้งหมดก่อน
-
-       เพราะฉะนั้นจะไม่มี
-       หน้าหลัก + ประวัติ + มหาลัย
-       ต่อกันอีก
-    */
-
-    app.innerHTML = "";
-
-
-    /* ==================================================
-       HOME
-    ================================================== */
-
-    if(page === "home"){
-
-        app.innerHTML = `
-
-        <section class="home">
-
-
-            <div>
-
-                <div class="hello">
+                <div class="small-title">
                     HELLO, I'M
                 </div>
 
-
-                <div class="tarming">
-                    TAR<span>MING</span>
+                <div class="home-name">
+                    TAR<span class="orange">MING</span>
                 </div>
 
-
-                <h1>
+                <h2>
                     นาย เสฎฐวุฒิ พลหาญ
-                </h1>
+                </h2>
 
-
-                <p>
+                <p class="home-description">
 
                     นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
                     แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์
@@ -1108,9 +1431,8 @@ function render(page){
 
                     <br>
 
-                    มีความสนใจด้านวิศวกรรม
-                    การบิน อวกาศ เทคโนโลยี
-                    และการพัฒนาตนเอง
+                    มีความสนใจด้านวิศวกรรม การบิน อวกาศ
+                    เทคโนโลยี และการพัฒนาตนเอง
 
                 </p>
 
@@ -1118,8 +1440,8 @@ function render(page){
                 <div class="buttons">
 
                     <button
-                        class="btn btn-orange"
-                        onclick="go('history')">
+                        class="btn btn-primary"
+                        onclick="showPage('history')">
 
                         รู้จักผมมากขึ้น
 
@@ -1127,8 +1449,8 @@ function render(page){
 
 
                     <button
-                        class="btn btn-white"
-                        onclick="go('contact')">
+                        class="btn btn-outline"
+                        onclick="showPage('contact')">
 
                         ติดต่อผม
 
@@ -1139,824 +1461,841 @@ function render(page){
             </div>
 
 
-            <div class="home-photo">
+            <div class="profile-image">
 
                 <img
-                    src="${PROFILE_IMAGE}"
-                    alt="TARMING">
-
-            </div>
-
-
-        </section>
-
-
-        <footer>
-
-            © 2026
-            <span>TARMING</span>
-            PORTFOLIO
-
-        </footer>
-
-        `;
-
-    }
-
-
-    /* ==================================================
-       HISTORY
-    ================================================== */
-
-    else if(page === "history"){
-
-        app.innerHTML = `
-
-        <section class="page">
-
-
-            <div
-                class="back"
-                onclick="go('home')">
-
-                ← กลับหน้าหลัก
-
-            </div>
-
-
-            <h1>
-                ประวัติ
-            </h1>
-
-
-            <div class="subtitle">
-                MY PROFILE
-            </div>
-
-
-            <div class="history-photo">
-
-                <img
-                    src="${PROFILE_IMAGE}"
+                    src="file_0000000085d47207b52f2b182e7429b3.png"
                     alt="นาย เสฎฐวุฒิ พลหาญ">
 
             </div>
 
+        </div>
 
-            <div class="info-card">
+    </div>
 
-
-                <h2>
-                    นาย เสฎฐวุฒิ พลหาญ
-                </h2>
+</section>
 
 
-                <div class="info-line">
+<!-- ======================================================
+     HISTORY
+====================================================== -->
 
-                    <strong>
-                        ชื่อ-นามสกุล:
-                    </strong>
+<section
+    id="history"
+    class="page">
 
-                    นาย เสฎฐวุฒิ พลหาญ
+    <div class="profile-layout">
 
-                </div>
+        <a
+            href="#"
+            class="back-home"
+            onclick="showPage('home'); return false;">
 
+            ← กลับหน้าหลัก
 
-                <div class="info-line">
+        </a>
 
-                    <strong>
-                        ชื่อเล่น:
-                    </strong>
+        <h1 class="page-title">
+            ประวัติ
+        </h1>
 
-                    ต้าหมิง
-
-                </div>
-
-
-                <div class="info-line">
-
-                    <strong>
-                        อายุ:
-                    </strong>
-
-                    17 ปี
-
-                </div>
+        <div class="page-subtitle">
+            MY PROFILE
+        </div>
 
 
-                <div class="info-line">
+        <div class="profile-photo-large">
 
-                    <strong>
-                        วัน/เดือน/ปีเกิด:
-                    </strong>
+            <img
+                src="file_0000000085d47207b52f2b182e7429b3.png"
+                alt="นาย เสฎฐวุฒิ พลหาญ">
 
-                    19 กุมภาพันธ์ 2552
-
-                </div>
+        </div>
 
 
-                <div class="info-line">
+        <div class="info-card">
 
-                    <strong>
-                        แผนการเรียน:
-                    </strong>
-
-                    เตรียมวิทยาการคอมพิวเตอร์
-                    และวิศวกรรม (CSE)
-
-                </div>
+            <h2>
+                นาย เสฎฐวุฒิ พลหาญ
+            </h2>
 
 
-                <div class="info-line">
-
-                    <strong>
-                        สถานที่ศึกษา:
-                    </strong>
-
-                    โรงเรียนบ้านบึง
-                    อุตสาหกรรมนุเคราะห์
-
-                </div>
-
-
-                <div class="info-line">
-
-                    <strong>
-                        เชื้อชาติ:
-                    </strong>
-
-                    ไทย
-
-                </div>
-
-
-                <div class="info-line">
-
-                    <strong>
-                        สัญชาติ:
-                    </strong>
-
-                    ไทย
-
-                </div>
-
-
-                <div class="info-line">
-
-                    <strong>
-                        ศาสนา:
-                    </strong>
-
-                    คริสต์
-
-                </div>
-
-
-                <div class="info-line">
-
-                    <strong>
-                        สถานศึกษา:
-                    </strong>
-
-                    โรงเรียนบ้านบึง
-                    “อุตสาหกรรมนุเคราะห์”
-
-                </div>
-
-
+            <div class="info-row">
+                <strong>ชื่อ-นามสกุล:</strong>
+                นาย เสฎฐวุฒิ พลหาญ
             </div>
 
-
-        </section>
-
-
-        <footer>
-
-            © 2026
-            <span>TARMING</span>
-            PORTFOLIO
-
-        </footer>
-
-        `;
-
-    }
-
-
-    /* ==================================================
-       EDUCATION
-    ================================================== */
-
-    else if(page === "education"){
-
-        app.innerHTML = `
-
-        <section class="page">
-
-
-            <div
-                class="back"
-                onclick="go('home')">
-
-                ← กลับหน้าหลัก
-
+            <div class="info-row">
+                <strong>ชื่อเล่น:</strong>
+                ต้าหมิง
             </div>
 
-
-            <h1>
-                การศึกษา
-            </h1>
-
-
-            <div class="subtitle">
-                EDUCATION
+            <div class="info-row">
+                <strong>อายุ:</strong>
+                17 ปี
             </div>
 
-
-            <div class="education-list">
-
-
-                <div class="education-card">
-
-                    <h2>
-                        ระดับอนุบาล
-                    </h2>
-
-                    <p>
-                        โรงเรียนบุญประทีปวิทยาคาร
-                    </p>
-
-                </div>
-
-
-                <div class="education-card">
-
-                    <h2>
-                        ระดับประถมศึกษา
-                    </h2>
-
-                    <p>
-                        โรงเรียนบุญประทีปวิทยาคาร
-                    </p>
-
-                </div>
-
-
-                <div class="education-card">
-
-                    <h2>
-                        ระดับมัธยมศึกษาตอนต้น
-                    </h2>
-
-                    <p>
-                        โรงเรียนบ้านบึง
-                        อุตสาหกรรมนุเคราะห์
-                    </p>
-
-                </div>
-
-
-                <div class="education-card">
-
-                    <h2>
-                        ระดับมัธยมศึกษาตอนปลาย
-                    </h2>
-
-                    <p>
-                        โรงเรียนบ้านบึง
-                        อุตสาหกรรมนุเคราะห์
-                    </p>
-
-                    <p>
-                        แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์
-                        และวิศวกรรม (CSE)
-                    </p>
-
-                    <p>
-                        ชั้นมัธยมศึกษาปีที่ 6/6
-                    </p>
-
-                </div>
-
-
+            <div class="info-row">
+                <strong>วัน/เดือน/ปีเกิด:</strong>
+                19 กุมภาพันธ์ 2552
             </div>
 
-
-        </section>
-
-
-        <footer>
-
-            © 2026
-            <span>TARMING</span>
-            PORTFOLIO
-
-        </footer>
-
-        `;
-
-    }
-
-
-    /* ==================================================
-       UNIVERSITY
-    ================================================== */
-
-    else if(page === "university"){
-
-        app.innerHTML = `
-
-        <section class="page">
-
-
-            <div
-                class="back"
-                onclick="go('home')">
-
-                ← กลับหน้าหลัก
-
+            <div class="info-row">
+                <strong>แผนการเรียน:</strong>
+                เตรียมวิทยาการคอมพิวเตอร์และวิศวกรรม (CSE)
             </div>
 
-
-            <h1>
-                มหาลัย
-            </h1>
-
-
-            <div class="subtitle">
-                UNIVERSITY
+            <div class="info-row">
+                <strong>สถานที่ศึกษา:</strong>
+                โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
             </div>
 
+            <div class="info-row">
+                <strong>เชื้อชาติ:</strong>
+                ไทย
+            </div>
 
-            <div class="university-card">
+            <div class="info-row">
+                <strong>สัญชาติ:</strong>
+                ไทย
+            </div>
+
+            <div class="info-row">
+                <strong>ศาสนา:</strong>
+                คริสต์
+            </div>
+
+            <div class="info-row">
+                <strong>สถานศึกษา:</strong>
+                โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-                <img
-                    src="${UNIVERSITY_LOGO}"
-                    alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ"
-                    class="university-logo"
-                >
+<!-- ======================================================
+     EDUCATION
+====================================================== -->
+
+<section
+    id="education"
+    class="page">
+
+    <div class="profile-layout">
+
+        <a
+            href="#"
+            class="back-home"
+            onclick="showPage('home'); return false;">
+
+            ← กลับหน้าหลัก
+
+        </a>
+
+        <h1 class="page-title">
+            การศึกษา
+        </h1>
+
+        <div class="page-subtitle">
+            EDUCATION
+        </div>
 
 
-                <div class="dream">
-                    MY DREAM
+        <div class="education-card">
+
+            <h2>
+                ระดับมัธยมศึกษา
+            </h2>
+
+            <h3>
+                โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+            </h3>
+
+            <p>
+                แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์
+                และวิศวกรรม (CSE)
+            </p>
+
+            <br>
+
+            <p>
+                ชั้นมัธยมศึกษาปีที่ 6/6
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     UNIVERSITY
+====================================================== -->
+
+<section
+    id="university"
+    class="page">
+
+    <div class="profile-layout">
+
+        <a
+            href="#"
+            class="back-home"
+            onclick="showPage('home'); return false;">
+
+            ← กลับหน้าหลัก
+
+        </a>
+
+        <h1 class="page-title">
+            มหาลัย
+        </h1>
+
+        <div class="page-subtitle">
+            UNIVERSITY
+        </div>
+
+
+        <div class="education-card">
+
+
+            <img
+                class="university-logo"
+                src="logo-lkmutnb.jpg"
+                alt="โลโก้มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ">
+
+
+            <h2>
+                มหาวิทยาลัยที่สนใจ
+            </h2>
+
+            <h3>
+                สาขาวิศวกรรมคอมพิวเตอร์
+            </h3>
+
+            <p>
+                สนใจศึกษาต่อในด้านคอมพิวเตอร์
+                วิศวกรรม เทคโนโลยี และนวัตกรรม
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     SKILLS
+====================================================== -->
+
+<section
+    id="skills"
+    class="page">
+
+    <div class="profile-layout">
+
+        <a
+            href="#"
+            class="back-home"
+            onclick="showPage('home'); return false;">
+
+            ← กลับหน้าหลัก
+
+        </a>
+
+        <h1 class="page-title">
+            ทักษะ
+        </h1>
+
+        <div class="page-subtitle">
+            MY SKILLS
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    💻
                 </div>
-
-
-                <h2>
-
-                    มหาวิทยาลัยเทคโนโลยี
-                    พระจอมเกล้าพระนครเหนือ
-
-                </h2>
-
 
                 <h3>
-                    คณะวิศวกรรมศาสตร์
+                    Computer
                 </h3>
 
-
                 <p>
-                    สาขาวิศวกรรมการบินและอวกาศ
+                    สนใจด้านคอมพิวเตอร์
+                    และเทคโนโลยี
                 </p>
 
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Technology
+                </h3>
+
+                <p>
+                    สนใจเทคโนโลยี
+                    และนวัตกรรมใหม่ๆ
+                </p>
 
             </div>
 
 
-        </section>
+            <div class="skill-card">
 
+                <div class="skill-icon">
+                    ⚙️
+                </div>
 
-        <footer>
+                <h3>
+                    Engineering
+                </h3>
 
-            © 2026
-            <span>TARMING</span>
-            PORTFOLIO
-
-        </footer>
-
-        `;
-
-    }
-
-
-    /* ==================================================
-       SKILLS
-    ================================================== */
-
-    else if(page === "skills"){
-
-        app.innerHTML = `
-
-        <section class="page">
-
-
-            <div
-                class="back"
-                onclick="go('home')">
-
-                ← กลับหน้าหลัก
+                <p>
+                    สนใจด้านวิศวกรรม
+                    และการสร้างสิ่งประดิษฐ์
+                </p>
 
             </div>
 
 
-            <h1>
-                ทักษะ
-            </h1>
+            <div class="skill-card">
 
-
-            <div class="subtitle">
-                MY SKILLS
-            </div>
-
-
-            <div class="skills-grid">
-
-
-                <div class="skill-card">
-
-                    <h2>
-                        💻 เทคโนโลยี
-                    </h2>
-
-                    <p>
-                        มีความสนใจด้านคอมพิวเตอร์
-                        เทคโนโลยี และนวัตกรรม
-                    </p>
-
+                <div class="skill-icon">
+                    ✈️
                 </div>
 
+                <h3>
+                    Aviation
+                </h3>
 
-                <div class="skill-card">
-
-                    <h2>
-                        ✈️ การบินและอวกาศ
-                    </h2>
-
-                    <p>
-                        มีความสนใจด้านการบิน
-                        อวกาศ และวิศวกรรม
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <h2>
-                        🤝 การทำงานเป็นทีม
-                    </h2>
-
-                    <p>
-                        สามารถทำงานร่วมกับผู้อื่น
-                        และรับผิดชอบงานที่ได้รับมอบหมาย
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <h2>
-                        🧠 การเรียนรู้
-                    </h2>
-
-                    <p>
-                        พร้อมเรียนรู้สิ่งใหม่
-                        และพัฒนาตนเองอยู่เสมอ
-                    </p>
-
-                </div>
-
+                <p>
+                    สนใจด้านการบิน
+                    และอวกาศ
+                </p>
 
             </div>
 
 
-        </section>
+            <div class="skill-card">
 
+                <div class="skill-icon">
+                    🤝
+                </div>
 
-        <footer>
+                <h3>
+                    Teamwork
+                </h3>
 
-            © 2026
-            <span>TARMING</span>
-            PORTFOLIO
-
-        </footer>
-
-        `;
-
-    }
-
-
-    /* ==================================================
-       RESEARCH / PROJECT
-    ================================================== */
-
-    else if(page === "research"){
-
-        app.innerHTML = `
-
-        <section class="page">
-
-
-            <div
-                class="back"
-                onclick="go('home')">
-
-                ← กลับหน้าหลัก
+                <p>
+                    สามารถทำงานร่วมกับผู้อื่น
+                    และทำงานเป็นทีม
+                </p>
 
             </div>
 
 
-            <h1>
-                ผลงาน
-            </h1>
+            <div class="skill-card">
 
+                <div class="skill-icon">
+                    💡
+                </div>
 
-            <div class="subtitle">
-                MY PROJECTS
+                <h3>
+                    Creativity
+                </h3>
+
+                <p>
+                    ชอบคิดค้น
+                    และพัฒนาสิ่งใหม่ๆ
+                </p>
+
             </div>
 
 
-            <div class="project-list">
+        </div>
+
+    </div>
+
+</section>
 
 
-                <div class="project-card">
+<!-- ======================================================
+     PROJECTS
+====================================================== -->
 
-                    <h2>
-                        🤖 โครงงานด้านเทคโนโลยี
-                    </h2>
+<section
+    id="projects"
+    class="page">
+
+    <div class="profile-layout">
+
+        <a
+            href="#"
+            class="back-home"
+            onclick="showPage('home'); return false;">
+
+            ← กลับหน้าหลัก
+
+        </a>
+
+        <h1 class="page-title">
+            ผลงาน
+        </h1>
+
+        <div class="page-subtitle">
+            PROJECTS
+        </div>
+
+
+        <div class="project-grid">
+
+
+            <div class="project-card">
+
+                <img
+                    src="1789097318177.jpg"
+                    alt="ผลงานหุ่นยนต์">
+
+                <div class="project-content">
+
+                    <h3>
+                        🤖 โครงงานหุ่นยนต์
+                    </h3>
 
                     <p>
-
-                        ผลงานการสร้างและพัฒนา
-                        โครงงานด้านเทคโนโลยี
-                        และหุ่นยนต์
-
+                        ผลงานที่เกี่ยวข้องกับเทคโนโลยี
+                        การสร้างและพัฒนาหุ่นยนต์
+                        รวมถึงการทำงานร่วมกับทีม
                     </p>
-
-                    <img
-                        src="1789097318177.jpg"
-                        alt="ผลงานหุ่นยนต์"
-                        class="project-image"
-                    >
 
                 </div>
 
+            </div>
 
-                <div class="project-card">
 
-                    <h2>
-                        👥 การทำงานร่วมกับทีม
-                    </h2>
+            <div class="project-card">
+
+                <img
+                    src="1789097279748.jpg"
+                    alt="ผลงานหุ่นยนต์">
+
+                <div class="project-content">
+
+                    <h3>
+                        🚀 โครงงานด้านเทคโนโลยี
+                    </h3>
 
                     <p>
-
-                        ประสบการณ์การทำงานร่วมกับเพื่อน
-                        การแบ่งหน้าที่
-                        และการแก้ไขปัญหาร่วมกัน
-
+                        การประยุกต์ใช้ความรู้ด้านเทคโนโลยี
+                        และวิศวกรรมในการสร้างผลงาน
                     </p>
-
-                    <img
-                        src="1789097279748.jpg"
-                        alt="กิจกรรมการทำงานเป็นทีม"
-                        class="project-image"
-                    >
 
                 </div>
 
+            </div>
 
-                <div class="project-card">
 
-                    <h2>
-                        🏫 การออกแบบอาคาร
-                    </h2>
+            <div class="project-card">
+
+                <img
+                    src="1789097279748.jpg"
+                    alt="ผลงานออกแบบอาคาร">
+
+                <div class="project-content">
+
+                    <h3>
+                        🏗️ ผลงานออกแบบ
+                    </h3>
 
                     <p>
-
                         ผลงานการออกแบบอาคาร
-                        และการใช้เทคโนโลยี
-                        เพื่อสร้างแบบจำลอง
-
+                        และการสร้างแบบจำลอง
+                        ด้วยโปรแกรมคอมพิวเตอร์
                     </p>
 
-                    <img
-                        src="1789097279748.jpg"
-                        alt="ผลงานออกแบบ"
-                        class="project-image"
-                    >
-
                 </div>
-
 
             </div>
 
 
-        </section>
+        </div>
+
+    </div>
+
+</section>
 
 
-        <footer>
+<!-- ======================================================
+     CONTACT
+====================================================== -->
 
-            © 2026
-            <span>TARMING</span>
-            PORTFOLIO
+<section
+    id="contact"
+    class="page">
 
-        </footer>
+    <div class="profile-layout">
 
-        `;
+        <a
+            href="#"
+            class="back-home"
+            onclick="showPage('home'); return false;">
+
+            ← กลับหน้าหลัก
+
+        </a>
+
+        <h1 class="page-title">
+            ติดต่อผม
+        </h1>
+
+        <div class="page-subtitle">
+            CONTACT ME
+        </div>
+
+
+        <div class="contact-box">
+
+            <h2>
+                มาพูดคุยกัน 👋
+            </h2>
+
+            <p>
+                สามารถติดต่อผมผ่านช่องทางต่างๆ
+                ได้ที่นี่
+            </p>
+
+
+            <div class="contact-list">
+
+                <a
+                    class="contact-link"
+                    href="#">
+
+                    📧 Email
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="#">
+
+                    📷 Instagram
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="#">
+
+                    📘 Facebook
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    © 2026
+    <span>TARMING</span>
+    PORTFOLIO
+
+</footer>
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* ======================================================
+   PAGE NAVIGATION
+====================================================== */
+
+function showPage(pageId) {
+
+    /* ซ่อนทุกหน้า */
+
+    const pages =
+        document.querySelectorAll(".page");
+
+    pages.forEach(function(page) {
+
+        page.classList.remove("active");
+
+    });
+
+
+    /* แสดงเฉพาะหน้าที่เลือก */
+
+    const selected =
+        document.getElementById(pageId);
+
+    if (selected) {
+
+        selected.classList.add("active");
 
     }
 
 
-    /* ==================================================
-       CONTACT
-    ================================================== */
+    /* ปิดเมนู */
 
-    else if(page === "contact"){
-
-        app.innerHTML = `
-
-        <section class="page">
+    closeMenu();
 
 
-            <div
-                class="back"
-                onclick="go('home')">
+    /* กลับขึ้นด้านบน */
 
-                ← กลับหน้าหลัก
-
-            </div>
-
-
-            <h1>
-                ติดต่อผม
-            </h1>
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 
-            <div class="subtitle">
-                CONTACT ME
-            </div>
+    /* เปลี่ยน URL */
+
+    history.replaceState(
+        null,
+        "",
+        "#" + pageId
+    );
+}
 
 
-            <div class="contact-card">
+/* ======================================================
+   OPEN MENU
+====================================================== */
 
+function openMenu() {
 
-                <div class="contact-line">
-
-                    <strong>
-                        👤 ชื่อ
-                    </strong>
-
-                    <br>
-
-                    นาย เสฎฐวุฒิ พลหาญ
-
-                </div>
-
-
-                <div class="contact-line">
-
-                    <strong>
-                        🏷️ ชื่อเล่น
-                    </strong>
-
-                    <br>
-
-                    ต้าหมิง
-
-                </div>
-
-
-                <div class="contact-line">
-
-                    <strong>
-                        🏫 สถานศึกษา
-                    </strong>
-
-                    <br>
-
-                    โรงเรียนบ้านบึง
-                    “อุตสาหกรรมนุเคราะห์”
-
-                </div>
-
-
-                <div class="contact-line">
-
-                    <strong>
-                        📚 แผนการเรียน
-                    </strong>
-
-                    <br>
-
-                    เตรียมวิทยาการคอมพิวเตอร์
-                    และวิศวกรรม (CSE)
-
-                </div>
-
-
-                <div class="contact-line">
-
-                    <strong>
-                        💬 ติดต่อ
-                    </strong>
-
-                    <br>
-
-                    สามารถเพิ่มช่องทางการติดต่อ
-                    เช่น Facebook / Instagram /
-                    Email ได้ที่นี่
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-        <footer>
-
-            © 2026
-            <span>TARMING</span>
-            PORTFOLIO
-
-        </footer>
-
-        `;
-
-    }
-
-
-    /* ==================================================
-       DEFAULT
-    ================================================== */
-
-    else{
-
-        render("home");
-
-    }
+    document
+        .getElementById("menuOverlay")
+        .classList.add("active");
 
 }
 
 
-/* ==================================================
-   เปิดหน้าแรก
-================================================== */
+/* ======================================================
+   CLOSE MENU
+====================================================== */
 
-let currentPage =
-    window.location.hash.replace("#","");
+function closeMenu() {
 
-
-const validPages = [
-    "home",
-    "history",
-    "education",
-    "university",
-    "skills",
-    "research",
-    "contact"
-];
-
-
-if(!validPages.includes(currentPage)){
-
-    currentPage = "home";
+    document
+        .getElementById("menuOverlay")
+        .classList.remove("active");
 
 }
 
 
-render(currentPage);
+/* ======================================================
+   CLICK OUTSIDE MENU
+====================================================== */
 
+document
+    .getElementById("menuOverlay")
+    .addEventListener(
+        "click",
+        function(event) {
 
-/* ==================================================
-   BROWSER BACK / FORWARD
-================================================== */
+            if (
+                event.target === this
+            ) {
 
-window.addEventListener(
-    "hashchange",
-    function(){
+                closeMenu();
 
-        let page =
-            window.location.hash.replace("#","");
-
-        if(!validPages.includes(page)){
-
-            page = "home";
+            }
 
         }
+    );
 
-        render(page);
 
-        window.scrollTo(0,0);
+/* ======================================================
+   ESC CLOSE MENU
+====================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeMenu();
+
+        }
 
     }
 );
 
+
+/* ======================================================
+   LOAD PAGE FROM URL
+====================================================== */
+
+function loadPageFromURL() {
+
+    let hash =
+        window.location.hash
+        .replace("#", "");
+
+    const validPages = [
+        "home",
+        "history",
+        "education",
+        "university",
+        "skills",
+        "projects",
+        "contact"
+    ];
+
+    if (
+        validPages.includes(hash)
+    ) {
+
+        showPage(hash);
+
+    } else {
+
+        showPage("home");
+
+    }
+
+}
+
+
+/* ======================================================
+   SNOW EFFECT
+====================================================== */
+
+const snowContainer =
+    document.getElementById(
+        "snow-container"
+    );
+
+
+function createSnowflake() {
+
+    const snow =
+        document.createElement("div");
+
+    snow.className =
+        "snowflake";
+
+    snow.innerHTML = "❄";
+
+
+    /* ตำแหน่ง */
+
+    snow.style.left =
+        Math.random() * 100 + "vw";
+
+
+    /* ขนาด */
+
+    const size =
+        Math.random() * 13 + 7;
+
+    snow.style.fontSize =
+        size + "px";
+
+
+    /* ความเร็ว */
+
+    const duration =
+        Math.random() * 8 + 7;
+
+    snow.style.animationDuration =
+        duration + "s";
+
+
+    /* ความโปร่งใส */
+
+    snow.style.opacity =
+        Math.random() * .65 + .25;
+
+
+    /* เริ่มไม่พร้อมกัน */
+
+    snow.style.animationDelay =
+        Math.random() * -15 + "s";
+
+
+    snowContainer.appendChild(snow);
+
+
+    /* ลบออกเมื่อจบ */
+
+    setTimeout(
+        function() {
+
+            snow.remove();
+
+        },
+        (duration + 15) * 1000
+    );
+
+}
+
+
+/* สร้างหิมะชุดแรก */
+
+for (
+    let i = 0;
+    i < 45;
+    i++
+) {
+
+    createSnowflake();
+
+}
+
+
+/* เติมหิมะเรื่อยๆ */
+
+setInterval(
+    createSnowflake,
+    400
+);
+
+
+/* ======================================================
+   START
+====================================================== */
+
+loadPageFromURL();
+
 </script>
 
+
 </body>
-</html>
+   </html>
