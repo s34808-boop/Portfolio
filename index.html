@@ -1,803 +1,773 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Naming | Portfolio</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Prompt',sans-serif;
-  background:#0b0b0f;
-  color:#fff;
-  line-height:1.7;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-.navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:100;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:20px 7%;
-  background:rgba(11,11,15,.85);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid #222;
-}
-
-.logo{
-  font-family:'Kanit';
-  font-size:32px;
-  font-weight:700;
-}
-
-.logo span{
-  color:#8b5cf6;
-}
-
-nav{
-  display:flex;
-  gap:25px;
-}
-
-nav a{
-  color:#aaa;
-  transition:.3s;
-}
-
-nav a:hover{
-  color:#fff;
-}
-
-.menu{
-  display:none;
-  background:none;
-  border:0;
-  color:#fff;
-  font-size:25px;
-}
-
-.section{
-  padding:120px 8%;
-}
-
-.hero{
-  min-height:100vh;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  align-items:center;
-  gap:70px;
-  padding-top:150px;
-}
-
-.eyebrow{
-  color:#a78bfa;
-  font-size:14px;
-  letter-spacing:4px;
-  font-weight:600;
-}
-
-.hero h1{
-  font-family:'Kanit';
-  font-size:clamp(70px,10vw,140px);
-  line-height:.9;
-  margin:15px 0 0;
-}
-
-.hero h2{
-  font-size:32px;
-  font-weight:400;
-  color:#aaa;
-}
-
-.role{
-  margin-top:15px;
-  font-size:20px;
-  color:#a78bfa;
-}
-
-.intro{
-  max-width:650px;
-  margin:25px 0;
-  color:#aaa;
-  font-size:17px;
-}
-
-.buttons{
-  display:flex;
-  gap:15px;
-  margin-top:30px;
-}
-
-.btn{
-  padding:13px 25px;
-  border-radius:50px;
-  transition:.3s;
-}
-
-.primary{
-  background:#8b5cf6;
-}
-
-.primary:hover{
-  transform:translateY(-3px);
-  background:#a78bfa;
-}
-
-.ghost{
-  border:1px solid #444;
-}
-
-.ghost:hover{
-  border-color:#8b5cf6;
-}
-
-.hero-card{
-  padding:15px;
-  border:1px solid #292932;
-  border-radius:30px;
-  background:linear-gradient(145deg,#15151c,#0d0d11);
-}
-
-.photo-placeholder{
-  aspect-ratio:4/5;
-  border-radius:20px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  background:radial-gradient(circle at center,#29223d,#111116 65%);
-  border:1px dashed #555;
-}
-
-.photo-icon{
-  font-size:50px;
-  color:#a78bfa;
-}
-
-.photo-placeholder span{
-  margin-top:10px;
-  font-size:20px;
-  letter-spacing:3px;
-}
-
-.photo-placeholder small{
-  color:#777;
-  margin-top:5px;
-}
-
-.card-label{
-  display:flex;
-  justify-content:space-between;
-  padding:18px 5px 3px;
-  color:#777;
-}
-
-.card-label strong{
-  color:#a78bfa;
-}
-
-.section-heading{
-  display:flex;
-  align-items:center;
-  gap:20px;
-  margin-bottom:55px;
-}
-
-.section-heading span{
-  color:#8b5cf6;
-  font-family:'Kanit';
-}
-
-.section-heading h2{
-  font-family:'Kanit';
-  font-size:48px;
-}
-
-.alt{
-  background:#101016;
-}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-}
-
-.lead{
-  font-size:28px;
-  color:#fff;
-  margin-bottom:20px;
-}
-
-.about-text p:not(.lead){
-  color:#999;
-  margin-bottom:18px;
-}
-
-.facts{
-  border-left:1px solid #333;
-}
-
-.facts div{
-  padding:18px 25px;
-  border-bottom:1px solid #292929;
-}
-
-.facts span{
-  display:block;
-  font-size:11px;
-  letter-spacing:2px;
-  color:#777;
-}
-
-.facts b{
-  font-weight:400;
-}
-
-.timeline-card{
-  display:grid;
-  grid-template-columns:200px 1fr;
-  gap:30px;
-  padding:35px;
-  border:1px solid #292932;
-  border-radius:20px;
-  background:#15151c;
-}
-
-.year{
-  color:#a78bfa;
-  font-size:20px;
-}
-
-.tag{
-  color:#a78bfa;
-  font-size:11px;
-  letter-spacing:2px;
-}
-
-.timeline-card h3{
-  font-family:'Kanit';
-  font-size:28px;
-  margin:5px 0;
-}
-
-.timeline-card p:last-child{
-  color:#888;
-}
-
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.skill{
-  padding:30px;
-  border:1px solid #292932;
-  border-radius:20px;
-  transition:.3s;
-  background:#101016;
-}
-
-.skill:hover{
-  transform:translateY(-6px);
-  border-color:#8b5cf6;
-}
-
-.skill-icon{
-  font-size:30px;
-  color:#a78bfa;
-}
-
-.skill h3{
-  margin:15px 0 5px;
-  font-family:'Kanit';
-  font-size:23px;
-}
-
-.skill p{
-  color:#888;
-}
-
-.project-grid{
-  display:grid;
-  gap:18px;
-}
-
-.project{
-  display:grid;
-  grid-template-columns:80px 1fr 40px;
-  gap:20px;
-  align-items:center;
-  padding:30px;
-  border:1px solid #292932;
-  border-radius:20px;
-  transition:.3s;
-}
-
-.project:hover{
-  background:#17171f;
-  border-color:#8b5cf6;
-}
-
-.project-no{
-  font-family:'Kanit';
-  font-size:25px;
-  color:#555;
-}
-
-.project h3{
-  font-family:'Kanit';
-  font-size:28px;
-}
-
-.project p:not(.tag){
-  color:#888;
-}
-
-.arrow{
-  font-size:25px;
-  color:#a78bfa;
-}
-
-.section-note{
-  color:#888;
-  margin-top:-30px;
-  margin-bottom:35px;
-}
-
-.cert-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.cert{
-  text-align:left;
-  color:#fff;
-  background:#15151c;
-  border:1px solid #292932;
-  border-radius:20px;
-  padding:30px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.cert:hover{
-  border-color:#8b5cf6;
-  transform:translateY(-5px);
-}
-
-.cert span{
-  display:block;
-  color:#8b5cf6;
-  font-size:25px;
-}
-
-.cert strong{
-  display:block;
-  font-family:'Kanit';
-  font-size:22px;
-  margin:10px 0 3px;
-}
-
-.cert small{
-  color:#777;
-}
-
-.contact-section{
-  text-align:center;
-}
-
-.contact-box{
-  max-width:800px;
-  margin:auto;
-}
-
-.contact-box h2{
-  font-family:'Kanit';
-  font-size:60px;
-  margin:10px 0;
-}
-
-.contact-box>p:not(.eyebrow){
-  color:#888;
-}
-
-.contact-links{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
-
-.contact-links a{
-  border:1px solid #333;
-  padding:10px 20px;
-  border-radius:50px;
-}
-
-.contact-links a:hover{
-  border-color:#8b5cf6;
-}
-
-footer{
-  padding:30px;
-  text-align:center;
-  color:#555;
-  border-top:1px solid #222;
-}
-
-@media(max-width:800px){
-  nav{
-    display:none;
-  }
-
-  .menu{
-    display:block;
-  }
-
-  .hero{
-    grid-template-columns:1fr;
-    padding-top:130px;
-  }
-
-  .hero-card{
-    max-width:500px;
-    margin:auto;
-  }
-
-  .about-grid{
-    grid-template-columns:1fr;
-  }
-
-  .skills-grid,
-  .cert-grid{
-    grid-template-columns:1fr;
-  }
-
-  .timeline-card{
-    grid-template-columns:1fr;
-  }
-
-  .project{
-    grid-template-columns:45px 1fr;
-  }
-
-  .arrow{
-    display:none;
-  }
-
-  .section-heading h2{
-    font-size:38px;
-  }
-
-  .contact-box h2{
-    font-size:45px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TARMING | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #08090d;
+      --card: #11131a;
+      --card2: #171a22;
+      --text: #f5f7ff;
+      --muted: #a8adbd;
+      --line: rgba(255,255,255,.09);
+      --accent: #66d9ff;
+      --accent2: #8d7dff;
+    }
+
+    body {
+      font-family: "Kanit", "Prompt", sans-serif;
+      background:
+        radial-gradient(
+          circle at 80% 10%,
+          rgba(102,217,255,.12),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 10% 40%,
+          rgba(141,125,255,.10),
+          transparent 28%
+        ),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8,9,13,.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 100px 24px;
+    }
+
+    /* HERO */
+    #home {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 60px;
+      padding-top: 140px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      line-height: .95;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent2)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-title {
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      color: #dfe4f4;
+      margin-bottom: 18px;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 1.05rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      transition: .25s;
+    }
+
+    .btn.primary {
+      background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent2)
+      );
+      color: #07080c;
+      font-weight: 600;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* PHOTO */
+    .photo-card {
+      min-height: 430px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(102,217,255,.10),
+          rgba(141,125,255,.08)
+        ),
+        var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 25px 80px rgba(0,0,0,.35);
+    }
+
+    .photo-placeholder {
+      color: #777d91;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+
+    /* HEADINGS */
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    /* BOX */
+    .about-box,
+    .contact-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 30px;
+    }
+
+    .about-box p {
+      color: #c5c9d6;
+      font-size: 1.08rem;
+    }
+
+    /* EDUCATION */
+    .education-card {
+      padding: 30px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+
+    .education-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .education-card .school {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 26px;
+      border-radius: 20px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(102,217,255,.35);
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    /* PROJECTS */
+    .project-card {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .project-card .tag {
+      display: inline-block;
+      width: fit-content;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(102,217,255,.1);
+      color: var(--accent);
+      font-size: .85rem;
+      margin-bottom: 12px;
+    }
+
+    /* CONTACT */
+    .contact-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-item {
+      padding: 17px 20px;
+      border-radius: 14px;
+      background: var(--card2);
+      border: 1px solid var(--line);
+      transition: .25s;
+    }
+
+    .contact-item:hover {
+      transform: translateX(5px);
+      border-color: rgba(102,217,255,.4);
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .contact-item span {
+      color: var(--muted);
+      word-break: break-word;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #74798b;
+      border-top: 1px solid var(--line);
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      #home {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .photo-card {
+        min-height: 300px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 80px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="navbar">
-  <a class="logo" href="#home">N<span>.</span></a>
-
+  <!-- NAVBAR -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-inner">
+
+      <a href="#home" class="logo">
+        TAR<span>MING</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">หน้าหลัก</a></li>
+        <li><a href="#about">เกี่ยวกับผม</a></li>
+        <li><a href="#education">การศึกษา</a></li>
+        <li><a href="#skills">ทักษะ</a></li>
+        <li><a href="#projects">ผลงาน</a></li>
+        <li><a href="#contact">ติดต่อ</a></li>
+      </ul>
+
+    </div>
   </nav>
 
-  <button class="menu">☰</button>
-</header>
 
-<section id="home" class="hero section">
-
-  <div>
-    <p class="eyebrow">HELLO, I'M</p>
-
-    <h1>น้ำอิง</h1>
-    <h2>Naming</h2>
-
-    <p class="role">Modern Management Student</p>
-
-    <p class="intro">
-      นักศึกษาการจัดการสมัยใหม่ที่สนใจงานบริหาร
-      การตลาด การสื่อสาร และการทำงานเป็นทีม
-      พร้อมเรียนรู้สิ่งใหม่และพัฒนาตัวเองอยู่เสมอ
-    </p>
-
-    <div class="buttons">
-      <a class="btn primary" href="#projects">ดูผลงานของฉัน</a>
-      <a class="btn ghost" href="#contact">ติดต่อฉัน</a>
-    </div>
-  </div>
-
-  <div class="hero-card">
-    <div class="photo-placeholder">
-      <div class="photo-icon">✦</div>
-      <span>YOUR PHOTO</span>
-      <small>ใส่รูปของคุณภายหลังได้เลย</small>
-    </div>
-
-    <div class="card-label">
-      <span>PORTFOLIO</span>
-      <strong>2026</strong>
-    </div>
-  </div>
-
-</section>
-
-<section id="about" class="section">
-
-  <div class="section-heading">
-    <span>01</span>
-    <h2>About Me</h2>
-  </div>
-
-  <div class="about-grid">
-
-    <div class="about-text">
-      <p class="lead">สวัสดีค่ะ เราชื่อน้ำอิง 👋</p>
-
-      <p>
-        เป็นนักศึกษาสาขาการจัดการสมัยใหม่
-        มีความสนใจด้านการบริหาร การตลาด
-        การสร้างสรรค์งาน และการทำงานร่วมกับผู้อื่น
-      </p>
-
-      <p>
-        เราชอบเรียนรู้จากประสบการณ์จริง
-        และเชื่อว่าทุกโปรเจกต์คือโอกาสในการพัฒนาตัวเอง
-      </p>
-    </div>
-
-    <div class="facts">
-      <div>
-        <span>NAME</span>
-        <b>น้ำอิง / Naming</b>
-      </div>
-
-      <div>
-        <span>FIELD</span>
-        <b>Modern Management</b>
-      </div>
-
-      <div>
-        <span>UNIVERSITY</span>
-        <b>Sripatum University Chonburi</b>
-      </div>
-
-      <div>
-        <span>INTERESTS</span>
-        <b>Management · Marketing · Teamwork</b>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="education" class="section alt">
-
-  <div class="section-heading">
-    <span>02</span>
-    <h2>Education</h2>
-  </div>
-
-  <article class="timeline-card">
-
-    <div class="year">2022 — 2026</div>
+  <!-- HOME -->
+  <section id="home">
 
     <div>
-      <p class="tag">BACHELOR'S DEGREE</p>
 
-      <h3>มหาวิทยาลัยศรีปทุม วิทยาเขตชลบุรี</h3>
+      <div class="eyebrow">
+        HELLO, I'M
+      </div>
 
-      <p>
-        คณะบริหารธุรกิจ · สาขาการจัดการสมัยใหม่
+      <h1>
+        <span>TARMING</span>
+      </h1>
+
+      <div class="hero-title">
+        เสฎฐวุฒิ พลหาญ
+      </div>
+
+      <p class="hero-text">
+        นักเรียนโรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+        ผู้มีความสนใจด้านวิศวกรรม การบิน และเทคโนโลยีอวกาศ
+        พร้อมเรียนรู้และพัฒนาตัวเอง
+        เพื่อก้าวเข้าสู่เส้นทางวิศวกรรมการบินและอวกาศ
       </p>
-    </div>
 
-  </article>
+      <div class="buttons">
 
-</section>
+        <a href="#about" class="btn primary">
+          รู้จักผมมากขึ้น
+        </a>
 
-<section id="skills" class="section">
+        <a href="#contact" class="btn">
+          ติดต่อผม
+        </a>
 
-  <div class="section-heading">
-    <span>03</span>
-    <h2>My Skills</h2>
-  </div>
-
-  <div class="skills-grid">
-
-    <div class="skill">
-      <div class="skill-icon">✦</div>
-      <h3>Canva</h3>
-      <p>ออกแบบสื่อและงานนำเสนอ</p>
-    </div>
-
-    <div class="skill">
-      <div class="skill-icon">▦</div>
-      <h3>Microsoft Office</h3>
-      <p>Word · Excel · PowerPoint</p>
-    </div>
-
-    <div class="skill">
-      <div class="skill-icon">◎</div>
-      <h3>Communication</h3>
-      <p>สื่อสารและนำเสนออย่างมั่นใจ</p>
-    </div>
-
-    <div class="skill">
-      <div class="skill-icon">↗</div>
-      <h3>Teamwork</h3>
-      <p>ทำงานร่วมกับผู้อื่นได้ดี</p>
-    </div>
-
-    <div class="skill">
-      <div class="skill-icon">◇</div>
-      <h3>Marketing</h3>
-      <p>พื้นฐานการตลาดและการวางแผน</p>
-    </div>
-
-    <div class="skill">
-      <div class="skill-icon">◈</div>
-      <h3>Management</h3>
-      <p>การจัดการและการทำงานเป็นระบบ</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="projects" class="section alt">
-
-  <div class="section-heading">
-    <span>04</span>
-    <h2>Projects</h2>
-  </div>
-
-  <div class="project-grid">
-
-    <article class="project">
-      <div class="project-no">01</div>
-
-      <div>
-        <p class="tag">MANAGEMENT</p>
-        <h3>Project Name One</h3>
-        <p>
-          โปรเจกต์ด้านการจัดการ
-          สามารถใส่รายละเอียดงานจริงและบทบาทของเราได้ตรงนี้
-        </p>
       </div>
 
-      <span class="arrow">↗</span>
-    </article>
+    </div>
 
-    <article class="project">
-      <div class="project-no">02</div>
 
-      <div>
-        <p class="tag">MARKETING</p>
-        <h3>Project Name Two</h3>
-        <p>
-          ผลงานด้านการตลาด การวางแผนคอนเทนต์
-          หรือแคมเปญที่เคยทำ
-        </p>
+    <div class="photo-card">
+
+      <div class="photo-placeholder">
+
+        ✈️
+
+        <br>
+
+        YOUR PHOTO
+
+        <br>
+
+        <small>
+          ใส่รูปของคุณตรงนี้
+        </small>
+
       </div>
 
-      <span class="arrow">↗</span>
-    </article>
+    </div>
 
-    <article class="project">
-      <div class="project-no">03</div>
+  </section>
 
-      <div>
-        <p class="tag">CREATIVE</p>
-        <h3>Project Name Three</h3>
-        <p>
-          งานสร้างสรรค์ งานออกแบบ
-          หรือผลงานที่อยากนำเสนอใน Portfolio
-        </p>
-      </div>
 
-      <span class="arrow">↗</span>
-    </article>
+  <!-- ABOUT -->
+  <section id="about">
 
-  </div>
-</section>
+    <h2 class="section-title">
+      เกี่ยวกับผม
+    </h2>
 
-<section id="certificates" class="section">
-
-  <div class="section-heading">
-    <span>05</span>
-    <h2>Certificates</h2>
-  </div>
-
-  <p class="section-note">
-    พื้นที่สำหรับใส่เกียรติบัตรและใบรับรองของเรา
-  </p>
-
-  <div class="cert-grid">
-
-    <button class="cert">
-      <span>01</span>
-      <strong>Certificate 01</strong>
-      <small>คลิกเพื่อดูรายละเอียด</small>
-    </button>
-
-    <button class="cert">
-      <span>02</span>
-      <strong>Certificate 02</strong>
-      <small>คลิกเพื่อดูรายละเอียด</small>
-    </button>
-
-    <button class="cert">
-      <span>03</span>
-      <strong>Certificate 03</strong>
-      <small>คลิกเพื่อดูรายละเอียด</small>
-    </button>
-
-  </div>
-
-</section>
-
-<section id="contact" class="section contact-section alt">
-
-  <div class="contact-box">
-
-    <p class="eyebrow">LET'S CONNECT</p>
-
-    <h2>มาคุยกันไหม?</h2>
-
-    <p>
-      ถ้าอยากรู้จักผลงานหรือพูดคุยเกี่ยวกับโปรเจกต์
-      สามารถติดต่อเราได้เลย
+    <p class="section-subtitle">
+      About Me
     </p>
 
-    <div class="contact-links">
-      <a href="mailto:your@email.com">✉ Email</a>
-      <a href="#">◎ Instagram</a>
-      <a href="#">f Facebook</a>
+    <div class="about-box">
+
+      <p>
+
+        สวัสดีครับ ผมชื่อ
+        <strong>TARMING</strong>
+        หรือ
+        <strong>เสฎฐวุฒิ พลหาญ</strong>
+
+        ปัจจุบันเป็นนักเรียน
+        <strong>โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์</strong>
+
+        ผมมีความสนใจในด้านวิศวกรรม
+        โดยเฉพาะเทคโนโลยีการบินและอวกาศ
+
+        และมีเป้าหมายที่จะศึกษาต่อในระดับมหาวิทยาลัย
+        เพื่อพัฒนาความรู้ ความสามารถ
+        และสร้างผลงานที่เกี่ยวข้องกับสายงานนี้ในอนาคต
+
+      </p>
+
     </div>
 
-  </div>
+  </section>
 
-</section>
 
-<footer>
-  © 2026 Naming Portfolio. Made with ♡
-</footer>
+  <!-- EDUCATION -->
+  <section id="education">
+
+    <h2 class="section-title">
+      การศึกษา
+    </h2>
+
+    <p class="section-subtitle">
+      Education
+    </p>
+
+    <div class="education-card">
+
+      <h3>
+        นักเรียนระดับมัธยมศึกษา
+      </h3>
+
+      <div class="school">
+        โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+      </div>
+
+      <p>
+        กำลังเตรียมความพร้อม
+        เพื่อศึกษาต่อในระดับมหาวิทยาลัย
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- UNIVERSITY GOAL -->
+  <section>
+
+    <h2 class="section-title">
+      เป้าหมายในอนาคต
+    </h2>
+
+    <p class="section-subtitle">
+      My University Goal
+    </p>
+
+    <div class="education-card">
+
+      <h3>
+        มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
+      </h3>
+
+      <div class="school">
+        คณะวิศวกรรมศาสตร์
+      </div>
+
+      <p>
+        สาขาวิศวกรรมการบินและอวกาศ
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills">
+
+    <h2 class="section-title">
+      ทักษะและความสนใจ
+    </h2>
+
+    <p class="section-subtitle">
+      Skills & Interests
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">✈️</div>
+        <h3>การบิน</h3>
+        <p>
+          สนใจเทคโนโลยีและระบบ
+          ที่เกี่ยวข้องกับอากาศยาน
+        </p>
+      </div>
+
+
+      <div class="card">
+        <div class="icon">🚀</div>
+        <h3>อวกาศ</h3>
+        <p>
+          สนใจเทคโนโลยีอวกาศ
+          จรวด และการสำรวจอวกาศ
+        </p>
+      </div>
+
+
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3>วิศวกรรม</h3>
+        <p>
+          ต้องการพัฒนาทักษะด้าน
+          วิทยาศาสตร์ คณิตศาสตร์
+          และการแก้ปัญหา
+        </p>
+      </div>
+
+
+      <div class="card">
+        <div class="icon">💡</div>
+        <h3>การเรียนรู้</h3>
+        <p>
+          พร้อมเรียนรู้สิ่งใหม่
+          และพัฒนาตัวเองอย่างต่อเนื่อง
+        </p>
+      </div>
+
+
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>การทำงานเป็นทีม</h3>
+        <p>
+          ให้ความสำคัญกับการสื่อสาร
+          และการทำงานร่วมกับผู้อื่น
+        </p>
+      </div>
+
+
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>เทคโนโลยี</h3>
+        <p>
+          สนใจการนำเทคโนโลยี
+          มาประยุกต์ใช้ในการสร้างผลงาน
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section id="projects">
+
+    <h2 class="section-title">
+      ผลงาน
+    </h2>
+
+    <p class="section-subtitle">
+      Projects
+    </p>
+
+    <div class="grid">
+
+      <div class="card project-card">
+
+        <span class="tag">
+          PROJECT 01
+        </span>
+
+        <h3>
+          ผลงานของผม
+        </h3>
+
+        <p>
+          สามารถเพิ่มรายละเอียดโครงงาน
+          กิจกรรม หรือผลงานที่ภาคภูมิใจ
+          ได้ที่นี่
+        </p>
+
+      </div>
+
+
+      <div class="card project-card">
+
+        <span class="tag">
+          PROJECT 02
+        </span>
+
+        <h3>
+          กิจกรรมที่เข้าร่วม
+        </h3>
+
+        <p>
+          เพิ่มกิจกรรม ค่ายวิศวกรรม
+          การแข่งขัน หรือกิจกรรมในโรงเรียน
+        </p>
+
+      </div>
+
+
+      <div class="card project-card">
+
+        <span class="tag">
+          PROJECT 03
+        </span>
+
+        <h3>
+          ผลงานในอนาคต
+        </h3>
+
+        <p>
+          พื้นที่สำหรับเพิ่มผลงานใหม่ ๆ
+          ที่จะสร้างขึ้นในอนาคต
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <h2 class="section-title">
+      ติดต่อผม
+    </h2>
+
+    <p class="section-subtitle">
+      Contact Me
+    </p>
+
+    <div class="contact-box">
+
+      <div class="contact-list">
+
+        <!-- EMAIL -->
+        <a
+          class="contact-item"
+          href="mailto:Tarmingx2@gmail.com"
+        >
+
+          <strong>
+            📧 Email
+          </strong>
+
+          <span>
+            Tarmingx2@gmail.com
+          </span>
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+        <a
+          class="contact-item"
+          href="https://www.instagram.com/lux_rtsp_9?stkn=MTR1ZTRuOGNnMzcybg=="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <strong>
+            📸 Instagram
+          </strong>
+
+          <span>
+            @lux_rtsp_9 — กดเพื่อเข้าสู่ Instagram
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    © 2026 TARMING — Portfolio
+
+  </footer>
 
 </body>
-  </html>
+</html>
