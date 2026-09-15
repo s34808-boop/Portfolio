@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -11,7 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -29,7 +29,7 @@ body{
     overflow-x:hidden;
 }
 
-button{
+button,a{
     font-family:inherit;
 }
 
@@ -37,10 +37,9 @@ a{
     text-decoration:none;
 }
 
-
-/* ================================
+/* =========================
    SNOW
-================================ */
+========================= */
 
 #snow{
     position:fixed;
@@ -53,56 +52,59 @@ a{
 .snowflake{
     position:absolute;
     top:-30px;
-    color:white;
-    text-shadow:0 0 6px #aaa;
-    animation:fall linear forwards;
+    color:#fff;
+    text-shadow:0 0 7px #aaa;
+    animation:snowfall linear forwards;
 }
 
-@keyframes fall{
-
+@keyframes snowfall{
     0%{
-        transform:translateY(-30px) translateX(0) rotate(0);
+        transform:translate3d(0,-30px,0) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
     }
 
     50%{
-        transform:translateY(50vh) translateX(35px) rotate(180deg);
+        transform:translate3d(40px,50vh,0) rotate(180deg);
     }
 
     100%{
-        transform:translateY(110vh) translateX(-30px) rotate(360deg);
+        transform:translate3d(-30px,110vh,0) rotate(360deg);
+        opacity:.8;
     }
-
 }
 
-
-/* ================================
+/* =========================
    HEADER
-================================ */
+========================= */
 
 header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    height:90px;
+    height:82px;
     background:rgba(255,255,255,.97);
     border-bottom:1px solid #eee;
     z-index:5000;
 }
 
 .navbar{
-    max-width:1200px;
     height:100%;
+    max-width:1200px;
     margin:auto;
     padding:0 30px;
 
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-    font-size:30px;
+    font-size:29px;
     font-weight:800;
     color:#222;
 }
@@ -112,25 +114,24 @@ header{
 }
 
 .menu-button{
-    width:62px;
-    height:62px;
+    width:60px;
+    height:60px;
     border:0;
-    border-radius:16px;
+    border-radius:15px;
     background:#f47721;
     color:#fff;
     font-size:34px;
     cursor:pointer;
 }
 
-
-/* ================================
-   PAGE
-================================ */
+/* =========================
+   PAGE SYSTEM
+========================= */
 
 .page{
     display:none;
     min-height:100vh;
-    padding-top:90px;
+    padding-top:82px;
 }
 
 .page.active{
@@ -138,6 +139,7 @@ header{
 }
 
 .container{
+    width:100%;
     max-width:1200px;
     margin:auto;
     padding:65px 30px 90px;
@@ -145,9 +147,9 @@ header{
 
 .back{
     display:inline-block;
-    color:#d97735;
+    margin-bottom:40px;
+    color:#d47735;
     font-size:19px;
-    margin-bottom:45px;
     cursor:pointer;
 }
 
@@ -159,19 +161,18 @@ header{
 }
 
 .subtitle{
-    color:#d4773b;
-    letter-spacing:6px;
+    color:#d47735;
     font-size:20px;
+    letter-spacing:6px;
     margin-bottom:50px;
 }
 
-
-/* ================================
+/* =========================
    HOME
-================================ */
+========================= */
 
-.home{
-    min-height:calc(100vh - 90px);
+.home-container{
+    min-height:calc(100vh - 82px);
 
     display:flex;
     align-items:center;
@@ -187,9 +188,9 @@ header{
 }
 
 .hello{
-    color:#d4773b;
-    letter-spacing:6px;
+    color:#d47735;
     font-size:21px;
+    letter-spacing:6px;
     margin-bottom:25px;
 }
 
@@ -240,9 +241,6 @@ header{
     color:#d47735;
 }
 
-
-/* รูปหน้าแรก */
-
 .home-photo{
     width:100%;
     max-width:430px;
@@ -257,10 +255,9 @@ header{
     box-shadow:0 20px 50px rgba(244,119,33,.2);
 }
 
-
-/* ================================
+/* =========================
    HISTORY
-================================ */
+========================= */
 
 .profile{
     display:grid;
@@ -269,11 +266,18 @@ header{
     align-items:start;
 }
 
+.profile-photo{
+    width:100%;
+    max-width:420px;
+    margin:auto;
+}
+
 .profile-photo img{
     display:block;
     width:100%;
     border-radius:28px;
     border:4px solid #f47721;
+    box-shadow:0 20px 50px rgba(244,119,33,.18);
 }
 
 .profile-card{
@@ -293,18 +297,17 @@ header{
 .info{
     color:#555;
     font-size:18px;
-    line-height:1.8;
-    margin-bottom:9px;
+    line-height:1.9;
+    margin-bottom:10px;
 }
 
 .info strong{
     color:#222;
 }
 
-
-/* ================================
+/* =========================
    EDUCATION
-================================ */
+========================= */
 
 .cards{
     display:grid;
@@ -332,24 +335,25 @@ header{
     line-height:1.8;
 }
 
-
-/* ================================
+/* =========================
    UNIVERSITY
-================================ */
+========================= */
 
 .university{
     max-width:850px;
     margin:auto;
     text-align:center;
+
     background:#fffaf3;
     border:2px solid #dc955f;
     border-radius:30px;
+
     padding:50px 30px;
 }
 
 .university-logo{
-    width:150px;
-    height:150px;
+    width:160px;
+    height:160px;
     object-fit:contain;
     margin-bottom:25px;
 }
@@ -371,10 +375,9 @@ header{
     line-height:1.9;
 }
 
-
-/* ================================
+/* =========================
    SKILLS
-================================ */
+========================= */
 
 .skills{
     display:flex;
@@ -391,10 +394,9 @@ header{
     font-size:18px;
 }
 
-
-/* ================================
+/* =========================
    PROJECTS
-================================ */
+========================= */
 
 .projects{
     display:grid;
@@ -412,7 +414,7 @@ header{
 
 .project img{
     width:100%;
-    height:280px;
+    height:300px;
     object-fit:cover;
     display:block;
 }
@@ -433,29 +435,9 @@ header{
     line-height:1.8;
 }
 
-
-/* ================================
-   IMAGE FALLBACK
-================================ */
-
-.image-error{
-    width:100%;
-    height:280px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#f8f8f8;
-    color:#999;
-
-    font-size:18px;
-}
-
-
-/* ================================
+/* =========================
    CONTACT
-================================ */
+========================= */
 
 .contact{
     max-width:700px;
@@ -480,14 +462,13 @@ header{
     line-height:2;
 }
 
-
-/* ================================
+/* =========================
    FOOTER
-================================ */
+========================= */
 
 footer{
     background:#222;
-    color:white;
+    color:#fff;
     text-align:center;
     padding:35px 20px;
 }
@@ -496,10 +477,9 @@ footer span{
     color:#f47721;
 }
 
-
-/* ================================
+/* =========================
    MENU
-================================ */
+========================= */
 
 .overlay{
     position:fixed;
@@ -589,10 +569,9 @@ footer span{
     font-size:34px;
 }
 
-
-/* ================================
+/* =========================
    MOBILE
-================================ */
+========================= */
 
 @media(max-width:850px){
 
@@ -614,11 +593,6 @@ footer span{
         grid-template-columns:1fr;
     }
 
-    .profile-photo{
-        max-width:430px;
-        margin:auto;
-    }
-
     .cards,
     .projects{
         grid-template-columns:1fr;
@@ -627,19 +601,9 @@ footer span{
     .title{
         font-size:48px;
     }
-
 }
 
-
 @media(max-width:550px){
-
-    header{
-        height:82px;
-    }
-
-    .page{
-        padding-top:82px;
-    }
 
     .navbar{
         padding:0 20px;
@@ -691,22 +655,25 @@ footer span{
         font-size:17px;
     }
 
+    .project img{
+        height:240px;
+    }
 }
-
 </style>
 </head>
 
-
 <body>
 
+<!-- =========================
+     SNOW
+========================= -->
 
-<!-- หิมะ -->
 <div id="snow"></div>
 
 
-<!-- ================================
+<!-- =========================
      HEADER
-================================ -->
+========================= -->
 
 <header>
 
@@ -715,16 +682,12 @@ footer span{
 <a href="#home"
    class="logo"
    onclick="showPage('home')">
-
 TAR<span>MING</span>
-
 </a>
 
 <button class="menu-button"
         onclick="openMenu()">
-
 ☰
-
 </button>
 
 </div>
@@ -732,18 +695,16 @@ TAR<span>MING</span>
 </header>
 
 
-
-<!-- ================================
+<!-- =========================
      HOME
-================================ -->
+========================= -->
 
 <section id="home"
          class="page active">
 
-<div class="container home">
+<div class="container home-container">
 
 <div class="home-grid">
-
 
 <div>
 
@@ -760,52 +721,38 @@ TAR<span>MING</span>
 </h2>
 
 <p>
-
 นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
 แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์
 และวิศวกรรม (CSE)
-
 <br>
-
-มีความสนใจด้านวิศวกรรม
-การบิน อวกาศ เทคโนโลยี
-และการพัฒนาตนเอง
-
+มีความสนใจด้านวิศวกรรม การบิน อวกาศ
+เทคโนโลยี และการพัฒนาตนเอง
 </p>
 
 <div class="buttons">
 
 <button class="btn btn-orange"
         onclick="showPage('history')">
-
 รู้จักผมมากขึ้น
-
 </button>
 
 <button class="btn btn-white"
         onclick="showPage('contact')">
-
 ติดต่อผม
-
 </button>
 
 </div>
 
 </div>
 
-
-
-<!-- รูปหน้าแรก -->
 
 <div class="home-photo">
 
 <img
 src="file_0000000085d47207b52f2b182e7429b3.png"
-alt="นาย เสฎฐวุฒิ พลหาญ"
-onerror="imageFailed(this)">
+alt="นาย เสฎฐวุฒิ พลหาญ">
 
 </div>
-
 
 </div>
 
@@ -814,10 +761,9 @@ onerror="imageFailed(this)">
 </section>
 
 
-
-<!-- ================================
+<!-- =========================
      HISTORY
-================================ -->
+========================= -->
 
 <section id="history"
          class="page">
@@ -826,9 +772,7 @@ onerror="imageFailed(this)">
 
 <div class="back"
      onclick="showPage('home')">
-
 ← กลับหน้าหลัก
-
 </div>
 
 <h1 class="title">
@@ -839,16 +783,13 @@ onerror="imageFailed(this)">
 MY PROFILE
 </div>
 
-
 <div class="profile">
-
 
 <div class="profile-photo">
 
 <img
 src="file_0000000085d47207b52f2b182e7429b3.png"
-alt="นาย เสฎฐวุฒิ พลหาญ"
-onerror="imageFailed(this)">
+alt="รูปประจำตัว">
 
 </div>
 
@@ -892,21 +833,12 @@ onerror="imageFailed(this)">
 <div class="info">
 <strong>เชื้อชาติ:</strong>
 ไทย
-</div>
-
-<div class="info">
+&nbsp;&nbsp;
 <strong>สัญชาติ:</strong>
 ไทย
-</div>
-
-<div class="info">
+&nbsp;&nbsp;
 <strong>ศาสนา:</strong>
 คริสต์
-</div>
-
-<div class="info">
-<strong>สถานศึกษา:</strong>
-โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
 </div>
 
 </div>
@@ -918,10 +850,9 @@ onerror="imageFailed(this)">
 </section>
 
 
-
-<!-- ================================
+<!-- =========================
      EDUCATION
-================================ -->
+========================= -->
 
 <section id="education"
          class="page">
@@ -930,9 +861,7 @@ onerror="imageFailed(this)">
 
 <div class="back"
      onclick="showPage('home')">
-
 ← กลับหน้าหลัก
-
 </div>
 
 <h1 class="title">
@@ -943,64 +872,43 @@ onerror="imageFailed(this)">
 EDUCATION
 </div>
 
-
 <div class="cards">
 
-
 <div class="card">
 
 <h3>
-🏫 โรงเรียน
+🎓 ระดับมัธยมศึกษา
 </h3>
 
 <p>
-โรงเรียนบ้านบึง
-“อุตสาหกรรมนุเคราะห์”
+โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
 </p>
 
-</div>
-
-
-<div class="card">
-
-<h3>
-📚 ระดับการศึกษา
-</h3>
-
 <p>
-มัธยมศึกษาปีที่ 6/6
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-💻 แผนการเรียน
-</h3>
-
-<p>
-เตรียมวิทยาการคอมพิวเตอร์
+แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์
 และวิศวกรรม (CSE)
 </p>
 
+<p>
+ระดับชั้นมัธยมศึกษาปีที่ 6/6
+</p>
+
 </div>
 
 
 <div class="card">
 
 <h3>
-🎯 ความสนใจ
+📚 ความสนใจ
 </h3>
 
 <p>
-วิศวกรรม การบิน อวกาศ
-เทคโนโลยี และนวัตกรรม
+สนใจด้านคอมพิวเตอร์ วิศวกรรม
+การบิน อวกาศ เทคโนโลยี
+และนวัตกรรม
 </p>
 
 </div>
-
 
 </div>
 
@@ -1009,10 +917,9 @@ EDUCATION
 </section>
 
 
-
-<!-- ================================
+<!-- =========================
      UNIVERSITY
-================================ -->
+========================= -->
 
 <section id="university"
          class="page">
@@ -1021,9 +928,7 @@ EDUCATION
 
 <div class="back"
      onclick="showPage('home')">
-
 ← กลับหน้าหลัก
-
 </div>
 
 <h1 class="title">
@@ -1034,36 +939,24 @@ EDUCATION
 UNIVERSITY
 </div>
 
-
 <div class="university">
-
-
-<!--
-ถ้ามีไฟล์โลโก้มหาวิทยาลัย
-ให้ตั้งชื่อเป็น university-logo.png
-แล้วใส่ไว้ใน GitHub
--->
 
 <img
 class="university-logo"
-src="university-logo.png"
-alt="โลโก้มหาวิทยาลัย"
-onerror="this.style.display='none'">
-
+src="logo-lkmutnb.jpg"
+alt="ตราสัญลักษณ์มหาวิทยาลัย">
 
 <h2>
 มหาวิทยาลัยที่สนใจ
 </h2>
 
 <h3>
-สาขาการบินและอวกาศ
+สาขาวิศวกรรมการบินและอวกาศ
 </h3>
 
 <p>
-
-สนใจศึกษาต่อในด้านการบิน อวกาศ
-เทคโนโลยี วิศวกรรม และนวัตกรรม
-
+สนใจศึกษาต่อด้านการบินและอวกาศ
+วิศวกรรม เทคโนโลยี และนวัตกรรม
 </p>
 
 </div>
@@ -1073,10 +966,9 @@ onerror="this.style.display='none'">
 </section>
 
 
-
-<!-- ================================
+<!-- =========================
      SKILLS
-================================ -->
+========================= -->
 
 <section id="skills"
          class="page">
@@ -1085,9 +977,7 @@ onerror="this.style.display='none'">
 
 <div class="back"
      onclick="showPage('home')">
-
 ← กลับหน้าหลัก
-
 </div>
 
 <h1 class="title">
@@ -1095,27 +985,42 @@ onerror="this.style.display='none'">
 </h1>
 
 <div class="subtitle">
-MY SKILLS
+SKILLS
 </div>
-
 
 <div class="skills">
 
-<div class="skill">💻 Computer</div>
+<div class="skill">
+💻 คอมพิวเตอร์
+</div>
 
-<div class="skill">🧩 Problem Solving</div>
+<div class="skill">
+🤖 เทคโนโลยี
+</div>
 
-<div class="skill">🤝 Teamwork</div>
+<div class="skill">
+🚀 วิศวกรรม
+</div>
 
-<div class="skill">🗣️ Communication</div>
+<div class="skill">
+✈️ การบิน
+</div>
 
-<div class="skill">🎨 Canva</div>
+<div class="skill">
+🌌 อวกาศ
+</div>
 
-<div class="skill">📊 Microsoft Office</div>
+<div class="skill">
+🤝 การทำงานเป็นทีม
+</div>
 
-<div class="skill">🚀 Technology</div>
+<div class="skill">
+💡 การแก้ปัญหา
+</div>
 
-<div class="skill">✈️ Aviation</div>
+<div class="skill">
+📢 การสื่อสาร
+</div>
 
 </div>
 
@@ -1124,10 +1029,9 @@ MY SKILLS
 </section>
 
 
-
-<!-- ================================
+<!-- =========================
      PROJECTS
-================================ -->
+========================= -->
 
 <section id="projects"
          class="page">
@@ -1136,9 +1040,7 @@ MY SKILLS
 
 <div class="back"
      onclick="showPage('home')">
-
 ← กลับหน้าหลัก
-
 </div>
 
 <h1 class="title">
@@ -1153,28 +1055,23 @@ PROJECTS
 <div class="projects">
 
 
-<!-- หุ่นยนต์ -->
+<!-- PROJECT 1 -->
 
 <div class="project">
 
 <img
-src="robot.jpg"
-alt="โครงงานหุ่นยนต์"
-onerror="tryImage(this,['robot.png','robot.jpeg','1789097318177.jpg','1789097318177.png'])">
+src="1789097279748.jpg"
+alt="กิจกรรมและการทำงานเป็นทีม">
 
 <div class="project-content">
 
 <h3>
-🤖 โครงงานหุ่นยนต์
+🤝 กิจกรรมและการทำงานเป็นทีม
 </h3>
 
 <p>
-
-ผลงานเกี่ยวกับการออกแบบ
-และพัฒนาหุ่นยนต์
-เพื่อใช้ในการเรียนรู้
-และการทำงานร่วมกับทีม
-
+ประสบการณ์การทำงานร่วมกับผู้อื่น
+การแบ่งหน้าที่ และการแก้ปัญหาร่วมกัน
 </p>
 
 </div>
@@ -1182,44 +1079,13 @@ onerror="tryImage(this,['robot.png','robot.jpeg','1789097318177.jpg','1789097318
 </div>
 
 
-
-<!-- การออกแบบอาคาร -->
-
-<div class="project">
-
-<img
-src="Tuk5.jpg"
-alt="ผลงานการออกแบบอาคาร"
-onerror="tryImage(this,['Tuk5.jpeg','Tuk5.png','Tuk5.webp'])">
-
-<div class="project-content">
-
-<h3>
-🏫 การออกแบบอาคาร
-</h3>
-
-<p>
-
-ผลงานการออกแบบอาคาร
-และการสร้างแบบจำลอง
-ด้วยโปรแกรมคอมพิวเตอร์
-
-</p>
-
-</div>
-
-</div>
-
-
-
-<!-- เทคโนโลยี -->
+<!-- PROJECT 2 -->
 
 <div class="project">
 
 <img
-src="technology.jpg"
-alt="เทคโนโลยีและนวัตกรรม"
-onerror="tryImage(this,['technology.png','technology.jpeg'])">
+src="1789097318177.jpg"
+alt="เทคโนโลยีและนวัตกรรม">
 
 <div class="project-content">
 
@@ -1228,11 +1094,8 @@ onerror="tryImage(this,['technology.png','technology.jpeg'])">
 </h3>
 
 <p>
-
-การพัฒนาและทดลองระบบ
-ทางด้านเทคโนโลยี
+การพัฒนาและทดลองระบบทางด้านเทคโนโลยี
 รวมถึงการทำงานร่วมกับทีม
-
 </p>
 
 </div>
@@ -1240,28 +1103,47 @@ onerror="tryImage(this,['technology.png','technology.jpeg'])">
 </div>
 
 
-
-<!-- การทำงานเป็นทีม -->
+<!-- PROJECT 3 -->
 
 <div class="project">
 
 <img
-src="team.jpg"
-alt="กิจกรรมและการทำงานเป็นทีม"
-onerror="tryImage(this,['team.png','team.jpeg'])">
+src="1789097279748.jpg"
+alt="การออกแบบอาคาร">
 
 <div class="project-content">
 
 <h3>
-👥 กิจกรรมและการทำงานเป็นทีม
+🏫 การออกแบบอาคาร
 </h3>
 
 <p>
+ผลงานการออกแบบอาคาร
+และการสร้างแบบจำลองด้วยโปรแกรมคอมพิวเตอร์
+</p>
 
-ประสบการณ์การทำงานร่วมกับผู้อื่น
-การแบ่งหน้าที่
-และการแก้ปัญหาร่วมกัน
+</div>
 
+</div>
+
+
+<!-- PROJECT 4 -->
+
+<div class="project">
+
+<img
+src="IMG_20260911_102647_613.jpg"
+alt="ผลงานกิจกรรม">
+
+<div class="project-content">
+
+<h3>
+⚙️ กิจกรรมด้านเทคโนโลยี
+</h3>
+
+<p>
+ผลงานและประสบการณ์จากกิจกรรม
+ด้านเทคโนโลยีและการทำงานร่วมกับผู้อื่น
 </p>
 
 </div>
@@ -1276,10 +1158,9 @@ onerror="tryImage(this,['team.png','team.jpeg'])">
 </section>
 
 
-
-<!-- ================================
+<!-- =========================
      CONTACT
-================================ -->
+========================= -->
 
 <section id="contact"
          class="page">
@@ -1288,9 +1169,7 @@ onerror="tryImage(this,['team.png','team.jpeg'])">
 
 <div class="back"
      onclick="showPage('home')">
-
 ← กลับหน้าหลัก
-
 </div>
 
 <h1 class="title">
@@ -1301,29 +1180,26 @@ onerror="tryImage(this,['team.png','team.jpeg'])">
 CONTACT
 </div>
 
-
 <div class="contact">
 
 <h2>
-ยินดีที่ได้รู้จักครับ 👋
+ติดต่อผมได้ที่
 </h2>
 
 <p>
-
-หากต้องการติดต่อหรือพูดคุย
-สามารถติดต่อผมผ่านช่องทางต่าง ๆ
-ได้เลยครับ
-
-</p>
-
-<br>
-
-<p>
-📱 Instagram : TARMING
+📱 สามารถติดต่อผ่านช่องทางโซเชียลมีเดีย
 </p>
 
 <p>
-💬 Facebook : TARMING
+Instagram : TARMING
+</p>
+
+<p>
+Facebook : TARMING
+</p>
+
+<p>
+ขอบคุณที่เข้ามาเยี่ยมชม Portfolio ของผมครับ
 </p>
 
 </div>
@@ -1333,10 +1209,9 @@ CONTACT
 </section>
 
 
-
-<!-- ================================
+<!-- =========================
      FOOTER
-================================ -->
+========================= -->
 
 <footer>
 
@@ -1347,16 +1222,15 @@ PORTFOLIO
 </footer>
 
 
-
-<!-- ================================
+<!-- =========================
      MENU
-================================ -->
+========================= -->
 
-<div id="overlay"
-     class="overlay">
+<div id="menu"
+     class="overlay"
+     onclick="closeMenuOutside(event)">
 
 <div class="menu-box">
-
 
 <div class="menu-head">
 
@@ -1366,11 +1240,13 @@ TARMING PORTFOLIO
 
 <button class="close"
         onclick="closeMenu()">
-
 ×
-
 </button>
 
+</div>
+
+<div style="text-align:center;margin-bottom:25px;color:#bbb;">
+Menu - เมนูต่างๆ
 </div>
 
 
@@ -1378,84 +1254,63 @@ TARMING PORTFOLIO
 
 
 <button class="menu-item"
-        onclick="go('home')">
+        onclick="showPage('home')">
 
-<div class="menu-icon">
-🏠
-</div>
-
+<div class="menu-icon">🏠</div>
 หน้าหลัก
 
 </button>
 
 
 <button class="menu-item"
-        onclick="go('history')">
+        onclick="showPage('history')">
 
-<div class="menu-icon">
-👤
-</div>
-
+<div class="menu-icon">👤</div>
 ประวัติ
 
 </button>
 
 
 <button class="menu-item"
-        onclick="go('education')">
+        onclick="showPage('education')">
 
-<div class="menu-icon">
-🎓
-</div>
-
+<div class="menu-icon">🎓</div>
 การศึกษา
 
 </button>
 
 
 <button class="menu-item"
-        onclick="go('university')">
+        onclick="showPage('university')">
 
-<div class="menu-icon">
-✈️
-</div>
-
+<div class="menu-icon">🏫</div>
 มหาลัย
 
 </button>
 
 
 <button class="menu-item"
-        onclick="go('skills')">
+        onclick="showPage('skills')">
 
-<div class="menu-icon">
-⚙️
-</div>
-
+<div class="menu-icon">⚙️</div>
 ทักษะ
 
 </button>
 
 
 <button class="menu-item"
-        onclick="go('projects')">
+        onclick="showPage('projects')">
 
-<div class="menu-icon">
-📁
-</div>
-
+<div class="menu-icon">📁</div>
 ผลงาน
 
 </button>
 
 
 <button class="menu-item"
-        onclick="go('contact')">
+        onclick="showPage('contact')">
 
-<div class="menu-icon">
-💬
-</div>
-
+<div class="menu-icon">💬</div>
 ติดต่อผม
 
 </button>
@@ -1468,231 +1323,159 @@ TARMING PORTFOLIO
 </div>
 
 
-
 <script>
 
+/* =========================
+   PAGE NAVIGATION
+========================= */
 
-/* ================================
-   PAGE SYSTEM
-================================ */
+function showPage(pageId){
 
-function showPage(name){
-
-    document
-    .querySelectorAll('.page')
-    .forEach(function(page){
-
+    document.querySelectorAll('.page').forEach(function(page){
         page.classList.remove('active');
-
     });
 
+    const page = document.getElementById(pageId);
 
-    const target =
-        document.getElementById(name);
-
-
-    if(target){
-
-        target.classList.add('active');
-
+    if(page){
+        page.classList.add('active');
     }
 
+    closeMenu();
 
     window.scrollTo({
         top:0,
         behavior:'smooth'
     });
 
-
-    history.replaceState(
-        null,
-        '',
-        '#' + name
-    );
-
+    history.replaceState(null,null,'#'+pageId);
 }
 
 
-
-/* ================================
-   MENU
-================================ */
+/* =========================
+   OPEN MENU
+========================= */
 
 function openMenu(){
 
     document
-    .getElementById('overlay')
+    .getElementById('menu')
     .classList.add('show');
 
 }
 
 
+/* =========================
+   CLOSE MENU
+========================= */
+
 function closeMenu(){
 
     document
-    .getElementById('overlay')
+    .getElementById('menu')
     .classList.remove('show');
 
 }
 
 
-function go(name){
+/* =========================
+   CLOSE OUTSIDE
+========================= */
 
-    closeMenu();
+function closeMenuOutside(event){
 
-    setTimeout(function(){
-
-        showPage(name);
-
-    },100);
+    if(event.target.id === 'menu'){
+        closeMenu();
+    }
 
 }
 
 
+/* =========================
+   OPEN PAGE FROM URL
+========================= */
 
-/* ================================
-   HASH
-================================ */
+window.addEventListener('load',function(){
 
-function loadPage(){
+    const hash =
+        window.location.hash.replace('#','');
 
-    let name =
-        location.hash.replace('#','');
+    const validPages = [
+        'home',
+        'history',
+        'education',
+        'university',
+        'skills',
+        'projects',
+        'contact'
+    ];
 
-
-    if(!name){
-
-        name='home';
-
-    }
-
-
-    if(document.getElementById(name)){
-
-        showPage(name);
-
+    if(validPages.includes(hash)){
+        showPage(hash);
     }else{
-
         showPage('home');
-
     }
 
-}
+});
 
 
-window.addEventListener(
-    'hashchange',
-    loadPage
-);
+/* =========================
+   SNOW EFFECT
+========================= */
 
+function createSnow(){
 
+    const snowContainer =
+        document.getElementById('snow');
 
-/* ================================
-   IMAGE FALLBACK
-================================ */
-
-function tryImage(img, list){
-
-    if(!img.dataset.index){
-
-        img.dataset.index=0;
-
-    }
-
-    let index =
-        parseInt(img.dataset.index);
-
-
-    if(index >= list.length){
-
-        img.style.display='none';
-
-        return;
-
-    }
-
-
-    img.dataset.index=index+1;
-
-    img.src=list[index];
-
-}
-
-
-function imageFailed(img){
-
-    img.style.display='none';
-
-}
-
-
-
-/* ================================
-   SNOW
-================================ */
-
-const snow =
-    document.getElementById('snow');
-
-
-function makeSnow(){
-
-    const item =
+    const snow =
         document.createElement('div');
 
+    snow.className='snowflake';
 
-    item.className='snowflake';
+    snow.innerHTML='❄';
 
-    item.innerHTML='❄';
+    snow.style.left =
+        Math.random()*100+'vw';
 
+    snow.style.fontSize =
+        (Math.random()*12+8)+'px';
 
-    item.style.left =
-        Math.random()*100+'%';
+    snow.style.opacity =
+        Math.random()*.7+.3;
 
+    snow.style.animationDuration =
+        (Math.random()*5+5)+'s';
 
-    item.style.fontSize =
-        (Math.random()*12+7)+'px';
+    snow.style.animationDelay =
+        (Math.random()*2)+'s';
 
-
-    const duration =
-        Math.random()*7+7;
-
-
-    item.style.animationDuration =
-        duration+'s';
-
-
-    snow.appendChild(item);
-
+    snowContainer.appendChild(snow);
 
     setTimeout(function(){
 
-        item.remove();
+        snow.remove();
 
-    },duration*1000+1000);
-
-}
-
-
-setInterval(
-    makeSnow,
-    350
-);
-
-
-for(let i=0;i<30;i++){
-
-    makeSnow();
+    },12000);
 
 }
 
 
-/* ================================
-   START
-================================ */
+/* สร้างหิมะต่อเนื่อง */
 
-loadPage();
+setInterval(createSnow,350);
 
+
+/* สร้างหิมะเริ่มต้น */
+
+for(let i=0;i<25;i++){
+
+    setTimeout(
+        createSnow,
+        i*120
+    );
+
+}
 
 </script>
 
