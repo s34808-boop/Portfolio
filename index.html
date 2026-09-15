@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>TARMING PORTFOLIO</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
 
 <style>
 
-/* =========================
-   BASIC
-========================= */
+/* ========================================
+   RESET
+======================================== */
 
 *{
     margin:0;
@@ -33,8 +43,7 @@ body{
     overflow-x:hidden;
 }
 
-button,
-a{
+button{
     font-family:inherit;
 }
 
@@ -44,46 +53,61 @@ a{
 }
 
 
-/* =========================
+/* ========================================
    SNOW
-========================= */
+======================================== */
 
 #snow-container{
     position:fixed;
-    inset:0;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     pointer-events:none;
-    z-index:9999;
     overflow:hidden;
+    z-index:99999;
 }
 
 .snow{
     position:absolute;
-    top:-20px;
-    color:white;
+    top:-30px;
+    color:#ffffff;
+    font-size:12px;
     opacity:.85;
-    user-select:none;
-    animation:snowfall linear infinite;
-    text-shadow:0 0 5px rgba(255,255,255,.8);
+    text-shadow:
+        0 0 5px rgba(255,255,255,.9);
+    animation:snowfall linear forwards;
 }
 
 @keyframes snowfall{
+
     0%{
-        transform:translate3d(0,-20px,0) rotate(0deg);
+        transform:
+            translateY(-30px)
+            translateX(0)
+            rotate(0deg);
     }
 
     50%{
-        transform:translate3d(40px,50vh,0) rotate(180deg);
+        transform:
+            translateY(50vh)
+            translateX(35px)
+            rotate(180deg);
     }
 
     100%{
-        transform:translate3d(-30px,110vh,0) rotate(360deg);
+        transform:
+            translateY(110vh)
+            translateX(-30px)
+            rotate(360deg);
     }
+
 }
 
 
-/* =========================
+/* ========================================
    HEADER
-========================= */
+======================================== */
 
 header{
     position:fixed;
@@ -91,16 +115,17 @@ header{
     left:0;
     width:100%;
     height:90px;
-    background:rgba(255,255,255,.96);
-    border-bottom:1px solid #eee;
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid #eeeeee;
     z-index:5000;
 }
 
 .navbar{
-    max-width:1200px;
     height:100%;
+    max-width:1200px;
     margin:auto;
     padding:0 30px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -119,15 +144,20 @@ header{
 .menu-btn{
     width:62px;
     height:62px;
+
     border:0;
     border-radius:16px;
+
     background:#f47721;
-    color:white;
+    color:#ffffff;
+
     font-size:32px;
     cursor:pointer;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     transition:.3s;
 }
 
@@ -136,9 +166,9 @@ header{
 }
 
 
-/* =========================
+/* ========================================
    PAGE SYSTEM
-========================= */
+======================================== */
 
 .page{
     display:none;
@@ -151,39 +181,45 @@ header{
 }
 
 .page-inner{
+    width:100%;
     max-width:1200px;
     margin:auto;
-    padding:70px 30px 100px;
+    padding:65px 30px 90px;
 }
 
 
-/* =========================
+/* ========================================
    HOME
-========================= */
+======================================== */
 
 .home{
     min-height:calc(100vh - 90px);
+
     display:flex;
     align-items:center;
 }
 
 .home-grid{
     width:100%;
+
     display:grid;
-    grid-template-columns:1fr 430px;
+    grid-template-columns:
+        minmax(0,1fr)
+        430px;
+
     gap:70px;
     align-items:center;
 }
 
 .small-title{
     color:#d4773b;
-    font-size:22px;
+    font-size:21px;
     letter-spacing:6px;
     margin-bottom:25px;
 }
 
 .home h1{
-    font-size:70px;
+    font-size:72px;
     line-height:1;
     font-weight:800;
     margin-bottom:25px;
@@ -195,6 +231,7 @@ header{
 
 .home h2{
     font-size:34px;
+    line-height:1.3;
     margin-bottom:20px;
 }
 
@@ -213,25 +250,28 @@ header{
 
 .btn{
     padding:15px 28px;
+
     border-radius:12px;
     border:2px solid #f47721;
+
     font-size:17px;
     cursor:pointer;
+
     transition:.3s;
-}
-
-.btn-main{
-    background:#f47721;
-    color:#fff;
-}
-
-.btn-outline{
-    background:#fff;
-    color:#d86d2b;
 }
 
 .btn:hover{
     transform:translateY(-3px);
+}
+
+.btn-main{
+    background:#f47721;
+    color:#ffffff;
+}
+
+.btn-outline{
+    background:#ffffff;
+    color:#d86d2b;
 }
 
 .profile-home{
@@ -243,77 +283,118 @@ header{
 .profile-home img{
     width:100%;
     display:block;
+
     border-radius:28px;
     border:4px solid #f47721;
-    box-shadow:0 20px 50px rgba(244,119,33,.18);
+
+    box-shadow:
+        0 20px 50px
+        rgba(244,119,33,.18);
 }
 
 
-/* =========================
+/* ========================================
    PAGE TITLE
-========================= */
+======================================== */
 
 .back{
     display:inline-block;
+
     color:#d4773b;
-    font-size:18px;
+    font-size:19px;
+
     margin-bottom:45px;
     cursor:pointer;
+
+    transition:.3s;
+}
+
+.back:hover{
+    color:#f47721;
+    transform:translateX(-4px);
 }
 
 .page-title{
     font-size:58px;
-    font-weight:800;
     line-height:1;
+    font-weight:800;
+
     margin-bottom:15px;
 }
 
 .page-subtitle{
     color:#d4773b;
-    letter-spacing:6px;
+
     font-size:20px;
+    letter-spacing:6px;
+
     margin-bottom:50px;
 }
 
 
-/* =========================
-   PROFILE
-========================= */
+/* ========================================
+   HISTORY
+======================================== */
 
 .profile-layout{
+
     display:grid;
-    grid-template-columns:420px 1fr;
+
+    grid-template-columns:
+        420px
+        minmax(0,1fr);
+
     gap:55px;
+
     align-items:start;
+}
+
+.profile-image{
+    width:100%;
 }
 
 .profile-image img{
     width:100%;
+    display:block;
+
     border-radius:28px;
     border:4px solid #f47721;
-    display:block;
-    box-shadow:0 20px 50px rgba(244,119,33,.15);
+
+    box-shadow:
+        0 20px 50px
+        rgba(244,119,33,.15);
 }
 
 .profile-card{
-    background:#fff;
+
+    background:#ffffff;
+
     border-radius:25px;
+
     padding:35px;
+
     border-left:6px solid #f47721;
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,.08);
 }
 
 .profile-card h2{
     color:#e66f24;
+
     font-size:30px;
+
     margin-bottom:25px;
 }
 
 .info{
-    font-size:18px;
-    line-height:1.9;
-    margin-bottom:8px;
     color:#555;
+
+    font-size:18px;
+    line-height:1.8;
+
+    margin-bottom:9px;
 }
 
 .info strong{
@@ -321,172 +402,283 @@ header{
 }
 
 
-/* =========================
-   UNIVERSITY
-========================= */
-
-.university-card{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-    background:#fffaf3;
-    border:2px solid #dc955f;
-    border-radius:30px;
-    padding:55px 35px;
-}
-
-.university-logo{
-    width:150px;
-    height:150px;
-    object-fit:contain;
-    margin-bottom:30px;
-}
-
-.university-card h2{
-    font-size:38px;
-    margin-bottom:15px;
-}
-
-.university-card h3{
-    font-size:29px;
-    color:#ed7627;
-    margin-bottom:25px;
-}
-
-.university-card p{
-    color:#666;
-    font-size:19px;
-    line-height:1.9;
-}
-
-
-/* =========================
+/* ========================================
    EDUCATION
-========================= */
+======================================== */
 
 .cards{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
     gap:25px;
 }
 
 .card{
-    padding:35px;
+
+    background:#ffffff;
+
+    border:1px solid #eeeeee;
+
     border-radius:22px;
-    background:#fff;
-    border:1px solid #eee;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+    padding:35px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.06);
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card h3{
+
     color:#ed7627;
+
     font-size:26px;
+
     margin-bottom:15px;
 }
 
 .card p{
+
     color:#666;
+
     font-size:17px;
+
     line-height:1.8;
 }
 
 
-/* =========================
+/* ========================================
+   UNIVERSITY
+======================================== */
+
+.university-card{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+    background:#fffaf3;
+
+    border:2px solid #dc955f;
+
+    border-radius:30px;
+
+    padding:55px 35px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(220,149,95,.08);
+}
+
+.university-logo{
+
+    width:150px;
+    height:150px;
+
+    object-fit:contain;
+
+    margin-bottom:30px;
+}
+
+.university-card h2{
+
+    font-size:38px;
+
+    margin-bottom:15px;
+}
+
+.university-card h3{
+
+    color:#ed7627;
+
+    font-size:29px;
+
+    margin-bottom:25px;
+}
+
+.university-card p{
+
+    color:#666;
+
+    font-size:19px;
+
+    line-height:1.9;
+}
+
+
+/* ========================================
    SKILLS
-========================= */
+======================================== */
 
 .skills{
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:15px;
 }
 
 .skill{
+
     padding:15px 25px;
+
     border-radius:50px;
+
     background:#fff5ec;
+
     border:1px solid #f47721;
+
     color:#d96b23;
+
     font-size:18px;
+
+    transition:.3s;
+}
+
+.skill:hover{
+
+    background:#f47721;
+
+    color:#ffffff;
+
+    transform:translateY(-3px);
 }
 
 
-/* =========================
+/* ========================================
    PROJECTS
-========================= */
+======================================== */
 
 .project-grid{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:28px;
 }
 
 .project{
+
     overflow:hidden;
-    border-radius:22px;
-    background:#fff;
-    border:1px solid #eee;
-    box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+    background:#ffffff;
+
+    border:1px solid #eeeeee;
+
+    border-radius:24px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.07);
+
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-5px);
 }
 
 .project img{
+
     width:100%;
+
     height:280px;
+
     object-fit:cover;
+
     display:block;
 }
 
 .project-content{
+
     padding:25px;
 }
 
 .project-content h3{
+
     color:#ed7627;
+
     font-size:25px;
+
     margin-bottom:10px;
 }
 
 .project-content p{
+
     color:#666;
+
+    font-size:17px;
+
     line-height:1.8;
 }
 
 
-/* =========================
+/* ========================================
    CONTACT
-========================= */
+======================================== */
 
 .contact-box{
+
     max-width:700px;
+
     margin:auto;
+
     text-align:center;
+
     padding:50px 30px;
-    border-radius:28px;
+
     background:#fffaf3;
+
     border:2px solid #dc955f;
+
+    border-radius:28px;
 }
 
 .contact-box h2{
+
     font-size:35px;
+
     margin-bottom:20px;
 }
 
 .contact-box p{
+
     color:#666;
+
     font-size:18px;
+
     line-height:2;
 }
 
 
-/* =========================
+/* ========================================
    FOOTER
-========================= */
+======================================== */
 
 footer{
-    background:#222;
-    color:#fff;
+
+    background:#222222;
+
+    color:#ffffff;
+
     text-align:center;
+
     padding:35px 20px;
+
     font-size:17px;
 }
 
@@ -495,18 +687,26 @@ footer span{
 }
 
 
-/* =========================
-   MENU MODAL
-========================= */
+/* ========================================
+   MENU
+======================================== */
 
 .menu-overlay{
+
     position:fixed;
+
     inset:0;
-    background:rgba(0,0,0,.72);
+
     z-index:7000;
+
+    background:
+        rgba(0,0,0,.72);
+
     display:none;
+
     align-items:center;
     justify-content:center;
+
     padding:20px;
 }
 
@@ -515,21 +715,33 @@ footer span{
 }
 
 .menu-box{
+
     width:100%;
     max-width:680px;
+
     max-height:90vh;
+
     overflow:auto;
-    background:#111;
+
+    background:#111111;
+
+    color:#ffffff;
+
     border:1px solid #f47721;
+
     border-radius:28px;
+
     padding:30px;
-    color:white;
 }
 
 .menu-top{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     margin-bottom:30px;
 }
 
@@ -538,40 +750,65 @@ footer span{
 }
 
 .close-btn{
+
     width:55px;
     height:55px;
+
     border-radius:15px;
+
     background:transparent;
-    color:white;
-    border:1px solid #555;
+
+    color:#ffffff;
+
+    border:1px solid #555555;
+
     font-size:30px;
+
     cursor:pointer;
 }
 
 .menu-grid{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
     gap:15px;
 }
 
 .menu-item{
+
     min-height:125px;
+
     border:1px solid #b65f27;
+
     border-radius:18px;
+
     background:#191512;
-    color:white;
+
+    color:#ffffff;
+
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
     justify-content:center;
+
     gap:10px;
+
     cursor:pointer;
+
     font-size:19px;
+
     transition:.3s;
 }
 
 .menu-item:hover{
+
     background:#f47721;
+
     transform:translateY(-3px);
 }
 
@@ -580,9 +817,9 @@ footer span{
 }
 
 
-/* =========================
+/* ========================================
    MOBILE
-========================= */
+======================================== */
 
 @media(max-width:850px){
 
@@ -590,21 +827,22 @@ footer span{
         padding:0 25px;
     }
 
-    .logo{
-        font-size:27px;
-    }
-
     .home{
         min-height:auto;
     }
 
     .home-grid{
+
         grid-template-columns:1fr;
+
         gap:45px;
     }
 
-    .home{
-        padding-top:30px;
+    .profile-home{
+
+        order:-1;
+
+        max-width:380px;
     }
 
     .home h1{
@@ -615,23 +853,23 @@ footer span{
         font-size:28px;
     }
 
-    .profile-home{
-        max-width:380px;
-        order:-1;
-    }
-
     .profile-layout{
+
         grid-template-columns:1fr;
+
         gap:35px;
     }
 
     .profile-image{
+
         max-width:430px;
+
         margin:auto;
     }
 
     .cards,
     .project-grid{
+
         grid-template-columns:1fr;
     }
 
@@ -639,9 +877,6 @@ footer span{
         font-size:48px;
     }
 
-    .page-inner{
-        padding:50px 25px 80px;
-    }
 }
 
 
@@ -655,9 +890,26 @@ footer span{
         padding-top:82px;
     }
 
+    .navbar{
+        padding:0 20px;
+    }
+
+    .logo{
+        font-size:27px;
+    }
+
     .menu-btn{
+
         width:58px;
         height:58px;
+
+        font-size:30px;
+    }
+
+    .page-inner{
+
+        padding:
+            50px 25px 80px;
     }
 
     .home h1{
@@ -689,7 +941,9 @@ footer span{
     }
 
     .university-card{
-        padding:40px 20px;
+
+        padding:
+            40px 20px;
     }
 
     .university-card h2{
@@ -704,47 +958,67 @@ footer span{
         font-size:16px;
     }
 
+    .project img{
+        height:240px;
+    }
+
     .menu-grid{
         grid-template-columns:1fr 1fr;
     }
 
     .menu-item{
+
         min-height:110px;
+
         font-size:17px;
     }
 
     .menu-icon{
         font-size:30px;
     }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
-<!-- =========================
+
+<!-- ========================================
      SNOW
-========================= -->
+======================================== -->
 
 <div id="snow-container"></div>
 
 
-<!-- =========================
+
+<!-- ========================================
      HEADER
-========================= -->
+======================================== -->
 
 <header>
 
     <div class="navbar">
 
-        <a href="#home" class="logo" onclick="showPage('home')">
+        <a
+            href="#home"
+            class="logo"
+            onclick="showPage('home')">
+
             TAR<span>MING</span>
+
         </a>
 
-        <button class="menu-btn" onclick="openMenu()">
+
+        <button
+            class="menu-btn"
+            onclick="openMenu()">
+
             ☰
+
         </button>
 
     </div>
@@ -753,15 +1027,18 @@ footer span{
 
 
 
-<!-- ==================================================
+<!-- ========================================
      HOME
-================================================== -->
+======================================== -->
 
-<section id="home" class="page active">
+<section
+    id="home"
+    class="page active">
 
     <div class="page-inner home">
 
         <div class="home-grid">
+
 
             <div>
 
@@ -769,35 +1046,49 @@ footer span{
                     HELLO, I'M
                 </div>
 
+
                 <h1>
                     TAR<span>MING</span>
                 </h1>
+
 
                 <h2>
                     นาย เสฎฐวุฒิ พลหาญ
                 </h2>
 
+
                 <p>
+
                     นักเรียนชั้นมัธยมศึกษาปีที่ 6/6
                     แผนการเรียนเตรียมวิทยาการคอมพิวเตอร์
                     และวิศวกรรม (CSE)
+
                     <br>
-                    มีความสนใจด้านวิศวกรรม การบิน อวกาศ
-                    เทคโนโลยี และการพัฒนาตนเอง
+
+                    มีความสนใจด้านวิศวกรรม
+                    การบิน อวกาศ เทคโนโลยี
+                    และการพัฒนาตนเอง
+
                 </p>
+
 
                 <div class="buttons">
 
                     <button
                         class="btn btn-main"
                         onclick="showPage('history')">
+
                         รู้จักผมมากขึ้น
+
                     </button>
+
 
                     <button
                         class="btn btn-outline"
                         onclick="showPage('contact')">
+
                         ติดต่อผม
+
                     </button>
 
                 </div>
@@ -805,13 +1096,15 @@ footer span{
             </div>
 
 
+
             <div class="profile-home">
 
                 <img
                     src="file_0000000085d47207b52f2b182e7429b3.png"
-                    alt="TARMING">
+                    alt="นาย เสฎฐวุฒิ พลหาญ">
 
             </div>
+
 
         </div>
 
@@ -821,28 +1114,39 @@ footer span{
 
 
 
-<!-- ==================================================
+<!-- ========================================
      HISTORY
-================================================== -->
+======================================== -->
 
-<section id="history" class="page">
+<section
+    id="history"
+    class="page">
 
     <div class="page-inner">
 
-        <a class="back" onclick="showPage('home')">
+
+        <a
+            class="back"
+            onclick="showPage('home')">
+
             ← กลับหน้าหลัก
+
         </a>
+
 
         <h1 class="page-title">
             ประวัติ
         </h1>
+
 
         <div class="page-subtitle">
             MY PROFILE
         </div>
 
 
+
         <div class="profile-layout">
+
 
             <div class="profile-image">
 
@@ -853,61 +1157,127 @@ footer span{
             </div>
 
 
+
             <div class="profile-card">
+
 
                 <h2>
                     นาย เสฎฐวุฒิ พลหาญ
                 </h2>
 
+
                 <div class="info">
-                    <strong>ชื่อ-นามสกุล:</strong>
+
+                    <strong>
+                        ชื่อ-นามสกุล:
+                    </strong>
+
                     นาย เสฎฐวุฒิ พลหาญ
+
                 </div>
 
+
                 <div class="info">
-                    <strong>ชื่อเล่น:</strong>
+
+                    <strong>
+                        ชื่อเล่น:
+                    </strong>
+
                     ต้าหมิง
+
                 </div>
 
+
                 <div class="info">
-                    <strong>อายุ:</strong>
+
+                    <strong>
+                        อายุ:
+                    </strong>
+
                     17 ปี
+
                 </div>
 
+
                 <div class="info">
-                    <strong>วัน/เดือน/ปีเกิด:</strong>
+
+                    <strong>
+                        วัน/เดือน/ปีเกิด:
+                    </strong>
+
                     19 กุมภาพันธ์ 2552
+
                 </div>
 
-                <div class="info">
-                    <strong>แผนการเรียน:</strong>
-                    เตรียมวิทยาการคอมพิวเตอร์และวิศวกรรม (CSE)
-                </div>
 
                 <div class="info">
-                    <strong>สถานที่ศึกษา:</strong>
-                    โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์
+
+                    <strong>
+                        แผนการเรียน:
+                    </strong>
+
+                    เตรียมวิทยาการคอมพิวเตอร์
+                    และวิศวกรรม (CSE)
+
                 </div>
 
+
                 <div class="info">
-                    <strong>เชื้อชาติ:</strong>
+
+                    <strong>
+                        สถานที่ศึกษา:
+                    </strong>
+
+                    โรงเรียนบ้านบึง
+                    อุตสาหกรรมนุเคราะห์
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>
+                        เชื้อชาติ:
+                    </strong>
+
                     ไทย
+
                 </div>
 
+
                 <div class="info">
-                    <strong>สัญชาติ:</strong>
+
+                    <strong>
+                        สัญชาติ:
+                    </strong>
+
                     ไทย
+
                 </div>
 
+
                 <div class="info">
-                    <strong>ศาสนา:</strong>
+
+                    <strong>
+                        ศาสนา:
+                    </strong>
+
                     คริสต์
+
                 </div>
 
+
                 <div class="info">
-                    <strong>สถานศึกษา:</strong>
-                    โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+
+                    <strong>
+                        สถานศึกษา:
+                    </strong>
+
+                    โรงเรียนบ้านบึง
+                    “อุตสาหกรรมนุเคราะห์”
+
                 </div>
+
 
             </div>
 
@@ -919,28 +1289,39 @@ footer span{
 
 
 
-<!-- ==================================================
+<!-- ========================================
      EDUCATION
-================================================== -->
+======================================== -->
 
-<section id="education" class="page">
+<section
+    id="education"
+    class="page">
 
     <div class="page-inner">
 
-        <a class="back" onclick="showPage('home')">
+
+        <a
+            class="back"
+            onclick="showPage('home')">
+
             ← กลับหน้าหลัก
+
         </a>
+
 
         <h1 class="page-title">
             การศึกษา
         </h1>
+
 
         <div class="page-subtitle">
             EDUCATION
         </div>
 
 
+
         <div class="cards">
+
 
             <div class="card">
 
@@ -996,6 +1377,7 @@ footer span{
 
             </div>
 
+
         </div>
 
     </div>
@@ -1004,32 +1386,44 @@ footer span{
 
 
 
-<!-- ==================================================
+<!-- ========================================
      UNIVERSITY
-================================================== -->
+======================================== -->
 
-<section id="university" class="page">
+<section
+    id="university"
+    class="page">
 
     <div class="page-inner">
 
-        <a class="back" onclick="showPage('home')">
+
+        <a
+            class="back"
+            onclick="showPage('home')">
+
             ← กลับหน้าหลัก
+
         </a>
+
 
         <h1 class="page-title">
             มหาลัย
         </h1>
+
 
         <div class="page-subtitle">
             UNIVERSITY
         </div>
 
 
+
         <div class="university-card">
 
+
             <!--
-                ถ้าโลโก้มหาลัยใน GitHub
-                ใช้ชื่อไฟล์อื่น ให้เปลี่ยนตรง src
+                ถ้าชื่อไฟล์โลโก้ของแกไม่ใช่
+                logo-lkmutnb.jpg
+                ให้เปลี่ยนชื่อไฟล์ตรงนี้
             -->
 
             <img
@@ -1042,14 +1436,19 @@ footer span{
                 มหาวิทยาลัยที่สนใจ
             </h2>
 
+
             <h3>
                 สาขาการบินและอวกาศ
             </h3>
 
+
             <p>
+
                 สนใจศึกษาต่อในด้านการบิน อวกาศ
                 เทคโนโลยี วิศวกรรม และนวัตกรรม
+
             </p>
+
 
         </div>
 
@@ -1059,60 +1458,79 @@ footer span{
 
 
 
-<!-- ==================================================
+<!-- ========================================
      SKILLS
-================================================== -->
+======================================== -->
 
-<section id="skills" class="page">
+<section
+    id="skills"
+    class="page">
 
     <div class="page-inner">
 
-        <a class="back" onclick="showPage('home')">
+
+        <a
+            class="back"
+            onclick="showPage('home')">
+
             ← กลับหน้าหลัก
+
         </a>
+
 
         <h1 class="page-title">
             ทักษะ
         </h1>
+
 
         <div class="page-subtitle">
             MY SKILLS
         </div>
 
 
+
         <div class="skills">
+
 
             <div class="skill">
                 💻 Computer
             </div>
 
+
             <div class="skill">
                 🧩 Problem Solving
             </div>
+
 
             <div class="skill">
                 🤝 Teamwork
             </div>
 
+
             <div class="skill">
                 🗣️ Communication
             </div>
+
 
             <div class="skill">
                 🎨 Canva
             </div>
 
+
             <div class="skill">
                 📊 Microsoft Office
             </div>
+
 
             <div class="skill">
                 🚀 Technology
             </div>
 
+
             <div class="skill">
                 ✈️ Aviation
             </div>
+
 
         </div>
 
@@ -1122,36 +1540,51 @@ footer span{
 
 
 
-<!-- ==================================================
+<!-- ========================================
      PROJECTS
-================================================== -->
+======================================== -->
 
-<section id="projects" class="page">
+<section
+    id="projects"
+    class="page">
 
     <div class="page-inner">
 
-        <a class="back" onclick="showPage('home')">
+
+        <a
+            class="back"
+            onclick="showPage('home')">
+
             ← กลับหน้าหลัก
+
         </a>
+
 
         <h1 class="page-title">
             ผลงาน
         </h1>
+
 
         <div class="page-subtitle">
             PROJECTS
         </div>
 
 
+
         <div class="project-grid">
 
-            <!-- PROJECT 1 -->
+
+            <!-- =========================
+                 ROBOT
+            ========================== -->
 
             <div class="project">
 
+
                 <img
-                    src="1789097279748.jpg"
-                    alt="ผลงานหุ่นยนต์">
+                    src="1789097318177.jpg"
+                    alt="โครงงานหุ่นยนต์">
+
 
                 <div class="project-content">
 
@@ -1160,9 +1593,12 @@ footer span{
                     </h3>
 
                     <p>
+
                         ผลงานเกี่ยวกับการออกแบบ
                         และพัฒนาหุ่นยนต์
-                        เพื่อใช้ในการแข่งขันและการเรียนรู้
+                        เพื่อใช้ในการแข่งขัน
+                        และการเรียนรู้ด้านเทคโนโลยี
+
                     </p>
 
                 </div>
@@ -1170,13 +1606,18 @@ footer span{
             </div>
 
 
-            <!-- PROJECT 2 -->
+
+            <!-- =========================
+                 TECHNOLOGY
+            ========================== -->
 
             <div class="project">
 
+
                 <img
                     src="1789097318177.jpg"
-                    alt="ผลงานหุ่นยนต์">
+                    alt="เทคโนโลยีและนวัตกรรม">
+
 
                 <div class="project-content">
 
@@ -1185,9 +1626,11 @@ footer span{
                     </h3>
 
                     <p>
+
                         การพัฒนาและทดลองระบบ
                         ทางด้านเทคโนโลยี
                         รวมถึงการทำงานร่วมกับทีม
+
                     </p>
 
                 </div>
@@ -1195,13 +1638,23 @@ footer span{
             </div>
 
 
-            <!-- PROJECT 3 -->
+
+            <!-- =========================
+                 BUILDING
+            ========================== -->
 
             <div class="project">
 
+
+                <!--
+                    รูปอาคารที่แกเพิ่มเข้า GitHub
+                    ชื่อไฟล์ Tuk5.jpg
+                -->
+
                 <img
-                    src="1789097279748.jpg"
-                    alt="ผลงาน">
+                    src="Tuk5.jpg"
+                    alt="ผลงานการออกแบบอาคาร">
+
 
                 <div class="project-content">
 
@@ -1210,9 +1663,13 @@ footer span{
                     </h3>
 
                     <p>
+
                         ผลงานการออกแบบอาคาร
                         และการสร้างแบบจำลอง
                         ด้วยโปรแกรมคอมพิวเตอร์
+                        โดยเน้นการออกแบบโครงสร้าง
+                        และรายละเอียดของอาคาร
+
                     </p>
 
                 </div>
@@ -1220,13 +1677,18 @@ footer span{
             </div>
 
 
-            <!-- PROJECT 4 -->
+
+            <!-- =========================
+                 TEAMWORK
+            ========================== -->
 
             <div class="project">
 
+
                 <img
-                    src="1789097318177.jpg"
-                    alt="กิจกรรม">
+                    src="1789097279748.jpg"
+                    alt="กิจกรรมและการทำงานเป็นทีม">
+
 
                 <div class="project-content">
 
@@ -1235,15 +1697,18 @@ footer span{
                     </h3>
 
                     <p>
+
                         ประสบการณ์การทำงานร่วมกับผู้อื่น
                         การแบ่งหน้าที่
                         และการแก้ปัญหาร่วมกัน
+
                     </p>
 
                 </div>
 
             </div>
 
+
         </div>
 
     </div>
@@ -1252,48 +1717,66 @@ footer span{
 
 
 
-<!-- ==================================================
+<!-- ========================================
      CONTACT
-================================================== -->
+======================================== -->
 
-<section id="contact" class="page">
+<section
+    id="contact"
+    class="page">
 
     <div class="page-inner">
 
-        <a class="back" onclick="showPage('home')">
+
+        <a
+            class="back"
+            onclick="showPage('home')">
+
             ← กลับหน้าหลัก
+
         </a>
+
 
         <h1 class="page-title">
             ติดต่อผม
         </h1>
+
 
         <div class="page-subtitle">
             CONTACT
         </div>
 
 
+
         <div class="contact-box">
+
 
             <h2>
                 ยินดีที่ได้รู้จักครับ 👋
             </h2>
 
+
             <p>
+
                 หากต้องการติดต่อหรือพูดคุย
                 สามารถติดต่อผมผ่านช่องทางต่าง ๆ
                 ได้เลยครับ
+
             </p>
 
+
             <br>
+
 
             <p>
                 📱 Instagram : TARMING
             </p>
 
+
             <p>
                 💬 Facebook : TARMING
             </p>
+
 
         </div>
 
@@ -1303,9 +1786,9 @@ footer span{
 
 
 
-<!-- ==================================================
+<!-- ========================================
      FOOTER
-================================================== -->
+======================================== -->
 
 <footer>
 
@@ -1317,30 +1800,41 @@ footer span{
 
 
 
-<!-- ==================================================
-     MENU
-================================================== -->
+<!-- ========================================
+     MENU OVERLAY
+======================================== -->
 
-<div id="menuOverlay" class="menu-overlay">
+<div
+    id="menuOverlay"
+    class="menu-overlay">
+
 
     <div class="menu-box">
 
+
         <div class="menu-top">
+
 
             <h2>
                 TARMING PORTFOLIO
             </h2>
 
+
             <button
                 class="close-btn"
                 onclick="closeMenu()">
+
                 ×
+
             </button>
+
 
         </div>
 
 
+
         <div class="menu-grid">
+
 
             <button
                 class="menu-item"
@@ -1432,6 +1926,7 @@ footer span{
 
             </button>
 
+
         </div>
 
     </div>
@@ -1440,19 +1935,22 @@ footer span{
 
 
 
-<!-- ==================================================
+<!-- ========================================
      JAVASCRIPT
-================================================== -->
+======================================== -->
 
 <script>
 
-/* =========================
-   PAGE NAVIGATION
-========================= */
+
+/* ========================================
+   SHOW ONLY ONE PAGE
+======================================== */
 
 function showPage(pageName){
 
-    const pages = document.querySelectorAll('.page');
+    const pages =
+        document.querySelectorAll('.page');
+
 
     pages.forEach(function(page){
 
@@ -1461,7 +1959,9 @@ function showPage(pageName){
     });
 
 
-    const target = document.getElementById(pageName);
+    const target =
+        document.getElementById(pageName);
+
 
     if(target){
 
@@ -1485,9 +1985,10 @@ function showPage(pageName){
 }
 
 
-/* =========================
+
+/* ========================================
    MENU
-========================= */
+======================================== */
 
 function openMenu(){
 
@@ -1520,9 +2021,10 @@ function go(pageName){
 }
 
 
-/* =========================
-   CLOSE MENU OUTSIDE
-========================= */
+
+/* ========================================
+   CLOSE MENU BY CLICKING OUTSIDE
+======================================== */
 
 document
     .getElementById('menuOverlay')
@@ -1540,14 +2042,15 @@ document
     );
 
 
-/* =========================
-   OPEN PAGE FROM URL
-========================= */
 
-function loadPageFromHash(){
+/* ========================================
+   HASH PAGE
+======================================== */
+
+function loadPage(){
 
     let page =
-        window.location.hash.replace('#','');
+        window.location.hash.substring(1);
 
 
     if(!page){
@@ -1557,11 +2060,11 @@ function loadPageFromHash(){
     }
 
 
-    const exists =
+    const target =
         document.getElementById(page);
 
 
-    if(exists){
+    if(target){
 
         showPage(page);
 
@@ -1576,16 +2079,19 @@ function loadPageFromHash(){
 
 window.addEventListener(
     'hashchange',
-    loadPageFromHash
+    loadPage
 );
 
 
-/* =========================
+
+/* ========================================
    SNOW EFFECT
-========================= */
+======================================== */
 
 const snowContainer =
-    document.getElementById('snow-container');
+    document.getElementById(
+        'snow-container'
+    );
 
 
 function createSnow(){
@@ -1593,31 +2099,40 @@ function createSnow(){
     const snow =
         document.createElement('div');
 
+
     snow.className = 'snow';
+
 
     snow.innerHTML = '❄';
 
+
     const size =
-        Math.random() * 13 + 8;
+        Math.random() * 13 + 7;
+
 
     const left =
         Math.random() * 100;
 
+
     const duration =
-        Math.random() * 7 + 6;
+        Math.random() * 7 + 7;
+
 
     const delay =
-        Math.random() * 5;
+        Math.random() * 2;
 
 
     snow.style.left =
         left + '%';
 
+
     snow.style.fontSize =
         size + 'px';
 
+
     snow.style.animationDuration =
         duration + 's';
+
 
     snow.style.animationDelay =
         delay + 's';
@@ -1630,12 +2145,12 @@ function createSnow(){
 
         snow.remove();
 
-    }, (duration + delay) * 1000 + 1000);
+    },(duration + delay) * 1000 + 1000);
 
 }
 
 
-/* สร้างหิมะเรื่อย ๆ */
+/* หิมะตกต่อเนื่อง */
 
 setInterval(
     createSnow,
@@ -1643,22 +2158,28 @@ setInterval(
 );
 
 
-/* สร้างชุดแรกทันที */
+/* หิมะชุดแรก */
 
-for(let i = 0; i < 25; i++){
+for(
+    let i = 0;
+    i < 30;
+    i++
+){
 
     createSnow();
 
 }
 
 
-/* =========================
-   START
-========================= */
+/* ========================================
+   START WEBSITE
+======================================== */
 
-loadPageFromHash();
+loadPage();
+
 
 </script>
+
 
 </body>
 </html>
