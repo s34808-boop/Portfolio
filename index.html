@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>TARMING PORTFOLIO</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
 
 <style>
 
-/* =========================
+/* =====================================
    RESET
-========================= */
+===================================== */
 
 *{
     margin:0;
@@ -43,9 +53,9 @@ a{
 }
 
 
-/* =========================
+/* =====================================
    SNOW
-========================= */
+===================================== */
 
 #snow{
     position:fixed;
@@ -66,7 +76,9 @@ a{
 @keyframes snowfall{
 
     0%{
-        transform:translate3d(0,-30px,0) rotate(0deg);
+        transform:
+        translate3d(0,-30px,0)
+        rotate(0deg);
         opacity:0;
     }
 
@@ -75,20 +87,24 @@ a{
     }
 
     50%{
-        transform:translate3d(40px,50vh,0) rotate(180deg);
+        transform:
+        translate3d(40px,50vh,0)
+        rotate(180deg);
     }
 
     100%{
-        transform:translate3d(-30px,110vh,0) rotate(360deg);
+        transform:
+        translate3d(-30px,110vh,0)
+        rotate(360deg);
         opacity:.8;
     }
 
 }
 
 
-/* =========================
+/* =====================================
    HEADER
-========================= */
+===================================== */
 
 header{
     position:fixed;
@@ -135,7 +151,7 @@ header{
     border-radius:15px;
 
     background:#f47721;
-    color:#fff;
+    color:white;
 
     font-size:34px;
 
@@ -143,9 +159,9 @@ header{
 }
 
 
-/* =========================
+/* =====================================
    PAGE SYSTEM
-========================= */
+===================================== */
 
 .page{
     display:none;
@@ -182,6 +198,7 @@ header{
 
 .title{
     font-size:58px;
+
     line-height:1;
 
     font-weight:800;
@@ -200,9 +217,9 @@ header{
 }
 
 
-/* =========================
+/* =====================================
    HOME
-========================= */
+===================================== */
 
 .home-container{
     min-height:calc(100vh - 82px);
@@ -286,11 +303,11 @@ header{
 .btn-orange{
     background:#f47721;
 
-    color:#fff;
+    color:white;
 }
 
 .btn-white{
-    background:#fff;
+    background:white;
 
     color:#d47735;
 }
@@ -312,13 +329,15 @@ header{
 
     border:4px solid #f47721;
 
-    box-shadow:0 20px 50px rgba(244,119,33,.2);
+    box-shadow:
+    0 20px 50px
+    rgba(244,119,33,.2);
 }
 
 
-/* =========================
+/* =====================================
    HISTORY
-========================= */
+===================================== */
 
 .profile{
     display:grid;
@@ -347,11 +366,13 @@ header{
 
     border:4px solid #f47721;
 
-    box-shadow:0 20px 50px rgba(244,119,33,.18);
+    box-shadow:
+    0 20px 50px
+    rgba(244,119,33,.18);
 }
 
 .profile-card{
-    background:#fff;
+    background:white;
 
     border-left:6px solid #f47721;
 
@@ -359,7 +380,9 @@ header{
 
     padding:35px;
 
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    box-shadow:
+    0 10px 35px
+    rgba(0,0,0,.08);
 }
 
 .profile-card h2{
@@ -385,20 +408,21 @@ header{
 }
 
 
-/* =========================
+/* =====================================
    EDUCATION
-========================= */
+===================================== */
 
 .cards{
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+    repeat(2,1fr);
 
     gap:25px;
 }
 
 .card{
-    background:#fff;
+    background:white;
 
     border:1px solid #eee;
 
@@ -406,7 +430,9 @@ header{
 
     padding:35px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.06);
 }
 
 .card h3{
@@ -428,9 +454,9 @@ header{
 }
 
 
-/* =========================
+/* =====================================
    UNIVERSITY
-========================= */
+===================================== */
 
 .university{
     max-width:850px;
@@ -481,20 +507,20 @@ header{
 }
 
 
-/* =========================
+/* =====================================
    SKILLS
-========================= */
+===================================== */
 
 .skills{
     display:flex;
 
     flex-wrap:wrap;
 
-    gap:15px;
+    gap:18px;
 }
 
 .skill{
-    padding:14px 24px;
+    padding:15px 28px;
 
     border-radius:50px;
 
@@ -504,18 +530,30 @@ header{
 
     color:#d96b23;
 
-    font-size:18px;
+    font-size:20px;
+
+    transition:.2s;
+}
+
+.skill:hover{
+    background:#f47721;
+
+    color:white;
+
+    transform:
+    translateY(-3px);
 }
 
 
-/* =========================
+/* =====================================
    PROJECTS
-========================= */
+===================================== */
 
 .projects{
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+    repeat(2,1fr);
 
     gap:28px;
 }
@@ -523,13 +561,26 @@ header{
 .project{
     overflow:hidden;
 
-    background:#fff;
+    background:white;
 
     border:1px solid #eee;
 
     border-radius:24px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.07);
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.07);
+
+    transition:.2s;
+}
+
+.project:hover{
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 15px 35px
+    rgba(0,0,0,.1);
 }
 
 .project img{
@@ -563,9 +614,9 @@ header{
 }
 
 
-/* =========================
+/* =====================================
    CONTACT
-========================= */
+===================================== */
 
 .contact{
     max-width:700px;
@@ -598,14 +649,14 @@ header{
 }
 
 
-/* =========================
+/* =====================================
    FOOTER
-========================= */
+===================================== */
 
 footer{
     background:#222;
 
-    color:#fff;
+    color:white;
 
     text-align:center;
 
@@ -617,9 +668,9 @@ footer span{
 }
 
 
-/* =========================
+/* =====================================
    MENU
-========================= */
+===================================== */
 
 .overlay{
     position:fixed;
@@ -628,7 +679,8 @@ footer span{
 
     z-index:7000;
 
-    background:rgba(0,0,0,.72);
+    background:
+    rgba(0,0,0,.72);
 
     display:none;
 
@@ -654,7 +706,7 @@ footer span{
 
     background:#111;
 
-    color:#fff;
+    color:white;
 
     border:1px solid #f47721;
 
@@ -684,7 +736,7 @@ footer span{
 
     background:transparent;
 
-    color:#fff;
+    color:white;
 
     border:1px solid #555;
 
@@ -698,7 +750,8 @@ footer span{
 .menu-grid{
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+    repeat(2,1fr);
 
     gap:15px;
 }
@@ -712,7 +765,7 @@ footer span{
 
     background:#191512;
 
-    color:#fff;
+    color:white;
 
     display:flex;
 
@@ -736,7 +789,8 @@ footer span{
 
     border-color:#f47721;
 
-    transform:translateY(-2px);
+    transform:
+    translateY(-2px);
 }
 
 .menu-icon{
@@ -744,9 +798,9 @@ footer span{
 }
 
 
-/* =========================
+/* =====================================
    MOBILE
-========================= */
+===================================== */
 
 @media(max-width:850px){
 
@@ -781,6 +835,7 @@ footer span{
 
 }
 
+
 @media(max-width:550px){
 
     header{
@@ -806,7 +861,8 @@ footer span{
     }
 
     .container{
-        padding:50px 20px 80px;
+        padding:
+        50px 20px 80px;
     }
 
     .home h1{
@@ -834,7 +890,8 @@ footer span{
     }
 
     .menu-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+        1fr 1fr;
     }
 
     .menu-item{
@@ -857,32 +914,33 @@ footer span{
 <body>
 
 
-<!-- =========================
+<!-- =====================================
      SNOW
-========================= -->
+===================================== -->
 
 <div id="snow"></div>
 
 
-<!-- =========================
+<!-- =====================================
      HEADER
-========================= -->
+===================================== -->
 
 <header>
 
 <div class="navbar">
 
 <a href="#home"
-   class="logo"
-   onclick="showPage('home')">
+class="logo"
+onclick="showPage('home')">
 
 TAR<span>MING</span>
 
 </a>
 
 
-<button class="menu-button"
-        onclick="openMenu()">
+<button
+class="menu-button"
+onclick="openMenu()">
 
 ☰
 
@@ -894,12 +952,13 @@ TAR<span>MING</span>
 
 
 
-<!-- =========================
+<!-- =====================================
      HOME
-========================= -->
+===================================== -->
 
-<section id="home"
-         class="page active">
+<section
+id="home"
+class="page active">
 
 <div class="container home-container">
 
@@ -940,24 +999,29 @@ TAR<span>MING</span>
 
 <div class="buttons">
 
-<button class="btn btn-orange"
-        onclick="showPage('history')">
+
+<button
+class="btn btn-orange"
+onclick="showPage('history')">
 
 รู้จักผมมากขึ้น
 
 </button>
 
 
-<button class="btn btn-white"
-        onclick="showPage('contact')">
+<button
+class="btn btn-white"
+onclick="showPage('contact')">
 
 ติดต่อผม
 
 </button>
 
+
 </div>
 
 </div>
+
 
 
 <div class="home-photo">
@@ -977,18 +1041,20 @@ alt="นาย เสฎฐวุฒิ พลหาญ">
 
 
 
-<!-- =========================
+<!-- =====================================
      HISTORY
-========================= -->
+===================================== -->
 
-<section id="history"
-         class="page">
+<section
+id="history"
+class="page">
 
 <div class="container">
 
 
-<div class="back"
-     onclick="showPage('home')">
+<div
+class="back"
+onclick="showPage('home')">
 
 ← กลับหน้าหลัก
 
@@ -1088,18 +1154,20 @@ alt="รูปประจำตัว">
 
 
 
-<!-- =========================
+<!-- =====================================
      EDUCATION
-========================= -->
+===================================== -->
 
-<section id="education"
-         class="page">
+<section
+id="education"
+class="page">
 
 <div class="container">
 
 
-<div class="back"
-     onclick="showPage('home')">
+<div
+class="back"
+onclick="showPage('home')">
 
 ← กลับหน้าหลัก
 
@@ -1171,7 +1239,7 @@ EDUCATION
 </h3>
 
 <p>
-ต้องการพัฒนาความรู้และทักษะ
+พัฒนาความรู้และทักษะ
 เพื่อนำไปต่อยอดในการศึกษาระดับมหาวิทยาลัย
 </p>
 
@@ -1186,18 +1254,20 @@ EDUCATION
 
 
 
-<!-- =========================
+<!-- =====================================
      UNIVERSITY
-========================= -->
+===================================== -->
 
-<section id="university"
-         class="page">
+<section
+id="university"
+class="page">
 
 <div class="container">
 
 
-<div class="back"
-     onclick="showPage('home')">
+<div
+class="back"
+onclick="showPage('home')">
 
 ← กลับหน้าหลัก
 
@@ -1248,18 +1318,20 @@ alt="ตรามหาวิทยาลัย">
 
 
 
-<!-- =========================
+<!-- =====================================
      SKILLS
-========================= -->
+===================================== -->
 
-<section id="skills"
-         class="page">
+<section
+id="skills"
+class="page">
 
 <div class="container">
 
 
-<div class="back"
-     onclick="showPage('home')">
+<div
+class="back"
+onclick="showPage('home')">
 
 ← กลับหน้าหลัก
 
@@ -1276,46 +1348,28 @@ SKILLS
 </div>
 
 
+<!-- มีแค่ 4 ทักษะตามที่ขอ -->
+
 <div class="skills">
 
 
 <div class="skill">
-💻 คอมพิวเตอร์
+💻 ภาษา C
 </div>
 
 
 <div class="skill">
-🤖 เทคโนโลยี
+🐍 ภาษา Python
 </div>
 
 
 <div class="skill">
-🚀 วิศวกรรม
+🌐 HTML
 </div>
 
 
 <div class="skill">
-✈️ การบิน
-</div>
-
-
-<div class="skill">
-🌌 อวกาศ
-</div>
-
-
-<div class="skill">
-💡 การแก้ปัญหา
-</div>
-
-
-<div class="skill">
-🤝 การทำงานเป็นทีม
-</div>
-
-
-<div class="skill">
-📢 การสื่อสาร
+🎬 การตัดต่อ
 </div>
 
 
@@ -1327,18 +1381,20 @@ SKILLS
 
 
 
-<!-- =========================
+<!-- =====================================
      PROJECTS
-========================= -->
+===================================== -->
 
-<section id="projects"
-         class="page">
+<section
+id="projects"
+class="page">
 
 <div class="container">
 
 
-<div class="back"
-     onclick="showPage('home')">
+<div
+class="back"
+onclick="showPage('home')">
 
 ← กลับหน้าหลัก
 
@@ -1358,12 +1414,13 @@ PROJECTS
 <div class="projects">
 
 
-<!-- =========================
-     การออกแบบอาคาร
+<!-- =====================================
+     1. การออกแบบอาคาร
      รูปตึก
-========================= -->
+===================================== -->
 
 <div class="project">
+
 
 <img
 src="IMG_20260911_102647_613.jpg"
@@ -1371,6 +1428,7 @@ alt="การออกแบบอาคาร">
 
 
 <div class="project-content">
+
 
 <h3>
 🏫 การออกแบบอาคาร
@@ -1382,18 +1440,20 @@ alt="การออกแบบอาคาร">
 และการสร้างแบบจำลองด้วยโปรแกรมคอมพิวเตอร์
 </p>
 
-</div>
 
 </div>
 
+</div>
 
 
-<!-- =========================
-     กิจกรรมด้านเทคโนโลยี
-     รูปกลุ่มคน
-========================= -->
+
+<!-- =====================================
+     2. กิจกรรมด้านเทคโนโลยี
+     รูปกลุ่ม
+===================================== -->
 
 <div class="project">
+
 
 <img
 src="1789097279748.jpg"
@@ -1401,6 +1461,7 @@ alt="กิจกรรมด้านเทคโนโลยี">
 
 
 <div class="project-content">
+
 
 <h3>
 ⚙️ กิจกรรมด้านเทคโนโลยี
@@ -1412,18 +1473,20 @@ alt="กิจกรรมด้านเทคโนโลยี">
 ด้านเทคโนโลยีและการทำงานร่วมกับผู้อื่น
 </p>
 
-</div>
 
 </div>
 
+</div>
 
 
-<!-- =========================
-     เทคโนโลยีและนวัตกรรม
+
+<!-- =====================================
+     3. เทคโนโลยีและนวัตกรรม
      รูปหุ่นยนต์
-========================= -->
+===================================== -->
 
 <div class="project">
+
 
 <img
 src="1789097318177.jpg"
@@ -1431,6 +1494,7 @@ alt="เทคโนโลยีและนวัตกรรม">
 
 
 <div class="project-content">
+
 
 <h3>
 🤖 เทคโนโลยีและนวัตกรรม
@@ -1442,10 +1506,10 @@ alt="เทคโนโลยีและนวัตกรรม">
 รวมถึงการทำงานร่วมกับทีม
 </p>
 
-</div>
 
 </div>
 
+</div>
 
 
 </div>
@@ -1456,18 +1520,20 @@ alt="เทคโนโลยีและนวัตกรรม">
 
 
 
-<!-- =========================
+<!-- =====================================
      CONTACT
-========================= -->
+===================================== -->
 
-<section id="contact"
-         class="page">
+<section
+id="contact"
+class="page">
 
 <div class="container">
 
 
-<div class="back"
-     onclick="showPage('home')">
+<div
+class="back"
+onclick="showPage('home')">
 
 ← กลับหน้าหลัก
 
@@ -1485,6 +1551,7 @@ CONTACT
 
 
 <div class="contact">
+
 
 <h2>
 ติดต่อผมได้ที่
@@ -1519,27 +1586,32 @@ Facebook : TARMING
 
 
 
-<!-- =========================
+<!-- =====================================
      FOOTER
-========================= -->
+===================================== -->
 
 <footer>
 
 © 2026
-<span>TARMING</span>
+
+<span>
+TARMING
+</span>
+
 PORTFOLIO
 
 </footer>
 
 
 
-<!-- =========================
+<!-- =====================================
      MENU
-========================= -->
+===================================== -->
 
-<div id="menu"
-     class="overlay"
-     onclick="closeMenuOutside(event)">
+<div
+id="menu"
+class="overlay"
+onclick="closeMenuOutside(event)">
 
 
 <div class="menu-box">
@@ -1547,22 +1619,26 @@ PORTFOLIO
 
 <div class="menu-head">
 
+
 <h2>
 TARMING PORTFOLIO
 </h2>
 
 
-<button class="close"
-        onclick="closeMenu()">
+<button
+class="close"
+onclick="closeMenu()">
 
 ×
 
 </button>
 
+
 </div>
 
 
-<div style="
+<div
+style="
 text-align:center;
 margin-bottom:25px;
 color:#bbb;
@@ -1576,8 +1652,9 @@ MENU — เมนูต่าง ๆ
 <div class="menu-grid">
 
 
-<button class="menu-item"
-        onclick="showPage('home')">
+<button
+class="menu-item"
+onclick="showPage('home')">
 
 <div class="menu-icon">
 🏠
@@ -1588,8 +1665,9 @@ MENU — เมนูต่าง ๆ
 </button>
 
 
-<button class="menu-item"
-        onclick="showPage('history')">
+<button
+class="menu-item"
+onclick="showPage('history')">
 
 <div class="menu-icon">
 👤
@@ -1600,8 +1678,9 @@ MENU — เมนูต่าง ๆ
 </button>
 
 
-<button class="menu-item"
-        onclick="showPage('education')">
+<button
+class="menu-item"
+onclick="showPage('education')">
 
 <div class="menu-icon">
 🎓
@@ -1612,8 +1691,9 @@ MENU — เมนูต่าง ๆ
 </button>
 
 
-<button class="menu-item"
-        onclick="showPage('university')">
+<button
+class="menu-item"
+onclick="showPage('university')">
 
 <div class="menu-icon">
 ✈️
@@ -1624,8 +1704,9 @@ MENU — เมนูต่าง ๆ
 </button>
 
 
-<button class="menu-item"
-        onclick="showPage('skills')">
+<button
+class="menu-item"
+onclick="showPage('skills')">
 
 <div class="menu-icon">
 ⚙️
@@ -1636,8 +1717,9 @@ MENU — เมนูต่าง ๆ
 </button>
 
 
-<button class="menu-item"
-        onclick="showPage('projects')">
+<button
+class="menu-item"
+onclick="showPage('projects')">
 
 <div class="menu-icon">
 📁
@@ -1648,8 +1730,9 @@ MENU — เมนูต่าง ๆ
 </button>
 
 
-<button class="menu-item"
-        onclick="showPage('contact')">
+<button
+class="menu-item"
+onclick="showPage('contact')">
 
 <div class="menu-icon">
 💬
@@ -1670,14 +1753,15 @@ MENU — เมนูต่าง ๆ
 
 <script>
 
-/* =========================
+/* =====================================
    PAGE NAVIGATION
-========================= */
+===================================== */
 
 function showPage(pageId){
 
     const pages =
         document.querySelectorAll('.page');
+
 
     pages.forEach(function(page){
 
@@ -1708,16 +1792,19 @@ function showPage(pageId){
 
 
     window.scrollTo({
+
         top:0,
+
         behavior:'smooth'
+
     });
 
 }
 
 
-/* =========================
-   MENU
-========================= */
+/* =====================================
+   OPEN MENU
+===================================== */
 
 function openMenu(){
 
@@ -1728,6 +1815,10 @@ function openMenu(){
 }
 
 
+/* =====================================
+   CLOSE MENU
+===================================== */
+
 function closeMenu(){
 
     document
@@ -1737,9 +1828,15 @@ function closeMenu(){
 }
 
 
+/* =====================================
+   CLOSE MENU OUTSIDE
+===================================== */
+
 function closeMenuOutside(event){
 
-    if(event.target.id === 'menu'){
+    if(
+        event.target.id === 'menu'
+    ){
 
         closeMenu();
 
@@ -1748,16 +1845,17 @@ function closeMenuOutside(event){
 }
 
 
-/* =========================
-   LOAD PAGE FROM URL
-========================= */
+/* =====================================
+   LOAD PAGE
+===================================== */
 
 window.addEventListener(
     'load',
     function(){
 
         const hash =
-            window.location.hash.replace('#','');
+            window.location.hash
+            .replace('#','');
 
 
         const validPages = [
@@ -1773,7 +1871,9 @@ window.addEventListener(
         ];
 
 
-        if(validPages.includes(hash)){
+        if(
+            validPages.includes(hash)
+        ){
 
             showPage(hash);
 
@@ -1787,9 +1887,9 @@ window.addEventListener(
 );
 
 
-/* =========================
-   SNOW
-========================= */
+/* =====================================
+   SNOW EFFECT
+===================================== */
 
 function createSnow(){
 
@@ -1865,5 +1965,7 @@ for(
 
 </script>
 
+
 </body>
+
 </html>
